@@ -1,6 +1,6 @@
-<h1 id="configuration-ble">BLE</h1>
+<h1 id="configuration-ble">BLE configuration</h1>
 
-This page describes build-time configurable parameters for BLE. A resource constrained device can limit its functionality to decrease the memory and flash use of the BLE module. 
+This page describes build-time configurable parameters for BLE. A resource constrained device can limit its functionality to decrease the memory and flash use of the BLE module.
 
 To understand what each feature provides, please refer to the API docs and the Bluetooth specification.
 
@@ -45,7 +45,7 @@ Name: ble.ble-role-observer
     Defined by: library:ble
     Value: true
     Macro name: BLE_ROLE_OBSERVER
-    
+
 Name: ble.ble-role-broadcaster
     Description: Include broadcaster BLE role support (sending advertising packets).
     Defined by: library:ble
@@ -123,5 +123,5 @@ Name: ble.ble-feature-periodic-advertising
     Defined by: library:ble
     Value: true
     Macro name: BLE_FEATURE_PERIODIC_ADVERTISING
-        
+
 ```

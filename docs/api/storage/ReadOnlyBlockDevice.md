@@ -2,7 +2,7 @@
 
 [Add introduction here.]
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## ReadOnlyBlockDevice class reference
 
@@ -14,4 +14,4 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## Related content
 
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

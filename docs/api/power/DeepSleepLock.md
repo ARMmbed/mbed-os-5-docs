@@ -6,7 +6,7 @@ The `DeepSleepLock` class provides an RAII object for disabling sleep. In other 
 
 ## DeepSleepLock class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_deep_sleep_lock.html)
 
 ## Example
 
@@ -17,4 +17,3 @@ This example shows how you can lock deep sleep to decrease interrupt latency at 
 ## Related content
 
 - [Power management API references](power-management-sleep.html).
-- [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).

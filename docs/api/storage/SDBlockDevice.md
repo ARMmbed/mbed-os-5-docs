@@ -1,10 +1,10 @@
 # SDBlockDevice
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.png)<span>SDBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_s_d_block_device.png)<span>SDBlockDevice class hierarchy</span></span>
 
 You can use the Mbed OS SD card block device, so applications can read and write data to flash storage cards using the standard POSIX File API programming interface. Applications use the FAT filesystem and SD block device components to persistently store data on SDCards. The SD block device uses the SD card SPI-mode of operation, which is a subset of possible SD card functionality.
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## How to wire an external SD-card module to a developer board
 
@@ -98,7 +98,7 @@ There is a difference between `erase` as usually defined for SD cards and the de
 
 ## SDBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/class_s_d_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_s_d_block_device.html)
 
 ## SDBlockDevice example application
 
@@ -106,4 +106,4 @@ There is a difference between `erase` as usually defined for SD cards and the de
 
 ## Related content
 
-- [BlockDevice configuration](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration](../apis/data-options-and-config.html).

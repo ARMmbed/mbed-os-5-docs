@@ -1,10 +1,10 @@
 <h1 id="contributing-storage">Storage</h1>
 
-Mbed OS provides various storage solutions, all built on top of the [BlockDevice interface](../apis/blockdevice.html).
+Mbed OS provides various storage solutions, all built on top of the [BlockDevice interface](../apis/blockdevice-apis.html).
 
 When you add a new platform, you must add the supported block devices to the list of components in the `targets.json` file. The block devices are located in the [components folder]( https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice). To enable a block device in the `COMPONENT_<component name>` folder, add the `<component name>` string to the component list for the target in the `targets.json` file. For example, for the internal memory block device, `COMPONENT_FLASHIAP`, add `"components_add": ["FLASHIAP"]` to your target section in the `targets.json` file.
 
-For more information about existing storage solutions in Mbed OS, see the [Storage API page](../apis/storage.html).
+For more information about existing storage solutions in Mbed OS, see the [Storage API page](../apis/data-storage.html).
 
 ## Block Device
 
@@ -26,7 +26,7 @@ A minimal file system needs to provide the following functions:
 
 Here is the full API that a file system may implement:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_system.html)
 
 File systems must be backed by a block device in Mbed OS. If you are using supported hardware, then you can use the Mbed OS block device classes. Otherwise, view the [block device porting section](#block-device) earlier in this guide.
 

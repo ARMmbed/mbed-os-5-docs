@@ -1,4 +1,4 @@
-# Static Global API
+<h1 id="static-global-api">kvstore_global_api (Static Global API)</h1>
 
 Applications should use the KVStore static API to access the instances of KVStore components that the selected configuration allocates.
 
@@ -6,7 +6,7 @@ Applications should use the KVStore static API to access the instances of KVStor
 
 The function `kv_init_storage_config()` allocates and initializes all the components required for the execution of the global API. The API implicitly calls it and can call it several times without side effects.
 
-The configuration parameters present in the API's `.json` files determine the allocation and setup of required KVStore components and block devices. The application's `.json` file, `mbed_app.json`, can override these parameters. Please see the [storage configuration documentation](../reference/storage.html) for details.
+The configuration parameters present in the API's `.json` files determine the allocation and setup of required KVStore components and block devices. The application's `.json` file, `mbed_app.json`, can override these parameters. Please see the [storage configuration documentation](../apis/data-storage.html) for details.
 
 ## Parameter details
 
@@ -36,7 +36,7 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 
 ## Static Global API class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
 
 ## Static Global API example
 
@@ -45,4 +45,4 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 ## Related content
 
 - [KVStore API](../apis/kvstore.html).
-- [Storage configuration](../reference/storage.html).
+- [Storage configuration](../apis/data-storage.html).

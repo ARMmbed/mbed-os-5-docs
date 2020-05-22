@@ -16,7 +16,7 @@ void main()
 
 ## Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__rtos___idle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__rtos___idle.html)
 
 ## Example
 
@@ -26,4 +26,3 @@ void main()
 
 - [DeepSleepLock API reference](deepsleeplock.html).
 - [Power management API reference](power-management-sleep.html).
-- [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).

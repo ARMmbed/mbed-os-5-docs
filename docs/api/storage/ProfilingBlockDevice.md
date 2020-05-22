@@ -6,7 +6,7 @@ The ProfilingBlockDevice class provides a decorator for an existing block device
 
 ProfilingBlockDevices take in a pointer to the block device being profiled as the only configurable parameter. If you want to count a storage operation such as programming, reading or writing to a block device, you should use the ProfilingBlockDevice object as the interface to the storage block rather than the underlying device. The below example highlights this use case.
 
-To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## ProfilingBlockDevice class reference
 
@@ -20,4 +20,4 @@ Create a ProfilingBlockDevice, perform storage operations and report back the re
 
 ## Related content
 
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

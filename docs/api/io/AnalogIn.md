@@ -12,7 +12,7 @@ The resolution for an ADC is the smallest distinguishable change in analog input
 
 ## AnalogIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_analog_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_analog_in.html)
 
 ## AnalogIn hello, world
 

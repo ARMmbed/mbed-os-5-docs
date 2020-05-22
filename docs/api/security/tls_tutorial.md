@@ -1,6 +1,6 @@
 <h1 id="tls-tutorial">Using Mbed TLS to communicate securely</h1>
 
-The [IP networking interface](../reference/ip-networking.html) includes [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), helps you understand and use TLS encryption in Mbed OS. The Transport Layer Security (TLS) is a successor of Secure Sockets Layer (SSL), and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured online services, such as cloud IoT platforms.
+The [IP networking interface](../apis/connectivity-architecture.html) includes [TLSSockets](../apis/tlssocket.html), which behave similarly to normal TCP sockets but automatically use Mbed TLS to set up a TLS connection to the server. This tutorial, based on [our blog entry](https://os.mbed.com/blog/entry/Adding-TLS-Sockets-to-Mbed-OS/), helps you understand and use TLS encryption in Mbed OS. The Transport Layer Security (TLS) is a successor of Secure Sockets Layer (SSL), and it is designed to provide communication security over a computer network. You will often find it necessary to use TLSSockets instead of raw TCPSockets when connecting to secured online services, such as cloud IoT platforms.
 
 In particular, this tutorial:
 

@@ -9,7 +9,7 @@ The interface is made up of two lines for all communication:
 
 <span class="warnings">**Warning:** We are introducing the I2C API in an upcoming release of Mbed OS. This page documents code that exists on a feature branch of Mbed OS. You can find details on how it may affect you in the [implementing the I2C API](#implementing-the-i2c-api) section.
 
-# Defined behaviors
+## Defined behaviors
 
 - `i2c_init`:
    - Initializes the peripheral pins specified in the input parameters.
@@ -69,7 +69,7 @@ The interface is made up of two lines for all communication:
 - `i2c_abort_async`:
    - Aborts any ongoing async transfers.
 
-# Undefined behaviors
+## Undefined behaviors
 
 - Use of a `null` pointer as an argument to any function.
 - Calling any `I2C` function before calling `i2c_init` or after calling `i2c_free`.
@@ -87,15 +87,15 @@ The interface is made up of two lines for all communication:
 - Passing an invalid pointer as `handler` to `i2c_transfer_async`.
 - Calling `i2c_transfer_abort` when no transfer is currently in progress.
 
-# Notes
+## Notes
 
 You can find more details about the design choices in the [HAL code design document](https://github.com/ARMmbed/mbed-os/blob/feature-i2c/docs/design-documents/hal/0001-i2c-overhaul.md).
 
-# Dependencies
+## Dependencies
 
 Hardware I2C capabilities.
 
-# Implementing the I2C API
+## Implementing the I2C API
 
 You can find the API and specification for the I2C API in the following class reference:
 
@@ -106,7 +106,7 @@ To enable I2C support in Mbed OS, add the `I2C` label in the `device_has` option
 You can also add the `I2C_ASYNCH` label in the `device_has` option to enable the asynchronous API,
 and `I2CSLAVE` to enable the I2CSlave API.
 
-# Testing
+## Testing
 
 The Mbed OS HAL provides a set of conformance tests for I2C. You can use these tests to validate the correctness of your implementation. To run the I2C HAL tests, use the following command:
 
@@ -117,4 +117,3 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal_fpga_ci_test_shield-i2c"
 You can read more about the test cases:
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/feature-i2c-doxy/group__hal__i2c__tests.html)
-

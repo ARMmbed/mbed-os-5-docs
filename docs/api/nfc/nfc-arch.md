@@ -38,12 +38,6 @@ NFC controllers typically support a large subset (if not all) of NFC Forum funct
 
 NFC EEPROMs behave like NFC tags whose memory can either be addressed through a wired (such as I2C) or NFC air interface. One benefit is that these work autonomously from a microcontroller. Some of them can also use the NFC field as a power source if they are powered off at the time.
 
-## Getting started with NFC and example
-
-NFC examples are available on [GitHub](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/nfc) and demonstrate how to create NFC tags that you can be read from and write to using a phone.
-
-<span class="images">![](../../images/explorenfc_nucleo.jpg)<span>An Explore-NFC board attached to a Nucleo board</span></span>
-
 ## API
 
 There are two entry points for the API, depending on whether you are using a NFC Controller or EEPROM.

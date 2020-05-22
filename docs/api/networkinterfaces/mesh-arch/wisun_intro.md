@@ -13,7 +13,7 @@ You can find more details about Wi-SUN at the [Wi-SUN Alliance site](https://www
 Mbed OS provides the [Mesh C++ API](../apis/mesh-api.html) for building Wi-SUN applications.
 
 - To connect to the Wi-SUN network, use the [Wi-SUN interface API](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/mbed-mesh-api/mbed-mesh-api/WisunInterface.h).
-- For the socket communication over the Wi-SUN network, use the [Mbed sockets API](../apis/network-socket.html).
+- For the socket communication over the Wi-SUN network, use the [Mbed sockets API](../apis/socket.html).
 
 ### Nanostack Wi-SUN API
 

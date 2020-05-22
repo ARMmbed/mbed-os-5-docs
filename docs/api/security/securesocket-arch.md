@@ -90,7 +90,7 @@ nsapi_error_t TLSSocketWrapper::set_client_cert_key(const char *client_cert_pem,
 
 ### Socket API
 
-`TLSSocketWrapper` implements the [Mbed OS Socket API](../apis/network-socket.html):
+`TLSSocketWrapper` implements the [Mbed OS Socket API](../apis/socket.html):
 
 ```
 virtual nsapi_error_t close();
@@ -167,4 +167,4 @@ For guidance of how to use these, please refer to the [Mbed TLS documentation](.
 
 - [Security overview](../apis/security.html).
 - [TLSSocket](../apis/tlssocket.html) API reference.
-- [DTLSSocket](../apis/dtlssocket.html) API reference.
+- [DTLSSocket](../apis/secure-socket-apis.html) API reference.

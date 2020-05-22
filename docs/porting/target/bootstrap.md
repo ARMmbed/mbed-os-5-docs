@@ -82,8 +82,56 @@ LR_IROM1  MBED_APP_START  MBED_APP_SIZE  {
 }
 ```
 
-
 **GCC linker script template:**
+
+```
+/* Device specific values */
+
+/* Tools provide -DMBED_ROM_START=xxx -DMBED_ROM_SIZE=xxx -DMBED_RAM_START=xxx -DMBED_RAM_SIZE=xxx */
+
+define symbol VECTORS     = xx; /* This value must match NVIC_NUM_VECTORS */
+define symbol HEAP_SIZE   = 0x10000;
+
+/* Common - Do not change */
+
+if (!isdefinedsymbol(MBED_APP_START)) {
+    define symbol MBED_APP_START = MBED_ROM_START;
+}
+
+if (!isdefinedsymbol(MBED_APP_SIZE)) {
+    define symbol MBED_APP_SIZE = MBED_ROM_SIZE;
+}
+
+if (!isdefinedsymbol(MBED_BOOT_STACK_SIZE)) {
+    /* This value is normally defined by the tools
+        to 0x1000 for bare metal and 0x400 for RTOS */
+    define symbol MBED_BOOT_STACK_SIZE = 0x400;
+}
+
+/* Round up VECTORS_SIZE to 8 bytes */
+define symbol VECTORS_SIZE = ((VECTORS * 4) + 7) & ~7;
+define symbol RAM_REGION_START = MBED_RAM_START + VECTORS_SIZE;
+define symbol RAM_REGION_SIZE = MBED_RAM_SIZE - VECTORS_SIZE;
+
+define memory mem with size = 4G;
+define region ROM_region = mem:[from MBED_APP_START size MBED_APP_SIZE];
+define region RAM_region = mem:[from RAM_REGION_START size RAM_REGION_SIZE];
+
+define block CSTACK    with alignment = 8, size = MBED_BOOT_STACK_SIZE   { };
+define block HEAP      with alignment = 8, size = HEAP_SIZE     { };
+
+initialize by copy { readwrite };
+do not initialize  { section .noinit };
+
+place at address mem: MBED_APP_START { readonly section .intvec };
+
+place in ROM_region   { readonly };
+place in RAM_region   { readwrite,
+                        block CSTACK, block HEAP };
+
+```
+
+GCC linker script template:
 
 ```
 /* Device specific values */

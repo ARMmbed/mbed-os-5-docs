@@ -107,7 +107,7 @@ After the call the processor and most components will reset, but it will not aff
 
 ## Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
 
 ## Example
 
@@ -117,4 +117,3 @@ After the call the processor and most components will reset, but it will not aff
 
 - [DeepSleepLock API reference](deepsleeplock.html).
 - [Idle loop API reference](idle-loop.html).
-- [Office Hours video about low power, tickless and sleep](https://www.youtube.com/watch?v=OFfOlBaegdg).

@@ -1,4 +1,4 @@
-<h1 id="build-profiles">Build profiles</h1>
+# Build profiles
 
 Arm Mbed OS defines three collections of toolchain flags used during the build. These are __build profiles__.  The three build profiles are *develop*, *debug* and *release*. The Mbed Online Compiler uses the *develop* build profile. When building from Arm Mbed CLI, you may select the __build profile__ by passing your desired build profile, by name or path, to the `--profile` argument.
 

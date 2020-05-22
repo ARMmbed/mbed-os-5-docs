@@ -118,7 +118,7 @@ There are four design components comprising the Arm Mbed LoRaWAN solution that e
 
 Mbed LoRa radio drivers reside outside of the Mbed OS tree. Arm provides support for `SX1272` and `SX1276` LoRa radios, which are the most widely used LoRa end-device radio chipsets.
 
-Arm Mbed OS contains a pure virtual class `LoRaRadio`, which you can use to inherit from and provide an Mbed LoRa radio driver to complement Mbed applications and the Mbed LoRaWAN stack. You can find a complete reference to the `LoRaRadio` class in the [LoRaRadio API reference](../apis/loraradio-api.html).
+Arm Mbed OS contains a pure virtual class `LoRaRadio`, which you can use to inherit from and provide an Mbed LoRa radio driver to complement Mbed applications and the Mbed LoRaWAN stack. You can find a complete reference to the `LoRaRadio` class in the [LoRaRadio API reference](../apis/loraradio.html).
 
 The LoRa radio drivers support both RTOS and non-RTOS environments. For RTOS environments, the drivers defer interrupts using a thread and signaling mechanism for deferred processing. For non-RTOS environments, the driver shares the user thread. A third party driver, which is an implementation of `LoRaRadio` class, can use any of the sync methods Mbed OS provides and is free to use any transport for register access internally. The most important prerequisites are:
 
@@ -217,7 +217,7 @@ At the moment, it's not possible to change a PHY during run time. You must selec
 
 The Arm Mbed LoRaWAN stack is event driven. To reduce complexity of the overall system, it uses the EventQueue, which the application passes to the stack. Both share this event queue. This ensures that the both stack and application run in the same context.
 
-There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](../apis/lorawan.html).
+There are certain events that the application sends in response to various network level operations. For a detailed discussion of these events, please visit the [LoRaWAN events documentation](../apis/lorawan-apis.html).
 
 ### Connection procedure
 

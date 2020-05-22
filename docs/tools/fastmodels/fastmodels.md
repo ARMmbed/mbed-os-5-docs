@@ -26,9 +26,9 @@ Fast Models can run most of the Mbed OS examples.
 
 Examples you can successfully run include:
 
-- [`mbed-os-example-blinky`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-blinky/).
-- [`mbed-os-example-tls`](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-tls-benchmark/).
-- [`mbed-os-example-devicekey`](../apis/devicekey.html#devicekey-example).
+- [`mbed-os-example-blinky`](https://github.com/ARMmbed/mbed-os-example-blinky).
+- [`mbed-os-example-tls`](https://github.com/ARMmbed/mbed-os-example-tls).
+- [`mbed-os-example-devicekey`](../apis/security-apis.html#devicekey-example).
 - [`mbed-os-example-nvstore`](../apis/nvstore.html#nvstore-example).
 - [`mbed-os-example-thread-statistics`](../apis/mbed-statistics.html#thread-statistics-example).
 - [`mbed-os-example-sys-info`](../apis/mbed-statistics.html#system-information-example).
@@ -36,7 +36,7 @@ Examples you can successfully run include:
 - [`mbed-os-example-cpu-stats`](../apis/mbed-statistics.html#cpu-statistics-example).
 - [`mbed-os-example-error-handling`](../apis/error-handling.html#error-handling-example).
 - [`mbed-os-example-filesystem`](../apis/filesystem.html#file-system-example).
-- [`mbed-os-example-blockdevice`](../apis/blockdevice.html#blockdevice-example).
+- [`mbed-os-example-blockdevice`](../apis/blockdevice-apis.html#blockdevice-example).
 - [`mbed-os-example-sockets`](../apis/socket.html#socket-example).
 
 The following examples use `mbed-os-example-blinky`.

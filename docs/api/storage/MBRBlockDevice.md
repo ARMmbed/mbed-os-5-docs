@@ -9,7 +9,7 @@ MBRBlockDevices have the following configurable parameters in the constructor:
   - _bd_ - Block device to back the MBRBlockDevice
   - _part_ - Partition to use, 1-4
 
-You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+You can view more information about the configurable settings and functions in the class reference. To configure this class, please see our [BlockDevice configuration documentation](../apis/data-options-and-config.html).
 
 ## MBRBlockDevice class reference
 
@@ -28,4 +28,4 @@ Partition an SD card, and format the new partition with a FAT filesystem. A PC w
 ## Related content
 
 - [HeapBlockDevice](heapblockdevice.html) API reference.
-- [BlockDevice configuration documentation](../reference/storage.html#blockdevice-default-configuration).
+- [BlockDevice configuration documentation](../apis/data-options-and-config.html).

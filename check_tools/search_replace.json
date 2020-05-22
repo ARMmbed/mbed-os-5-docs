@@ -1,0 +1,4 @@
+{
+    "search" : "https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/.*?\/",
+    "replace": "https://github.com/ARMmbed/mbed-os-snippet-"
+}

@@ -1,8 +1,8 @@
 # UnbufferedSerial
 
-<span class="images">![](https://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
-The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/BufferedSerial.html) class. The classes also share the same default configurations.
+The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/serial-uart-apis.html) class. The classes also share the same default configurations.
 
 Unlike the BufferedSerial class, the UnbufferedSerial class does not use intermediary buffers to store bytes to transmit to or read from the hardware. The user application is responsible for processing each byte as it is received. The method to read data returns only one byte for every call. Therefore, we recommend you use this class when you need more control and for use in interrupt handlers with the RTOS. You can also use this class to write multiple bytes at once. Because it does not acquire a mutex lock, you must ensure only one instance uses the serial port.
 
@@ -14,7 +14,7 @@ You can view more information about the configurable settings and functions in t
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../tutorials/serial-communication.html#windows-serial-driver).</span>
+<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../program-setup/serial-communication.html#windows-serial-driver).</span>
 
 ## UnbufferedSerial Example
 

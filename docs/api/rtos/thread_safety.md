@@ -78,7 +78,7 @@ For more information see [rtos/Mutex.h](../mbed-os-api-doxy/_mutex_8h_source.htm
 
 Mbed OS provides atomic functions to make code **interrupt safe**. If you must modify an object or data structure from interrupts, you can use these atomic functions to synchronize the access.
 
-For more information see [platform/critical.h](../mbed-os-api-doxy/critical_8h_source.html).
+For more information see [platform/critical.h](../mbed-os-api-doxy/mbed__critical_8h_source.html).
 
 #### Critical sections
 
@@ -89,7 +89,7 @@ Critical sections disable interrupts to provide uninterrupted access to a resour
 - Do not perform time consuming operations inside critical sections. This will negatively affect the timing of the entire system, because all interrupts are disabled during critical sections.
 - Do not invoke any standard lib or RTOS functions within a critical section; it could result in a hard fault because RTOS performs SVC calls.
 
-For more information see [platform/critical.h](../mbed-os-api-doxy/critical_8h_source.html).
+For more information see [platform/critical.h](../mbed-os-api-doxy/mbed__critical_8h_source.html).
 
 ### Major Mbed OS libraries
 

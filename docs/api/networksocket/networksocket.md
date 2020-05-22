@@ -1,6 +1,6 @@
-<h1 id="network-socket">Network socket overview</h1>
+# Network socket
 
-The application programming interface for IP networking is the Socket API. As described in the [IP networking](../reference/ip-networking.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API is abstract and supports various protocols such as TCP, UDP and non-IP data delivery for NB-IoT cellular networks.
+The application programming interface for IP networking is the Socket API. As described in the [IP networking](../apis/connectivity-architecture.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API is abstract and supports various protocols such as TCP, UDP and non-IP data delivery for NB-IoT cellular networks.
 
 <span class="images">![](../../images/ip-networking.png)<span>Sockets</span></span>
 
@@ -41,18 +41,6 @@ sock.recv(buf, 100);
 // Close the socket
 sock.close();
 ```
-
-## Changes in Mbed OS 5.10
-
-The 5.10 release refactors the Mbed OS Socket API. For most of the applications, these changes are not noticeable because the `TCPSocket` and `UDPSocket` classes still emulate legacy behavior.
-
-The new design contains an abstract socket interface that applications can use directly. Casting `Socket` pointers back to `TCPSocket` or `UDPSocket` is no longer necessary.
-
-Upcasting any protocol specific class to `Socket` has no side effect and is a recommended API design. Knowing the exact type is only required when you create the socket.
-
-The new design also emphasizes use of `SocketAddress` for holding the IP addresses, instead on textual format. `SocketAddress` is a container class that protocols other than IP can use in the future. Legacy string versions of `connect()`, `bind()` and `sendto()` functions do not exist in the `Socket` base class, but they exist in `TCPSocket` and `UDPSocket` classes.
-
-The new design also renders the TCPServer API unnecessary, moving its functionality directly into TCPSocket itself. The legacy TCPServer class still exists and is fully functional.
 
 ## Using DNS names
 
@@ -97,7 +85,7 @@ The network socket API provides a common interface for using sockets on network 
 - [UDPSocket](udpsocket.html): This class provides the ability to send packets of data over UDP.
 - [TCPSocket](tcpsocket.html): This class provides the ability to send a stream of data over TCP.
 - [SocketAddress](socketaddress.html): You can use this class to represent the IP address and port pair of a unique network endpoint.
-- [CellularNonIPSocket](../apis/non-ip-cellular-socket.html): This class provides the ability to send and receive 3GPP non-IP datagrams (NIDD) using the cellular IoT feature.
+- [CellularNonIPSocket](../apis/network-socket-apis.html): This class provides the ability to send and receive 3GPP non-IP datagrams (NIDD) using the cellular IoT feature.
 - [Network status](network-status.html): API for monitoring network status changes.
 - [DNS resolver](dns-resolver.html): API for resolving DNS names
 

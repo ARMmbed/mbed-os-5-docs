@@ -12,7 +12,7 @@ The Socket API is the common API among all IP connectivity methods. All network 
 
 In the OSI model, the Socket API relates to layer 4, the Transport layer. In Mbed OS, the Socket API supports both TCP and UDP protocols.
 
-Refer to [Socket API](../apis/network-socket.html) reference for usage instructions.
+Refer to [Socket API](../apis/socket.html) reference for usage instructions.
 
 ## IP stacks
 
@@ -29,7 +29,7 @@ The following table summarizes different stacks, use cases and their limitations
 |Stack|Network protocols supported|Use cases|Limitations|
 |-----|---------------------------|---------|-----------|
 |LwIP|IPv4, IPv6, PPP|Ethernet, Wi-Fi, 2G/3G/4G Cellular|4 sockets, 1 interface, no routing|
-|Nanostack|IPv6, 6LoWPAN, Thread|Mesh networking, Border Router|Only IPv6|
+|Nanostack|IPv6, 6LoWPAN |Mesh networking, Border Router|Only IPv6|
 |External IP module|Depends on the module|(Save RAM/Flash)|Depends on the module. Usually poor match to Socket API|
 
 ### Configuring the IP stack interface
@@ -42,7 +42,7 @@ Depending on the Layer 3, Network layer, protocol used, there are different ways
 |LwIP|Ethernet, WiFi|IPv6|[RFC 4862](https://tools.ietf.org/html/rfc4862) IPv6 Stateless Address Autoconfiguration. No DHCPv6 support|
 |LwIP|PPP|IPv4,IPv6|automatic|
 |Nanostack|Ethernet|IPv6|static or [RFC 4862](https://tools.ietf.org/html/rfc4862) IPv6 Stateless Address Autoconfiguration. No DHCPv6 support|
-|Nanostack|IEEE 802.15.4|6LoWPAN|Thread or 6LoWPAN-ND+RPL|
+|Nanostack|IEEE 802.15.4|6LoWPAN| 6LoWPAN-ND+RPL|
 
 ## Network interfaces
 
@@ -56,10 +56,9 @@ Mbed OS implements the following network interface APIs:
 - Wi-Fi.
 - Cellular (PPP).
 - 6LoWPAN-ND mesh networking.
-- Thread mesh networking.
 - Wi-SUN mesh networking.
 
-Refer to [Network Interface](../apis/network-interfaces.html) API reference for usage instructions.
+Refer to [Network Interface](../apis/network-interface-apis.html) API reference for usage instructions.
 
 ## Network drivers
 
@@ -83,7 +82,7 @@ There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol lay
 
 Cellular drivers have the same two separate cases as Wi-Fi. If they use an external IP stack, the driver implements the Network stack API. If they use the internal IP stack, LwIP, then they implement the Serial PPP driver.
 
-### Mesh (Wi-SUN, 6LoWPAN-ND, Thread) RF driver
+### Mesh (Wi-SUN, 6LoWPAN-NDead) RF driver
 
 <span class="images">![](../images/rf-driver.png)<span>RF driver</span></span>
 

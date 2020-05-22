@@ -1,18 +1,20 @@
 <h1 id="cli-update">Update devices</h1>
 
-Arm Mbed OS allows you to update your device firmware, enabled by the Pelion Device Management IoT platform. Mbed CLI includes features to prepare and ship updates for devices managed through the [Device Management Portal](https://cloud.mbed.com/docs/latest/introduction/index.html).
+Arm Mbed OS allows you to update your device firmware using Pelion Device Management. Mbed CLI includes features to prepare and ship updates for devices managed through [Device Management Portal](https://www.pelion.com/docs/device-management/current/introduction/index.html).
 
-Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all device management subcommands. This document explains the steps to enable and use Device Management with a project.
+Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mbed dev-mgmt` and `mbed dm` are also available as shorter aliases). The remainder of this document uses the `mbed dm` alias for all `device-management` subcommands. This document explains the steps to enable and use Device Management with a project.
+
+<span class="tips">**Tip**: This page is about using Device Management to update an application on a device in the field. To update dependencies of an application on your computer, [see `mbed update`](../build-tools/compile.html#update-programs-and-libraries).</span>
 
 ## Requirements
 
 To use the `mbed dm` command to update a device, your device must be running an application with Device Management Client and a supported managed or unmanaged bootloader.
 
-This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://cloud.mbed.com/docs/latest/connecting/device-management-client-tutorials.html) on one of our reference platforms.
+This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://www.pelion.com/docs/device-management/current/connecting/device-management-client-tutorials.html) on one of our reference platforms.
 
 ## Project setup
 
-Configure your Mbed Cloud SDK API key, target and toolchain. [Obtain the API key](https://cloud.mbed.com/docs/latest/integrate-web-app/api-keys.html) from the the Device Management Portal.
+Configure your Device Management SDK API key, target and toolchain. [Obtain the API key](https://cloud.mbed.com/docs/latest/integrate-web-app/api-keys.html) from Device Management Portal.
 
 ```
 $ mbed config -G CLOUD_SDK_API_KEY <API_KEY>
@@ -22,7 +24,7 @@ $ mbed toolchain <TOOLCHAIN>
 
 <span class="notes">**Note:** The API key must have Administrator privileges to use this feature.</span>
 
-Initialize the device management feature of Mbed CLI with the following command:
+Initialize the Device Management feature of Mbed CLI with the following command:
 
 ```
 $ mbed dm init -d "<company domain name>" --model-name "<product model identifier>"
@@ -35,14 +37,14 @@ This command asks for information about your update certificate. After completin
 - A certificate in `.update-certificates/default.der`.
 - A matching private key in `.update-certificates/default.key.pem`.
 - A set of default settings in `.manifest_tool.json`.
-- Device Management update credentials in `update_default_resources.c`
+- Device Management update credentials in `update_default_resources.c`.
 - Device Management settings in `.mbed_cloud_config.json`, including default settings for:
    - A unique vendor identifier, based on the domain name supplied as the `-d` parameter to `mbed dm init`.
    - A unique model identifier, based on the vendor identifier and the model name supplied as the `--model-name` to `mbed dm init`.
    - The path of the update certificate and private key.
-- Device Management developer credentials in `mbed_cloud_dev_credentials.c`
+- Device Management developer credentials in `mbed_cloud_dev_credentials.c`.
 
-<span class="notes">**Note:** The certificate created in `mbed dm init` is not suitable for production. Use it for testing and development only. To create a certificate for production purposes, use an air-gapped computer or a Hardware Security Module. When going to production, conduct a security review on your manifest signing infrastructure because it is the core of the security guarantees for update client.</span>
+<span class="notes">**Note:** The certificate created in `mbed dm init` is not suitable for production. Use it for testing and development only. To create a certificate for production purposes, use an air-gapped computer or a Hardware Security Module. When going to production, conduct a security review on your manifest signing infrastructure because it is the core of the security guarantees for Update client.</span>
 
 ## Single-device update
 
@@ -52,7 +54,7 @@ Mbed CLI provides a subcommand, `mbed dm update device`, for development with a 
 $ mbed compile
 ```
 
-This generates a payload to update the device with. After generating the payload, update the device through Device Management with:
+This generates an image to update the device with. After generating the image, update the device through Device Management with:
 
 ```
 $ mbed dm update device -D <device ID> -m <target>
@@ -60,28 +62,30 @@ $ mbed dm update device -D <device ID> -m <target>
 
 This performs several actions:
 
-1. Upload the payload, generated by `mbed compile`, to Device Management.
-1. Hash the payload, and create a manifest that links to its location in Device Management.
-1. Create an update campaign for the supplied device ID, with the newly created manifest.
-1. Start the campaign.
-1. Wait for the campaign to complete.
-1. Delete the payload, manifest and update campaign out of Device Management.
+1. Uploads the image, generated by `mbed compile`, to Device Management.
+1. Hashes the image, and create a manifest that links to its location in Device Management.
+1. Creates an update campaign for the supplied device ID, with the newly created manifest.
+1. Starts the campaign.
+1. Waits for the campaign to complete.
+1. Deletes the image, manifest and update campaign out of Device Management.
 
 ## Multidevice update
 
-To update more than one device, use Mbed CLI to generate and upload a manifest and payload to the Device Management portal. Then use the Device Management portal to create device filters that include many devices in an update campaign. After the steps in [Project Setup](#project-setup), you can create and upload manifests and payloads by running:
+To update more than one device, use Mbed CLI to generate and upload a manifest and image to Device Management Portal. Then use Device Management Portal to create device filters that include many devices in an update campaign. After the steps in [Project Setup](#project-setup), you can create and upload manifests and images by running:
 
 ```
 $ mbed compile
 ```
 
-This generates a payload to update the device with. After generating the payload, upload the payload and manifest with:
+This generates an image to update the device with.
+
+After generating the image, upload the image and manifest with:
 
 ```
 $ mbed dm update prepare
 ```
 
-`mbed dm update prepare` automatically uses the update payload that `mbed compile` generates. You may provide a name and description for the payload and corresponding manifest with additional arguments:
+`mbed dm update prepare` automatically uses the update image that `mbed compile` generates. You may provide a name and description for the image and corresponding manifest with additional arguments:
 
 ```
 $ mbed dm update prepare -n <PAYLOAD_NAME> -d <PAYLOAD_DESCRIPTION>\
@@ -90,8 +94,9 @@ $ mbed dm update prepare -n <PAYLOAD_NAME> -d <PAYLOAD_DESCRIPTION>\
 
 Both methods of creating a manifest use the defaults created in `mbed dm init`. You can override each default using an input file or command-line arguments.
 
-Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the payload and manifest to Device Management, and you can then create and start an [update campaign](https://cloud.mbed.com/docs/latest/updating-firmware/update-campaigns.html) using the Device Management Portal.
+Once you execute `mbed dm update prepare`, Mbed CLI automatically uploads the image and manifest to Device Management, and you can then create and start an [update campaign](https://www.pelion.com/docs/device-management/current/updating-firmware/update-campaigns.html) using the Device Management Portal.
+
 
 ## Advanced use
 
-Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://cloud.mbed.com/docs/latest/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.
+Mbed CLI allows for significantly more flexibility than the model above shows in exactly the same way as [the manifest tool](https://www.pelion.com/docs/device-management/current/updating-firmware/manifest-tool.html). You can override each of the defaults that `mbed dm init` sets by using the command-line or an input file. Mbed CLI supports a variety of commands. You can print a full list of commands by using `manifest-tool --help`.

@@ -12,7 +12,7 @@ For additional information, please see the [storage overview page](storage.html#
 
 ## Use cases
 
-The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications using FAT in conjunction with an SD card.
+The main reason to use the FAT file system is its usefulness on portable storage. Because of this, most applications use FAT in conjunction with an SD card.
 
 The first step to using the FAT file system is formatting storage with FAT. You can do this on a PC with the native format command or on Mbed OS with the `format` function.
 
@@ -30,7 +30,7 @@ The API that this presents is the standard Mbed OS file system API. Once declare
 
 You can swap the FAT file system in place with other Mbed OS file systems, which is a good method for prototyping applications.
 
-To configure this class, please see the [FileSystem configuration documentation](../reference/storage.html#filesystem-default-configuration).
+To configure this class, please see the [FileSystem configuration documentation](../apis/data-options-and-config.html).
 
 ## FATFileSystem class reference
 
@@ -42,6 +42,6 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ## Related content
 
-- [Storage configuration](../reference/storage.html).
+- [Storage configuration](../apis/data-storage.html).
 - [LittleFileSystem](littlefilesystem.html).
 - [Storage overview](storage.html#declaring-a-file-system).

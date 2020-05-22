@@ -90,5 +90,4 @@ Please look at the **Technical Reference Manual** and **Arm Architecture Referen
 
 ## Related content
 
-- [Office Hours video about Crash Dump Analysis](https://www.youtube.com/watch?v=7xKWFSnUye8).
 - Mbed OS [error decoder](https://mbed.com/s/error).

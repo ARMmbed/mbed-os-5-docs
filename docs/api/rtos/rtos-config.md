@@ -9,7 +9,7 @@ All threads in Mbed OS share a global heap. By default, Mbed OS dynamically allo
 By default, there are four threads running after boot: the ISR/scheduler thread, the idle thread, the timer thread and the main application thread. Combined, the idle thread, timer thread and ISR/scheduler thread consume 2 kilobytes of RAM. The user cannot modify these. You can expand or reduce the size of the main application thread stack by using the Mbed configuration system.
 
 
-This is the complete list of RTOS configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](configuration.html) for details on how you may use or override these settings.
+This is the complete list of RTOS configuration parameters. To view all configuration parameters, run the `--config -v` command. Please see [the configuration system documentation](../program-setup/advanced-configuration.html) for details on how you may use or override these settings.
 
 ## RTOS configuration parameters
 
