@@ -94,7 +94,7 @@
                     "sources": []
                 },
                 {
-                    "title": "Build and debug with Mbed CLI",
+                    "title": "Build with Mbed CLI",
                     "sub_chapters": [{
                             "title": "Installing Mbed CLI",
                             "intro": {
@@ -112,7 +112,7 @@
                     ]
                 },
                 {
-                    "title": "Build and debug with the Online Compiler",
+                    "title": "Build with the Online Compiler",
                     "sub_chapters": [{
                             "title": "Importing and compiling the code",
                             "intro": {
