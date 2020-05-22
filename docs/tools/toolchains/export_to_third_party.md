@@ -59,34 +59,6 @@ We will do our best to maintain the exported libraries and project files, but pl
 
 ## Third party tool notes
 
-### Makefiles and Arm Mbed OS 2 projects
-
-When you export an Arm Mbed OS 2 project with a Makefile exporter or an exporter that uses a Makefile, you may have to modify the flags to remove some linker flags. You may see an error, such as the one below, in your compiler output.
-
-```
-link: mbed_blinky.elf
-/opt/gnuarm/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-ar/thumb/fpu/libc.a(lib_a-fflush.o): In function `__sflush_r':
-fflush.c:(.text.__sflush_r+0x80): undefined reference to `__wrap__free_r'
-/opt/gnuarm/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-ar/thumb/fpu/libc.a(lib_a-fclose.o): In function `_fclose_r':
-fclose.c:(.text._fclose_r+0x4a): undefined reference to `__wrap__free_r'
-fclose.c:(.text._fclose_r+0x58): undefined reference to `__wrap__free_r'
-fclose.c:(.text._fclose_r+0x7a): undefined reference to `__wrap__free_r'
-/opt/gnuarm/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-ar/thumb/fpu/libc.a(lib_a-svfprintf.o): In function `_svfprintf_r':
-vfprintf.c:(.text._svfprintf_r+0x13d6): undefined reference to `__wrap__malloc_r'
-/opt/gnuarm/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-ar/thumb/fpu/libc.a(lib_a-mprec.o): In function `_Balloc':
-mprec.c:(.text._Balloc+0x24): undefined reference to `__wrap__calloc_r'
-mprec.c:(.text._Balloc+0x40): undefined reference to `__wrap__calloc_r'
-/opt/gnuarm/gcc-arm-none-eabi-5_4-2016q3/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-ar/thumb/fpu/libc.a(lib_a-svfiprintf.o): In function `__ssprint_r':
-vfprintf.c:(.text.__ssprint_r+0x60): undefined reference to `__wrap__malloc_r'
-vfprintf.c:(.text.__ssprint_r+0xc8): undefined reference to `__wrap__realloc_r'
-vfprintf.c:(.text.__ssprint_r+0xd6): undefined reference to `__wrap__free_r'
-collect2: error: ld returned 1 exit status
-make[1]: *** [mbed_blinky.elf] Error 1
-make: *** [all] Error 2
-```
-
-If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r`, `-Wl,--wrap,_realloc_r` and `-Wl,--wrap,_calloc_r`from the `LD_FLAGS` variable in the Makefile.
-
 ### Make and Eclipse (GNU Arm Embedded Toolchain, Arm Compiler)
 
 <span class="notes">**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.</span>

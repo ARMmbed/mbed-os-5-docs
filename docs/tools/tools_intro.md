@@ -11,7 +11,7 @@ The three Mbed OS development tools are Mbed Studio, Mbed CLI and the Mbed Onlin
 
 We developed Mbed OS using the Mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an Mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
 
-`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS, so you can also use Mbed Studio or the Mbed Online Compiler for building Mbed OS examples and programs. Beginner developers or those who are not comfortable with the command-line may prefer Mbed Studio or the Online Compiler. Furthermore, you can use the exporters to third party development tools that were part of the Arm Mbed OS 2 ecosystem.
+`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS, so you can also use Mbed Studio or the Mbed Online Compiler for building Mbed OS examples and programs. Beginner developers or those who are not comfortable with the command-line may prefer Mbed Studio or the Online Compiler.
 
 ## Arm Mbed Online Compiler
 
@@ -34,14 +34,12 @@ You can build Mbed OS with the Arm Compiler and GUN Arm Embedded toolchains. The
 
 <span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5, IAR or uARM.</span>
 
-<!--should this version change? Do we want to list both 6.13 and 6.14? If we're ever going to provide a list of all supported versions per toolchain, it should be here-->
-
 ## Arm Mbed Studio
 
 Mbed Studio is our new desktop IDE and is available to anyone with an Mbed account as a public beta. You can download it for Windows and Mac, and access the documentation at [os.mbed.com/docs/mbed-studio](https://os.mbed.com/docs/mbed-studio/).
 
 To complement our popular Mbed Online Compiler and command-line tools, we created Mbed Studio, the tooling you need in a desktop IDE to have a quick development, debug and deploy cycle when you build your next product. Mbed Studio speeds up your development flow and provides functionality that helps you get the most out of Mbed OS.
 
-## Third party development tools
+## Exporting to third party development tools
 
-You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](exporting.html).
+You can export your project from any of our tools to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](../build-tools/third-party-build-tools.html).
