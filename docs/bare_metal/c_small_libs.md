@@ -22,28 +22,7 @@ You can build with the smaller C libraries by creating an `mbed_app.json` with t
 
 This links your application with `microlib` for the `ARM` toolchain and `newlib-nano` for the `GCC_ARM` toolchain.
 
-### Non-returning main() required
-
-Arm microlib doesn't support exiting from `main()`; attempting to exit from `main()` causes a bare metal application to crash. Here we show two ways to prevent this.
-
-#### Sleep in a loop
-
-One recommended technique is to sleep in a loop at the end of `main()`:
-```
-while (true) {
-    sleep();
-}
-```
-
-This is energy-efficient compared to an empty `while (true) {}` loop, which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
-
-#### Dispatching an EventQueue
-
-If your application is based on an `EventQueue`, dispatching it at the end of `main()` works as well:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
-
-The call to `queue.dispatch_forever()` never returns, as long as we don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
+<span class="notes">**Note:** You bare-metal application should _not_ return from `main()` if it uses Arm `microlib`. Please see [Non-returning main()](#non-returning-main) for advice.</span>
 
 ## Newlib-nano
 
@@ -84,6 +63,29 @@ After you have completed the steps above, add `small` to the `supported_c_libs` 
     "iar": ["std"]
 }
 ```
+
+### Non-returning main()
+
+Arm microlib doesn't support exiting from `main()`; attempting to exit from `main()` causes a bare metal application to crash. Here we show two ways to prevent this.
+
+#### Sleeping in a loop
+
+One recommended technique is to sleep in a loop at the end of `main()`:
+```
+while (true) {
+    sleep();
+}
+```
+
+This is energy-efficient compared to an empty `while (true) {}` loop, which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
+
+#### Dispatching an EventQueue
+
+If your application is based on an `EventQueue`, dispatching it at the end of `main()` works as well:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/EventQueue_ex_2/main.cpp)
+
+The call to `queue.dispatch_forever()` never returns, as long as we don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
 
 ### Note on uARM toolchain
 
