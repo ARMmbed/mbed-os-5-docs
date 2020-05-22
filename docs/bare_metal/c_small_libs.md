@@ -24,18 +24,18 @@ This links your application with `microlib` for the `ARM` toolchain and `newlib-
 
 ### Non-returning main() required
 
-Exiting from `main()` is not supported by [Arm microlib](#arm-microlib) and causes a bare metal application to crash. Here we show two ways to prevent this.
+Arm microlib doesn't support exiting from `main()`; attempting to exit from `main()` causes a bare metal application to crash. Here we show two ways to prevent this.
 
 #### Sleep in a loop
 
-One recommended technique is sleep in a loop at the end of `main()`:
+One recommended technique is to sleep in a loop at the end of `main()`:
 ```
 while (true) {
     sleep();
 }
 ```
 
-This is energy-efficient compared to an empty `while (true) {}` loop which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
+This is energy-efficient compared to an empty `while (true) {}` loop, which keeps the processor running. A loop is still needed, because `sleep()` returns after the system is woken up by an interrupt.
 
 #### Dispatching an EventQueue
 
