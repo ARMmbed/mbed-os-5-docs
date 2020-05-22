@@ -15,23 +15,13 @@ There is no installer for Linux; please follow the [manual installation guide](.
 
 ### Instructions for Windows
 
-1. Download and install [Python 2.7.x](https://www.python.org/downloads/windows/) (which includes `pip`).
+1. Download and install [Python 3.7.x](https://www.python.org/downloads/windows/) (which includes `pip`).
 1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
 ### Instructions for macOS
 
-1. macOS 10.8 and later comes with Python 2.7 preinstalled.
-
-   - If you are using the preinstalled version but need to install `pip`, you can run the following command (taken from the [pip installation guide](https://pip.pypa.io/en/stable/installing/)):
-
-      ```
-        curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-        python get-pip.py
-      ```
-
-   - If you are running an earlier version of macOS, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
-
+1. If your version of macOS does not come with Python 3, download and install [Python from the official website](https://www.python.org/downloads/mac-osx/). This package includes `pip`.
 1. Download and install [Git](https://git-scm.com/downloads) (versions 1.9.5 or later are supported).
 1. Download and install [Mercurial](https://www.mercurial-scm.org/downloads) (versions 2.2.2 or later are supported).
 
@@ -42,7 +32,7 @@ Linux distributions typically manage software through package managers. The spec
 As an example, the following is a command to install all dependencies on Ubuntu:
 
 ```
-sudo apt install python2.7 python-pip git mercurial
+sudo apt install python3 python3-pip git mercurial
 ```
 
 ## 2. Install Mbed CLI
@@ -52,7 +42,7 @@ sudo apt install python2.7 python-pip git mercurial
 To install Mbed CLI with pip:
 
 ```
-pip install mbed-cli
+python3 -m pip install mbed-cli
 ```
 
 To verify Mbed CLI installed correctly, run `mbed --help`.
@@ -60,7 +50,7 @@ To verify Mbed CLI installed correctly, run `mbed --help`.
 To update Mbed CLI, run:
 
 ```
-pip install -U mbed-cli
+python3 -m pip install -U mbed-cli
 ```
 
 ## 3. Install a compiler
