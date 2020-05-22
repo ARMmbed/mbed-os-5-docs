@@ -89,4 +89,4 @@ The call to `queue.dispatch_forever()` never returns, as long as we don't break 
 
 ### Note on uARM toolchain
 
-The uARM toolchain is the ARMC6 toolchain with the Arm microlib, the C micro-library. This toolchain will be deprecated after 5.15.
+The uARM toolchain is the ARMC5 toolchain with the Arm microlib, the C micro-library. This toolchain will be deprecated after 5.15.
