@@ -15,7 +15,6 @@ The driver-less HID interface provides a channel over which the CMSIS-DAP debug 
 Supported tools include:
 
 - Keil MDK.
-- IAR Workbench.
 - pyOCD.
 
 ### USB drag and drop programming

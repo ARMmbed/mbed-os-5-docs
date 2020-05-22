@@ -194,25 +194,9 @@ Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sur
 
 ### supported_toolchains
 
-The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `uARM`, `ARMC5`, `ARMC6`, `GCC_ARM` and `IAR`.
+The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM` and `GCC_ARM`.
 
-When using `ARM`, `ARMC5`, `ARMC6` for `supported_toolchains`, please note:
-
-- If the target supports only Arm Compiler 5 (version 5.06 update 6), `supported_toolchains` specifies `ARMC5`. The build system uses Arm Compiler 5 when you use `-t ARM` or `-t ARMC5` with `mbed compile` command.
-
-- If the target supports only Arm Compiler 6 (version 6.11), `supported_toolchains` specifies `ARMC6`. The build system uses Arm Compiler 6 when you use `-t ARM` or `-t ARMC6` with `mbed compile` command.
-
-- If the target supports compiling with both Arm Compiler 5 and Arm Compiler 6, `supported_toolchains` specifies `ARM`. Arm Compiler 6 is the default Arm Compiler for Mbed OS. If a target specifies `ARM` in `supported_toolchains`, the system defaults to using Arm Compiler 6 when you use `-t ARM` with the `mbed compile` command. If the build system fails to detect a valid configuration for Arm Compiler 6, it automatically (without any manual intervention) detects if a valid configuration for Arm Compiler 5 exists and continues using Arm Compiler 5 if it successfully detects Arm Compiler 5. You will see a warning message in your standard output from the build system indicating this behavior.
-
-- You can only specify one of `ARM`, `ARMC5` or `ARMC6` for `supported_toolchains` for a target in `targets/targets.json` or `custom_targets.json`.
-
-- It's invalid to use `-t ARMC5` with the `mbed compile` command for a target that specifies `ARMC6` for `supported_toolchains`, and it's invalid to use `-t ARMC6` if `supported_toolchains` specifies `ARMC5`.
-
-<span class="notes">**Note**: Arm Compiler 6 is the default Arm Compiler version for Mbed OS development. Most platforms are already compatible with it; platforms still supporting Arm Compiler 5 will be migrated to Arm Compiler 6. Please do not use Arm Compiler 5 in any new development, as its support will be deprecated in September 2019.</span>
-
-### default_toolchain
-
-The `default_toolchain` property names the toolchain that compiles code for this target in the Online Compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5, IAR or uARM.</span>
 
 ### post_binary_hook
 
@@ -251,7 +235,7 @@ Use this property to pass necessary data for exporting to various third party to
 
 We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/) retrieved from each CMSIS Pack.
 
-The [`"device_name"`](../porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+The [`"device_name"`](../porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 204 of the `.pdsc` file:
 
@@ -376,8 +360,8 @@ For each of these target roles, some restrictions are in place:
   - `SPI_ASYNCH`.
   - `SPISLAVE`.
   - `SYSTICK_CLK_OFF_DURING_SLEEP`.
-- If `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
-- MCUs, Families and SubFamilies must set `public` to `false`
+- If `release_versions` contains 5, then `supported_toolchains` must contain both `GCC_ARM` and `ARM`.
+- MCUs, Families and SubFamilies must set `public` to `false`.
 
 ### Sample output
 

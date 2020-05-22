@@ -10,7 +10,7 @@ The default baud rate, or speed, for this application is set to `9600`. You can 
 
 <span class="tips">**Tip:** You can find more information on the Mbed OS configuration tools and serial communication in Mbed OS in the [related links section](#related-links).</span>
 
-The output transmits the system, CPU, heap and thread information. 
+The output transmits the system, CPU, heap and thread information.
 
 <span class="notes">**Note:** If you are building with the Mbed OS bare metal profile, you will not get thread information.</span>
 
@@ -43,7 +43,6 @@ The output transmits the system, CPU, heap and thread information.
 | -------- | ----------- | -------------- |
 | ARM      | 1           | PVVbbbb (P = Major; VV = Minor; bbbb = build number) |
 | GCC_ARM  | 2           | VVRRPP  (VV = Version; RR = Revision; PP = Patch)    |
-| IAR      | 3           | VRRRPPP (V = Version; RRR = Revision; PPP = Patch)   |
 
 
 ### CPU statistics

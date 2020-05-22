@@ -11,7 +11,7 @@ For example, add `printf("Hello World!\n\r");` to the top of your main function,
 
 ## Exporting to a desktop IDE
 
-To debug using a desktop IDE such as Keil uVision, IAR or Eclipse, use the `mbed export` command to generate project files.
+To debug using a desktop IDE such as Keil uVision or Eclipse, use the `mbed export` command to generate project files.
 
 For example, for a K64F and Keil uVision:
 

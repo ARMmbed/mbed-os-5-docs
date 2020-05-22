@@ -24,18 +24,16 @@ If you are updating your own linker script, you must:
 - Define the heap region:
     - Arm - The heap is the `ARM_LIB_HEAP` region.
     - GCC_ARM - The heap starts at the symbol `__end__` and ends at the `__HeapLimit` symbol.
-    - IAR - The heap is the `HEAP` region.
 - Define the boot stack region:
     - Arm - The boot stack is the `ARM_LIB_STACK` region.
     - GCC_ARM - The boot stack starts at the symbol `__StackLimit` and ends at the symbol `__StackTop`.
-    - IAR - The boot stack is the `CSTACK` region.
 - Add defines for a relocatable application - `MBED_APP_START` and `MBED_APP_SIZE`.
 - Add the define for boot stack size - `MBED_BOOT_STACK_SIZE`.
 - Add preprocessing directive `#! armcc -E` (ARM compiler only).
 
 If you are using the below linker script, then you need to update all the defines in the `/* Device specific values */` section for your target.
 
-Arm linker script template:
+**Arm linker script template:**
 
 ```
 #! armcc -E
@@ -84,7 +82,7 @@ LR_IROM1  MBED_APP_START  MBED_APP_SIZE  {
 }
 ```
 
-IAR linker script template:
+**GCC linker script template:**
 
 ```
 /* Device specific values */

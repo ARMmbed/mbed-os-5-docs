@@ -11,7 +11,8 @@ Although you can use our tools to generate project files specific to many IDEs, 
 1. Right click on your project.
 1. Select *Export Program...*.
 1. Under 'Export toolchain', select *Make (GCC ARM)*.
-    * For most targets you can also export to IAR or ARMCC.
+
+    For most targets you can also export to ARMCC.
 1. Click *Export*, and unpack at a convenient location.
 
 ![Exporting to Make](../../images/other_ides1.png)

@@ -173,12 +173,10 @@ Add the following line to `mbed_app.json` to test:
 
 For devices with small memory, we recommend using release profiles for building and exporting. Please see the documentation about [build profiles](../program-setup/build-profiles-and-rules.html).
 
-Examples:
+Example:
 
 ```
-$ mbed export -m KW24D -i make_iar --profile release
-OR
-$ mbed compile -m KW24D -t IAR --profile release
+$ mbed compile -m KW24D -t ARM --profile release
 ```
 
 ## Troubleshooting
