@@ -96,7 +96,7 @@ Make itself does not compile source code. It relies on a compiler such as:
 - [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which you can install for free using the [instructions](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
 - Arm Compiler 6.
 
-<span class="notes">**Note:** Ensure that the compiler you are exporting to is accessible using your `PATH` environment variable because Makefile requires this. For example, when using an exported Makefile from `make_armc6`, the command `armcc` prints a help message about how to use Arm Compiler 6.</span>
+<span class="notes">**Note:** Ensure that the compiler you are exporting to is accessible using your `PATH` environment variable because Makefile requires this. For example, when using an exported Makefile from `make_armc6`, the command `armclang` prints a help message about how to use Arm Compiler 6.</span>
 
 If you do not add your compiler to the `PATH` environment variable, running Make results in an error such as the errors below.
 
