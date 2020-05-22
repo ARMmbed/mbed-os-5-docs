@@ -29,7 +29,7 @@ Exiting from `main()` is not supported by [Arm microlib](#arm-microlib) and caus
 #### Sleep in a loop
 
 One recommended technique is sleep in a loop at the end of `main()`:
-```C
+```
 while (true) {
     sleep();
 }
