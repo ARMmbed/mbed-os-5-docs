@@ -3,17 +3,10 @@
 If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
 - Keil uVision5.
-- IAR Systems.
-- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using:
-    - GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
-    - IAR Arm Compiler (version 8.32).
+- Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
 - GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain 6.
-- Make using:
-    - GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
-    - IAR Arm Compiler (version 8.32).
-- VSCode using:
-    - GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
-    - IAR Arm Compiler (version 8.32).
+- Make using GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
+- VSCode using GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
 - Code::Blocks.
 - Cross Core Embedded Studio.
 - e2studio.
@@ -94,14 +87,13 @@ make: *** [all] Error 2
 
 If you see such an error, remove the `-Wl,--wrap,_malloc_r`, `-Wl,--wrap,_free_r`, `-Wl,--wrap,_realloc_r` and `-Wl,--wrap,_calloc_r`from the `LD_FLAGS` variable in the Makefile.
 
-### Make and Eclipse (GNU Arm Embedded Toolchain, IAR Compiler, Arm Compiler 6)
+### Make and Eclipse (GNU Arm Embedded Toolchain, Arm Compiler)
 
 <span class="notes">**Note:** Our Eclipse CDT projects use Makefile. Therefore, Makefile advice also applies to using Eclipse.</span>
 
 Make itself does not compile source code. It relies on a compiler such as:
 
 - [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which you can install for free using the [instructions](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
-- The IAR Arm compiler bundled with the IAR Embedded Workbench.
 - Arm Compiler 6.
 
 <span class="notes">**Note:** Ensure that the compiler you are exporting to is accessible using your `PATH` environment variable because Makefile requires this. For example, when using an exported Makefile from `make_armc6`, the command `armcc` prints a help message about how to use Arm Compiler 6.</span>

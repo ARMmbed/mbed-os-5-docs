@@ -264,7 +264,6 @@ If you do not need any specialization of the export, then replace your exporters
 
 ```diff
 EXPORTERS = {
-     'iar': iar.IAR,
      'embitz' : embitz.EmBitz,
      'coide' : coide.CoIDE,
 +    'kds' : gnuarmeclipse.GNUARMEclipse,
@@ -296,7 +295,7 @@ After inheriting from the `GNUARMEclipse` class, specialize the generate method 
 
 ## Eclipse + Make
 
-If your IDE uses Eclipse and does not use the GNU Arm Eclipse plugin, you can use the "Unmanaged makefile" Eclipse exporter classes, `EclipseGcc`, `EclipseArmc5` and `EclipseIar`. Much like the GNU Arm Eclipse section, you may decide to alias or specialize.
+If your IDE uses Eclipse and does not use the GNU Arm Eclipse plugin, you can use the "Unmanaged makefile" Eclipse exporter classes, `EclipseGcc` and `EclipseArmc5`. Much like the GNU Arm Eclipse section, you may decide to alias or specialize.
 
 ## Make
 

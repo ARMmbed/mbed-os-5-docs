@@ -30,11 +30,11 @@ Please install the following:
 - [Python](https://www.python.org/downloads).
 - [Git](https://git-scm.com/downloads).
 - [Mbed CLI](../tools/installation-and-setup.html).
-- Choose an IDE and debugger. The three commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/), [IAR Embedded Workbench](https://www.iar.com/iar-embedded-workbench/) and [Keil MDK](http://www.keil.com/). 
+- Choose an IDE and debugger. The two commonly used IDEs are [Eclipse](https://www.eclipse.org/ide/) and [Keil MDK](http://www.keil.com/).
 
     Limitations:
 
-    - Eclipse is license free, whereas both IAR and Keil IDE require licenses.
+    - Eclipse is license free, whereas Keil IDE require licenses.
     - Your target may not be supported in certain IDEs.
     - If your interface firmware does not support mass storage device, you won't be able to do automated testing. If your target has another method of flashing, such as self-programming or through a debugger, use the [manual testing path](../porting/manual-testing.html).
 

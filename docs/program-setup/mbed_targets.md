@@ -194,23 +194,9 @@ Enabling `is_disk_virtual` adds delay after flashing firmware binary to make sur
 
 ### supported_toolchains
 
-The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM`, `ARMC6`, `GCC_ARM` and `IAR`.
+The `supported_toolchains` property is the list of toolchains that support a target. The allowed values for `supported_toolchains` are `ARM` and `GCC_ARM`.
 
-<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
-
-When using `ARM` or `ARMC6` for `supported_toolchains`, please note:
-
-- If the target supports only Arm Compiler 6 (version 6.11), `supported_toolchains` specifies `ARMC6`. The build system uses Arm Compiler 6 when you use `-t ARM` or `-t ARMC6` with `mbed compile` command.
-
-- If the target supports compiling with both Arm Compiler 5 and Arm Compiler 6, `supported_toolchains` specifies `ARM`. Arm Compiler 6 is the default Arm Compiler for Mbed OS. If a target specifies `ARM` in `supported_toolchains`, the system defaults to using Arm Compiler 6 when you use `-t ARM` with the `mbed compile` command. If the build system fails to detect a valid configuration for Arm Compiler 6, it automatically (without any manual intervention) detects if a valid configuration for Arm Compiler 5 exists and continues using Arm Compiler 5 if it successfully detects Arm Compiler 5. You will see a warning message in your standard output from the build system indicating this behavior.
-
-- You can only specify one of `ARM` or `ARMC6` for `supported_toolchains` for a target in `targets/targets.json` or `custom_targets.json`.
-
-### default_toolchain
-
-<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5 or uARM.</span>
-
-The `default_toolchain` property names the toolchain that compiles code for this target in the Online Compiler. Possible values for `default_toolchain` are `ARM` or `uARM`.
+<span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5, IAR or uARM.</span>
 
 ### post_binary_hook
 
