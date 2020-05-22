@@ -10,7 +10,7 @@ A mask can be supplied so you only use certain parts of a port, allowing other b
 
 ## PortInOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/PortInOut_ex_1/main.cpp)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Drivers/PortInOut_ex_1/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PortInOut_ex_1/main.cpp)](https://github.com/ARMmbed/mbed-os-snippet-PortInOut_ex_1/blob/v6.0/main.cpp)
 
 ## Related content
 

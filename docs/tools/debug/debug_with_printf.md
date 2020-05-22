@@ -31,7 +31,7 @@ To send data over the serial connection, use the [BufferedSerial](../apis/serial
 
 This program blinks the LED on your development board and prints a message every time the LED changes state:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_BlinksLED/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_BlinksLED/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DebugPrintf_BlinksLED/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-DebugPrintf_BlinksLED/blob/v6.0/main.cpp)
 
 
 Compile this program, and flash it on your development board. You now can inspect these messages using a serial monitor.
@@ -86,7 +86,7 @@ Compile this program, and flash it on your development board. You now can inspec
 
 By default, the speed at which the microcontroller and your computer communicate (the baud rate) is set to 9600 baud. This setting fits most use cases, but you can change it by calling the `baud` function on the serial object:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_SetBaudRate/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_Debugging/DebugPrintf_SetBaudRate/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DebugPrintf_SetBaudRate/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-DebugPrintf_SetBaudRate/blob/v6.0/main.cpp)
 
 
 If you change the baud rate on the device, you also need to change it on your serial monitor:

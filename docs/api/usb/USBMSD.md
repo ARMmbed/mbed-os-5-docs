@@ -10,11 +10,11 @@ You can use the USBMSD interface to emulate a mass storage device over USB. You 
 
 ## USBMSD SDBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_SDBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_SDBlockDevice/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBMSD_SDBlockDevice/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-USBMSD_SDBlockDevice/blob/v6.0/main.cpp)
 
 ## USBMSD HeapBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_HeapBlockDevice)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_USB/USBMSD_HeapBlockDevice/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBMSD_HeapBlockDevice/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-USBMSD_HeapBlockDevice/blob/v6.0/main.cpp)
 
 ## Related content
 

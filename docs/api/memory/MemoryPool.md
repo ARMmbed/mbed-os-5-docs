@@ -22,7 +22,7 @@ mpool.free(message);
 
 This example shows [Queue](queue.html) and MemoryPool managing measurements.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Queue/)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_RTOS/Queue/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Queue/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Queue/blob/v6.0/main.cpp)
 
 ## Related content
 
