@@ -16,11 +16,11 @@ This program prints a "Hello World!" message that you can view on a serial termi
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.0/main.cpp)
 
-### Viewing output in a serial terminal
+## Viewing output in a serial terminal
 
 Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. When a single board is connected, run: 
+Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. When a single board is connected, run:
 
 ```
 mbed sterm
@@ -45,26 +45,26 @@ To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
 - To list all options, run `mbed sterm -h`:
 
-```
-usage: mbed sterm [-h] [-m TARGET] [-p PORT] [-b BAUDRATE] [-e ECHO] [-r] [-v] [-vv]
+    ```
+    usage: mbed sterm [-h] [-m TARGET] [-p PORT] [-b BAUDRATE] [-e ECHO] [-r] [-v] [-vv]
 
-Open serial terminal to connected target (usually board), or connect to a user-specified COM port
+    Open serial terminal to connected target (usually board), or connect to a user-specified COM port
 
-optional arguments:
--h, --help            show this help message and exit
--m TARGET, --target TARGET
-                        Compile target MCU. Example: K64F, NUCLEO_F401RE,
-                        NRF51822...
--p PORT, --port PORT  Communication port. Default: auto-detect. Specifying
-                        this will also ignore the -m/--target option above.
--b BAUDRATE, --baudrate BAUDRATE
-                        Communication baudrate. Default: 9600
--e ECHO, --echo ECHO  Switch local echo on/off. Default: on
--r, --reset           Reset the targets (via SendBreak) before opening
-                        terminal.
--v, --verbose         Verbose diagnostic output
--vv, --very_verbose   Very verbose diagnostic output
-```
+    optional arguments:
+    -h, --help            show this help message and exit
+    -m TARGET, --target TARGET
+                            Compile target MCU. Example: K64F, NUCLEO_F401RE,
+                            NRF51822...
+    -p PORT, --port PORT  Communication port. Default: auto-detect. Specifying
+                            this will also ignore the -m/--target option above.
+    -b BAUDRATE, --baudrate BAUDRATE
+                            Communication baudrate. Default: 9600
+    -e ECHO, --echo ECHO  Switch local echo on/off. Default: on
+    -r, --reset           Reset the targets (via SendBreak) before opening
+                            terminal.
+    -v, --verbose         Verbose diagnostic output
+    -vv, --very_verbose   Very verbose diagnostic output
+    ```
 
 ## Auto-opening a serial terminal after compilation
 
@@ -82,11 +82,11 @@ Use your terminal application to interact with the following examples.
 
 If you're not sure how to build these examples and run them on your board, please see our [build tools section](../build-tools/index.html).
 
-## Echo back characters you type
+### Echo back characters you type
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/blob/v6.0/main.cpp)
 
-## Use the U and D keys to make LED1 brighter or dimmer
+### Use the U and D keys to make LED1 brighter or dimmer
 
 <span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
@@ -94,12 +94,12 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/blob/v6.0/main.cpp)
 
-## Pass characters in both directions
+### Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/blob/v6.0/main.cpp)
 
-## Read to a buffer
+### Read to a buffer
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/blob/v6.0/main.cpp)

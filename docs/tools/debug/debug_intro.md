@@ -1,4 +1,4 @@
-# Debugging
+<h1 id="debugging">Debugging with third party tools</h1>
 
 There are extensive instructions on debugging Arm Mbed OS applications with [uVision 5](../debug-test/keil-uvision.html), [Eclipse](../debug-test/third-party-tools.html) and [Visual Studio Code](../debug-test/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](setting-up-a-local-debug-toolchain.html).
 

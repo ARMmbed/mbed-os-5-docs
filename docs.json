@@ -1101,9 +1101,6 @@
             "type": "markdown",
             "chapters": [{
                     "title": "Debugging",
-                    "intro": {
-                        "path": "docs/tools/debug/debug_intro.md"
-                    },
                     "sub_chapters": [{
                             "title": "Methods",
                             "sources": [{
@@ -1137,6 +1134,9 @@
                         },
                         {
                             "title": "Third party tools",
+                            "intro": {
+                                "path": "docs/tools/debug/debug_intro.md"
+                            },
                             "sources": [{
                                     "path": "docs/tools/debug/eclipse_pyocd.md"
                                 },

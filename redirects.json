@@ -50,7 +50,7 @@
     "reference/bare-metal-apis.html": "apis/index.html",
     "reference/configuration-mesh.html": "apis/configuration-mesh.html",
     "tools/greentea-testing-applications.html": "debug-test/greentea-for-testing-applications.html",
-    "tools/debugging-arm-mbed-os-applications.html": "debug-test/debugging-arm-mbed-os-applications.html",
+    "tools/debugging-arm-mbed-os-applications.html": "debug-test/debugging-methods-for-arm-mbed-os-applications.html",
     "tools/setting-up-a-local-debug-toolchain.html": "debug-test/setting-up-a-local-debug-toolchain.html",
     "tools/daplink.html": "debug-test/daplink.html",
     "tools/icetea-testing-applications.html": "debug-test/icetea-test-applications.html",
