@@ -235,7 +235,7 @@ Use this property to pass necessary data for exporting to various third party to
 
 We use the tool [ArmPackManager](https://github.com/ARMmbed/mbed-os/tree/master/tools/arm_pack_manager) to parse CMSIS Packs for target information. [`index.json`](https://github.com/ARMmbed/mbed-os/blob/master/tools/arm_pack_manager/index.json) stores the parsed information from the [PDSC (Pack Description)](http://www.keil.com/pack/doc/CMSIS/Pack/html/) retrieved from each CMSIS Pack.
 
-The [`"device_name"`](../porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support IAR and uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
+The [`"device_name"`](../porting/index.html) attribute it `targets.json` maps from a target in Mbed OS to a device in a CMSIS Pack. To support uVision exports for your target, you must add a `"device_name"` field in `targets.json` containing this key.
 
 [http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc](http://www.keil.com/pack/Keil.Kinetis_K20_DFP.pdsc) is the PDSC that contains TEENSY_31 device (MK20DX256xxx7). ArmPackManager has parsed this PDSC, and `index.json` stores the device information. The device information begins on line 204 of the `.pdsc` file:
 
@@ -360,8 +360,8 @@ For each of these target roles, some restrictions are in place:
   - `SPI_ASYNCH`.
   - `SPISLAVE`.
   - `SYSTICK_CLK_OFF_DURING_SLEEP`.
-- If `release_versions` contains 5, then `supported_toolchains` must contain all of `GCC_ARM`, `ARM` and `IAR`
-- MCUs, Families and SubFamilies must set `public` to `false`
+- If `release_versions` contains 5, then `supported_toolchains` must contain both `GCC_ARM` and `ARM`.
+- MCUs, Families and SubFamilies must set `public` to `false`.
 
 ### Sample output
 
