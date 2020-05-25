@@ -53,7 +53,7 @@
     "tools/debugging-arm-mbed-os-applications.html": "debug-test/debugging-arm-mbed-os-applications.html",
     "tools/setting-up-a-local-debug-toolchain.html": "debug-test/setting-up-a-local-debug-toolchain.html",
     "tools/daplink.html": "debug-test/daplink.html",
-    "tools/icetea-testing-applications.html": "debug-test/icetea-for-testing-applications.html",
+    "tools/icetea-testing-applications.html": "debug-test/icetea-test-applications.html",
     "reference/mbed-os-build-rules.html": "program-setup/build-rules.html",
     "reference/project-structures-and-configuration.html": "program-setup/project-structure.html",
     "reference/bootstrap.html": "program-setup/bootstrap.html",
