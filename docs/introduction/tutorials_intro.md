@@ -43,6 +43,11 @@ These tutorials show you how to install, export a project to and start a debuggi
 - [Keil uVision](../debug-test/keil-uvision.html).
 - [Visual Studio](../debug-test/visual-studio-code.html).
 
+## Testing
+
+- [Test your applications or Mbed OS with Greentea](../debug-test/greentea-for-testing-applications.html).
+- [Using the Icetea test framework](../debug-test/icetea.html) and [test applications](../debug-test/icetea-test-applications.html).
+
 ## Bootloader
 
 - [A tutorial for creating and using a bootloader](../program-setup/creating-and-using-a-bootloader.html).
