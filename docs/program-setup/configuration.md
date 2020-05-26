@@ -321,4 +321,4 @@ The API groups in **API references and tutorials** have their own configuration 
 * [Drivers configuration](../apis/drivers-options-and-config.html)
 * [Platform configuration](../apis/platform-options-and-config.html)
 * [Data storage configuration](../apis/data-options-and-config.html)
-* [Connectivity configuration](..apis/connectivity-options-and-config.html) and [6LoWPAN Mesh](../apis/configuration-mesh.html), [BLE](../apis/configuration-ble.html) and [LoRaWAN](../apis/lorawan-configuration.html)
+* [Connectivity configuration](../apis/connectivity-options-and-config.html) and [6LoWPAN Mesh](../apis/configuration-mesh.html), [BLE](../apis/configuration-ble.html) and [LoRaWAN](../apis/lorawan-configuration.html)

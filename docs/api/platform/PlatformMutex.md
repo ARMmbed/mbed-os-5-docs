@@ -4,9 +4,9 @@
 
 You can use the PlatformMutex class to synchronize the execution of threads.
 
-The Mbed OS drivers use the PlatformMutex class instead of [Mutex](mutex.html). This enables the use of drivers when the Mbed OS is compiled without the RTOS. For examples, please see [AnalogIn](analogin.html), [BusOut](busout.html), [Serial](serial.html), [SPI](spi.html) and [I2C](i2c.html).
+The Mbed OS drivers use the PlatformMutex class instead of [Mutex](../apis/mutex.html). This enables the use of drivers when the Mbed OS is compiled without the RTOS. For examples, please see [AnalogIn](../apis/analogin.html), [BusOut](../apis/busout.html), [SPI](../apis/spi.html) and [I2C](../apis/i2c.html).
 
-<span class="notes">**Note:** For the standard use of RTOS mutexes, please see [Mutex](mutex.html).</span>
+<span class="notes">**Note:** For the standard use of RTOS mutexes, please see [Mutex](../apis/mutex.html).</span>
 
 ## PlatformMutex class reference
 
@@ -18,9 +18,10 @@ The Mbed OS drivers use the PlatformMutex class instead of [Mutex](mutex.html). 
 
 ## Related content
 
-- [Mutex](mutex.html).
-- [AnalogIn](analogin.html).
-- [BusOut](busout.html).
-- [Serial](serial.html).
-- [SPI](spi.html).
-- [I2C](i2c.html).
+- [Mutex](../apis/mutex.html).
+- [AnalogIn](../apis/analogin.html).
+- [BusOut](../apis/busout.html).
+- [BufferedSerial](../apis/serial-uart-apis.html).
+- [UnbufferedSerial](../apis/unbufferedserial.html).
+- [SPI](../apis/spi.html).
+- [I2C](../apis/i2c.html).
