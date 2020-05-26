@@ -18,15 +18,9 @@ The following steps describe how you can create a new RF driver:
    - TX functionality.
    - RX functionality.
 
-1. Build the Nanostack MAC tester application:
+## Testing
 
-   `mbed test --clean --compile --icetea -t <toolchain> -m <platform> -DICETEA_MAC_TESTER_ENABLED --test-config NANOSTACK_MAC_TESTER -n address_read_and_write`
-
-1. Verify the functionality of your implementation by running the Nanostack RF driver testcase set in the Mbed OS repository:
-
-   `mbed test --run --icetea -t <toolchain> -m <platform> --test-config NANOSTACK_MAC_TESTER -n address_read_and_write,send_data,send_data_indirect,send_large_payloads,create_and_join_PAN,ED_scan`
-
-<span class="notes">**Note:** The MAC tester application is a basic verification tool for the RF driver. When going to production, please use more specific RF driver testing.</span>
+To verify the implementation of the RF driver, please create a working Mesh network and run the full set of Mbed OS Socket tests from [TESTS/netsocket](https://github.com/ARMmbed/mbed-os/blob/master/TESTS/netsocket/README.md).
 
 ## Implementing the PHY API
 

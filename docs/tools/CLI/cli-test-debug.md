@@ -4,7 +4,7 @@
 
 Use the `mbed test` command to compile and run tests.
 
-There are two testing frameworks: Greentea and Icetea. Greentea provides tests designed for driver porting and target verification. Icetea provides and manages tests for multiple devices at the same time. For example, you can test the network setup for a server and multiple clients, simultaneously controlling them from the test environment.
+The testing framework is Greentea, which provides tests designed for driver porting and target verification.
 
 The arguments to `test` are:
 
@@ -24,7 +24,6 @@ The arguments to `test` are:
 - `--app-config <APP_CONFIG>`: the path of an app configuration file. The default is to look for `mbed_app.json`.
 - `--test-config <TEST_CONFIG>`: the path or Mbed OS keyword of a test configuration file, for example, `ethernet`, `odin_wifi` or `path/to/config.json`.
 - `--greentea`: to run Greentea tests. As a default, it only runs Greentea tests.
-- `--icetea`: to run Icetea tests. If used without the `--greentea` flag, then it only runs Icetea tests.
 - `-v` or `--verbose`: for verbose diagnostic output.
 - `-vv` or `--very_verbose`: for very verbose diagnostic output.
 
@@ -89,32 +88,6 @@ Test Case:
     Path: .\TESTS\functional\test3
 ```
 
-For Icetea:
-
-```
-$ mbed test -m K64F -t GCC_ARM --icetea --compile-list
-Available Icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
-Test Case:
-    Name: test_cmdline
-    Path: ./TEST_APPS/testcases/example/test_cmdline.py
-    Test applications: ./TEST_APPS/device/exampleapp
-Test Case:
-    Name: UDPSOCKET_BIND_PORT
-    Path: ./TEST_APPS/testcases/netsocket/SOCKET_BIND_PORT.py
-    Test applications: ./TEST_APPS/device/socket_app
-Test Case:
-    Name: TCPSOCKET_BIND_PORT
-    Path: ./TEST_APPS/testcases/netsocket/SOCKET_BIND_PORT.py
-    Test applications: ./TEST_APPS/device/socket_app
-Test Case:
-    Name: TCPSERVER_ACCEPT
-    Path: ./TEST_APPS/testcases/netsocket/TCPSERVER_ACCEPT.py
-    Test applications: ./TEST_APPS/device/socket_app
-Test Case:
-    Name: TCPSOCKET_ECHOTEST_BURST_SHORT
-    Path: ./TEST_APPS/testcases/netsocket/TCPSOCKET_ECHOTEST_BURST_SHORT.py
-    Test applications: ./TEST_APPS/device/socket_app
-```
 
 You can find the tests that are available for **running** by using the `--run-list` option:
 
@@ -128,29 +101,12 @@ mbedgt: available tests for built 'K64F-ARM', location '.\build\tests\K64F\ARM'
         test 'TESTS-functional-test3'
 ```
 
-For Icetea:
-
-```
-$ mbed test -m K64F -t GCC_ARM --icetea --run-list
-Available Icetea tests for build 'K64F-GCC_ARM', location 'TEST_APPS'
-    test 'UDPSOCKET_BIND_PORT'
-    test 'TCPSOCKET_BIND_PORT'
-    test 'TCPSERVER_ACCEPT'
-    test 'TCPSOCKET_ECHOTEST_BURST_SHORT'
-```
-
 ## Compiling and running tests
 
 You can specify that the tests only **build** by using the `--compile` option:
 
 ```
 $ mbed test -m K64F -t GCC_ARM --compile
-```
-
-For Icetea, only the test applications are built:
-
-```
-$ mbed test -m K64F -t GCC_ARM --compile --icetea
 ```
 
 You can specify that the tests only **run** by using the `--run` option:
