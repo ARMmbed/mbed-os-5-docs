@@ -20,7 +20,29 @@ This program prints a "Hello World!" message that you can view on a serial termi
 
 Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. When a single board is connected, run:
+Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. You can either set it to [open after compilation](#opening-a-serial-terminal-after-compilation), or open it [manually](#manually-opening-a-serial-terminal).
+
+### Opening a serial terminal after compilation
+
+To compile an application, flash it onto a board and open a serial terminal:
+
+```
+mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
+```
+
+This starts message printing (`Hello World!` in the example) once the application is flashed onto the board.
+
+To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
+
+<span class="notes">**Notes:**
+- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` in the command above.
+- This method only works if _one_ board of the TARGET you specify is connected. To work with multiple boards, open a serial terminal manually as described below.</span>
+
+### Manually opening a serial terminal
+
+You can open a serial terminal manually, which is useful when the board is already flashed with the desired application (i.e. one built with the [online compiler](../quick-start/build-with-the-online-compiler.html)).
+
+When a single board is connected, run:
 
 ```
 mbed sterm
@@ -30,12 +52,9 @@ mbed sterm
 
 `mbed sterm` starts message printing.
 
-Restart the application using the board's reset button, or by entering <kbd>Ctrl + B</kbd> in the serial terminal.
-The example prints "Hello World!" to the terminal after the reset.
-
 To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-## Additional options of mbed sterm
+### Additional options of mbed sterm
 
 - If you have multiple boards connected:
     1. Run `mbedls` to find the port of the board you want to use.
@@ -66,14 +85,6 @@ To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
     -vv, --very_verbose   Very verbose diagnostic output
     ```
 
-## Auto-opening a serial terminal after compilation
-
-To compile, flash and open a serial terminal in one command line:
-
-```
-mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
-```
-
 ## Additional examples - reading user inputs
 
 In addition to printing messages, Mbed OS applications can also read keyboard inputs from the user using the [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html) classes.
@@ -88,7 +99,7 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 ### Use the U and D keys to make LED1 brighter or dimmer
 
-<span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
+<span class="notes">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
 <span class="images">![](../../images/NUCLEOF401RE.png)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
