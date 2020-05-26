@@ -175,7 +175,7 @@
                         {
                             "title": "Scheduling options and config",
                             "intro": {
-                                "path": "docs/api/rtos/rtos-config.md"
+                                "path": "docs/reference/configuration/rtos-config.md"
                             },
                             "sources": []
                         },
@@ -259,7 +259,7 @@
                         {
                             "title": "Drivers options and config",
                             "intro": {
-                                "path": "docs/api/io/io-config.md"
+                                "path": "docs/reference/configuration/io-config.md"
                             },
                             "sources": []
                         },
@@ -424,7 +424,7 @@
                         {
                             "title": "Platform options and config",
                             "intro": {
-                                "path": "docs/api/platform/platform-config.md"
+                                "path": "docs/reference/configuration/platform-config.md"
                             },
                             "sources": []
                         },
@@ -576,7 +576,7 @@
                         {
                             "title": "Data options and config",
                             "intro": {
-                                "path": "docs/api/storage/storage-config.md"
+                                "path": "docs/reference/configuration/storage-config.md"
                             },
                             "sources": []
                         },
@@ -715,16 +715,16 @@
                         {
                             "title": "Connectivity options and config",
                             "sources": [{
-                                    "path": "docs/api/connectivity-config.md"
+                                    "path": "docs/reference/configuration/connectivity-config.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/mesh-config.md"
+                                    "path": "docs/reference/configuration/mesh-config.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/ble-config.md"
+                                    "path": "docs/reference/configuration/ble-config.md"
                                 },
                                 {
-                                    "path": "docs/api/lorawan/lorawanconfig.md"
+                                    "path": "docs/reference/configuration/lorawanconfig.md"
                                 }
                             ]
                         },
