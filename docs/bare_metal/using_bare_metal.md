@@ -9,6 +9,8 @@ Here is a code snippet that can work for both Mbed OS profiles; it prints text a
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/blob/v6.0/main.cpp)
 
+<span class="notes">**Note:** To be compatible with Arm microlib, a bare metal application should not return from `main()`. In this example, the `queue.dispatch_forever()` call never returns. For more details, see [Non-returning main()](../baremetal/using-small-c-libraries.html#non-returning-main).</span>
+
 ## 1. Creating a bare metal application
 
 To create the application:
