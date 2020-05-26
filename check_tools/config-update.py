@@ -1,18 +1,7 @@
-#! /usr/bin/env python2
-"""
-mbed SDK
-Copyright (c) 2019 ARM Limited
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-    http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-LIBRARIES BUILD
-"""
+#!/usr/bin/env python
+# Copyright (c) 2019-2020 Arm Limited and Contributors. All rights reserved.
+#
+
 
 # Script to automatically update the configuration parameters list in
 # each configuration doc page with the output from `mbed compile --config -v`
@@ -36,9 +25,54 @@ LIBRARIES BUILD
 #
 # Note: The script does not produce a correct output with Python 3.x
 
-import sys, os
+import argparse
+import logging
+import os
+import pathlib
 import re
 import subprocess
+import sys
+from enum import Enum
+
+
+LOG = logging.getLogger(__name__)
+
+LOG_FORMAT = "%(asctime)s - %(levelname)s - %(message)s"
+
+
+DEFAULT_PATH = os.path.join(
+    pathlib.Path(__file__).parent.absolute(),
+    "..",
+    "docs",
+    "reference",
+    "configuration"
+)
+
+class ReturnCode(Enum):
+    """Return codes."""
+
+    SUCCESS = 0
+    ERROR = 1
+    INVALID_OPTIONS = 2
+
+
+class ArgumentParserWithDefaultHelp(argparse.ArgumentParser):
+    """Subclass that always shows the help message on invalid arguments."""
+
+    def error(self, message):
+        """Error handler."""
+        sys.stderr.write(f"error: {message}\n")
+        self.print_help()
+        raise SystemExit(ReturnCode.INVALID_OPTIONS.value)
+
+
+def set_log_verbosity(increase_verbosity):
+    """Set the verbosity of the log output."""
+    log_level = logging.DEBUG if increase_verbosity else logging.INFO
+
+    LOG.setLevel(log_level)
+    logging.basicConfig(level=log_level, format=LOG_FORMAT)
+
 
 def split_into_pairs(l):
     """ Split the provided list into a, b pairs.
@@ -52,6 +86,7 @@ def split_into_pairs(l):
     for i in range(0, len(l), 2):
         yield l[i:i + 2]
 
+
 def is_string(line):
     """ Determine if the provided string contains
         alphabetical characters (case insensitive)
@@ -64,30 +99,35 @@ def is_string(line):
     regexp = re.compile(r'[a-z]', re.IGNORECASE)
     return regexp.search(line)
 
-def main(file):
-    file_h = open(file, 'r+')
+
+def generate_config_content(file):
+    """..."""
+    LOG.debug(f"_____ {file} _____")
+    file_h = open(file, "r+")
     file   = file_h.read()
 
     # Collect indices of markdown code block ticks, split into start,end pairs
     # with `split_into_pairs` below. Collect the config parameter prefix used in
     # the current block if viable and replace the contents with the output of
     # the Mbed CLI config verbose list command.
-    snippet_indices = [m.start() for m in re.finditer('```', file)]
+    snippet_indices = [m.start() for m in re.finditer("```", file)]
 
     blocks = {}
     for i in range(0, int(len(snippet_indices) / 2)):
-        # Need to rerun on every loop as the indices change each iteration
-        snippet_indices = [m.start() for m in re.finditer('```', file)]
+        snippet_indices = [m.start() for m in re.finditer("```", file)] # Need to rerun on every loop as the indices change each iteration
+
         ranges = list(split_into_pairs(snippet_indices))
-        start  = ranges[i][0]
-        end    = ranges[i][1]
+        start = ranges[i][0]
+        end = ranges[i][1]
 
         try:
             blocks[i] = file[start : end + 3]
-            if ('Name: ' in blocks[i]):
-                lib = blocks[i].split('Name: ')[1].split('.')[0]
-                print("=================   %s   =================" % lib)
-                out = str(subprocess.check_output(["mbed", "compile", "--config", "-v", "--prefix", lib]))
+            if "Name: " in blocks[i]:
+                lib = blocks[i].split("Name: ")[1].split(".")[0]
+                print(f"=================   {lib}   =================")
+                cmd = ["mbed", "compile", "-m", "DISCO_L475VG_IOT01A", "--config", "-v", "--prefix", lib]
+                LOG.debug(cmd)
+                configuration_output = subprocess.check_output(cmd).decode()
 
                 # Some APIs break config options into logical blocks in their config files.
                 # If a tag is applied to a parameter block, only display parameter names that contain that tag
@@ -104,28 +144,28 @@ def main(file):
                 # and split the configuration list output into its components.
                 # Collect tag (if present), split <TAG> from ```<TAG> at current index
                 # Check with regex for string to cover for potential trailing whitespaces
-                tag = file[start : file.find('\n', start)].split('`')[-1]
+                tag = file[start : file.find("\n", start)].split("`")[-1]
                 if is_string(tag):
-                    print("\t------- Tag: %s -------" % tag)
+                    print(f"\t------- Tag: {tag} -------")
 
-                    start_of_config_block = file.find('Name:', start)
+                    start_of_config_block = file.find("Name:", start)
                     updated_config = str(file[ : start_of_config_block])
-                    for line in out.splitlines():
-                        if 'Name' in line and tag in line:
+                    for line in configuration_output.splitlines():
+                        if "Name" in line and tag in line:
                             updated_config += line
 
                             # Collect all text until next parameter name. If there's no following 'Name:' token, its the last
                             # config option, match to 'Macros' instead to termiante the block. Offset starting index to avoid finding
                             # the current line's 'Name:' token.
-                            eol = out.find('\n', out.find(line))
-                            if out.find('Name:', out.find(line) + len('Name:')) > 0:
-                                updated_config += out[eol : out.find('Name:', out.find(line) + len('Name:'))]
+                            eol = configuration_output.find("\n", configuration_output.find(line))
+                            if configuration_output.find("Name:", configuration_output.find(line) + len("Name:")) > 0:
+                                updated_config += configuration_output[eol : configuration_output.find("Name:", configuration_output.find(line) + len("Name:"))]
                             else:
-                                updated_config += out[eol : out.find('Macros', out.find(line))]
+                                updated_config += configuration_output[eol : configuration_output.find("Macros", configuration_output.find(line))]
 
                     updated_config += str(file[end:])
                 else:
-                    updated_config = str(file[:start+4] + out[:out.index("Macros") - 1] + file[end:])
+                    updated_config = str(file[:start+4] + configuration_output[:configuration_output.index("Macros") - 1] + file[end:])
 
                 file = updated_config
 
@@ -135,33 +175,99 @@ def main(file):
             print("Error")
             print(e)
             print("____________________")
-            exc_type, exc_obj, exc_tb = sys.exc_info()
+            exc_type, _ , exc_tb = sys.exc_info()
             fname = os.path.split(exc_tb.tb_frame.f_code.co_filename)[1]
             print(exc_type, fname, exc_tb.tb_lineno)
-            pass
 
     file_h.truncate(0)
     file_h.seek(0)
     file_h.write(file)
     file_h.close()
 
-if __name__ == '__main__':
-    if (len(sys.argv) < 2):
-        path = '../docs/reference/configuration'
-    else:
-        path = sys.argv[1]
 
-    if (path == '-h' or path == '--help'):
-        print("By default the script runs out of the docs tools directory and iterates through reference/configuration.\n"
-              "You may pass in a directory path that will run on all files contained within, or a single file path optionally.")
-        exit(0)
-
-    if (os.path.isfile(path)):
-        main(path)
-    elif (os.path.isdir(path)):
-        for doc in os.listdir(path):
-            if (doc != 'configuration.md'):
-                print('_____ %s _____' % os.path.join(path, doc))
-                main(os.path.join(path, doc))
+def config_update(args):
+    """..."""
+    if os.path.isfile(args.path):
+        generate_config_content(args.path)
     else:
-        print("Please provide a valid file or directory path")
+        for (root, _, filenames) in os.walk(args.path):
+            for filename in filenames:
+                if not filename == "configuration.md":
+                    generate_config_content(os.path.join(root, filename))
+
+
+def is_valid_file(parser, arg):
+    """Check if the file or directory exists."""
+    file = os.path.join(pathlib.Path().absolute(), arg)
+    if not os.path.exists(file):
+        parser.error(f"'{file}': No such file or directory.")
+    else:
+        return file
+
+
+def parse_args():
+    """Parse the command line args."""
+    parser = ArgumentParserWithDefaultHelp(
+        description=(
+            "Copy mbed-os-5-docs (or make a symlink) to a mbed-os repository."
+            "The script runs from mbed-os-5-docs/check_tools/ and iterates"
+            f" through {DEFAULT_PATH}. You may"
+            " pass a directory or a file. In case of a directory, the script"
+            " will run on all files contained within it. "
+        ),
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+    )
+
+    parser.add_argument(
+        "path",
+        type=lambda x: is_valid_file(parser, x),
+        nargs="?",
+        help="path to file or directory.",
+        default=DEFAULT_PATH,
+    )
+
+    parser.add_argument(
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="increase verbosity of status information.",
+    )
+
+    parser.set_defaults(func=config_update)
+
+    args_namespace = parser.parse_args()
+
+    # We want to fail gracefully, with a consistent
+    # help message, in the no argument case.
+    # So here's an obligatory hasattr hack.
+    if not hasattr(args_namespace, "func"):
+        parser.error("No arguments given!")
+    else:
+        return args_namespace
+
+
+def run_config_update():
+    """Application main algorithm."""
+    args = parse_args()
+
+    set_log_verbosity(args.verbose)
+
+    LOG.debug("Starting script")
+    LOG.debug(f"Command line arguments:{args}")
+
+    args.func(args)
+
+
+def _main():
+    """..."""
+    try:
+        run_config_update()
+    except Exception as error:
+        print(error)
+        return ReturnCode.ERROR.value
+    else:
+        return ReturnCode.SUCCESS.value
+
+
+if __name__ == "__main__":
+    sys.exit(_main())
