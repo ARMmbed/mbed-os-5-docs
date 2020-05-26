@@ -11,6 +11,15 @@ Name: platform.all-stats-enabled
     Description: Set to 1 to enable all platform stats. When enabled the functions mbed_stats_*_get returns non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
     No value set
+Name: platform.callback-comparable
+    Description: Enables support for comparing two Callbacks. See notes on operator== for limitations. Can be disabled to save ROM if not required.
+    Defined by: library:platform
+    Macro name: MBED_CONF_PLATFORM_CALLBACK_COMPARABLE
+    Value: 1 (set by library:platform)
+Name: platform.callback-nontrivial
+    Description: Enables support for non-trivial callable objects in Callback. Can be disabled to save ROM if no-one is using non-trivial types. Changing this value may cause incompatibility with pre-built binaries.
+    Defined by: library:platform
+    No value set
 Name: platform.cpu-stats-enabled
     Description: Set to 1 to enable cpu stats. When enabled the function mbed_stats_cpu_get returns non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
@@ -19,7 +28,7 @@ Name: platform.crash-capture-enabled
     Description: Enables crash context capture when the system enters a fatal error/crash.
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_CRASH_CAPTURE_ENABLED
-    Value: 1 (set by library:platform[K64F])
+    Value: 1 (set by library:platform[DISCO_L475VG_IOT01A])
 Name: platform.cthunk_count_max
     Description: The maximum CThunk objects used at the same time. This must be greater than 0 and less 256
     Defined by: library:platform
@@ -56,11 +65,7 @@ Name: platform.fatal-error-auto-reboot-enabled
     Description: Setting this to true enables auto-reboot on a fatal error.
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_FATAL_ERROR_AUTO_REBOOT_ENABLED
-    Value: 1 (set by library:platform[K64F])
-Name: platform.force-non-copyable-error
-    Description: Force compile time error when a NonCopyable object is copied
-    Defined by: library:platform
-    No value set
+    Value: 1 (set by library:platform[DISCO_L475VG_IOT01A])
 Name: platform.heap-stats-enabled
     Description: Set to 1 to enable heap stats. When enabled the function mbed_stats_heap_get returns non-zero data. See mbed_stats.h for more information
     Defined by: library:platform
@@ -75,16 +80,16 @@ Name: platform.memory-tracing-enabled
     Defined by: library:platform
     No value set
 Name: platform.minimal-printf-enable-64-bit
-    Description: Enable printing 64 bit integers when using mprintf profile
+    Description: Enable printing 64 bit integers when using minimal printf library
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_MINIMAL_PRINTF_ENABLE_64_BIT
     Value: 1 (set by library:platform)
 Name: platform.minimal-printf-enable-floating-point
-    Description: Enable floating point printing when using mprintf profile
+    Description: Enable floating point printing when using minimal printf library
     Defined by: library:platform
     No value set
 Name: platform.minimal-printf-set-floating-point-max-decimals
-    Description: Maximum number of decimals to be printed
+    Description: Maximum number of decimals to be printed when using minimal printf library
     Defined by: library:platform
     Macro name: MBED_CONF_PLATFORM_MINIMAL_PRINTF_SET_FLOATING_POINT_MAX_DECIMALS
     Value: 6 (set by library:platform)
@@ -106,17 +111,19 @@ Name: platform.stdio-baud-rate
     Macro name: MBED_CONF_PLATFORM_STDIO_BAUD_RATE
     Value: 9600 (set by library:platform)
 Name: platform.stdio-buffered-serial
-    Description: (Applies if target.console-uart is true and stdio-minimal-console-only is false.) Use UARTSerial driver to obtain buffered serial I/O on stdin/stdout/stderr. If false, unbuffered serial_getc and serial_putc are used directly.
+    Description: (Applies if target.console-uart is true and stdio-minimal-console-only is false.) Use BufferedSerial driver to obtain buffered serial I/O on stdin/stdout/stderr. If false, unbuffered serial_getc and serial_putc are used directly.
     Defined by: library:platform
     No value set
 Name: platform.stdio-convert-newlines
     Description: Enable conversion to standard newlines on stdin/stdout/stderr
     Defined by: library:platform
-    No value set
+    Macro name: MBED_CONF_PLATFORM_STDIO_CONVERT_NEWLINES
+    Value: 1 (set by library:platform)
 Name: platform.stdio-convert-tty-newlines
     Description: Enable conversion to standard newlines on any tty FILE stream
     Defined by: library:platform
-    No value set
+    Macro name: MBED_CONF_PLATFORM_STDIO_CONVERT_TTY_NEWLINES
+    Value: 1 (set by library:platform)
 Name: platform.stdio-flush-at-exit
     Description: Enable or disable the flush of standard I/O's at exit.
     Defined by: library:platform

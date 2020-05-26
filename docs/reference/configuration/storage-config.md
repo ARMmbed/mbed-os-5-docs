@@ -365,6 +365,51 @@ Name: littlefs.read_size
     Defined by: library:littlefs
     Macro name: MBED_LFS_READ_SIZE
     Value: 64 (set by library:littlefs)
+Name: littlefs2.block_cycles
+    Description: Number of erase cycles before a block is forcefully evicted. Larger values are more efficient but cause less even wear distribution. 0 disables dynamic wear-leveling.
+    Defined by: library:littlefs2
+    Macro name: MBED_LFS2_BLOCK_CYCLES
+    Value: 1024 (set by library:littlefs2)
+Name: littlefs2.block_size
+    Description: Size of a logical block. This does not impact ram consumption and may be larger than the physical erase block. If the physical erase block is larger, littlefs will use that instead. Larger values will be faster but waste more storage when files are not aligned to a block size.
+    Defined by: library:littlefs2
+    Macro name: MBED_LFS2_BLOCK_SIZE
+    Value: 512 (set by library:littlefs2)
+Name: littlefs2.cache_size
+    Description: Size of read/program caches. Each file uses 1 cache, and littlefs allocates 2 caches for internal operations. Larger values should be faster but uses more RAM.
+    Defined by: library:littlefs2
+    Macro name: MBED_LFS2_CACHE_SIZE
+    Value: 64 (set by library:littlefs2)
+Name: littlefs2.enable_assert
+    Description: Enables asserts, true = enabled, false = disabled, null = disabled only in release builds
+    Defined by: library:littlefs2
+    No value set
+Name: littlefs2.enable_debug
+    Description: Enables debug logging, true = enabled, false = disabled, null = disabled only in release builds
+    Defined by: library:littlefs2
+    No value set
+Name: littlefs2.enable_error
+    Description: Enables error logging, true = enabled, false = disabled, null = disabled only in release builds
+    Defined by: library:littlefs2
+    No value set
+Name: littlefs2.enable_info
+    Description: Enables info logging, true = enabled, false = disabled, null = disabled only in release builds
+    Defined by: library:littlefs2
+    No value set
+Name: littlefs2.enable_warn
+    Description: Enables warn logging, true = enabled, false = disabled, null = disabled only in release builds
+    Defined by: library:littlefs2
+    No value set
+Name: littlefs2.intrinsics
+    Description: Enable intrinsics for bit operations such as ctz, popc, and le32 conversion. Can be disabled to help debug toolchain issues
+    Defined by: library:littlefs2
+    Macro name: MBED_LFS2_INTRINSICS
+    Value: 1 (set by library:littlefs2)
+Name: littlefs2.lookahead_size
+    Description: Size of the lookahead buffer. A larger lookahead reduces the allocation scans and results in a faster filesystem but uses more RAM.
+    Defined by: library:littlefs2
+    Macro name: MBED_LFS2_LOOKAHEAD_SIZE
+    Value: 64 (set by library:littlefs2)
 ```
 
 ## BlockDevice - default configuration
