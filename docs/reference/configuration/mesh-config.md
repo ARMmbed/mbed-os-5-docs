@@ -92,6 +92,33 @@ Name: nanostack-eventloop.use_platform_tick_timer
     No value set
 ```
 ```
+Configuration parameters
+------------------------
+Name: nanostack-eventloop.exclude_highres_timer
+    Description: Exclude high resolution timer from build
+    Defined by: library:nanostack-eventloop
+    No value set
+Name: nanostack-eventloop.use_platform_tick_timer
+    Description: Use platform provided low resolution tick timer for eventloop
+    Defined by: library:nanostack-eventloop
+    No value set
+Name: nanostack-hal.critical-section-usable-from-interrupt
+    Description: Make critical section API usable from interrupt context. Else a mutex is used as locking primitive. Consult arm_hal_interrupt.c for possible side effects on interrupt latency.
+    Defined by: library:nanostack-hal
+    No value set
+Name: nanostack-hal.event-loop-dispatch-from-application
+    Description: Application is responsible of message dispatch loop. Else launch a separate thread for event-loop.
+    Defined by: library:nanostack-hal
+    No value set
+Name: nanostack-hal.event-loop-use-mbed-events
+    Description: Use Mbed OS global event queue for Nanostack event loop, rather than our own thread.
+    Defined by: library:nanostack-hal
+    No value set
+Name: nanostack-hal.event_loop_thread_stack_size
+    Description: Define event-loop thread stack size. [bytes]
+    Defined by: library:nanostack-hal
+    Macro name: MBED_CONF_NANOSTACK_HAL_EVENT_LOOP_THREAD_STACK_SIZE
+    Value: 6144 (set by library:nanostack-hal)
 Name: nanostack.configuration
     Description: Build time configuration. Refer to Handbook for valid values. Default: full stack
     Defined by: library:nanostack
@@ -99,6 +126,8 @@ Name: nanostack.configuration
     Value: nanostack_full (set by library:nanostack)
 ```
 ```
+Configuration parameters
+------------------------
 Name: nanostack-hal.critical-section-usable-from-interrupt
     Description: Make critical section API usable from interrupt context. Else a mutex is used as locking primitive. Consult arm_hal_interrupt.c for possible side effects on interrupt latency.
     Defined by: library:nanostack-hal
@@ -126,7 +155,7 @@ This configuration allows you to adjust Nanostack's heap usage:
 Configuration parameters
 ------------------------
 Name: mbed-mesh-api.heap-size
-    Description: Nanostack's heap size [bytes: 0-‭4294967295‬]
+    Description: Nanostack's heap size [bytes: 0-4294967295]
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_HEAP_SIZE
     Value: 32500 (set by library:mbed-mesh-api)
@@ -205,55 +234,62 @@ The following parameters are only valid for the Wi-SUN FAN mesh network. These a
 Configuration parameters
 ------------------------
 Name: mbed-mesh-api.wisun-bc-channel-function
-    Description: Broadcast channel function.
+    Description: Broadcast channel function as specified in the Wi-SUN FAN specification. Wi-SUN stack will select channel function if value 255 is used.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_BC_CHANNEL_FUNCTION
     Value: 255 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-bc-dwell-interval
-    Description: Broadcast dwell interval. Range: 15-255 milliseconds
+    Description: Broadcast dwell interval. Range: 15-255 milliseconds. Wi-SUN stack default value will be used when set to 0.
     Defined by: library:mbed-mesh-api
     No value set
 Name: mbed-mesh-api.wisun-bc-fixed-channel
-    Description: Default fixed channel
+    Description: Default 16-bit fixed channel for multicast. Used when channel hopping is not desired.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_BC_FIXED_CHANNEL
-    Value: 0xffff (set by library:mbed-mesh-api)
+    Value: 65535 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-bc-interval
-    Description: Broadcast interval. Duration between broadcast dwell intervals. Range: 0-16777216 milliseconds
+    Description: 32-bit broadcast interval. Duration between broadcast dwell intervals. Wi-SUN stack default value will be used when set to 0.
     Defined by: library:mbed-mesh-api
     No value set
+Name: mbed-mesh-api.wisun-device-type
+    Description: Supported device operating modes: MESH_DEVICE_TYPE_WISUN_ROUTER, MESH_DEVICE_TYPE_WISUN_BORDER_ROUTER
+    Defined by: library:mbed-mesh-api
+    Macro name: MBED_CONF_MBED_MESH_API_WISUN_DEVICE_TYPE
+    Value: MESH_DEVICE_TYPE_WISUN_ROUTER (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-network-name
-    Description: default network name for wisun network
+    Description: Network name for a wisun network. Maximum network name length can be 32 ASCII characters excluding terminating 0
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_NETWORK_NAME
     Value: "Wi-SUN Network" (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-operating-class
-    Description: Operating class.
+    Description: Operating class for the regulatory-domain as specified in the Wi-SUN PHY Specification. Wi-SUN stack uses operating-class suitable for EU-region if value 255 is used.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_OPERATING_CLASS
     Value: 255 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-operating-mode
-    Description: Operating mode.
+    Description: Operating mode as specified in the Wi-SUN PHY Specification. Wi-SUN stack uses operating-mode suitable for EU-region if value 255 is used.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_OPERATING_MODE
     Value: 255 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-regulatory-domain
-    Description: Regulator domain.
+    Description: Regulator domain value as specified in the Wi-SUN PHY Specification. Default value 3 is for EU region.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_REGULATORY_DOMAIN
     Value: 3 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-uc-channel-function
-    Description: Unicast channel function.
+    Description: Unicast channel function as specified in the Wi-SUN FAN specification. Wi-SUN stack will select channel function if value 255 is used.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_UC_CHANNEL_FUNCTION
     Value: 255 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-uc-dwell-interval
-    Description: Unicast dwell interval. Range: 15-255 milliseconds
+    Description: Unicast dwell interval. Range: 15-255 milliseconds.
     Defined by: library:mbed-mesh-api
-    No value set
+    Macro name: MBED_CONF_MBED_MESH_API_WISUN_UC_DWELL_INTERVAL
+    Value: 255 (set by library:mbed-mesh-api)
 Name: mbed-mesh-api.wisun-uc-fixed-channel
-    Description: Default fixed channel
+    Description: Default 16-bit fixed channel for unicast. Used when channel hopping is not desired.
     Defined by: library:mbed-mesh-api
     Macro name: MBED_CONF_MBED_MESH_API_WISUN_UC_FIXED_CHANNEL
-    Value: 0xffff (set by library:mbed-mesh-api)
+    Value: 65535 (set by library:mbed-mesh-api)
+
 ```

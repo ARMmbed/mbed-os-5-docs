@@ -39,89 +39,78 @@ These are feature that you can disable:
 ```
 Configuration parameters
 ------------------------
-
-Name: ble.ble-role-observer
-    Description: Include observer BLE role support (scanning for and processing advertising packets).
+Name: ble.ble-feature-extended-advertising
+    Description: Include extended advertising support (advertising sets, secondary channels).
     Defined by: library:ble
-    Value: true
-    Macro name: BLE_ROLE_OBSERVER
-
-Name: ble.ble-role-broadcaster
-    Description: Include broadcaster BLE role support (sending advertising packets).
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_ROLE_BROADCASTER
-
-Name: ble.ble-role-central
-    Description: Include central BLE role support (initiates connections), depends on observer role.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_ROLE_CENTRAL
-
-Name: ble.ble-role-peripheral
-    Description: Include peripheral BLE role support (accepts connections), depends on broadcaster role.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_ROLE_PERIPHERAL
-
+    Macro name: BLE_FEATURE_EXTENDED_ADVERTISING
+    Value: 1 (set by library:ble)
 Name: ble.ble-feature-gatt-client
     Description: Include Gatt Client BLE role support (requests remote operations on attributes), depends on peripheral and central role.
     Defined by: library:ble
-    Value: true
     Macro name: BLE_FEATURE_GATT_CLIENT
-
+    Value: 1 (set by library:ble)
 Name: ble.ble-feature-gatt-server
     Description: Include Gatt Server BLE role support (executes operations on stored attributes), depends on peripheral or central role.
     Defined by: library:ble
-    Value: true
     Macro name: BLE_FEATURE_GATT_SERVER
-
-Name: ble.ble-feature-security
-    Description: Include security support (key management), depends on peripheral or central role.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_SECURITY
-
-Name: ble.ble-feature-secure-connections
-    Description: Include secure connections support, depends on the security feature.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_SECURE_CONNECTIONS
-
-Name: ble.ble-feature-signing
-    Description: Include signing support (signed attribute writes), depends on the security feature.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_SIGNING
-
-Name: ble.ble-feature-whitelist
-    Description: Include whitelist support (peer filtering), depends on the security feature.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_WHITELIST
-
-Name: ble.ble-feature-privacy
-    Description: Include privacy support(random resolvable addresses), depends on the security feature.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_PRIVACY
-
-Name: ble.ble-feature-phy-management
-    Description: Additional PHY support (2M and Coded)
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_PHY_MANAGEMENT
-
-Name: ble.ble-feature-extended-advertising
-    Description: Include extended advertising support(advertising sets, secondary channels), depends on the phy management feature.
-    Defined by: library:ble
-    Value: true
-    Macro name: BLE_FEATURE_EXTENDED_ADVERTISING
-
+    Value: 1 (set by library:ble)
 Name: ble.ble-feature-periodic-advertising
     Description: Include periodic advertising support, depends on the extended advertising feature.
     Defined by: library:ble
-    Value: true
     Macro name: BLE_FEATURE_PERIODIC_ADVERTISING
-
+    Value: 1 (set by library:ble)
+Name: ble.ble-feature-phy-management
+    Description: Additional PHY support (2M and Coded)
+    Defined by: library:ble
+    Macro name: BLE_FEATURE_PHY_MANAGEMENT
+    Value: 1 (set by library:ble)
+Name: ble.ble-feature-privacy
+    Description: Include privacy support (random resolvable addresses), depends on the security feature.
+    Defined by: library:ble
+    Macro name: BLE_FEATURE_PRIVACY
+    Value: 1 (set by library:ble)
+Name: ble.ble-feature-secure-connections
+    Description: Include secure connections support, depends on the security feature.
+    Defined by: library:ble
+    Macro name: BLE_FEATURE_SECURE_CONNECTIONS
+    Value: 1 (set by library:ble)
+Name: ble.ble-feature-security
+    Description: Include security support (key management), depends on peripheral or central role.
+    Defined by: library:ble
+    Macro name: BLE_FEATURE_SECURITY
+    Value: 1 (set by library:ble)
+Name: ble.ble-feature-signing
+    Description: Include signing support (signed attribute writes), depends on the security feature.
+    Defined by: library:ble
+    Macro name: BLE_FEATURE_SIGNING
+    Value: 1 (set by library:ble)
+Name: ble.ble-feature-whitelist
+    Description: Include whitelist support (peer filtering), depends on the security feature.
+    Defined by: library:ble
+    Macro name: BLE_FEATURE_WHITELIST
+    Value: 1 (set by library:ble)
+Name: ble.ble-role-broadcaster
+    Description: Include broadcaster BLE role support (sending advertising packets).
+    Defined by: library:ble
+    Macro name: BLE_ROLE_BROADCASTER
+    Value: 1 (set by library:ble)
+Name: ble.ble-role-central
+    Description: Include central BLE role support (initiates connections), depends on observer role.
+    Defined by: library:ble
+    Macro name: BLE_ROLE_CENTRAL
+    Value: 1 (set by library:ble)
+Name: ble.ble-role-observer
+    Description: Include observer BLE role support (scanning for and processing advertising packets).
+    Defined by: library:ble
+    Macro name: BLE_ROLE_OBSERVER
+    Value: 1 (set by library:ble)
+Name: ble.ble-role-peripheral
+    Description: Include peripheral BLE role support (accepts connections), depends on broadcaster role.
+    Defined by: library:ble
+    Macro name: BLE_ROLE_PERIPHERAL
+    Value: 1 (set by library:ble)
+Name: ble.present
+    Defined by: library:ble
+    Macro name: MBED_CONF_BLE_PRESENT
+    Value: 1 (set by library:ble)
 ```
