@@ -34,8 +34,7 @@ When the board is flashed, it starts printing to the terminal (`Hello World!`, i
 
 To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b> </div>
-
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b>
 <br/>- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` in the command above.
 <br/>- This method only works for a single board. To work with multiple boards, open a serial terminal manually as described below.</div>
 
