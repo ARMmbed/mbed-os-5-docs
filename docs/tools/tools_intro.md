@@ -36,7 +36,7 @@ You can build Mbed OS with the Arm Compiler and GNU Arm Embedded toolchains. The
 
 ## Arm Mbed Studio
 
-Mbed Studio is our new desktop IDE and is available to anyone with an Mbed account as a public beta. You can download it for Windows and Mac, and access the documentation at [os.mbed.com/docs/mbed-studio](https://os.mbed.com/docs/mbed-studio/).
+Mbed Studio is our new desktop IDE and is available to anyone with an Mbed account as a public beta. You can download it for Windows, Linux and Mac, and access the documentation at [os.mbed.com/docs/mbed-studio](https://os.mbed.com/docs/mbed-studio/).
 
 To complement our popular Mbed Online Compiler and command-line tools, we created Mbed Studio, the tooling you need in a desktop IDE to have a quick development, debug and deploy cycle when you build your next product. Mbed Studio speeds up your development flow and provides functionality that helps you get the most out of Mbed OS.
 
