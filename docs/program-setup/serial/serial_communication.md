@@ -24,19 +24,20 @@ Mbed CLI provides a serial terminal that is configured with a default baud rate 
 
 ### Opening a serial terminal after compilation
 
-To compile an application, flash it onto a board and open a serial terminal:
+You can use one command to compile an application, flash it onto a board and open a serial terminal:
 
 ```
 mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
 ```
 
-This starts message printing (`Hello World!` in the example) once the application is flashed onto the board.
+When the board is flashed, it starts printing to the terminal (`Hello World!`, in this example).
 
 To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-<span class="notes">**Notes:**
-- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` in the command above.
-- This method only works if _one_ board of the TARGET you specify is connected. To work with multiple boards, open a serial terminal manually as described below.</span>
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b> </div>
+
+<br/>- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` in the command above.
+<br/>- This method only works for a single board. To work with multiple boards, open a serial terminal manually as described below.</div>
 
 ### Manually opening a serial terminal
 
