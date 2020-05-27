@@ -51,7 +51,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 ## Bootloader
 
 - [A tutorial for creating and using a bootloader](../program-setup/creating-and-using-a-bootloader.html).
-- [An official example](https://github.com/ARMmbed/mbed-os-example-bootloader).
+- [An official example of bootloader implementation](https://github.com/ARMmbed/mbed-os-example-bootloader).
 
 ## Connecting to the cloud
 
