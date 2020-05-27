@@ -35,7 +35,7 @@ When the board is flashed, it starts printing to the terminal (`Hello World!`, i
 To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
 <div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b>
-<br/>- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` in the command above.
+<br/>- If your application uses a baud rate other than 9600, specify it with `-b BAUDRATE` in the command above.
 <br/>- This method only works for a single board. To work with multiple boards, open a serial terminal manually as described below.</div>
 
 ### Manually opening a serial terminal
@@ -53,10 +53,10 @@ mbed sterm
 To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
 <div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b>
-<br/>If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` when opening the serial terminal.
+<br/>If your application uses a baud rate other than 9600, specify it with `-b BAUDRATE` when opening the serial terminal.
 <br/>If you have multiple boards connected:
 <br/>1. Run `mbedls` to find the port of the board you want to use.
-<br/>2. Run `mbed sterm -p <PORT>`.
+<br/>2. Run `mbed sterm -p PORT`.
 <br/>To list all options, run `mbed sterm -h`</div>
 
 ## Additional examples - reading user inputs
