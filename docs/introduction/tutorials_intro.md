@@ -13,7 +13,7 @@ This page is an index of all tutorials and official examples.
 | Network socket | | - [Sockets](https://github.com/ARMmbed/mbed-os-example-sockets) <br/> - [Socket statistics](https://github.com/ARMmbed/mbed-os-example-socket-stats) |
 | NFC | | - [Smart Poster](https://github.com/ARMmbed/mbed-os-example-nfc/blob/master/NFC_SmartPoster/README.md) <br/> - [EEPROM](https://github.com/ARMmbed/mbed-os-example-nfc/blob/master/NFC_EEPROM/README.md)|
 | Network secure socket | | [TLS socket](https://github.com/ARMmbed/mbed-os-example-tls-socket) |
-| Platform | - [Application flow control](../apis/platform-tutorials.html) <br/> - [Power optimization](../apis/power-optimization.html) | - [Thread statistics](https://github.com/ARMmbed/mbed-os-example-thread-statistics) <br/> - [CPU statistics](https://github.com/ARMmbed/mbed-os-example-cpu-stats) <br/> - [Error handling](https://github.com/ARMmbed/mbed-os-example-error-handling) |
+| Platform | - [Application flow control](../apis/platform-tutorials.html) <br/> - [Power optimization](../apis/power-optimization.html) | - [Thread statistics](https://github.com/ARMmbed/mbed-os-example-thread-statistics) <br/> - [CPU statistics](https://github.com/ARMmbed/mbed-os-example-cpu-stats) <br/> - [Error handling](https://github.com/ARMmbed/mbed-os-example-error-handling) <br/> - [System information](https://github.com/ARMmbed/mbed-os-example-sys-info) |
 | Scheduling | [EventQueue](../apis/scheduling-tutorials.html) | |
 | Security | [Secure communication](../apis/tls-tutorial.html) | - [ATECC608A secure element](https://github.com/ARMmbed/mbed-os-example-atecc608a) <br/> - [DeviceKey](https://github.com/ARMmbed/mbed-os-example-devicekey) <br/> - [Mbed Crypto](https://github.com/ARMmbed/mbed-os-example-mbed-crypto) <br/> - [Mbed TLS: Authenticated encryption](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/authcrypt) <br/> - [Mbed TLS: Benchmark](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/benchmark) <br/> - [Mbed TLS: Hashing](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/hashing) <br/> - [Mbed TLS: TLS client](https://github.com/ARMmbed/mbed-os-example-tls/blob/master/tls-client) <br/> - [PSA attestation](https://github.com/ARMmbed/mbed-os-example-attestation) |
 | USB | [Audio player](../apis/usb-wav-audio-player.html) | |
@@ -57,7 +57,6 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 [Pelion Device Management](https://github.com/ARMmbed/mbed-os-example-pelion)
 
-<!--404 https://github.com/ARMmbed/mbed-os-example-aws -->
 
 ## Migrating
 
