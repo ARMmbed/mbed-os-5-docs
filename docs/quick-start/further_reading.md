@@ -13,7 +13,7 @@
     - [Mbed OS serial communication](../program-setup/serial-communication.html).
 
 - Tutorials:
-   - [Debugging](../debug-test/methods.html).
+   - [Debugging](../debug-test/index.html).
    - [Serial communications](../program-setup/serial-communication.html).
    - [Optimizing binary size](../apis/platform-tutorials.html).
 
