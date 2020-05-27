@@ -26,6 +26,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 - A new section [for the bare metal profile](../bare-metal/index.html), including [moving Mbed 2 applications to bare metal](../bare-metal/using-the-bare-metal-profile.html) and [porting targets from Mbed 2](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
 - We've grouped [our API references with the relevant tutorials and configuration information](../apis/index.html) so you can work on a feature from start to finish in a single area of the docs.
+- Updated [information about serial communication with your development board](../program-setup/serial-communication.html) and [using printf() to debug](../debug-test/debugging-using-printf-statements.html).
 - A list of [deprecated APIs and their replacements](../apis/index.html#deprecated-apis).
 - Updates to [setting up Mbed OS programs](../program-setup/index.html), [build tools](../build-tools/index.html) and [debugging and testing](../debug-test/index.html).
 - New API references for [BufferedSerial](../apis/serial-uart-apis.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
