@@ -48,42 +48,16 @@ When a single board is connected, run:
 mbed sterm
 ```
 
-(If you have multiple boards connected, please refer to [Additional options of mbed sterm](#additional-options-of-mbed-sterm).)
-
 `mbed sterm` starts message printing.
 
 To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-### Additional options of mbed sterm
-
-- If you have multiple boards connected:
-    1. Run `mbedls` to find the port of the board you want to use.
-    1. Run `mbed sterm -p <PORT>`.
-
-- If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` when opening the serial terminal.
-
-- To list all options, run `mbed sterm -h`:
-
-    ```
-    usage: mbed sterm [-h] [-m TARGET] [-p PORT] [-b BAUDRATE] [-e ECHO] [-r] [-v] [-vv]
-
-    Open serial terminal to connected target (usually board), or connect to a user-specified COM port
-
-    optional arguments:
-    -h, --help            show this help message and exit
-    -m TARGET, --target TARGET
-                            Compile target MCU. Example: K64F, NUCLEO_F401RE,
-                            NRF51822...
-    -p PORT, --port PORT  Communication port. Default: auto-detect. Specifying
-                            this will also ignore the -m/--target option above.
-    -b BAUDRATE, --baudrate BAUDRATE
-                            Communication baudrate. Default: 9600
-    -e ECHO, --echo ECHO  Switch local echo on/off. Default: on
-    -r, --reset           Reset the targets (via SendBreak) before opening
-                            terminal.
-    -v, --verbose         Verbose diagnostic output
-    -vv, --very_verbose   Very verbose diagnostic output
-    ```
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b>
+<br/>If your application uses a baud rate other than 9600, specify it with `-b <BAUDRATE>` when opening the serial terminal.
+<br/>If you have multiple boards connected:
+1. Run `mbedls` to find the port of the board you want to use.
+1. Run `mbed sterm -p <PORT>`.
+<br/>To list all options, run `mbed sterm -h`</div>
 
 ## Additional examples - reading user inputs
 
