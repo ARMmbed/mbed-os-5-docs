@@ -25,7 +25,7 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 
 ### Compiler versions
 
-You can build Mbed OS with the Arm Compiler and GUN Arm Embedded toolchains. The currently supported versions are:
+You can build Mbed OS with the Arm Compiler and GNU Arm Embedded toolchains. The currently supported versions are:
 
 | Compiler| Download location | Name in Mbed CLI |
 | --- | --- | --- |
