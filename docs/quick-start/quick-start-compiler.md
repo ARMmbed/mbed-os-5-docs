@@ -60,10 +60,3 @@ Alternatively, you may select the import button on the top left hand side of the
 1. Open the folder where the executable file was downloaded, and then click and drag (or copy and paste) the file to your Mbed board's USB device folder.
 
 1. Press the board's reset button.
-
-## Related links
-
-- [Collaborating with multiple authors](../build-tools/collaborative-work.html).
-- [Mbed OS statistics API](../apis/mbed-statistics.html).
-- [Mbed OS configuration](../program-setup/advanced-configuration.html).
-- [Mbed OS serial communication](../program-setup/serial-communication.html).

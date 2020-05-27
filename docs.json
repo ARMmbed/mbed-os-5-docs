@@ -94,7 +94,7 @@
                     "sources": []
                 },
                 {
-                    "title": "Build and debug with Mbed CLI",
+                    "title": "Build with Mbed CLI",
                     "sub_chapters": [{
                             "title": "Installing Mbed CLI",
                             "intro": {
@@ -108,29 +108,15 @@
                                 "path": "docs/quick-start/cli_code.md"
                             },
                             "sources": []
-                        },
-                        {
-                            "title": "Debugging with Mbed CLI",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-cli-debug.md"
-                            },
-                            "sources": []
                         }
                     ]
                 },
                 {
-                    "title": "Build and debug with the Online Compiler",
+                    "title": "Build with the Online Compiler",
                     "sub_chapters": [{
                             "title": "Importing and compiling the code",
                             "intro": {
                                 "path": "docs/quick-start/quick-start-compiler.md"
-                            },
-                            "sources": []
-                        },
-                        {
-                            "title": "Debugging with the Online Compiler",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-online-debug.md"
                             },
                             "sources": []
                         }
@@ -1115,9 +1101,6 @@
             "type": "markdown",
             "chapters": [{
                     "title": "Debugging",
-                    "intro": {
-                        "path": "docs/tools/debug/debug_intro.md"
-                    },
                     "sub_chapters": [{
                             "title": "Methods",
                             "sources": [{
@@ -1151,6 +1134,9 @@
                         },
                         {
                             "title": "Third party tools",
+                            "intro": {
+                                "path": "docs/tools/debug/debug_intro.md"
+                            },
                             "sources": [{
                                     "path": "docs/tools/debug/eclipse_pyocd.md"
                                 },

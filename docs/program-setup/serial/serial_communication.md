@@ -6,86 +6,85 @@ The Arm Mbed microcontroller on your board can communicate with a host PC over t
 
 This allows you to:
 
-- Print out messages to a [host PC terminal (useful for debugging)](#terminal-applications).
-- Read input from the host PC keyboard.
-- Communicate with applications and programming languages running on the host PC that can communicate with a serial port. Examples are Perl, Python and Java.
+- Print out messages to a PC terminal (useful for debugging).
+- Read input from a PC keyboard.
+- Communicate with applications running on a PC to exchange data.
 
-## Hello, world
+## Hello World - printing messages
 
-This program prints a "Hello World" message that you can view on a [terminal application](#using-terminal-applications). Communication over the USB serial port uses the standard serial interface. Specify the internal (USBTX, USBRX) pins to connect to the serial port routed over USB:
+This program prints a "Hello World!" message that you can view on a serial terminal. Mbed OS redirects any `printf()` statements to the board's debug USB serial.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_HelloWorld/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_HelloWorld/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.0/main.cpp)
 
-## Using terminal applications
+## Viewing output in a serial terminal
 
-Terminal applications run on your host PC. They provide a window where your Mbed board can print and where you can type characters back to your board.
+Serial terminals run on your host PC. They provide an interface where your Mbed board can print and where you can type characters back to your board.
 
-<span class="tips">**Serial configuration:** The standard setup for the USB serial port is 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1)</span>
+Mbed CLI provides a serial terminal that is configured with a default baud rate of `9600`. You can either set it to [open after compilation](#opening-a-serial-terminal-after-compilation), or open it [manually](#manually-opening-a-serial-terminal).
 
-### Installing an application for Windows
+### Opening a serial terminal after compilation
 
-There are many terminal applications for Windows, including:
+You can use one command to compile an application, flash it onto a board and open a serial terminal:
 
-- [CoolTerm](http://freeware.the-meiers.org/) - this is the application we use in this example. We use it often because it usually "just works".
-- [Tera Term](http://sourceforge.jp/projects/ttssh2/files).
-- [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/).
-- Some Windows PCs come with **Hyperterminal** installed.
+```
+mbed compile -t <TOOLCHAIN> -m <TARGET> --flash --sterm
+```
 
-### Configuring the connection
+When the board is flashed, it starts printing to the terminal (`Hello World!`, in this example).
 
-1. Plug in your Mbed board.
-1. Open CoolTerm.
-1. Click **Connect**. This opens up an 8-n-1 9600 baud connection to the first available serial port. If you have more than one board plugged in, you may need to change the port under **Options > Serial Port > Port**.
+To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-Check your connection parameters:
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b>
+<br/>- If your application uses a baud rate other than 9600, specify it with `-b BAUDRATE` in the command above.
+<br/>- This method only works for a single board. To work with multiple boards, open a serial terminal manually as described below.</div>
 
-1. Select **Options > Serial Port**.
-1. You should see 9600 baud, 8 bits, 1 stop bit, no parity (9600-8-N-1).
-1. If you do not see your board, click **Re-Scan Peripherals**.
+### Manually opening a serial terminal
 
-Your terminal program is now configured and connected.
+You can open a serial terminal manually, which is useful when the board is already flashed with the desired application (i.e. one built with the [online compiler](../quick-start/build-with-the-online-compiler.html)).
 
-## Using terminal applications on Linux
+When a single board is connected, run:
 
-CoolTerm should work under Linux. If for some reason it doesn't, you can try one of the following:
+```
+mbed sterm
+```
 
-- [Minicom](https://help.ubuntu.com/community/Minicom).
-- [GNU Screen](https://www.gnu.org/software/screen/manual/screen.html).
+`mbed sterm` starts message printing.
 
-## Minimal Printf
+To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
-For low memory devices you may optionally use the [ArmMbed minimal printf library](https://github.com/ARMmbed/minimal-printf).
+<div style="background-color:#F3F3F3; text-align:left; vertical-align: middle; padding:15px 30px;">  <b>Note:</b>
+<br/>If your application uses a baud rate other than 9600, specify it with `-b BAUDRATE` when opening the serial terminal.
+<br/>If you have multiple boards connected:
+<br/>1. Run `mbedls` to find the port of the board you want to use.
+<br/>2. Run `mbed sterm -p PORT`.
+<br/>To list all options, run `mbed sterm -h`</div>
 
-# Additional examples
+## Additional examples - reading user inputs
+
+In addition to printing messages, Mbed OS applications can also read keyboard inputs from the user using the [BufferedSerial](../apis/bufferedserial.html) and [UnbufferedSerial](../apis/unbufferedserial.html) classes.
 
 Use your terminal application to interact with the following examples.
 
 If you're not sure how to build these examples and run them on your board, please see our [build tools section](../build-tools/index.html).
 
-## Echo back characters you type
+### Echo back characters you type
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/blob/v6.0/main.cpp)
 
-## Use the U and D keys to make LED1 brighter or dimmer
+### Use the U and D keys to make LED1 brighter or dimmer
 
-<span class="tips">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
+<span class="notes">**Note:** This example only works if LED1 is on the Pwm pin of the board you are using, such as the NUCLEO-F401RE. </span>
 
 <span class="images">![](../../images/NUCLEOF401RE.png)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/blob/v6.0/main.cpp)
 
-## Pass characters in both directions
+### Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/blob/v6.0/main.cpp)
 
-## Using stdin, stdout and stderr
-
-By default, the C `stdin`, `stdout` and `stderr file` handles map to the PC serial connection:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.0/main.cpp)
-
-## Read to a buffer
+### Read to a buffer
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/blob/v6.0/main.cpp)
