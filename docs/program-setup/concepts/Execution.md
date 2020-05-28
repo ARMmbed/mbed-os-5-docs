@@ -23,7 +23,10 @@ There are two types of schedulers:
 * Cooperative
     * Active thread needs to yield execution for another thread to run
     * Not supported by Mbed OS
-* Preemptive
+* Preemptive: A scheduler (a central piece of software) is responsible for piking and running the threads. Schedulers can use different algorithms: 
+
+    * Priority based round robin (used in Mbed OS).
+    * Execute threads in equal time slots, according to their priority.    
     * Central piece of software (scheduler) responsible for picking and running the threads
     * Different algorithms can be used
         * Priority based round robin is used by Mbed OS
