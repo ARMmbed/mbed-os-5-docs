@@ -13,7 +13,7 @@ Here is a code snippet that can work for both Mbed OS profiles; it prints text a
 
 ## 1. Creating a bare metal application
 
-To create the application:
+To create the application using Mbed CLI:
 
 1. Create a new Mbed OS application and navigate to its directory:
 
