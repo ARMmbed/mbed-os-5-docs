@@ -2,7 +2,7 @@ When writing an Mbed OS program, in whichever development tool you use, you may 
 
 * Set up a serial connection to your board so you can flash and debug your program.
     * You won't usually need a serial driver for Mbed enabled boards, but if you're on Windows you [may need to install one](../program-setup/windows-serial-driver.html).
-    * Mbed CLI has a built-in serial terminal to display output from your application
+    * Mbed CLI has a built-in serial terminal to display output from your program.
 * Select or create a build profile.
 * Use build rules to include or exclude files and directories from your build.
 * Use the configuration system to define how your board uses features and the bootloader.
