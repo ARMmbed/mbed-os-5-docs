@@ -12,8 +12,6 @@ When writing an Mbed OS program, in whichever development tool you use, you may 
 
 Most embedded systems are dedicated to performing a single duty, although some can be very complex. They are typically constrained in resources and contain only the necessary components to perform that duty. Most embedded systems are powered by a single microcontroller chip, which is typically limited in resources such as memory. Software for an embedded system must be carefully designed to make the best use of these limited resources. Mbed OS in the default full profile is often too large for constrained systems, but has a bare metal profile that is targeted to those systems.
 
-In single-microcontroller embedded systems, a thread is an independent segment of the program that executes within the single process running on the microcontroller. Threading is a fundamental technique in software development, which allows multiple tasks to run concurrently using schedulers, either standalone or included in a real time operating system (RTOS). Threads provide a lot of flexibility to the developer but come at the cost of resources for the scheduler. Mbed OS, in its default full profile, provides an RTOS for applications where resources are not critical. There is also a bare metal profile, which is optimized for constrained targets and does not include the RTOS or threading capabilities.
-
 ## Threads
 
 In single-microcontroller embedded systems, a thread is an independent segment of the program that executes within the single process running on the microcontroller. Threading is a fundamental technique in software development, which allows multiple tasks to run concurrently using schedulers, either standalone or included in a real time operating system (RTOS). Threads provide a lot of flexibility to the developer but come at the cost of resources for the scheduler. Mbed OS, in its default full profile, provides an RTOS for applications where resources are not critical. The bare metal profile does not include the RTOS or threading capabilities.
@@ -23,7 +21,7 @@ There are two types of schedulers:
 * Cooperative
     * Active thread needs to yield execution for another thread to run
     * Not supported by Mbed OS
-* Preemptive: A scheduler (a central piece of software) is responsible for piking and running the threads. Schedulers can use different algorithms: 
+* Preemptive: A scheduler (a central piece of software) is responsible for piking and running the threads. Schedulers can use different algorithms:
 
     * Priority based round robin (used in Mbed OS).
     * Execute threads in equal time slots, according to their priority.    
