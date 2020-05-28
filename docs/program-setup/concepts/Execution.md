@@ -16,13 +16,14 @@ Most embedded systems are dedicated to performing a single duty, although some c
 
 In single-microcontroller embedded systems, a thread is an independent segment of the program that executes within the single process running on the microcontroller. Threading is a fundamental technique in software development, which allows multiple tasks to run concurrently using schedulers, either standalone or included in a real time operating system (RTOS). Threads provide a lot of flexibility to the developer but come at the cost of resources for the scheduler. Mbed OS, in its default full profile, provides an RTOS for applications where resources are not critical. The bare metal profile does not include the RTOS or threading capabilities.
 
-There are two types of schedulers:
+There are two types of schedulers (a central piece of software):
 
 * Preemptive
-    * A scheduler (a central piece of software) is responsible for piking and running the threads. Schedulers can use different algorithms:
+    * The scheduler is responsible for picking and running the threads. Preemptive schedulers can use different algorithms.
         * Priority based round robin is used by Mbed OS
         * Threads are executed in equal time slots according to their priority
 * Cooperative
+    * The scheduler doesn't actively manage the threads
     * Active thread needs to yield execution for another thread to run
     * Not supported by Mbed OS
 
