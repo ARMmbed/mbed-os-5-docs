@@ -1,6 +1,6 @@
 When writing an Mbed OS program, in whichever development tool you use, you may need to:
 
-* Set up a connection to your board so you can flash and debug your program.
+* Set up a serial connection to your board so you can flash and debug your program.
     * You won't usually need a serial driver for Mbed enabled boards, but if you're on Windows you [may need to install one](../program-setup/windows-serial-driver.html).
     * Mbed CLI has a built-in serial terminal to display output from your application
 * Select or create a build profile.
