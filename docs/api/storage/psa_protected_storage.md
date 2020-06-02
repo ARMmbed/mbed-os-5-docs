@@ -6,7 +6,7 @@ Unlike [PSA internal storage](../apis/psa-compliant-apis.html), PSA protected st
 
 ## PSA protected storage class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/protected__storage_8h.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/protected__storage_8h.html)
 
 ## Related content
 

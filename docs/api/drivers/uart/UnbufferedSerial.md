@@ -1,6 +1,6 @@
 # UnbufferedSerial
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
 The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/serial-uart-apis.html) class. The classes also share the same default configurations.
 
@@ -12,7 +12,7 @@ You can view more information about the configurable settings and functions in t
 
 ## Class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
 
 <span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../program-setup/serial-communication.html#windows-serial-driver).</span>
 

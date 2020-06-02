@@ -50,7 +50,7 @@ In the current implementation, a bootloader does not exist in single and dual V7
 
 ## PSA initial attestation reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group___p_s_a-_attestation.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/group___p_s_a-_attestation.html)
 
 ## PSA initial attestation example
 

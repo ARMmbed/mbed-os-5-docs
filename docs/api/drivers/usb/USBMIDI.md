@@ -1,6 +1,6 @@
 # USBMIDI
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/class_u_s_b_m_i_d_i.png)<span>USBMIDI class hierarchy</span></span>
 
 You can use the USBMIDI interface to send and receive MIDI messages over USB using the standard USB-MIDI protocol.
 
@@ -8,7 +8,7 @@ Examples of tasks you can perform using this library include sending MIDI messag
 
 ## USBMIDI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_m_i_d_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/class_u_s_b_m_i_d_i.html)
 
 The two examples below use a program called "Anvil Studio 32-bit" to play MIDI notes from an Mbed board through the host PC. You can play back the MIDI notes through headphones or speakers by following the steps below:
 

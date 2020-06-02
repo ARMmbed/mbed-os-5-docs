@@ -9,7 +9,7 @@ The implementation of PSA internal storage varies depending on the target type:
 
 ## PSA internal storage class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/psa__prot__internal__storage_8h.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/psa__prot__internal__storage_8h.html)
 
 ## Related content
 

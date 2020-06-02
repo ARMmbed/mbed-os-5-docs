@@ -6,7 +6,7 @@ Synchronization level: not protected.
 
 ## I2CSlave class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_i2_c_slave.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.0/mbed-os-api-doxy/classmbed_1_1_i2_c_slave.html)
 
 ## I2CSlave example
 
