@@ -12,7 +12,7 @@ The base station's job is to speak LoRa with the devices in its coverage area. T
 
 You can think of a LoRaWAN as a network with virtualized network layer. The devices talk to the network server using LoRaWAN protocol and making a LoRaWAN network. If multiple base stations are listening to your device, all of them forward your packet to the network server, which means that a LoRaWAN device is not localized to a certain cell.
 
-<span class="images">![](../../images/lorawan_nwk_arch.png)<span>Figure 1: general network architecture</span></span>
+<span class="images">![](../../../images/lorawan_nwk_arch.png)<span>Figure 1: general network architecture</span></span>
 
 Usually the network topology looks like a one-hop star network. However, there may be cases in which a repeater is involved in the radio path working as a middle-man between the base station and the device. The current standard specification does not allow more than one repeater.
 
@@ -41,7 +41,7 @@ Class A is a mandatory device class. All LoRaWAN devices must implement a Class 
 
 In Class A, the device always initiates a communication cycle. When a device transmits a datagram, it opens two receive windows after specific delays. Timings of these delays and the lengths of receive windows themselves are subjected to regional constraints. The transmission, however, is need based. However, it is scheduled or transmitted based on the duty cycle restrictions following an Aloha-like mechanism.
 
-<span class="images">![](../../images/class_a_timing.png)<span>Figure 2: Class A timing diagram</span></span>
+<span class="images">![](../../../images/class_a_timing.png)<span>Figure 2: Class A timing diagram</span></span>
 
 ### Class B
 
@@ -49,7 +49,7 @@ Class B devices allow for receive slots at scheduled times. For this purpose, th
 
 The base stations transmit a beacon every 128 seconds, and all Class B nodes are assigned a time slot within the 128 second cycle and are told when to listen.
 
-<span class="images">![](../../images/class_b_timing.png)<span>Figure 3: Class B timing diagram</span></span>
+<span class="images">![](../../../images/class_b_timing.png)<span>Figure 3: Class B timing diagram</span></span>
 
 Beacon guard time precedes each beacon, and no ping slot can be placed in that time period. A ping slot is a 30 ms unit that you can assign to a Class B device. Beacon reserved is a time period when the actual beacon is sent. Beacon window is the time period when you can open and assign ping slots.
 
@@ -68,7 +68,7 @@ Class C devices are main powered or have sufficient amount of power supply avail
 
 Class C devices listen at RX2 window as often as possible. Such devices need to open an RX2 window immediately after the transmission before opening an RX1 window. In other words, you can use the `RECV_DELAY1` time for listening on RX2. At the end of RX1 window, the device opens a continuous RX2 window until another transmission happens.
 
-<span class="images">![](../../images/class_c_timing.png)<span>Figure 4: Class C timing diagram</span></span>
+<span class="images">![](../../../images/class_c_timing.png)<span>Figure 4: Class C timing diagram</span></span>
 
 ## LoRaWAN connection types
 
@@ -104,7 +104,7 @@ Arm Mbed OS comes loaded with a tiny, secure, thread safe LoRaWAN stack (followi
 
 The stack is layered in logical order and is highly configurable. It currently supports Class A and Class C of LoRaWAN devices.
 
-<span class="images">![](../../images/class_structure_lorawan.png)<span>Figure 5: Mbed LoRaWAN stack class hierarchy</span></span>
+<span class="images">![](../../../images/class_structure_lorawan.png)<span>Figure 5: Mbed LoRaWAN stack class hierarchy</span></span>
 
 There are four design components comprising the Arm Mbed LoRaWAN solution that enrich the application with all the necessary tools to operate as a LoRaWAN device:
 
@@ -223,7 +223,7 @@ There are certain events that the application sends in response to various netwo
 
 This section discusses flows and corresponding state changes in the Mbed LoRaWAN stack relating to the network connection paradigm. For detailed API reference for connection procedure, please visit [LoRaWANInterface API documentation](../mbed-os-api-doxy/class_lo_ra_w_a_n_interface.html). Look for `connect()` or `connect(lorawan_connect_t)` APIs.
 
-<span class="images">![](../../images/connect_sm.png)<span>Figure 6: connection paradigm flow</span></span>
+<span class="images">![](../../../images/connect_sm.png)<span>Figure 6: connection paradigm flow</span></span>
 
 The Arm Mbed LoRaWAN stack sends a `CONNECTED` event to the application once the activation completes. The stack retries a specific number of times before sending a `JOIN_FAILURE` event to the application if the stack did not receive a `JOIN ACCEPT` message.
 
@@ -238,9 +238,9 @@ lorawan.send(port, data, length, MSG_UNCONFIRMED_FLAG);
 
 Flows for sending an unconfirmed or confirmed message look like this:
 
-<span class="images">![](../../images/tx_unconfirmed_sm.png)<span>Figure 7: Unconfirmed Message Flow</span></span>
+<span class="images">![](../../../images/tx_unconfirmed_sm.png)<span>Figure 7: Unconfirmed Message Flow</span></span>
 
-<span class="images">![](../../images/tx_confirmed_sm.png)<span>Figure 8: Confirmed Message Flow</span></span>
+<span class="images">![](../../../images/tx_confirmed_sm.png)<span>Figure 8: Confirmed Message Flow</span></span>
 
 For an unconfirmed message, the stack sends a `TX_DONE` event to the application when a transmission has happened and both RX window slots are elapsed (in Class C right after transmission as RX2 never gets elapsed in Class C).
 
@@ -269,7 +269,7 @@ Receive APIs return `LORAWAN_STATUS_WOULD_BLOCK` if there is nothing to read. Th
 
 The flow for reception looks like this:
 
-<span class="images">![](../../images/recv_sm.png)<span>Figure 9: Receive Message Flow</span></span>
+<span class="images">![](../../../images/recv_sm.png)<span>Figure 9: Receive Message Flow</span></span>
 
 ### Automatic handling of pending data and MAC commands
 
