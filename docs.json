@@ -790,7 +790,7 @@
                         {
                             "title": "DNS APIs",
                             "sources": [{
-                                "path": "docs/api/networksocket/DNS.md"
+                                "path": "docs/api/connectivity/networksocket/DNS.md"
                             }]
                         },
                         {
