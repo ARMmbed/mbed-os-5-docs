@@ -146,15 +146,15 @@
                 {
                     "title": "Scheduling: RTOS and event handling",
                     "intro": {
-                        "path": "docs/api/rtos/scheduling.md"
+                        "path": "docs/api/scheduling/scheduling.md"
                     },
                     "sub_chapters": [{
                             "title": "Scheduling concepts",
                             "sources": [{
-                                    "path": "docs/api/rtos/rtos.md"
+                                    "path": "docs/api/scheduling/rtos.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/thread_safety.md"
+                                    "path": "docs/api/scheduling/thread_safety.md"
                                 }
                             ]
                         },
@@ -168,53 +168,53 @@
                         {
                             "title": "Scheduling tutorials",
                             "sources": [{
-                                "path": "docs/api/rtos/events_tutorial.md"
+                                "path": "docs/api/scheduling/events_tutorial.md"
                             }]
                         },
                         {
                             "title": "RTOS APIs",
                             "sources": [{
-                                    "path": "docs/api/rtos/ConditionVariable.md"
+                                    "path": "docs/api/scheduling/ConditionVariable.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/EventFlags.md"
+                                    "path": "docs/api/scheduling/EventFlags.md"
                                 },
                                 {
-                                    "path": "docs/api/power/IdleLoop.md"
+                                    "path": "docs/api/scheduling/IdleLoop.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/Kernel.md"
+                                    "path": "docs/api/scheduling/Kernel.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/Mail.md"
+                                    "path": "docs/api/scheduling/Mail.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/Mutex.md"
+                                    "path": "docs/api/scheduling/Mutex.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/Queue.md"
+                                    "path": "docs/api/scheduling/Queue.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/Semaphore.md"
+                                    "path": "docs/api/scheduling/Semaphore.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/ThisThread.md"
+                                    "path": "docs/api/scheduling/ThisThread.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/Thread.md"
+                                    "path": "docs/api/scheduling/Thread.md"
                                 }
                             ]
                         },
                         {
                             "title": "Event handling APIs",
                             "sources": [{
-                                    "path": "docs/api/rtos/Event.md"
+                                    "path": "docs/api/scheduling/Event.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/EventQueue.md"
+                                    "path": "docs/api/scheduling/EventQueue.md"
                                 },
                                 {
-                                    "path": "docs/api/rtos/UserAllocatedEvent.md"
+                                    "path": "docs/api/scheduling/UserAllocatedEvent.md"
                                 }
                             ]
                         }
@@ -223,22 +223,22 @@
                 {
                     "title": "Drivers",
                     "intro": {
-                        "path": "docs/api/io/drivers_list.md"
+                        "path": "docs/api/drivers/drivers_list.md"
                     },
                     "sub_chapters": [{
                             "title": "Drivers concepts",
                             "intro": {
-                                "path": "docs/api/io/drivers.md"
+                                "path": "docs/api/drivers/drivers.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Drivers architecture",
                             "sources": [{
-                                    "path": "docs/api/usb/usb-arch.md"
+                                    "path": "docs/api/drivers/usb/usb-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/usb_component.md"
+                                    "path": "docs/api/drivers/usb/usb_component.md"
                                 }
                             ]
                         },
@@ -252,135 +252,135 @@
                         {
                             "title": "Drivers tutorials",
                             "sources": [{
-                                    "path": "docs/api/io/alarm-tutorial.md"
+                                    "path": "docs/api/drivers/tutorials/alarm-tutorial.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
+                                    "path": "docs/api/drivers/tutorials/Mbed_USB_WAV_Audio_Player/Mbed_USB_WAV_Audio_Player.md"
                                 }
                             ]
                         },
                         {
                             "title": "Serial (UART) APIs",
                             "sources": [{
-                                    "path": "docs/api/io/BufferedSerial.md"
+                                    "path": "docs/api/drivers/uart/BufferedSerial.md"
                                 },
                                 {
-                                    "path": "docs/api/io/UnbufferedSerial.md"
+                                    "path": "docs/api/drivers/uart/UnbufferedSerial.md"
                                 }
                             ]
                         },
                         {
                             "title": "SPI APIs",
                             "sources": [{
-                                    "path": "docs/api/io/QuadSPI.md"
+                                    "path": "docs/api/drivers/spi/QuadSPI.md"
                                 },
                                 {
-                                    "path": "docs/api/io/SPI.md"
+                                    "path": "docs/api/drivers/spi/SPI.md"
                                 },
                                 {
-                                    "path": "docs/api/io/SPISlave.md"
+                                    "path": "docs/api/drivers/spi/SPISlave.md"
                                 }
                             ]
                         },
                         {
                             "title": "I/O APIs",
                             "sources": [{
-                                    "path": "docs/api/io/AnalogIn.md"
+                                    "path": "docs/api/drivers/io/AnalogIn.md"
                                 },
                                 {
-                                    "path": "docs/api/io/AnalogOut.md"
+                                    "path": "docs/api/drivers/io/AnalogOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/BusIn.md"
+                                    "path": "docs/api/drivers/io/BusIn.md"
                                 },
                                 {
-                                    "path": "docs/api/io/BusOut.md"
+                                    "path": "docs/api/drivers/io/BusOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/BusInOut.md"
+                                    "path": "docs/api/drivers/io/BusInOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/DigitalIn.md"
+                                    "path": "docs/api/drivers/io/DigitalIn.md"
                                 },
                                 {
-                                    "path": "docs/api/io/DigitalOut.md"
+                                    "path": "docs/api/drivers/io/DigitalOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/DigitalInOut.md"
+                                    "path": "docs/api/drivers/io/DigitalInOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/InterruptIn.md"
+                                    "path": "docs/api/drivers/io/InterruptIn.md"
                                 },
                                 {
-                                    "path": "docs/api/io/PortIn.md"
+                                    "path": "docs/api/drivers/io/PortIn.md"
                                 },
                                 {
-                                    "path": "docs/api/io/PortOut.md"
+                                    "path": "docs/api/drivers/io/PortOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/PortInOut.md"
+                                    "path": "docs/api/drivers/io/PortInOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/PwmOut.md"
+                                    "path": "docs/api/drivers/io/PwmOut.md"
                                 }
                             ]
                         },
                         {
                             "title": "USB APIs",
                             "sources": [{
-                                    "path": "docs/api/usb/USBAudio.md"
+                                    "path": "docs/api/drivers/usb/USBAudio.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBCDC.md"
+                                    "path": "docs/api/drivers/usb/USBCDC.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBCDC_ECM.md"
+                                    "path": "docs/api/drivers/usb/USBCDC_ECM.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBHID.md"
+                                    "path": "docs/api/drivers/usb/USBHID.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBKeyboard.md"
+                                    "path": "docs/api/drivers/usb/USBKeyboard.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMIDI.md"
+                                    "path": "docs/api/drivers/usb/USBMIDI.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMouse.md"
+                                    "path": "docs/api/drivers/usb/USBMouse.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMouseKeyboard.md"
+                                    "path": "docs/api/drivers/usb/USBMouseKeyboard.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBMSD.md"
+                                    "path": "docs/api/drivers/usb/USBMSD.md"
                                 },
                                 {
-                                    "path": "docs/api/usb/USBSerial.md"
+                                    "path": "docs/api/drivers/usb/USBSerial.md"
                                 }
                             ]
                         },
                         {
                             "title": "Other driver APIs",
                             "sources": [{
-                                    "path": "docs/api/io/CAN.md"
+                                    "path": "docs/api/drivers/CAN.md"
                                 },
                                 {
-                                    "path": "docs/api/io/FlashIAP.md"
+                                    "path": "docs/api/drivers/FlashIAP.md"
                                 },
                                 {
-                                    "path": "docs/api/io/I2C.md"
+                                    "path": "docs/api/drivers/I2C.md"
                                 },
                                 {
-                                    "path": "docs/api/io/I2CSlave.md"
+                                    "path": "docs/api/drivers/I2CSlave.md"
                                 },
                                 {
-                                    "path": "docs/api/io/MbedCRC.md"
+                                    "path": "docs/api/drivers/MbedCRC.md"
                                 },
                                 {
-                                    "path": "docs/api/io/ResetReason.md"
+                                    "path": "docs/api/drivers/ResetReason.md"
                                 },
                                 {
-                                    "path": "docs/api/io/Watchdog.md"
+                                    "path": "docs/api/drivers/Watchdog.md"
                                 }
                             ]
                         }
@@ -417,7 +417,7 @@
                         {
                             "title": "Platform tutorials",
                             "sources": [{
-                                    "path": "docs/api/io/flow_control.md"
+                                    "path": "docs/api/drivers/flow_control.md"
                                 },
                                 {
                                     "path": "docs/api/power/power_manage.md"
@@ -436,16 +436,16 @@
                                     "path": "docs/api/platform/Rtc.md"
                                 },
                                 {
-                                    "path": "docs/api/io/Ticker.md"
+                                    "path": "docs/api/drivers/Ticker.md"
                                 },
                                 {
                                     "path": "docs/api/platform/Time.md"
                                 },
                                 {
-                                    "path": "docs/api/io/TimeOut.md"
+                                    "path": "docs/api/drivers/TimeOut.md"
                                 },
                                 {
-                                    "path": "docs/api/io/Timer.md"
+                                    "path": "docs/api/drivers/Timer.md"
                                 },
                                 {
                                     "path": "docs/api/platform/Wait.md"
