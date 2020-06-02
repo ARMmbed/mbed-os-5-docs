@@ -19,7 +19,7 @@ The Nanostack library, which provides a set of C API headers with more functiona
 
 Typically, the 6LoWPAN-ND network consists of one border router on multiple low-powered nodes. You can connect the nodes to a cloud service for feeding in the sensor or control data.
 
-![Node connected to server](../../../images/node_to_server_2.jpg?raw=true)
+![Node connected to server](../../../images/node_to_server_2.jpg)
 
 ### Different device types in a 6LoWPAN-ND network
 
