@@ -2,7 +2,7 @@
 
 This interface informs you about connection state changes asynchronously. Providing a method to register a callback function to a socket accomplishes this. Each time the network interface's state changes, it triggers the callback.
 
-![Network states](../../images/NetworkinterfaceStates.png)
+![Network states](../../../images/NetworkinterfaceStates.png)
 
 ## Usage
 

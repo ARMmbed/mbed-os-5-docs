@@ -2,7 +2,7 @@
 
 Mbed OS cellular provides your IoT application with access to world-wide operator-maintained cellular networks, both IP and non-IP, as Figure 1 illustrates. Mbed OS cellular implementation is based on international 3GPP and OMA standards, and it has been verified to work with all cellular networks such as NB-IoT, CAT-M1, 4G LTE, 3G WCDMA and GPRS.
 
-<span class="images">![](../../images/api-cellular-overview.png)<span>Figure 1. Mbed OS cellular overview</span></span>
+<span class="images">![](../../../images/api-cellular-overview.png)<span>Figure 1. Mbed OS cellular overview</span></span>
 
 Please read about [Mbed OS connectivity technology](https://www.mbed.com/en/technologies/connectivity/) if you are not yet familiar with it.
 
@@ -80,7 +80,7 @@ If you want to use UDP or TCP sockets, you need an IP stack. Mbed OS cellular ha
 
 ### PPP mode with the LWIP stack on Mbed OS
 
-<span class="images">![](../../images/Cell_PPP.png)</span>
+<span class="images">![](../../../images/Cell_PPP.png)</span>
 
 In PPP (Point-to-Point Protocol) mode, the LWIP stack is linked as a part of the Mbed OS application. Because LWIP stack implements sockets, the socket functionality is hardware-independent.
 
@@ -93,7 +93,7 @@ You can enable PPP mode and also configure LWIP features in the application conf
 
 ### AT mode with the IP stack on the modem
 
-<span class="images">![](../../images/Cell_AT.png)</span>
+<span class="images">![](../../../images/Cell_AT.png)</span>
 
 In AT mode, the modem's internal IP stack is used over an AT link. Sockets are part of the IP stack, so AT commands are used to control sockets. Socket AT commands are modem specific, and need to be implemented on the Mbed OS side. You can browse `CellularStack` under the `cellular/targets` folder to find out how your hardware supports AT sockets.
 

@@ -2,7 +2,7 @@
 
 IP Networking in Mbed OS is layered in three clearly defined API levels. The diagram below shows the layers next to the closest matching [OSI model](https://en.wikipedia.org/wiki/OSI_model) layers.
 
-<span class="images">![](../images/ip-networking.png)<span>IP networking</span></span>
+<span class="images">![](../../../images/ip-networking.png)<span>IP networking</span></span>
 
 The following sections introduce the APIs and technologies implemented in each level.
 
@@ -18,7 +18,7 @@ Refer to [Socket API](../apis/socket.html) reference for usage instructions.
 
 Mbed OS has three options to select for the IP stack. The connectivity modules provides two built-in IP stacks or an external IP stack.
 
-<span class="images">![](../images/networkstacks.png)<span>Network stack</span></span>
+<span class="images">![](../../../images/networkstacks.png)<span>Network stack</span></span>
 
 As the diagram above shows, all stacks implement the same Socket API. Therefore, the application developer rarely needs to know which stack is going to be used. Mbed OS chooses one at the build time, and usually it is LwIP.
 
@@ -66,25 +66,25 @@ Refer to [Network Interface](../apis/network-interface-apis.html) API reference 
 
 ### Ethernet driver
 
-<span class="images">![](../images/emac.png)<span>Emac API</span></span>
+<span class="images">![](../../../images/emac.png)<span>Emac API</span></span>
 
 Ethernet drivers are implemented using the stack-independent EMAC API. Because the Ethernet driver requires no configuration, it does not implement any controlling interface for the application.
 
 ### Wi-Fi driver
 
-<span class="images">![](../images/wifi.png)<span>Wi-Fi driver</span></span>
+<span class="images">![](../../../images/wifi.png)<span>Wi-Fi driver</span></span>
 
 There are two types of Wi-Fi drivers in Mbed OS, depending on which protocol layer it implements. Wi-Fi drivers are either a special case of Ethernet driver or external IP stacks. Wi-Fi drivers require configuration from an application and, therefore, implement both the low level EMAC API or Network stack API and the high level controlling interface API called `WiFiInterface`.
 
 ### Cellular modem driver
 
-<span class="images">![](../images/cellular.png)<span>Cellular driver</span></span>
+<span class="images">![](../../../images/cellular.png)<span>Cellular driver</span></span>
 
 Cellular drivers have the same two separate cases as Wi-Fi. If they use an external IP stack, the driver implements the Network stack API. If they use the internal IP stack, LwIP, then they implement the Serial PPP driver.
 
 ### Mesh (Wi-SUN, 6LoWPAN-NDead) RF driver
 
-<span class="images">![](../images/rf-driver.png)<span>RF driver</span></span>
+<span class="images">![](../../../images/rf-driver.png)<span>RF driver</span></span>
 
 On Mesh networks, Nanostack uses IEEE 802.15.4 radios for transmitting and receiving packets. The RF driver implements the `NanostackRfPhy` API.
 

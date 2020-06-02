@@ -4,7 +4,7 @@ One of the most popular connectivity technologies is Wireless LAN (Wireless Fide
 
 To users, these networks behave exactly as Ethernet but without cables.
 
-<span class="images">![](../../images/wlan-segment.png)<span>WLAN networks</span></span>
+<span class="images">![](../../../images/wlan-segment.png)<span>WLAN networks</span></span>
 
 A WLAN network typically consists of an access point (AP) connected to an Ethernet backbone and multiple stations (STA) connecting the same access point. You can identify networks by their name, which the standard refers to as **service set identifier** (SSID). Multiple access points can serve the same network, and you can identify each AP by its **basic service set identifier** (BSSID).
 
@@ -24,7 +24,7 @@ Today, new access points and computers support all a/b/g/n/ac standards, and mos
 
 ## Wi-Fi in Mbed OS
 
-<span class="images">![](../../images/wifi.png)<span>Wi-Fi driver</span></span>
+<span class="images">![](../../../images/wifi.png)<span>Wi-Fi driver</span></span>
 
 In Mbed OS, wireless LAN devices are either external devices or integrated modules. The driver and hardware handle all the complexity of IEEE 802.11 family standards and integrate into Mbed OS by offering an emulated Ethernet interface or network stack API.
 
@@ -33,6 +33,6 @@ As with Ethernet, Wi-Fi networks are only used for carrying IP traffic in Mbed O
 For more information, please see the following sections:
 
 - [IP networking](../apis/connectivity-architecture.html).
-- [Ethernet](ethernet-technology.html).
+- [Ethernet](../apis/ethernet-technology.html).
 - [Socket API](../apis/socket.html).
 - [WifiInterface API](../apis/wi-fi.html).

@@ -15,7 +15,7 @@ NetworkInterface is also the controlling API that the application uses to specif
 
 When you create a network interface, it starts from the disconnected state. When you call `NetworkInteface::connect()`, the interface stays connected until you call `NetworkInterface::disconnect()`. The following diagram illustrates the state changes:
 
-![Network states](../../images/NetworkinterfaceStates.png)
+![Network states](../../../images/NetworkinterfaceStates.png)
 
 The interface handles all state changes between `Connecting`, `Local connectivity` and `Global route found`. Calling `NetworkInterface::connect()` might return when either local or global connectivity states are reached. This depends on the connectivity. For example, Ethernet and Wi-Fi interfaces return when global connectivity is reached. 6LoWPAN-based mesh networks depend on the standard you're using. The `LoWPANNDInterface` returns from `connect()` call when it connects to a border router that provides a global connection.
 

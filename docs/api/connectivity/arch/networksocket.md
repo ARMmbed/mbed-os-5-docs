@@ -2,7 +2,7 @@
 
 The application programming interface for IP networking is the Socket API. As described in the [IP networking](../apis/connectivity-architecture.html) section, the Socket API relates to OSI layer 4, the Transport layer. In Mbed OS, the Socket API is abstract and supports various protocols such as TCP, UDP and non-IP data delivery for NB-IoT cellular networks.
 
-<span class="images">![](../../images/ip-networking.png)<span>Sockets</span></span>
+<span class="images">![](../../../images/ip-networking.png)<span>Sockets</span></span>
 
 In Mbed OS, this socket API is C++ based but closely follows the functionality from the POSIX standard (IEEE Std 1003.1) and relevant RFC standards. The Socket interface is abstract and protocol agnostic and requires you to specify the protocol only when creating the socket. With libraries and interfaces, you may use the abstract base class, which allows you to port applications from one protocol to another.
 

@@ -657,44 +657,44 @@
                                 "path": "docs/api/connectivity-arch.md"
                             },
                             "sources": [{
-                                    "path": "docs/api/bluetooth/bluetooth.md"
+                                    "path": "docs/api/connectivity/types/bluetooth.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/cellular-arch.md"
+                                    "path": "docs/api/connectivity/types/cellular-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/ethernet-arch.md"
+                                    "path": "docs/api/connectivity/types/ethernet-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/wifi-arch.md"
+                                    "path": "docs/api/connectivity/types/wifi-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/lorawan/lora-tech.md"
+                                    "path": "docs/api/connectivity/types/lora-tech.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/nfc-arch.md"
+                                    "path": "docs/api/connectivity/types/nfc-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/wisun_intro.md"
+                                    "path": "docs/api/connectivity/types/wisun_intro.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/mesh-arch/6lowpan_nd_intro.md"
+                                    "path": "docs/api/connectivity/types/6lowpan_nd_intro.md"
                                 }
                             ]
                         },
                         {
                             "title": "Connectivity architecture",
                             "sources": [{
-                                    "path": "docs/api/networking-arch.md"
+                                    "path": "docs/api/connectivity/arch/networking-arch.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/networksocket.md"
+                                    "path": "docs/api/connectivity/arch/networksocket.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/networkinterface.md"
+                                    "path": "docs/api/connectivity/arch/networkinterface.md"
                                 },
                                 {
-                                    "path": "docs/api/security/securesocket-arch.md"
+                                    "path": "docs/api/connectivity/arch/securesocket-arch.md"
                                 }
                             ]
                         },
@@ -717,19 +717,19 @@
                         {
                             "title": "Connectivity tutorials",
                             "sources": [{
-                                    "path": "docs/api/networkinterfaces/mesh_tutorial.md"
+                                    "path": "docs/api/connectivity/tutorials/mesh_tutorial.md"
                                 },
                                 {
-                                    "path": "docs/api/light-control.md"
+                                    "path": "docs/api/connectivity/tutorials/light-control.md"
                                 },
                                 {
-                                    "path": "docs/api/lorawan/lorawanintro.md"
+                                    "path": "docs/api/connectivity/tutorials/lorawanintro.md"
                                 },
                                 {
-                                    "path": "docs/api/lorawan/intro-to-lora.md"
+                                    "path": "docs/api/connectivity/tutorials/intro-to-lora.md"
                                 },
                                 {
-                                    "path": "docs/api/security/tls_tutorial.md"
+                                    "path": "docs/api/connectivity/tutorials/tls_tutorial.md"
                                 }
                             ]
                         },
@@ -737,21 +737,21 @@
                             "title": "Network socket APIs",
 
                             "sources": [{
-                                    "path": "docs/api/networksocket/CellularNonIPSocket.md"
+                                    "path": "docs/api/connectivity/networksocket/CellularNonIPSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/socket.md"
+                                    "path": "docs/api/connectivity/networksocket/socket.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/SocketAddress.md"
+                                    "path": "docs/api/connectivity/networksocket/SocketAddress.md"
                                 }, {
-                                    "path": "docs/api/networksocket/SocketStats.md"
+                                    "path": "docs/api/connectivity/networksocket/SocketStats.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/TCPSocket.md"
+                                    "path": "docs/api/connectivity/networksocket/TCPSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/UDPSocket.md"
+                                    "path": "docs/api/connectivity/networksocket/UDPSocket.md"
                                 }
                             ]
                         },
@@ -759,20 +759,20 @@
                             "title": "Network interface APIs",
 
                             "sources": [{
-                                    "path": "docs/api/networkinterfaces/CellularInterface.md"
+                                    "path": "docs/api/connectivity/networkinterfaces/CellularInterface.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/EthInterface.md"
+                                    "path": "docs/api/connectivity/networkinterfaces/EthInterface.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/MeshInterface.md"
+                                    "path": "docs/api/connectivity/networkinterfaces/MeshInterface.md"
                                 },
                                 {
-                                    "path": "docs/api/networkinterfaces/NetworkStatus.md"
+                                    "path": "docs/api/connectivity/networkinterfaces/NetworkStatus.md"
                                 },
 
                                 {
-                                    "path": "docs/api/networkinterfaces/WifiInterface.md"
+                                    "path": "docs/api/connectivity/networkinterfaces/WifiInterface.md"
                                 }
                             ]
                         },
@@ -780,10 +780,10 @@
                         {
                             "title": "Secure socket APIs",
                             "sources": [{
-                                    "path": "docs/api/networksocket/DTLSSocket.md"
+                                    "path": "docs/api/connectivity/secure-socket/DTLSSocket.md"
                                 },
                                 {
-                                    "path": "docs/api/networksocket/TLSSocket.md"
+                                    "path": "docs/api/connectivity/secure-socket/TLSSocket.md"
                                 }
                             ]
                         },
@@ -796,54 +796,54 @@
                         {
                             "title": "Bluetooth APIs",
                             "sources": [{
-                                    "path": "docs/api/bluetooth/BatteryService.md"
+                                    "path": "docs/api/connectivity/bluetooth/BatteryService.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/BLE.md"
+                                    "path": "docs/api/connectivity/bluetooth/BLE.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/Gap.md"
+                                    "path": "docs/api/connectivity/bluetooth/Gap.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/GattClient.md"
+                                    "path": "docs/api/connectivity/bluetooth/GattClient.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/GattServer.md"
+                                    "path": "docs/api/connectivity/bluetooth/GattServer.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/HeartRateService.md"
+                                    "path": "docs/api/connectivity/bluetooth/HeartRateService.md"
                                 },
                                 {
-                                    "path": "docs/api/bluetooth/SecurityManager.md"
+                                    "path": "docs/api/connectivity/bluetooth/SecurityManager.md"
                                 }
                             ]
                         },
                         {
                             "title": "NFC APIs",
                             "sources": [{
-                                    "path": "docs/api/nfc/MessageBuilder.md"
+                                    "path": "docs/api/connectivity/nfc/MessageBuilder.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/MessageParser.md"
+                                    "path": "docs/api/connectivity/nfc/MessageParser.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/NFCController.md"
+                                    "path": "docs/api/connectivity/nfc/NFCController.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/NFCEEPROM.md"
+                                    "path": "docs/api/connectivity/nfc/NFCEEPROM.md"
                                 },
                                 {
-                                    "path": "docs/api/nfc/SimpleMessageParser.md"
+                                    "path": "docs/api/connectivity/nfc/SimpleMessageParser.md"
                                 }
                             ]
                         },
                         {
                             "title": "LoRAWAN APIs",
                             "sources": [{
-                                    "path": "docs/api/lorawan/lorawan.md"
+                                    "path": "docs/api/connectivity/lorawan/lorawan.md"
                                 },
                                 {
-                                    "path": "docs/api/lorawan/loraradio.md"
+                                    "path": "docs/api/connectivity/lorawan/loraradio.md"
                                 }
                             ]
                         }

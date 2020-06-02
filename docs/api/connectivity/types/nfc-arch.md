@@ -2,7 +2,7 @@
 
 NFC stands for Near-Field Communication and is a short-range radio technology. You can use it to enable use cases such as contactless payments, access control and device pairing.
 
-<span class="images">![](../../images/n_mark.png)<span>N Mark</span></span>
+<span class="images">![](../../../images/n_mark.png)<span>N Mark</span></span>
 
 You can find more details on NFC about the [NFC Forum's website](https://nfc-forum.org/what-is-nfc/).
 

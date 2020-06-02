@@ -6,7 +6,7 @@ Initially, the speed from the standard was 1 Mbps, but later standards increased
 
 Ethernet works with cable lengths of up to 100 meters. When connected to a switch, Ethernet allows the maximum segment length to span 200 meters.
 
-<span class="images">![](../../images/ethernet-segment.png)<span>Ethernet segment</span></span>
+<span class="images">![](../../../images/ethernet-segment.png)<span>Ethernet segment</span></span>
 
 ## Ethernet connection speeds
 
@@ -26,7 +26,7 @@ Today, most Ethernet devices are capable of automatically negotiating connection
 
 Ethernet framing has remained nearly untouched after its initial introduction, making it possible to connect devices with various speeds to the same Ethernet segment. Mbed OS uses Ethernet only to carry IP frames.
 
-<span class="images">![](../../images/ethernet-frame.png)<span>Ethernet frame</span></span>
+<span class="images">![](../../../images/ethernet-frame.png)<span>Ethernet frame</span></span>
 
 **Fields in frame:**
 

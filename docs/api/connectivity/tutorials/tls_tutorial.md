@@ -16,7 +16,7 @@ Unlike desktop operating systems, such as Windows or macOS, Mbed OS does not hav
 
 You can use any browser to find the root CAs, but this tutorial uses Firefox:
 
-<span class="images">![](../../images/root-ca-selection.png "Getting root CA in Firefox")<span>Getting a root CA in Firefox</span></span>
+<span class="images">![](../../../images/root-ca-selection.png "Getting root CA in Firefox")<span>Getting a root CA in Firefox</span></span>
 
 1. Use Firefox to go to a page that uses HTTPS and is hosted on the same domain as the server you want to talk to over a TLS Socket.
 1. Click `Tools` > `Page Info`.
@@ -40,7 +40,7 @@ You can use any browser to find the root CAs, but this tutorial uses Firefox:
 1. Look for the last occurance of `-----BEGIN CERTIFICATE-----`.
 1. Copy everything from `-----BEGIN CERTIFICATE-----` to `-----END CERTIFICATE-----`, and store it in a file.
 
-<span class="images">![](../../images/tlssocket02.png "Getting root CA via OpenSSL")<span>Getting a root CA through OpenSSL</span></span>
+<span class="images">![](../../../images/tlssocket02.png "Getting root CA via OpenSSL")<span>Getting a root CA through OpenSSL</span></span>
 
 ## Placing the CA certificate in code
 

@@ -37,11 +37,11 @@ You can use and extend a cellular interface in various different ways. For examp
 
 - Using AT commands to control sockets in an existing IP stack built into the cellular modem.
 
-<span class="images">![](../../images/Cell_AT.png)</span>
+<span class="images">![](../../../images/Cell_AT.png)</span>
 
 - Using a PPP (Point-to-Point Protocol) pipe to pass IP packets between an Mbed OS supported IP stack and cellular modem device.
 
-<span class="images">![](../../images/Cell_PPP.png)</span>
+<span class="images">![](../../../images/Cell_PPP.png)</span>
 
 [`mbed-os-example-cellular`](https://github.com/ARMmbed/mbed-os-example-cellular) uses PPP or AT mode depending on the modem. We can summarize this particular design as follows:
 

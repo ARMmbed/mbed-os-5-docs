@@ -8,7 +8,7 @@ There is a lot of interest in [LoRa](https://www.lora-alliance.org), a wide-area
 
 A typical LoRa network consists of four parts: devices, gateways, a network service and an application:
 
-<span class="images">![](../../images/lora1_2.png)<span>Topology of a LoRa network</span></span>
+<span class="images">![](../../../images/lora1_2.png)<span>Topology of a LoRa network</span></span>
 
 For hardware, you need devices and gateways, similar to how you would set up a Wi-Fi network. Gateways are simple: they scan the spectrum and capture LoRa packets. There is no gateway pinning here. Devices are not associated with a single gateway; thus, all gateways within range of a device receive the signal. The gateways then forward their data to a network service that handles the packet.
 
@@ -44,11 +44,11 @@ You have [many choices in the gateways](https://www.loriot.io/lora-gateways.html
 - [MultiTech conduit](http://www.multitech.com/brands/multiconnect-conduit). About 1/3 of the price of the Kerlink (about 450 euros) and good for smaller setups. MultiTech also has a [rugged outdoor](http://www.multitech.com/brands/multiconnect-conduit-ip67) version. Make sure you also order the LoRa mCard.
 - Building your own with a Raspberry Pi and an [IMST iC880A](http://shop.imst.de/wireless-modules/lora-products/8/ic880a-spi-lorawan-concentrator-868-mhz) concentrator. At about 150 euros, this is a cost-efficient option.
 
-<span class="images">![](../../images/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 150 euros.</span></span>
+<span class="images">![](../../../images/lora5.jpg)<span>Self-built LoRa gateway based on Raspberry Pi 2 and IMST iC880A. Total cost is about 150 euros.</span></span>
 
 For development purposes, one gateway is enough, but in a production deployment, you need at least two because there will always be dark spots in your network.
 
-<span class="images">![](../../images/lora18.jpg)<span>Kerlink Wirnet station overlooking the Oslo fjord.</span></span>
+<span class="images">![](../../../images/lora18.jpg)<span>Kerlink Wirnet station overlooking the Oslo fjord.</span></span>
 
 ### Choosing a device
 
@@ -119,15 +119,15 @@ Follow the instructions in [this document](https://github.com/ttn-zh/ic880a-gate
 1. You're redirected to the dashboard page.
 1. Click **Gateways**.
 
-    <span class="images">![](../../images/ttn1.png)</span>
+    <span class="images">![](../../../images/ttn1.png)</span>
 
 1. Click **Register gateway**.
 
-    <span class="images">![](../../images/ttn2.png)</span>
+    <span class="images">![](../../../images/ttn2.png)</span>
 
 1. Fill in the details of your gateway.
 
-    <span class="images">![](../../images/ttn3.png)<span>Gateway details: The Things Network uses the gateway location to create coverage maps, so make sure the location is set correctly.</span></span>
+    <span class="images">![](../../../images/ttn3.png)<span>Gateway details: The Things Network uses the gateway location to create coverage maps, so make sure the location is set correctly.</span></span>
 
 1. If you use the Kerlink Wirnet station:
     - Tick **I'm using the legacy packet forwarder**.
@@ -142,7 +142,7 @@ Follow the instructions in [this document](https://github.com/ttn-zh/ic880a-gate
 
 If you use the MultiTech conduit, you need the 'Gateway key' to authenticate the gateway to the network. Copy it.
 
-<span class="images">![](../../images/ttn4.png)</span>
+<span class="images">![](../../../images/ttn4.png)</span>
 
 ### Installing the packet forwarder
 
@@ -150,7 +150,7 @@ If you use the MultiTech conduit, you need the 'Gateway key' to authenticate the
 
 No further action required. The gateway shows as 'Connected' in the TTN console.
 
-<span class="images">![](../../images/ttn7.png)<span>Connected!</span></span>
+<span class="images">![](../../../images/ttn7.png)<span>Connected!</span></span>
 
 #### MultiTech conduit
 
@@ -163,7 +163,7 @@ No further action required. The gateway shows as 'Connected' in the TTN console.
 
 1. A wizard starts. Answer the questions.
 
-    <span class="images">![](../../images/ttn5.png)</span>
+    <span class="images">![](../../../images/ttn5.png)</span>
 
 1. After the gateway reboots, log back in.
 1. Then run (again):
@@ -174,17 +174,17 @@ No further action required. The gateway shows as 'Connected' in the TTN console.
 
 1. Fill in the remaining questions.
 
-    <span class="images">![](../../images/ttn6.png)<span>Wizard (2) for configuring the MultiTech Conduit</span></span>
+    <span class="images">![](../../../images/ttn6.png)<span>Wizard (2) for configuring the MultiTech Conduit</span></span>
 
 1. After this, the gateway shows as **Connected** in the TTN console.
 
-    <span class="images">![](../../images/ttn7.png)<span>Connected!</span></span>
+    <span class="images">![](../../../images/ttn7.png)<span>Connected!</span></span>
 
 ## Building a device
 
 This section explains how to build a device that can send sensor data over the LoRa network. For example, you can create a motion sensor using a [PIR sensor](https://www.adafruit.com/products/189) (less than 10 euros). Of course, you can use any other sensor.
 
-<span class="images">![](../../images/lora6.jpg)<span>PIR sensor hooked up to a Nordic Semiconductor nRF51-DK with a SX1276 LoRa shield</span></span>
+<span class="images">![](../../../images/lora6.jpg)<span>PIR sensor hooked up to a Nordic Semiconductor nRF51-DK with a SX1276 LoRa shield</span></span>
 
 ### Some notes on writing firmware
 
@@ -212,31 +212,31 @@ Register the device in The Things Network, and generate some keys:
 1. Click **Applications**.
 1. Click **Add application**.
 
-    <span class="images">![](../../images/ttn8.png)</span>
+    <span class="images">![](../../../images/ttn8.png)</span>
 
 1. Fill in the details of your application, and click **Add application**.
 
-    <span class="images">![](../../images/ttn9.png)<span>Filling in the application details in The Things Network.</span></span>
+    <span class="images">![](../../../images/ttn9.png)<span>Filling in the application details in The Things Network.</span></span>
 
 1. You're redirected to the application page. Under **Devices**, click **Register device**.
 
-    <span class="images">![](../../images/ttn10.png)</span>
+    <span class="images">![](../../../images/ttn10.png)</span>
 
 1. If your device has an EUI printed on it, enter this in **Device EUI**.
 
-    <span class="images">![](../../images/ttn11.png)<span>The device EUI is often printed on the module or on the box.</span></span>
+    <span class="images">![](../../../images/ttn11.png)<span>The device EUI is often printed on the module or on the box.</span></span>
 
 1. If your device does not have an EUI printed on it, press the **generate** button to allocate an EUI from a block owned by The Things Network. Do **not** make an EUI up; it must be globally unique.
 
-    <span class="images">![](../../images/ttn12.png)</span>
+    <span class="images">![](../../../images/ttn12.png)</span>
 
 1. Fill in the rest of the details, and click **Register**.
 
-    <span class="images">![](../../images/ttn13.png)</span>
+    <span class="images">![](../../../images/ttn13.png)</span>
 
 1. The device page opens. It contains the keys that your device uses when authenticating with the network. Click the `<>` button to get the keys as a byte array. This makes it easy to copy the keys into code.
 
-    <span class="images">![](../../images/ttn14.png)</span>
+    <span class="images">![](../../../images/ttn14.png)</span>
 
 Now that the device is registered in The Things Network, you can start writing code!
 
@@ -251,11 +251,11 @@ Mbed comes with the Arm Mbed Online Compiler, which you can use to build applica
 1. Click **Import this program**.
 1. You're redirected to the Online Compiler, where you can give the program a name.
 
-    <span class="images">![](../../images/lora7_2.png)<span>Importing a program to get started</span></span>
+    <span class="images">![](../../../images/lora7_2.png)<span>Importing a program to get started</span></span>
 
 <span class="notes">**Note:** Make sure you select the correct board in the top right corner of the compiler.</span>
 
-<span class="images">![](../../images/lora8_2.png)<span>Selecting the correct board</span></span>
+<span class="images">![](../../../images/lora8_2.png)<span>Selecting the correct board</span></span>
 
 ### Setting keys
 
@@ -267,7 +267,7 @@ In the Online Compiler:
 1. Under `lora.application-eui`, enter the application EUI from the TTN console.
 1. Under `lora.application-key`, enter the application key from the TTN console.
 
-    <span class="images">![](../../images/ttn15.png)<span>Correct keys set in `mbed_app.json`</span></span>
+    <span class="images">![](../../../images/ttn15.png)<span>Correct keys set in `mbed_app.json`</span></span>
 
 1. Under `lora.phy` specify the channel plan for your region. A list of possible values is listed under '[Selecting a PHY'](https://github.com/ARMmbed/mbed-os-example-lorawan#selecting-a-phy) in the readme.
 
@@ -301,13 +301,13 @@ Now you can verify whether the setup works by flashing this application to your 
 
 1. In the Online Compiler, click the **Compile** button.
 
-    <span class="images">![](../../images/lora10.png)<span>Compile button</span></span>
+    <span class="images">![](../../../images/lora10.png)<span>Compile button</span></span>
 
 1. When compilation succeeds, the compiler sends a file to your computer.
 1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](../program-setup/windows-serial-driver.html).
 1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Data** tab:
 
-    <span class="images">![](../../images/ttn19.png)<span>We've got data!</span></span>
+    <span class="images">![](../../../images/ttn19.png)<span>We've got data!</span></span>
 
 <span class="notes">**Note 1:** You can hook a [serial monitor](../program-setup/serial-communication.html) up to the development board (baud rate 115,200) to see debugging messages.</span>
 
@@ -358,7 +358,7 @@ You can toggle the LED on your development board over LoRa. In the Online Compil
 1. Compile, and flash the application.
 1. When the device is back online, use the The Things Network console to queue a message. Go to your device page, and under **Downlink**, select port **21** and data `01`. Then press **Send**.
 
-    <span class="images">![](../../images/ttn16.png)<span>Queuing a downlink message over port 21</span></span>
+    <span class="images">![](../../../images/ttn16.png)<span>Queuing a downlink message over port 21</span></span>
 
 1. After the next transmission, the LED toggles, and a message appears on the serial console. Try the same thing now by sending `0`.
 
@@ -368,18 +368,18 @@ The system works and sends data in two directions, but the data is not stored an
 
 For this tutorial, we built a small web application that listens for events from the movement sensors and shows an overview of all sensors. To use this application, you need a recent version of [Node.js](https://nodejs.org) installed on your computer.
 
-<span class="images">![](../../images/lora19.png)<span>Demo application</span></span>
+<span class="images">![](../../../images/lora19.png)<span>Demo application</span></span>
 
 To build this application, first grab an access key from The Things Network:
 
 1. Go to your application in the TTN console.
 1. Locate your **Application ID**, and make note of it.
 
-    <span class="images">![](../../images/ttn17.png)</span>
+    <span class="images">![](../../../images/ttn17.png)</span>
 
 1. Locate your **Access Key**, click the **show** button and make note of it, as well.
 
-    <span class="images">![](../../images/ttn18.png)</span>
+    <span class="images">![](../../../images/ttn18.png)</span>
 
 Now clone, the demo application, and run it.
 

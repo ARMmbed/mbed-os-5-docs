@@ -6,7 +6,7 @@
 
 To use secure DTLS connections, application use the `DTLSSocketWrapper` through the Socket API, so existing applications and libraries are compatible.
 
-`DTLSSocketWrapper` inherits `TLSSocketWrapper` and uses the same API. The only difference is that it uses timers to keep track of DTLS timeouts. Please see [TLSSocket](tlssocket.html) for an example.
+`DTLSSocketWrapper` inherits `TLSSocketWrapper` and uses the same API. The only difference is that it uses timers to keep track of DTLS timeouts. Please see [TLSSocket](../apis/tlssocket.html) for an example.
 
 ## DTLSSocket class reference
 
@@ -21,4 +21,4 @@ Please see the TLSSocket example:
 ## Related content
 
 - [Secure Socket](../apis/secure-socket.html).
-- [TLSSocket](tlssocket.html).
+- [TLSSocket](../apis/tlssocket.html).
