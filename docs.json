@@ -397,13 +397,13 @@
                                     "path": "docs/api/platform/platform.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/printf.md"
+                                    "path": "docs/api/platform/printf.md"
                                 },
                                 {
-                                    "path": "docs/program-setup/runtime/Memory.md"
+                                    "path": "docs/api/platform/Memory.md"
                                 },
                                 {
-                                    "path": "docs/program-setup/runtime/static_memory_optimization.md"
+                                    "path": "docs/api/platform/static_memory_optimization.md"
                                 }
                             ]
                         },
@@ -417,74 +417,74 @@
                         {
                             "title": "Platform tutorials",
                             "sources": [{
-                                    "path": "docs/api/drivers/flow_control.md"
+                                    "path": "docs/api/platform/flow_control.md"
                                 },
                                 {
-                                    "path": "docs/api/power/power_manage.md"
+                                    "path": "docs/api/platform/power_manage.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/runtime_mem_trace.md"
+                                    "path": "docs/api/platform/runtime_mem_trace.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/runtime_stats.md"
+                                    "path": "docs/api/platform/runtime_stats.md"
                                 }
                             ]
                         },
                         {
                             "title": "Time APIs",
                             "sources": [{
-                                    "path": "docs/api/platform/Rtc.md"
+                                    "path": "docs/api/platform/time/Rtc.md"
                                 },
                                 {
-                                    "path": "docs/api/drivers/Ticker.md"
+                                    "path": "docs/api/platform/time/Ticker.md"
                                 },
                                 {
-                                    "path": "docs/api/platform/Time.md"
+                                    "path": "docs/api/platform/time/Time.md"
                                 },
                                 {
-                                    "path": "docs/api/drivers/TimeOut.md"
+                                    "path": "docs/api/platform/time/TimeOut.md"
                                 },
                                 {
-                                    "path": "docs/api/drivers/Timer.md"
+                                    "path": "docs/api/platform/time/Timer.md"
                                 },
                                 {
-                                    "path": "docs/api/platform/Wait.md"
+                                    "path": "docs/api/platform/time/Wait.md"
                                 }
                             ]
                         },
                         {
                             "title": "Power APIs",
                             "sources": [{
-                                    "path": "docs/api/power/DeepSleepLock.md"
+                                    "path": "docs/api/platform/power/DeepSleepLock.md"
                                 },
 
                                 {
-                                    "path": "docs/api/power/LowPowerTicker.md"
+                                    "path": "docs/api/platform/power/LowPowerTicker.md"
                                 },
                                 {
-                                    "path": "docs/api/power/LowPowerTimeout.md"
+                                    "path": "docs/api/platform/power/LowPowerTimeout.md"
                                 },
                                 {
-                                    "path": "docs/api/power/LowPowerTimer.md"
+                                    "path": "docs/api/platform/power/LowPowerTimer.md"
                                 },
                                 {
-                                    "path": "docs/api/power/PowerManagement.md"
+                                    "path": "docs/api/platform/power/PowerManagement.md"
                                 }
                             ]
                         },
                         {
                             "title": "Memory APIs",
                             "sources": [{
-                                    "path": "docs/api/memory/MemTrace.md"
+                                    "path": "docs/api/platform/memory/MemTrace.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/MpuManagement.md"
+                                    "path": "docs/api/platform/memory/MpuManagement.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/MemoryPool.md"
+                                    "path": "docs/api/platform/memory/MemoryPool.md"
                                 },
                                 {
-                                    "path": "docs/api/memory/MbedStats.md"
+                                    "path": "docs/api/platform/memory/MbedStats.md"
                                 }
                             ]
                         },

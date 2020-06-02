@@ -1,6 +1,6 @@
 # Timer
 
-<span class="images">![](../../images/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
+<span class="images">![](../../../images/classmbed_1_1_timer.png)<span>Timer class hierarchy</span></span>
 
 Use the Timer interface to create, start, stop and read a stopwatch-like timer for measuring precise times (better than millisecond precision).
 
