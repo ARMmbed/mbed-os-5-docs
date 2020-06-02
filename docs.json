@@ -893,17 +893,17 @@
             "chapters": [{
                     "title": "Concepts",
                     "sources": [{
-                            "path": "docs/program-setup/runtime/Execution.md"
+                            "path": "docs/program-setup/concepts/Execution.md"
                         },
                         {
-                            "path": "docs/program-setup/runtime/Bootstrap.md"
+                            "path": "docs/program-setup/concepts/Bootstrap.md"
                         },
                         {
-                            "path": "docs/program-setup/project-structure.md"
+                            "path": "docs/program-setup/concepts/project-structure.md"
                         },
 
                         {
-                            "path": "docs/program-setup/managed-unmanaged-bootloader.md"
+                            "path": "docs/program-setup/concepts/managed-unmanaged-bootloader.md"
                         }
                     ]
                 },
@@ -920,23 +920,23 @@
                 {
                     "title": "Build profiles and rules",
                     "sources": [{
-                            "path": "docs/tools/CLI/build_profiles.md"
+                            "path": "docs/program-setup/build-profiles-rules/build_profiles.md"
                         },
                         {
-                            "path": "docs/program-setup/build_rules.md"
+                            "path": "docs/program-setup/build-profiles-rules/build_rules.md"
                         },
                         {
-                            "path": "docs/tools/CLI/debug_builds_cli.md"
+                            "path": "docs/program-setup/build-profiles-rules/debug_builds_cli.md"
                         }
                     ]
                 },
                 {
                     "title": "Advanced configuration",
                     "sources": [{
-                            "path": "docs/program-setup/configuration.md"
+                            "path": "docs/program-setup/advanced/configuration.md"
                         },
                         {
-                            "path": "docs/program-setup/bootloader.md"
+                            "path": "docs/program-setup/advanced/bootloader.md"
                         }
                     ]
                 },
@@ -1104,47 +1104,47 @@
                     "sub_chapters": [{
                             "title": "Methods",
                             "sources": [{
-                                    "path": "docs/tools/debug/debugging_mbed_os_apps.md"
+                                    "path": "docs/debugging-testing/debug/debugging_mbed_os_apps.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/local_debugging_toolchain.md"
+                                    "path": "docs/debugging-testing/debug/local_debugging_toolchain.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/memap.md"
+                                    "path": "docs/debugging-testing/debug/memap.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/DAP.md"
+                                    "path": "docs/debugging-testing/debug/DAP.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/common_issues.md"
+                                    "path": "docs/debugging-testing/debug/common_issues.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/debug_fault_exception.md"
+                                    "path": "docs/debugging-testing/debug/debug_fault_exception.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/run_and_compile_time_errors.md"
+                                    "path": "docs/debugging-testing/debug/run_and_compile_time_errors.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/debug_with_printf.md"
+                                    "path": "docs/debugging-testing/debug/debug_with_printf.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/debug_microbit.md"
+                                    "path": "docs/debugging-testing/debug/debug_microbit.md"
                                 }
                             ]
                         },
                         {
                             "title": "Third party tools",
                             "intro": {
-                                "path": "docs/tools/debug/debug_intro.md"
+                                "path": "docs/debugging-testing/debug/debug_intro.md"
                             },
                             "sources": [{
-                                    "path": "docs/tools/debug/eclipse_pyocd.md"
+                                    "path": "docs/debugging-testing/debug/eclipse_pyocd.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/keil_uvision.md"
+                                    "path": "docs/debugging-testing/debug/keil_uvision.md"
                                 },
                                 {
-                                    "path": "docs/tools/debug/vs_code.md"
+                                    "path": "docs/debugging-testing/debug/vs_code.md"
                                 }
                             ]
                         }
@@ -1155,19 +1155,19 @@
                     "sub_chapters": [{
                         "title": "Testing",
                         "intro": {
-                            "path": "docs/tools/testing/testing_intro.md"
+                            "path": "docs/debugging-testing/testing/testing_intro.md"
                         },
                         "sources": [{
-                                "path": "docs/tools/testing/unit_testing.md"
+                                "path": "docs/debugging-testing/testing/unit_testing.md"
                             },
                             {
-                                "path": "docs/tools/testing/testing_greentea.md"
+                                "path": "docs/debugging-testing/testing/testing_greentea.md"
                             },
                             {
-                                "path": "docs/tools/testing/utest.md"
+                                "path": "docs/debugging-testing/testing/utest.md"
                             },
                             {
-                                "path": "docs/tools/fastmodels/fastmodels.md"
+                                "path": "docs/debugging-testing/fastmodels/fastmodels.md"
                             }
                         ]
                     }]
