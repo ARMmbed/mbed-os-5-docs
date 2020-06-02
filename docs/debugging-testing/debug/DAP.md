@@ -28,8 +28,6 @@ DAPLink debug probes appear on the host computer as a USB disk. Program files in
 The DAPLink debug probe also provides a USB serial port, which can be bridged through to a TTL UART on the target system.
 The USB serial port will appear on a Windows machine as a COM port, or on a Linux machine as a /dev/tty interface.
 
-If your operating system is Windows 7, please refer to the [Windows serial driver information](../program-setup/windows-serial-driver.html).
-
 ## Further reading
 
 - [DAPLink firmware updates and FAQ page](https://armmbed.github.io/DAPLink/).
