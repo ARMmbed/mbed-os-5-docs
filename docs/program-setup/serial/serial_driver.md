@@ -1,6 +1,6 @@
 # Windows serial driver
 
-<span class="warnings">**Warning**: This page is for **Windows 7 only**. Do NOT install the serial driver on Windows 8 or above - serial ports work out of the box.</span>
+<span class="warnings">**Warning**: This page is for **Windows 7 only**. Do not install the serial driver on Windows 8 or newer; serial ports work out of the box with these versions.</span>
 
 You can connect your board to your computer over USB. This works out of the box on Linux and macOS. If you are using Windows, you may need to install a serial port driver:
 
