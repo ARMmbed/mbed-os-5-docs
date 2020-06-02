@@ -649,12 +649,12 @@
                 {
                     "title": "Connectivity",
                     "intro": {
-                        "path": "docs/api/connectivity_list.md"
+                        "path": "docs/api/connectivity/connectivity_list.md"
                     },
                     "sub_chapters": [{
                             "title": "Choosing a connectivity type",
                             "intro": {
-                                "path": "docs/api/connectivity-arch.md"
+                                "path": "docs/api/connectivity/connectivity-arch.md"
                             },
                             "sources": [{
                                     "path": "docs/api/connectivity/types/bluetooth.md"
@@ -1323,22 +1323,22 @@
                 {
                     "title": "Porting security",
                     "sources": [{
-                            "path": "docs/porting/psa/spm.md"
+                            "path": "docs/porting/security/spm.md"
                         },
                         {
-                            "path": "docs/porting/psa/crypto.md"
+                            "path": "docs/porting/security/crypto.md"
                         },
                         {
-                            "path": "docs/porting/target/entropy.md"
+                            "path": "docs/porting/security/entropy.md"
                         },
                         {
-                            "path": "docs/porting/target/hw-accelerated-crypto.md"
+                            "path": "docs/porting/security/hw-accelerated-crypto.md"
                         },
                         {
-                            "path": "docs/porting/psa/TLS-on-PSA.md"
+                            "path": "docs/porting/security/TLS-on-PSA.md"
                         },
                         {
-                            "path": "docs/porting/psa/testing_psa_service_compliance.md"
+                            "path": "docs/porting/security/testing_psa_service_compliance.md"
                         }
                     ]
                 },
