@@ -14,7 +14,7 @@ You can view more information about the configurable settings and functions in t
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
 
-<span class="notes">**Note**: On a Windows machine, you need to install a USB serial driver. See [Windows serial configuration](../program-setup/serial-communication.html#windows-serial-driver).</span>
+<span class="notes">**Note**: On a Windows 7 machine, you need to install a USB serial driver. Please see the [Windows serial driver](../program-setup/serial-communication.html#windows-serial-driver) document for more information.</span>
 
 ## UnbufferedSerial Example
 

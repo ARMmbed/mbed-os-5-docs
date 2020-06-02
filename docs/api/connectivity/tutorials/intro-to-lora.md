@@ -304,7 +304,7 @@ Now you can verify whether the setup works by flashing this application to your 
     <span class="images">![](../../../images/lora10.png)<span>Compile button</span></span>
 
 1. When compilation succeeds, the compiler sends a file to your computer.
-1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. In most cases, you do not need a driver, but you can find drivers [here](../program-setup/windows-serial-driver.html).
+1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device. If you are working on Windows 7, you might need to [install a serial driver](../program-setup/windows-serial-driver.html).
 1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Data** tab:
 
     <span class="images">![](../../../images/ttn19.png)<span>We've got data!</span></span>
