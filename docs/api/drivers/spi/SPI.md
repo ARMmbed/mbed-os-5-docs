@@ -8,7 +8,7 @@ You can use this interface for communication with SPI slave devices, such as FLA
 
 ## Interface
 
-<span class="images">![](../../images/pin_out.png)<span>A pinout map.</span></span>
+<span class="images">![](../../../images/pin_out.png)<span>A pinout map.</span></span>
 
 The default settings of the SPI interface are 1MHz, 8-bit, Mode 0.
 

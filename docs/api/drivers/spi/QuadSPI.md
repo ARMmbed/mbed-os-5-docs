@@ -10,7 +10,7 @@ The QSPI protocol provides a serial communication interface on four data lines b
 
 The default configuration for the QSPI interface is 1 MHz, Single-SPI, Mode 0.
 
-<span class="images">![](../../images/quadspi.png)</span>
+<span class="images">![](../../../images/quadspi.png)</span>
 
 The above diagram shows an example hardware configuration of a Flash memory connected over a QSPI interface.
 
