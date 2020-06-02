@@ -8,11 +8,11 @@ A functional Mbed OS USB device consists an implementation of USBPhy, the USBDev
 - USBDevice is the core of Mbed OS's USB stack and is responsible for state management and synchronization.
 - USB component is code that inherits from USBDevice and provides the desired USB interfaces.
 
-<span class="images">![](../../images/usb_inheritance_diagram.png)</span>
+<span class="images">![](../images/usb_inheritance_diagram.png)</span>
 
 You can see the interaction of these three components in this diagram:
 
-<span class="images">![](../../images/usb_connection_diagram.png)</span>
+<span class="images">![](../images/usb_connection_diagram.png)</span>
 
 ## Synchronization
 
@@ -75,7 +75,7 @@ Table of control callbacks and the required response:
 | callback_set_configuration(configuration)         | complete_set_configuration(result)       |
 | callback_set_interface(interface, alternate)      | complete_set_interface(result)           |
 
-<span class="images">![](../../images/usb_control_state_diagram_user.png)</span>
+<span class="images">![](../images/usb_control_state_diagram_user.png)</span>
 
 The USB stack guarantees the setup packet passed to `callback_request` and `callback_request_xfer_done` remains valid and unchanged up to the point the USB component completes the request with `complete_request` and `complete_request_xfer_done`. Additionally, when the USB component calls `complete_request` with the value `Receive` or `Send`, the USB stack guarantees that `callback_request_xfer_done` is called. If the USB component calls `complete_request` with a buffer and size, that buffer must remain valid and unchanged until USBDevice calls the function `callback_request_xfer_done`.
 
@@ -87,7 +87,7 @@ When a USB component adds an endpoint, you can either write to it with `write` o
 
 Below is a diagram showing the typical state machine for read (OUT) and write (IN) transfers.
 
-<span class="images">![](../../images/usb_endpoint_state_diagram_user_3.png)</span>
+<span class="images">![](../images/usb_endpoint_state_diagram_user_3.png)</span>
 
 ## Endpoint configuration
 
