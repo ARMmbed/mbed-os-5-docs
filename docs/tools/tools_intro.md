@@ -25,18 +25,18 @@ We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifica
 
 ### Compiler versions
 
-You can build Mbed OS with the Arm Compiler and GUN Arm Embedded toolchains. The currently supported versions are:
+You can build Mbed OS with the Arm Compiler and GNU Arm Embedded toolchains. The currently supported versions are:
 
 | Compiler| Download location | Name in Mbed CLI |
 | --- | --- | --- |
-| Arm Compiler 6.13 (default ARM toolchain) | - A paid version is available as [Arm Compiler 6.13 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). </br> - A paid version is also included in [Keil MDK 5.29](http://www2.keil.com/mdk5/529) | `arm` |
-| GNU Arm Embedded version 9 (9-2019-q4-major) | [GNU Arm Embedded version 9 (9-2019-q4-major)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads) | `gcc` |
+| Arm Compiler 6.13 (default ARM toolchain) | - A paid version is available as [Arm Compiler 6.13 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). </br> - A paid version is also included in [Keil MDK 5.29](http://www2.keil.com/mdk5/529) | `ARM` |
+| GNU Arm Embedded version 9 (9-2019-q4-major) | [GNU Arm Embedded version 9 (9-2019-q4-major)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads) | `GCC_ARM` |
 
 <span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5, IAR or uARM.</span>
 
 ## Arm Mbed Studio
 
-Mbed Studio is our new desktop IDE and is available to anyone with an Mbed account as a public beta. You can download it for Windows and Mac, and access the documentation at [os.mbed.com/docs/mbed-studio](https://os.mbed.com/docs/mbed-studio/).
+Mbed Studio is our new desktop IDE and is available to anyone with an Mbed account. You can [download it for Windows, Linux and Mac](https://os.mbed.com/docs/mbed-studio/current/installing/index.html), and access the documentation at [os.mbed.com/docs/mbed-studio](https://os.mbed.com/docs/mbed-studio/).
 
 To complement our popular Mbed Online Compiler and command-line tools, we created Mbed Studio, the tooling you need in a desktop IDE to have a quick development, debug and deploy cycle when you build your next product. Mbed Studio speeds up your development flow and provides functionality that helps you get the most out of Mbed OS.
 
