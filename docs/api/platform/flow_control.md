@@ -33,7 +33,7 @@ Here is an example that uses a ticker object:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Ticker)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Ticker/blob/v6.0/main.cpp)
 
-<span class="warnings"> **Warning:** A ticker/timeout's handlers are executed in ISR context and thus, like any ISR handlers, should return quickly and not use `printf` or APIs that are not intended for ISRs.</span>
+<span class="warnings"> **Warning:** A ticker/timeout's handlers are executed in interrupt contexts and thus, like any interrupt handlers, should return quickly and not use `printf` or APIs that are not intended for interrupts.</span>
 
 If you don't need the precision of a high-frequency Ticker or Timeout, we recommend that you use [LowPowerTicker](../apis/lowpowerticker.html) or [Low Power Timeout](../apis/lowpowertimeout.html) instead. The low power classes inform the operating system you want to allow deep sleep mode on your system. Note that entering deep sleep also depends on the specific environment and characteristics of your system, not just your API selection. For more information about sleep and deep sleep, please refer to our [documentation about power management](../apis/power-management-sleep.html) and our [Mbed Office Hours video](https://www.youtube.com/watch?v=OFfOlBaegdg&t=12s).
 
@@ -50,7 +50,7 @@ The [EventQueue](../apis/eventqueue.html) class uses the `call_every()` function
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-EventQueue)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-EventQueue/main.cpp)
 
-For one-off delays, use `call_in()`. Just as with Ticker and Timeout, if no threads are running during a wait, the system enters [sleep or deep sleep mode](../apis/power-management-sleep.html). A major advantage of EventQueue over Ticker and Timeout is that the handler is called in the same context as the EventQueue is dispatched (thread, in the case of RTOS), so ISR-related restrictions (such as no `printf` oand no `Mutex`) do not apply.
+For one-off delays, use `call_in()`. Just as with Ticker and Timeout, if no threads are running during a wait, the system enters [sleep or deep sleep mode](../apis/power-management-sleep.html). A major advantage of EventQueue over Ticker and Timeout is that the handler is called in the same context as the EventQueue is dispatched (thread, in the case of RTOS), so interrupt-related restrictions (such as no `printf` oand no `Mutex`) do not apply.
 
 ## Handling user actions
 
