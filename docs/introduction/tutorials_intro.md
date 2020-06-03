@@ -55,7 +55,6 @@ These tutorials show you how to install, export a project to and start a debuggi
 ## Connecting to the cloud
 
 - [Pelion Device Management](https://github.com/ARMmbed/mbed-os-example-pelion)
-- [AWS](https://github.com/ARMmbed/mbed-os-example-aws)
 
 ## Migrating
 
