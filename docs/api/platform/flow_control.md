@@ -6,22 +6,22 @@ We can use Blinky to explore flow control and task management in Arm Mbed OS app
 
 If we want to automatically blink an LED, we have four main techniques:
 
-1. [Busy wait](#busy-wait)
+1. [Wait API](#wait-api)
 1. [Ticker and Timeout](#ticker-and-timeout)
 1. [Thread](#thread)
 1. [EventQueue](#eventqueue)
 
 The techniques cater to different requirements for precision, efficiency and context.
 
-### Busy wait
+### Wait API
 
-Busy wait is a method that blocks the processor for a period of time. The processor runs at full power for the duration of the wait:
+The Wait API creates delays by actively blocking the execution for a period of time. It uses the busy wait strategy - internally running a loop until the end of the period.
+
+Here is an example that uses `wait_us()` of the API to wait a number of microseconds:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait/blob/v6.0/main.cpp)
 
-Notice `wait_us()` - it is part of the [Wait API](../mbed-os-api-doxy/group__platform__wait__api.html), and sets the busy wait time as number of microseconds.
-
-The Wait API is an ISR-safe way to create short delays of nanoseconds to a few microseconds. However, we do not recommend busy waiting for longer delays.
+The processor is active for the entire duration, so the Wait API is suitable when you need short delays (nanoseconds to a few microseconds) without triggering [sleep modes](../apis/power-management-sleep.html) which have some wake-up latencies. It is also safe to use in interrupt contexts. However, we do not recommend busy waiting for longer delays, during which the system may not be able to switch to other tasks or save power as it cannot sleep.
 
 For longer delays - millisecond to seconds - use one of the other techniques. 
 
