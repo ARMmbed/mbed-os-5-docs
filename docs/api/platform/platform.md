@@ -12,7 +12,7 @@ Mbed OS also provides global APIs for the sleep and preemption global resources.
 - [Wait](../apis/wait.html): An API that provides simple wait capabilities. These wait capabilities are integrated with the RTOS to schedule another thread if the current thread is blocked. If all threads are blocked, the idle thread will save power by putting the MCU to sleep.
 - [CriticalSectionLock](../apis/criticalsectionlock.html): An object that establishes the beginning of a critical section and uses RAII to disable and restore interrupt state when the current scope exits.
 - [Power management](../apis/power-management-sleep.html): An API to control sleep modes. A user of this API configures the sleep states that the MCU enters on idle, when everything is blocked.
-- [DeepSleepLock](apis/power-apis.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
+- [DeepSleepLock](../apis/power-apis.html): A class that prevents sleep within a scope. For instance, Use this class to prevent the configured sleep mode from interfering with a fast or low latency communication channel.
 
 ## Common data structures
 
