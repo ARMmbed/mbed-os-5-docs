@@ -1,7 +1,5 @@
 # Execution
 
-Most embedded systems are dedicated to performing a single duty, although some can be very complex. They are typically constrained in resources and contain only the necessary components to perform that duty. Most embedded systems are powered by a single microcontroller chip, which is typically limited in resources such as memory. Software for an embedded system must be carefully designed to make the best use of these limited resources. Mbed OS in the default full profile is often too large for constrained systems, but has a bare metal profile that is targeted to those systems.
-
 ## Threads
 
 In single-microcontroller embedded systems, a thread is an independent segment of the program that executes within the single process running on the microcontroller. Threading is a fundamental technique in software development, which allows multiple tasks to run concurrently using schedulers, either standalone or included in a real time operating system (RTOS). Threads provide a lot of flexibility to the developer but come at the cost of resources for the scheduler. Mbed OS, in its default full profile, provides an RTOS for applications where resources are not critical. The bare metal profile does not include the RTOS or threading capabilities.
