@@ -22,7 +22,7 @@ This page is an index of all tutorials and official examples.
 
 These tutorials teach you to communicate with your development board, an essential part of programming and debugging:
 
-- [Windows serial driver tutorial](../program-setup/windows-serial-driver.html)
+- [Windows serial driver tutorial](../program-setup/windows-serial-driver.html) (Windows 7 only)
 - [Board to PC communication over USB tutorial](../program-setup/serial-communication.html)
 
 ## Debugging
@@ -54,8 +54,7 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 ## Connecting to the cloud
 
-[Pelion Device Management](https://github.com/ARMmbed/mbed-os-example-pelion)
-
+- [Pelion Device Management](https://github.com/ARMmbed/mbed-os-example-pelion)
 
 ## Migrating
 

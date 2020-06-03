@@ -2,7 +2,7 @@
 
 The Arm Mbed microcontroller on your board can communicate with a host PC over the same USB cable that you use for programming.
 
-<span class="tips">If you're working on Windows earlier than Windows 10, you might need to [install a serial driver](../program-setup/windows-serial-driver.html).</span>
+<span class="tips">If you're working on Windows 7, you might need to [install a serial driver](../program-setup/windows-serial-driver.html).</span>
 
 This allows you to:
 
