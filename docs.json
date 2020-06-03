@@ -891,6 +891,13 @@
             "slug": "program-setup",
             "type": "markdown",
             "chapters": [{
+                    "title": "Introduction",
+                    "intro": {
+                        "path": "docs/program-setup/program_setup_intro.md"
+                    },
+                    "sources": []
+                },
+                {
                     "title": "Concepts",
                     "sources": [{
                             "path": "docs/program-setup/concepts/Execution.md"
