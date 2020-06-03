@@ -11,9 +11,9 @@ If we want to automatically blink an LED, we have four main techniques:
 1. [Thread](#thread)
 1. [EventQueue](#eventqueue)
 
-All above techniques accomplish delays but cater to different requirements for precision, efficiency and context.
+The techniques cater to different requirements for precision, efficiency and context.
 
-<span class="tips">**Tip:** You may want to read the [power optimization](../apis/platform-concepts.html) tutorial to understand how to achieve power savings. </span>
+<span class="tips">**Tip:** You may want to read the [power optimization](../apis/platform-concepts.html) tutorial to learn how to save power. </span>
 
 ### Busy wait
 
@@ -21,13 +21,13 @@ Busy wait is a method that blocks the processor for a period of time. The proces
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait/blob/v6.0/main.cpp)
 
-Notice `wait_us()` - it is part of the [Wait API](../mbed-os-api-doxy/group__platform__wait__api.html) to busy wait a given number of microseconds.
+Notice `wait_us()` - it is part of the [Wait API](../mbed-os-api-doxy/group__platform__wait__api.html), and sets the busy wait time as number of microseconds.
 
 The Wait API is an ISR-safe way to create short delays of nanoseconds to a few microseconds. However, we do not recommend busy waiting for longer delays.
 
-The following techniques are better suited for milliseconds to seconds delays which apply to our example's use case.
+For longer delays - millisecond to seconds - use one of the other techniques. 
 
-### Ticker, Timeout
+### Ticker and Timeout
 
 Tickers and Timeouts are non-blocking, interrupt-based ways of creating a time interval - your code continues to execute or sleep when there is nothing to do. The difference is that Tickers are recurring whereas Timeouts are one-off.
 
@@ -39,30 +39,29 @@ Here is an example that uses a ticker object:
 
 If you don't need the precision of a high-frequency ticker or timeout, we recommend that you use LowPowerTicker or LowPowerTimeout instead. These allow the system to be put in deep sleep mode.
 
-- _High-resolution microsecond ticker/timeout_ ([Ticker](ticker.html), [Timeout](timeout.html))
-- _Low Power ticker/timeout_ ([LowPowerTicker](lowpowerticker.html), [LowPowerTimeout](lowpowertimeout.html))
+- High-resolution microsecond [Ticker](../apis/ticker.html) and [timeout](../apis/timeout.html). 
+- [Low Power Ticker](../apis/lowpowerticker.html) and [Low Power Timeout](../apis/lowpowertimeout.html).
 
-Usage of the low power classes will inform the operating system of your desire to allow Deep Sleep mode on your system, although actually entering deep sleep depends on the specific environment and characteristics of your system. For more information about Sleep and Deep Sleep, please refer to our [documentation page](power-management-sleep.html) as well as watch our [Mbed Office Hours video](https://www.youtube.com/watch?v=OFfOlBaegdg&t=12s) where the concepts of Sleep and Deep Sleep are described in-depth.
+Use the the low power classes to inform the operating system you want to allow deep sleep mode on your system. Note that entering deep sleep depends on the specific environment and characteristics of your system, not just your API selection. For more information about sleep and deep sleep, please refer to our [documentation about power management](../apis/power-management-sleep.html) and our [Mbed Office Hours video](https://www.youtube.com/watch?v=OFfOlBaegdg&t=12s).
 
 ### Thread
 
-If your application is running in RTOS mode then [Thread](../apis/thread.html)s are another efficient way to blink an LED. During the waiting period, it is possible to take advantage of Mbed OS optimizations to automatically conserve power and deal with other tasks.
+If your application is running in RTOS mode then [Threads](../apis/thread.html) are another efficient way to blink an LED. During the waiting period, it is possible to take advantage of Mbed OS optimizations to automatically conserve power and deal with other tasks. This makes Threads the most efficient way to run tasks in Mbed OS.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread/blob/v6.0/main.cpp)
 
-Threads are the most efficient ways to run tasks in Mbed OS since the operating system internally contains optimizations for efficient scheduling of tasks and maximizing the system's sleep time.
 
 ### EventQueue
 
-The [EventQueue](../apis/eventqueue.html) class has a simple-to-use `call_every()` function to schedule repeated actions:
+The [EventQueue](../apis/eventqueue.html) class uses the `call_every()` function to schedule repeated actions:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-EventQueue)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-EventQueue/main.cpp)
 
-<span class="tips">**Tip:** For one-off delays, use `call_in()`.
+For one-off delays, use `call_in()`.
 
-Just as with Ticker/Timeout, if no threads are running during a wait, the system enters sleep mode.</span>
+Just as with Ticker and Timeout, if no threads are running during a wait, the system enters sleep mode.
 
-A major advantage of EventQueue over [Ticker/Timeout](#ticker-timeout) is that the handler is called in the same context (thread, in the case of RTOS) where the EventQueue is dispatched, thus ISR-related restrictions (e.g. no `printf`, no `Muxex` usage, etc.) do not apply.
+A major advantage of EventQueue over Ticker and Timeout is that the handler is called in the same context as the EventQueue is dispatched (thread, in the case of RTOS), so ISR-related restrictions (such as no `printf` oand no `Muxex`) do not apply.
 
 ## Flow control for manual actions
 
