@@ -17,11 +17,11 @@ The techniques cater to different requirements for precision, efficiency and con
 
 The Wait API creates delays by actively blocking the execution for a period of time. It uses the busy wait strategy - internally running a loop until the end of the period.
 
-Here is an example that uses `wait_us()` of the API to wait a number of microseconds:
+Here is an example that uses the API's `wait_us()` function to wait a number of microseconds:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait/blob/v6.0/main.cpp)
 
-The processor is active for the entire duration, so the Wait API is suitable when you need short delays (nanoseconds to a few microseconds) without triggering [sleep modes](../apis/power-management-sleep.html) which have some wake-up latencies. It is also safe to use in interrupt contexts. However, we do not recommend busy waiting for longer delays, during which the system may not be able to switch to other tasks or save power as it cannot sleep.
+The processor is active for the entire duration, so the Wait API is suitable when you need short delays (nanoseconds to a few microseconds) without triggering [sleep modes](../apis/power-management-sleep.html), which have some wake-up latencies. It is also safe to use in interrupt contexts. However, we do not recommend busy waiting for longer delays: the system may not be able to switch to other tasks or save power by sleeping.
 
 For longer delays - millisecond to seconds - use one of the other techniques. 
 
@@ -39,7 +39,7 @@ If you don't need the precision of a high-frequency Ticker or Timeout, we recomm
 
 ### Thread
 
-If your application is running in RTOS mode then [Threads](../apis/thread.html) are another efficient way to blink an LED. During the waiting period, it is possible to take advantage of Mbed OS optimizations to automatically conserve power and deal with other tasks. This makes Threads the most efficient way to run tasks in Mbed OS.
+If your application is running in RTOS mode then [Threads](../apis/thread.html) are another efficient way to blink an LED. During the waiting period, Mbed OS automatically conserves power and deals with other tasks. This makes Threads the most efficient way to run tasks in Mbed OS.
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread/blob/v6.0/main.cpp)
 
@@ -50,7 +50,7 @@ The [EventQueue](../apis/eventqueue.html) class uses the `call_every()` function
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-EventQueue)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/Tutorials_UsingAPIs/Flow-Control-EventQueue/main.cpp)
 
-For one-off delays, use `call_in()`. Just as with Ticker and Timeout, if no threads are running during a wait, the system enters [sleep or deep sleep mode](../apis/power-management-sleep.html). A major advantage of EventQueue over Ticker and Timeout is that the handler is called in the same context as the EventQueue is dispatched (thread, in the case of RTOS), so interrupt-related restrictions (such as no `printf` oand no `Mutex`) do not apply.
+For one-off delays, use `call_in()`. Just as with Ticker and Timeout, if no threads are running during a wait, the system enters [sleep or deep sleep mode](../apis/power-management-sleep.html). A major advantage of EventQueue over Ticker and Timeout is that the handler is called in the same context as the EventQueue is dispatched (thread, in the case of RTOS), so interrupt-related restrictions (such as no `printf` and no `Mutex`) do not apply.
 
 ## Handling user actions
 
