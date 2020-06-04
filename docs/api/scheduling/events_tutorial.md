@@ -116,21 +116,21 @@ If your project only uses fix-sized events, you can use a counter that tracks th
 If your projects uses variable-sized events, you can calculate the number of available events of a specific size because successfully allocated memory is never fragmented further. However, untouched space can service any event that fits, which complicates such a calculation.
 
 ```
-// event size in words: 9 + callback_size + arguments_size (where 9 is internal space for event data)
+// event size in words: 9 + callback_size (4) + arguments_size (where 9 is internal space for event data)
 void func1(int);
 void func3(int, int, int);
 
-EventQueue queue(2*(9+4)*sizeof(int)); // 26 words of storage (store two callbacks with three arguments at max)
-queue.call(func1, 1);       // requires 11 words of storage (9+2)
-queue.call(func3, 1, 2, 3); // requires 13 words of storage (9+4)
+EventQueue queue(2*(9+4+3)*sizeof(int)); // 32 words of storage (store two callbacks with three arguments at max)
+queue.call(func1, 1);       // requires 14 words of storage (9+4+1)
+queue.call(func3, 1, 2, 3); // requires 16 words of storage (9+4+3)
 // after this we have 2 words of storage left
 
 queue.dispatch(); // free all pending events
 
-queue.call(func, 1, 2, 3); // requires 13 words of storage (9+4)
+queue.call(func, 1, 2, 3); // requires 16 words of storage (9+4+3)
 queue.call(func, 1, 2, 3); // fails
-// storage has been fragmented into two events with 11 and 13 words
-// of storage, no space is left for an another 13 word event even though two words
+// storage has been fragmented into two events with 14 and 16 words
+// of storage, no space is left for an another 16 word event even though two words
 // exist in the memory region
 ```
 
@@ -139,24 +139,24 @@ queue.call(func, 1, 2, 3); // fails
 The following example would fail because of fragmentation:
 
 ```
-// event size in words: 9 + callback_size + arguments_size (where 9 is internal space for event data)
+// event size in words: 9 + callback_size (4) + arguments_size (where 9 is internal space for event data)
 void func0();
 void func3(int, int, int);
 
-EventQueue queue(4*(9+1)*sizeof(int)); // 40 words of storage
-queue.call(func0);       // requires 10 word of storage (9+1)
-queue.call(func0);       // requires 10 word of storage (9+1)
-queue.call(func0);       // requires 10 word of storage (9+1)
-queue.call(func0);       // requires 10 word of storage (9+1)
+EventQueue queue(4*(9+4)*sizeof(int)); // 52 words of storage
+queue.call(func0);       // requires 13 words of storage (9+4)
+queue.call(func0);       // requires 13 words of storage (9+4)
+queue.call(func0);       // requires 13 words of storage (9+4)
+queue.call(func0);       // requires 13 words of storage (9+4)
 // 0 words of storage remain
 
 queue.dispatch();  // free all pending events
-// all memory is free again (40 words) and in 10-word chunks
+// all memory is free again (52 words) and in 13-word chunks
 
-queue.call(func3, 1, 2, 3); // requires 13 words of storage (9+4), so allocation fails
+queue.call(func3, 1, 2, 3); // requires 16 words of storage (9+4+3), so allocation fails
 ```
 
-Forty words of storage are free but only for allocations of 10 words or fewer. The solution to this failure is to increase the size of your EventQueue. Having the proper sized EventQueue prevents you from running out of space for events in the future.
+52 words of storage are free but only for allocations of 13 words or fewer. The solution to this failure is to increase the size of your EventQueue. Having the proper sized EventQueue prevents you from running out of space for events in the future.
 
 ### More about events
 
