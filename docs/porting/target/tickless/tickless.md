@@ -1,6 +1,8 @@
+# Tickless mode
+
 Tickless mode is an optimization mechanism available in RTOS for suspending the SysTick. You can use it in situations when RTOS is idle for multiple ticks, so you can achieve power savings by entering uninterrupted sleep. 
 
-# Reminder on scheduling & sleep modes in Mbed OS
+## Reminder on scheduling & sleep modes in Mbed OS
 
 Mbed OS uses the SysTick timer at period of 1ms to process threads' scheduling.
 For instance, a system running two threads would see its timing diagram look like :
@@ -9,7 +11,7 @@ For instance, a system running two threads would see its timing diagram look lik
 
 Note how the device never enters deepsleep and wastes cycles in Systick while all thread are asleep.
 
-# Tickless mode
+## Tickless mode
 
 To support tickless mode in Mbed OS, your target needs to meet two requirements:
 
@@ -28,10 +30,10 @@ The expected scheduling for the same use-case as previously described should loo
 
 ![](./resources/Tickless.png)
 
-# Testing
+## Testing
 
 There are no dedicated tests validating tickless mode. Running all Mbed OS tests suites, with particular focus on HAL sleep and HAL low power ticker tests, provides sufficient coverage.
 
-# References
+## References
 
 You can find more details on sleep modes in mbed in the section : [Mbed OS power management sleep](../../../apis/power-management-sleep.html)
