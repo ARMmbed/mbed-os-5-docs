@@ -84,19 +84,23 @@ To select a board as the build target:
 
 The **Compile** menu offers five options:
 
-1. **Compile:** builds code that you have modified since your last compile and downloads the resulting binary file.
-1. **Compile All:** same as *compile*, but rebuilds all source code, even if it hasn't changed since the last compile.
-1. **Build Only:** compiles your code but doesn't download the result.
-1. **Compile Macros:** defines additional macros at compile time.
-1. **Update Docs**: adds documentation.
+- **Compile:** builds code that you have modified since your last compile and downloads the built binary file to your default download location.
+- **Compile All:** same as *compile*, but rebuilds all source code, even if it hasn't changed since the last compile. Downloads the built binary file to your default download location.
+- **Build Only:** compiles your code but doesn't download the result.
+- **Compile Macros:** defines additional macros at compile time.
+- **Update Docs**: adds documentation.
 
 ## Copying the file to the board
 
-<span class="notes">**Note:** If you're working on Windows, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../program-setup/serial-communication.html).</span>
+To run your program on the board:
 
-Your board should appear on your computer as removable storage. To run your program on the board, simply drag and drop the file you downloaded in the previous section.
+1. Connect your board to the computer over USB. It appears on your computer as removable storage.
+1. Navigate to your default download location. If the build has completed, your binary should be in this folder.
+1. Drag and drop the binary file to the board.
 
 <span class="images">![](../../images/device_on_mac.png)<span>The device appears as removable storage, under the name `MBED`</span></span>
+
+<span class="notes">**Note:** If you're working on Windows 7, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../program-setup/serial-communication.html).</span>
 
 # Forking a repository
 
