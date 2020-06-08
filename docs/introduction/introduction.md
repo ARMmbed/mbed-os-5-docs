@@ -30,5 +30,5 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 - A list of [deprecated APIs and their replacements](../apis/index.html#deprecated-apis).
 - Updates to [setting up Mbed OS programs](../program-setup/index.html), [build tools](../build-tools/index.html) and [debugging and testing](../debug-test/index.html).
 - New API references for [BufferedSerial](../apis/serial-uart-apis.html) and [UnbufferedSerial](../apis/unbufferedserial.html).
-- A guide to [porting a custom board](../porting/derivative-port.html).
+- A guide to [porting a custom board](../porting/porting-custom-boards.html).
 - A porting guide for the [static pin map extension](../porting/static-pinmap-port.html).
