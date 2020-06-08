@@ -1425,7 +1425,7 @@
                     ]
                 },
                 {
-                    "title": "Derivative port",
+                    "title": "Porting custom boards",
                     "intro": {
                         "path": "docs/porting/custom-target-porting.md"
                     },
