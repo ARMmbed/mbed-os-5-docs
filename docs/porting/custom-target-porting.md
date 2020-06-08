@@ -243,8 +243,6 @@ There are more directory levels than target configuration levels because many ta
    mbedls --mock 0764:IMAGINARYBOARD
    ```
 
-  <span class="notes">**Note:** If you intend to release a new target to the Mbed community, it needs a unique Platform ID. To get one, please contact your technical account manager or email [our support team](mailto:support@mbed.com).</span>
-
 1. Run the tests, with the following command:
 
    ```
