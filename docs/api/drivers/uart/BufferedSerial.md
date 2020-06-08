@@ -7,7 +7,7 @@ The `BufferedSerial` class provides UART functionality. We recommend you use thi
 Serial channels have the following characteristics:
 
 - TX and RX pins - you can specify either pin as Not Connected (NC) for simplex (unidirectional) communication or both as valid pins for full duplex (bidirectional) communication.
-- Baud rate - predefined speed at which data is sent and received on the UART interface. Standard baud rates include 9600, 119200 and 115200.
+- Baud rate - predefined speed at which data is sent and received on the UART interface. Standard baud rates include 9600, 19200 and 115200.
 
 Data is transmitted using packets of configurable sizes divided in different sections, which include:
 
