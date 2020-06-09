@@ -45,7 +45,7 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ## LittleFileSystem example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-5.15/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/master/main.cpp)
 
 ## Related content
 
