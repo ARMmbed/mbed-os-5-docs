@@ -90,15 +90,7 @@ Configure your target to support Mbed OS 6:
 
     <span class="notes">**Note:** As mentioned above, to successfully build with microlib, the target must define a two-region memory model. You might need to replace the content of the `TOOLCHAIN_ARM_STD` linker file with that of `TOOLCHAIN_ARM_MICRO`, which includes a two-region memory model linker file.</span>
 
-1. If your board does not have a low power ticker, ensure that tickless is enabled using the microsecond ticker:
-
-    ```json
-    "overrides": {
-        "tickless-from-us-ticker": true
-    }
-    ```
-
-    - By default, all bare metal targets are configured to have a boot stack size of 0x1000 (4,096 bytes). If this is too much for your target, you will need to override the stack allocation to match your target's available RAM.
+1. By default, all bare metal targets are configured to have a boot stack size of 0x1000 (4,096 bytes). If this is too much for your target, you will need to override the stack allocation to match your target's available RAM.
 
     The stack size is configured by setting a value for the `boot-stack-size` attribute; this value must be a multiple of 8 for alignment purposes. We recommend that you reduce the boot stack size to 0x400 (1,024 bytes) if your target has 8KB of RAM and to 0x300 (768 bytes) if your target has 4KB of RAM.
 
