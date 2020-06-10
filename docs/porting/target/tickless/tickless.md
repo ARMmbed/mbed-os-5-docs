@@ -27,7 +27,7 @@ To enable tickless mode for your target, add the `MBED_TICKLESS` macro in `targe
 ]
 ```
 
-When tickless mode is enabled, Mbed OS's default [OsTimer](../mbed-os-api-doxy/structos__timer__def.html) based on the [low power ticker](../mbed-os-api-doxy/group__hal__lp__ticker.html) replaces SysTick. If a target's low power ticker has an excessively long wake-up time or other performance issues, make it use the [microsecond ticker](../mbed-os-api-doxy/group__hal__us__ticker.html) instead by adding the below configuration in 'target.json' (in your target's section). And this configuration is not required for the target which does not have low power ticker as the default OsTimer based on the microsecond ticker.
+When tickless mode is enabled, Mbed OS's default [OsTimer](../mbed-os-api-doxy/structos__timer__def.html), based on the [low power ticker](../mbed-os-api-doxy/group__hal__lp__ticker.html), replaces SysTick. If a target's low power ticker has an excessively long wake-up time or other performance issues, make it use the [microsecond ticker](../mbed-os-api-doxy/group__hal__us__ticker.html) instead, by adding the `tickless-from-us-ticker` configuration in 'target.json' (in your target's section). This configuration is not required for a target that does not have low power ticker, because it will default to the microsecond ticker.
 
 ```json
 "overrides": {
