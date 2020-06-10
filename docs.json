@@ -1302,7 +1302,7 @@
                             "path": "docs/porting/target/thread_porting.md"
                         },
                         {
-                            "path": "docs/porting/target/tickless.md"
+                            "path": "docs/porting/target/tickless/tickless.md"
                         },
                         {
                             "path": "docs/porting/target/sleep.md"
