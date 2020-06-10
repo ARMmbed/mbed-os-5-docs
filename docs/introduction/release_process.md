@@ -50,7 +50,7 @@ After all tests return no errors, we release the latest updates. You can find th
 
 ## The API life cycle
 
-Mbed OS API are managed in three phases:
+Mbed OS APIs are managed in three phases:
 
 1.	Experimental: No changes are considered breaking, so they can be changed in any release type. They are on the Mbed OS Master branch and can be included in any Mbed OS build, but are identified as experimental and users have to explicitly include them.
 1.	Stable: Can only be changed in a non-breaking manner. These are included by default in the Mbed OS full profile and, where appropriate, the bare metal profile.
