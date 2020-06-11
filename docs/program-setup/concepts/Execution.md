@@ -6,21 +6,20 @@ In single-microcontroller embedded systems, a thread is an independent segment o
 
 There are two types of schedulers (a central piece of software):
 
-* Preemptive
-    * The scheduler is responsible for picking and running the threads. Preemptive schedulers can use different algorithms.
-        * Priority based round robin is used by Mbed OS
-        * Threads are executed in equal time slots according to their priority
-* Cooperative
-    * The scheduler doesn't actively manage the threads
-    * Active thread needs to yield execution for another thread to run
-    * Not supported by Mbed OS
+* **Preemptive:** The scheduler is responsible for picking and running the threads. Preemptive schedulers can use different algorithms:
+    * Mbed OS uses priority based round robin.
+    * In an algorithm not used in Mbed OS, threads are executed in equal time slots according to their priority.
+* **Cooperative:** The scheduler doesn't actively manage the threads. An active thread needs to yield execution for another thread to run. Mbed OS does not support this.
 
 Your application (`main` function) starts execution in the main thread, but it's not the only thread running in Mbed OS. There are many threads running system services, such as:
-* Main - The default thread that executes the application's `main` function. The main thread has 4kB of stack space by default. The application can configure it in `mbed_app.json` by defining the `MAIN_STACK_SIZE` parameter.
-* Idle - The thread that's run by the scheduler when there's no other activity in the system (e.g. all other threads are waiting for some event). It's used to make sure the board is not burning empty processor cycles, but is put to sleep for as long as possible.
-* Timer - The thread that handles system and user timer objects. *Note: The user timer class RtosTimer is deprecated. You should not use it for new designs. Use EventQueue instead.*
 
-On top of the standard system threads, some drivers may use additional threads. Users can create threads using the [Thread class](../apis/thread.html).
+* **Main:** The default thread that executes the application's `main` function. The main thread has 4kB of stack space by default. The application can configure it in `mbed_app.json` by defining the `MAIN_STACK_SIZE` parameter.
+* **Idle:** The thread that's run by the scheduler when there's no other activity in the system (for example, all other threads are waiting for some event). It's used to make sure the board is not burning empty processor cycles, but is put to sleep for as long as possible.
+* **Timer:** The thread that handles system and user timer objects.
+
+    **Note:** The user timer class RtosTimer is deprecated and you should not use it in new designs. Use EventQueue instead.
+
+On top of the standard system threads, some drivers may use additional threads. You can create threads using the [Thread class](../apis/thread.html).
 
 ## Modes
 
