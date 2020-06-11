@@ -8,7 +8,7 @@ Mbed OS uses the SysTick timer in periods of 1ms to process threads' scheduling.
 
 For instance, a system running two threads would see this timing:
 
-![](resources/Normal_Tick.png)
+<span class="images">![](resources/Normal_Tick.png)</span>
 
 Note that the device never enters deep sleep and wastes cycles in SysTick while all threads are asleep.
 
@@ -39,7 +39,7 @@ If tickless mode uses the microsecond ticker, the device will enter sleep rather
 
 The expected scheduling for the previous use case should look like:
 
-![](resources/Tickless.png)
+<span class="images">![](resources/Tickless.png)</span>
 
 ## Testing
 
