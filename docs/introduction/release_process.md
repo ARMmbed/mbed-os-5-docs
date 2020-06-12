@@ -54,6 +54,6 @@ Mbed OS APIs are managed in three phases:
 
 1.	Experimental: No changes are considered breaking, so they can be changed in any release type. They are on the Mbed OS Master branch and can be included in any Mbed OS build, but are identified as experimental and users have to explicitly include them.
 1.	Stable: Can only be changed in a non-breaking manner. These are included by default in the Mbed OS full profile and, where appropriate, the bare metal profile.
-1.	Deprecated: API deprecation is a breaking change, and done only in major releases.
+1.	Deprecated: An API that will be removed in the next major release. Building with a deprecated API will raise a warning, but will not fail. Arm Mbed will announce an upcoming major release so that you can replace the deprecated API in time.
 
 APIs moved between the three phases only through pull requests raised against the Master branch.
