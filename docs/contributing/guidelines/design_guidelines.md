@@ -130,6 +130,22 @@ A general module can be split into two APIs, the frontend (or user API) and the 
 - If a callback is called in interrupt context, the API responsible should be clearly documented with a warning.
 	Use a consistent form across all APIs: **"warning: called from interrupt context"**
 
+### Experimental APIs
+
+All new APIs are considered experimental APIs and identified with `FEATURE_EXPERIMENTAL_API`:
+
+- For simple APIs (only one source file, or one source file and one header file), or when adding an experimental API to a stable library, use the flag as a preprocessor `ifdef` in the source file:
+
+    ```
+    #ifdef FEATURE_EXPERIMENTAL_API
+        // Code
+    #endif
+    ```
+
+- For full subsystems or libraries, place them under the directory `FEATURE_EXPERIMENTAL_API`.
+
+The build system only compiles files under this directory, or using this IFDEF, if the user includes them in the application's configuration.
+
 ## Documentation
 
 - Document all entities in a `.h` file using doxygen comment blocks.
