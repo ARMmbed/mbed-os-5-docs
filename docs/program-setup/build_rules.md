@@ -83,7 +83,7 @@ By default, Mbed OS doesn't compile [experimental APIs](). You can override this
 }
 
 ```
-<!--so for a specific one, or does this now allow me to use all experimental APIs in one giant go?-->
+The `EXPERIMENTAL_API` flag enables experimental APIs but may not activate individual APIs. Please follow each API's documentation to use it.  
 
 ### Component directories
 
