@@ -115,6 +115,6 @@ After the call the processor and most components will reset, but it will not aff
 
 ## Related content
 
-- [How build profiles impact sleep mode options](../program-setup/build-profiles-and-rules.html).
+- [How build profiles impact sleep mode functionality](../program-setup/build-profiles-and-rules.html).
 - [DeepSleepLock API reference](deepsleeplock.html).
 - [Idle loop API reference](idle-loop.html).
