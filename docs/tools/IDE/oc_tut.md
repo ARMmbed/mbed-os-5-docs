@@ -101,7 +101,7 @@ To run your program on the board:
 
 <span class="images">![](../../images/device_on_mac.png)<span>The device appears as removable storage, under the name `MBED`</span></span>
 
-<span class="notes">**Note:** If you're working on Windows 7, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../program-setup/serial-communication.html).</span>
+<span class="notes">**Note:** If you're working on Windows 7, you might need to install a driver to allow you to copy to your board. Please see the [Windows Serial Driver section](../tutorials/serial-communication.html).</span>
 
 # Forking a repository
 
