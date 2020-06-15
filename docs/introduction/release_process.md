@@ -1,4 +1,4 @@
-# How We Release Arm Mbed OS
+# How we release Arm Mbed OS
 
 The three types of Arm Mbed OS releases are major, feature and patch.
 
