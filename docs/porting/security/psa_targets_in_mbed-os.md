@@ -1,11 +1,11 @@
+# PSA targets in Mbed OS
+
 *Glossary*\
 NSPE - Non-Secure Processing Environment\
 PSA - Platform Security Architecture\
 SPE - Secure Processing Environment\
 SPM - Secure Partition Manager\
 TF-M - Trusted Firmware M
-
-# PSA targets in Mbed OS
 
 Before start reading this, please read [porting a custom
 board](https://os.mbed.com/docs/mbed-os/latest/porting/porting-a-custom-board.html)
@@ -19,7 +19,7 @@ focus is more on target configurations, build and validation. Mbed OS relies on
 Services and SPM. Therefore the PSA target being added to Mbed OS **MUST**
 already be supported by TF-M.
 
-# Adding new PSA targets
+## Adding new PSA targets
 To help with the creation of PSA targets, a couple of generic targets have been
 added to `targets/targets.json`.
 * `PSA_Target` (Root level PSA target)
@@ -62,7 +62,7 @@ Example of a single-core Armv7-M PSA target:
     }
 ```
 
-## Naming convention for dual-core and Armv8-M target names
+### Naming convention for dual-core and Armv8-M target names
 As described in previous paragraphs, only NSPE target name **MUST** be defined
 for dual-core and Armv8-M PSA targets. For Armv8-M non-PSA targets, both SPE
 and NSPE target names can be defined. This section defines the naming
@@ -72,7 +72,7 @@ convention for the same.
 `TargetName_NPSA_S`  : Non-PSA secure target\
 `TargetName_NPSA`    : Non-PSA non-secure target
 
-## Adding single-core PSA targets
+### Adding single-core PSA targets
 Mbed OS's PSA service emulation provides PSA compatibility for single-core PSA
 targets.
 
@@ -207,7 +207,7 @@ In this case, following additional attributes **MUST** be added,
         ]
 ```
 
-## Adding dual-core PSA targets
+### Adding dual-core PSA targets
 A target can be categorized as a dual-core target if it has at least two cores
 that are either Armv7-M or Armv6-M. On dual-core PSA targets, TF-M runs on the
 SPE and provides PSA services.
@@ -332,7 +332,7 @@ attributes have been added,
 
 If a dual-core PSA target can inherit from `PSA_DUAL_CORE` then there is no need to add the additional attributes listed above.
 
-## Adding Armv8-M PSA targets
+### Adding Armv8-M PSA targets
 An Mbed OS (NSPE) target **MUST** contain the following attributes in addition
 to other target attributes defined in [porting a custom
 board](https://os.mbed.com/docs/mbed-os/latest/porting/porting-a-custom-board.html)
@@ -442,7 +442,7 @@ added.
         ]
 ```
 
-#  Enabling PSA at application level
+## Enabling PSA at application level
 Having an entropy source is crucial for Mbed TLS and Mbed Crypto. The
 [document](https://os.mbed.com/docs/mbed-os/latest/porting/entropy-sources.html)
 talks about entropy and how to add an entropy source. Sometimes a target might
@@ -463,7 +463,7 @@ example mbed_app.json:
 }
 ```
 
-# Build and validation
+## Build and validation
 For dual-core and Armv8-M PSA targets, TF-M runs on the SPE and provides PSA
 services. The python script `build_tfm.py` automates building TF-M and copying
 the TF-M binary to a predefined location defined by the target attribute
@@ -474,7 +474,7 @@ The
 [mbed-os-tf-m-regression-tests](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests)
 contains build scripts, TF-M regression tests and PSA API compliance tests.
 
-## Building TF-M and running regression tests
+### Building TF-M and running regression tests
 Follow the steps below to build TF-M and regression tests:
 
 1. Clone
@@ -523,7 +523,7 @@ optional arguments:
                         Suite name for PSA API Tests
 ```
 
-## Building TF-M and running PSA compliance tests
+### Building TF-M and running PSA compliance tests
 Follow the steps below to build TF-M and compliance tests:
 
 1. Switch to the `mbed-os-tf-m-regression-tests` directory.
@@ -570,7 +570,7 @@ optional arguments:
                         <include_path1>;<include_path2>;...;<include_pathn>
 ```
 
-## Building TF-M and creating Mbed OS pull request
+### Building TF-M and creating Mbed OS pull request
 Follow the steps below to build TF-M and to create Mbed OS pull request:
 
 1. Switch to `mbed-os-tf-m-regression-tests` directory
