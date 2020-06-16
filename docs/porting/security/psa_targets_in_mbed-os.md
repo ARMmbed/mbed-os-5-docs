@@ -172,10 +172,6 @@ In this case, you must add the following additional attributes:
         ],
         "extra_labels_add": [
             "MBED_PSA_SRV"
-        ],
-        "macros_add": [
-            "MBEDTLS_PSA_HAS_ITS_IO",
-            "MBEDTLS_USE_PSA_CRYPTO"
         ]
 ```
 
@@ -236,9 +232,7 @@ The following example shows a PSA enabled dual-core target, `PSoC64`:
         "macros_add": [
             "CYB0644ABZI_S2D44",
             "CYBSP_WIFI_CAPABLE",
-            "TFM_MULTI_CORE_MULTI_CLIENT_CALL=1",
-            "MBEDTLS_PSA_HAS_ITS_IO",
-            "MBEDTLS_USE_PSA_CRYPTO"
+            "TFM_MULTI_CORE_MULTI_CLIENT_CALL=1"
         ],
         "detect_code": [
             "190A"
@@ -278,10 +272,6 @@ This dual-core PSA target doesn't inherit from `PSA_DUAL_CORE` because it has to
         "extra_labels_add": [
             "TFM",
             "TFM_DUALCPU"
-        ],
-        "macros_add": [
-            "MBEDTLS_PSA_HAS_ITS_IO",
-            "MBEDTLS_USE_PSA_CRYPTO"
         ]
 ```
 
@@ -376,10 +366,6 @@ If an Armv8-M PSA target cannot inherit from `PSA_V8_M` because it has to inheri
         "extra_labels_add": [
             "TFM",
             "TFM_V8M"
-        ],
-        "macros_add": [
-            "MBEDTLS_PSA_HAS_ITS_IO",
-            "MBEDTLS_USE_PSA_CRYPTO"
         ]
 ```
 
@@ -437,32 +423,6 @@ To build TF-M and regression tests:
     ```
 1. Flash the regression tests binary to the target and ensure all regression tests pass.
 
-#### All supported options
-
-```console
-usage: build_tfm.py [-h]
-                    [-c {ConfigCoreIPC.cmake,ConfigRegressionIPC.cmake,ConfigPsaApiTestIPC.cmake}]
-                    [-m {ARM_MUSCA_A1,ARM_MUSCA_B1,CY8CKIT_064S2_4343W,CYESKIT_064B0S2_4343W}]
-                    [-t {ARMCLANG,GNUARM}] [-d] [-l] [--commit]
-                    [-s {CRYPTO,INITIAL_ATTESTATION,PROTECTED_STORAGE,INTERNAL_TRUSTED_STORAGE}]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -c {ConfigCoreIPC.cmake,ConfigRegressionIPC.cmake,ConfigPsaApiTestIPC.cmake}, --config {ConfigCoreIPC.cmake,ConfigRegressionIPC.cmake,ConfigPsaApiTestIPC.cmake}
-                        Use the specified TF-M configuration
-  -m {ARM_MUSCA_A1,ARM_MUSCA_B1,CY8CKIT_064S2_4343W,CYESKIT_064B0S2_4343W}, --mcu {ARM_MUSCA_A1,ARM_MUSCA_B1,CY8CKIT_064S2_4343W,CYESKIT_064B0S2_4343W}
-                        Build for the given MCU
-  -t {ARMCLANG,GNUARM}, --toolchain {ARMCLANG,GNUARM}
-                        Build for the given toolchain (default is
-                        tfm_default_toolchain)
-  -d, --debug           Set build profile to debug
-  -l, --list            Print supported TF-M secure targets
-  --commit              Commit secure binaries (TF-M) and
-                        features/FEATURE_PSA/TARGET_TFM/VERSION.txt
-  -s {CRYPTO,INITIAL_ATTESTATION,PROTECTED_STORAGE,INTERNAL_TRUSTED_STORAGE}, --suite {CRYPTO,INITIAL_ATTESTATION,PROTECTED_STORAGE,INTERNAL_TRUSTED_STORAGE}
-                        Suite name for PSA API Tests
-```
-
 ### Building TF-M and running PSA compliance tests
 
 To build TF-M and compliance tests:
@@ -494,33 +454,6 @@ To build TF-M and compliance tests:
 1. Flash the PSA API compliance tests binary to the target and ensure all PSA API compliance tests pass.
 
     <span class="notes">**Note:** Any PSA API compliance tests that fail in the TF-M example application will fail in Mbed OS as well.</span>
-
-#### All supported options
-
-```console
-usage: build_psa_compliance.py [-h] -m
-                               {ARM_MUSCA_A1,ARM_MUSCA_B1,CY8CKIT_064S2_4343W}
-                               [-t {ARMCLANG,GNUARM}] [-v {1,2,3,4,5}]
-                               [-s {CRYPTO,INITIAL_ATTESTATION,PROTECTED_STORAGE,INTERNAL_TRUSTED_STORAGE}]
-                               [-r RANGE] [-i INCLUDE]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -m {ARM_MUSCA_A1,ARM_MUSCA_B1,CY8CKIT_064S2_4343W}, --mcu {ARM_MUSCA_A1,ARM_MUSCA_B1,CY8CKIT_064S2_4343W}
-                        Build for the given MCU
-  -t {ARMCLANG,GNUARM}, --toolchain {ARMCLANG,GNUARM}
-                        Build for the given toolchain (GNUARM)
-  -v {1,2,3,4,5}, --verbose {1,2,3,4,5}
-                        Verbose level of the build (default : 3)
-  -s {CRYPTO,INITIAL_ATTESTATION,PROTECTED_STORAGE,INTERNAL_TRUSTED_STORAGE}, --suite {CRYPTO,INITIAL_ATTESTATION,PROTECTED_STORAGE,INTERNAL_TRUSTED_STORAGE}
-                        Test suite name (default : CRYPTO)
-  -r RANGE, --range RANGE
-                        Test suite range (default : all tests), Format :
-                        'test_start_number;test_end_number'
-  -i INCLUDE, --include INCLUDE
-                        Test include path, Format :
-                        <include_path1>;<include_path2>;...;<include_pathn>
-```
 
 ### Building TF-M and creating an Mbed OS pull request
 
