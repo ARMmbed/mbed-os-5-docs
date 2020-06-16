@@ -16,26 +16,27 @@ Please fork or branch the following repositories:
 
 The following Mbed CLI commands retrieve and fork the `mbed-os-example-blinky` code, and redirect `mbed-os` to point to the newly forked `mbed-os` repository:
 
-```
-git clone mbed-os-example-blinky
-cd mbed-os-example-blinky
-```
+1. Import the code:
 
-Delete the file `mbed-os.lib` (`rm mbed-os.lib` on Linux/macOS, `del mbed-os.lib` on Windows).
+    ```
+    mbed import https://github.com/ARMmbed/mbed-os-example-blinky
+    ```
 
-Next, add your fork of `mbed-os` (change the URL to match your repository).
+1. Delete the file `mbed-os.lib` (`rm mbed-os.lib` on Linux/macOS, `del mbed-os.lib` on Windows).
 
-```
-mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
-```
+1. Add your fork of `mbed-os` (change the URL to match your repository).
 
-Next, set up the upstream remote, and create a branch for the new port.
+    ```
+    mbed add https://github.com/ARMmbed/mbed-os-new-target mbed-os
+    ```
 
-```
-cd mbed-os
-git remote add upstream https://github.com/ARMmbed/mbed-os
-git checkout -b <branch_name>
-```
+1. Set up the upstream remote, and create a branch for the new port.
+
+    ```
+    cd mbed-os
+    git remote add upstream https://github.com/ARMmbed/mbed-os
+    git checkout -b <branch_name>
+    ```
 
 ## Build the Blinky program for an existing target
 
