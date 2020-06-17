@@ -432,3 +432,4 @@ The `orphans` command shows all targets that you cannot reach from a public targ
 
 - [Defining a PSA-compliant target in targets.json](../program-setup/adding-and-configuring-targets.html#defining-a-psa-compliant-target-in-targets.json).
 - [Developing: Mbed CLI](../build-tools/mbed-cli.html).
+- [Custom targets in Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/mbed-os/custom-targets.html).
