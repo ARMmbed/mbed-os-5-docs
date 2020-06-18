@@ -371,7 +371,7 @@ If an Armv8-M PSA target cannot inherit from `PSA_V8_M` because it has to inheri
 
 Having an entropy source is crucial for Mbed TLS and PSA. The [entropy source porting document](../porting/entropy-sources.html) discusses why and how to add an entropy source.
 
-If your target doesn't have a True Random Number Generator (TRNG), configure it as a non-PSA target in `targets/targets.json`. In this scenario, if an application wants to use the target as a PSA target, then it is the application's responsibility to provide an entropy source and mark that target as a PSA target at the application level. To enable PSA for a target from an application, use the config option [target_overrides](,,/reference/configuration.html).
+If your target doesn't have a True Random Number Generator (TRNG), configure it as a non-PSA target in `targets/targets.json`. In this scenario, if an application wants to use the target as a PSA target, then it is the application's responsibility to provide an entropy source and mark that target as a PSA target at the application level. To enable PSA for a target from an application, use the config option [target_overrides](../reference/configuration.html).
 
 An example of `mbed_app.json`:
 
@@ -468,14 +468,14 @@ To build TF-M and create an Mbed OS pull request:
 
     The command builds TF-M with the config `ConfigCoreIPC.cmake`, copies the TF-M binary to the location defined by the target attribute `tfm_delivery_dir`, and commits the changes to Mbed OS.
 
-**Tip:** When you run the Python script `build_tfm.py` without any options, TF-M is built for all supported targets and the secure binary (TF-M) for each target is copied to the location defined by the target attribute `tfm_delivery_dir`. When you use the `--commit` option, a new Mbed OS commit is created with the new or modified TF-M binaries and `features/FEATURE_PSA/TARGET_TFM/VERSION.txt`.
+    <span class="tips">**Tip:** When you run the Python script `build_tfm.py` without any options, TF-M is built for all supported targets and the secure binary (TF-M) for each target is copied to the location defined by the target attribute `tfm_delivery_dir`. When you use the `--commit` option, a new Mbed OS commit is created with the new or modified TF-M binaries and `features/FEATURE_PSA/TARGET_TFM/VERSION.txt`.</span>
 
 1. Switch to the `mbed-os` directory and check the latest commit.
 
    If everything looks good, push the changes to your fork of Mbed OS.
 1. Create an Mbed OS pull request against [https://github.com/ARMmbed/mbed-os](https://github.com/ARMmbed/mbed-os).
 
-<span class="tips">**Tip:** See the [contributing guide](../contributing/index.html) for more information about pull requests.</span>
+    <span class="tips">**Tip:** See the [contributing guide](../contributing/index.html) for more information about pull requests.</span>
 
 ## Further reading
 
