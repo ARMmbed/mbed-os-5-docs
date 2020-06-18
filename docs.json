@@ -1330,7 +1330,7 @@
                 {
                     "title": "Porting security",
                     "sources": [{
-                            "path": "docs/porting/security/spm.md"
+                            "path": "docs/porting/security/psa_targets_in_mbed-os.md"
                         },
                         {
                             "path": "docs/porting/security/crypto.md"
@@ -1343,9 +1343,6 @@
                         },
                         {
                             "path": "docs/porting/security/TLS-on-PSA.md"
-                        },
-                        {
-                            "path": "docs/porting/security/testing_psa_service_compliance.md"
                         }
                     ]
                 },
