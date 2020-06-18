@@ -24,7 +24,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
-- A new [PSA porting guide for ](../porting/porting-security.html).
+- A new [PSA porting guide](../porting/porting-security.html).
 - New information about [API life cycle ](../introduction/versions-and-releases.html#the-api-life-cycle) and how to [contribute experimental APIs](../contributing/software-design.html#experimental-apis) and [use them in an application](../program-setup/build-rules.html#label-directories).
 - [Tickless mode porting updates](../porting/tickless-mode.html).
 - A new section [for the bare metal profile](../bare-metal/index.html), including [moving Mbed 2 applications to bare metal](../bare-metal/using-the-bare-metal-profile.html) and [porting targets from Mbed 2](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
