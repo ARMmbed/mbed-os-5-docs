@@ -161,7 +161,7 @@
     "tools/debug-builds-cli.html": "program-setup/debug-builds-cli.html",
     "tools/troubleshooting.html": "build-tools/troubleshoot.html",
     "apis/bufferedserial.html": "apis/serial-uart-apis.html",
-    "porting/porting-targets.html" : "apis/porting-the-hal-apis.html",
+    "porting/porting-targets.html" : "porting/porting-the-hal-apis.html",
     "tools/build-profiles.html" : "program-setup/build-profiles-and-rules.html",
     "tools/utest-asynchronous-c-test-harness.html" : "debug-test/utest-asynchronous-c-test-harness.html",
     "apis/non-ip-cellular-socket.html" : "apis/network-socket-apis.html",

@@ -46,7 +46,7 @@ This leads to significant energy savings without any modification from you. For 
 Whether the sleep manager puts the MCU in deep sleep instead of sleep depends on:
 
 - Whether the device has low-power tickers available. These are required to wake up the MCU when high-frequency tickers are disabled. If low power tickers are available, the `DEVICE_LPTICKER` macro is set.
-- Whether [tickless mode](../porting/tickless.html) is enabled. In tickless mode, the system can function without SysTick running. This is either enabled by the device, or by setting the `MBED_TICKLESS=1` macro.
+- Whether [tickless mode](../porting/tickless-mode.html) is enabled. In tickless mode, the system can function without SysTick running. This is either enabled by the device, or by setting the `MBED_TICKLESS=1` macro.
 - If any bus or driver is active that relies on the high-frequency clock, such as the SPI bus when doing asynchronous operations or a high-frequency [Timer](../apis/timer.html).
 - The time until waking up, as waking up from deep sleep can take up to 10 ms.
 

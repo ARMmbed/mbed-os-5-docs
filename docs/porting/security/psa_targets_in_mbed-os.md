@@ -2,7 +2,7 @@
 
 This document describes the process of adding new PSA targets to Mbed OS, focusing on target configurations, build and validation. Mbed OS relies on [TF-M](https://git.trustedfirmware.org/trusted-firmware-m.git/tree/) for its implementation of PSA, so the PSA target you are adding to Mbed OS **must** already be supported by TF-M.
 
-Before reading this document, please read [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-targets.html), which provide step-by-step instructions to porting a new target to Mbed OS.
+Before reading this document, please read [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-the-hal-apis.html), which provide step-by-step instructions to porting a new target to Mbed OS.
 
 ## Glossary
 
@@ -177,7 +177,7 @@ In this case, you must add the following additional attributes:
 
 A target can be categorized as a dual-core target if it has at least two cores that are either Armv7-M or Armv6-M. On dual-core PSA targets, TF-M runs on the SPE and provides PSA services.
 
-An Mbed OS (NSPE) target must contain the following attributes (in addition to other target attributes defined in [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-targets.html)):
+An Mbed OS (NSPE) target must contain the following attributes (in addition to other target attributes defined in [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-the-hal-apis.html)):
 
 * `inherits`: PSA generic target `PSA_DUAL_CORE`, unless the target has to inherit
   from one of its family targets.
@@ -278,7 +278,7 @@ If a dual-core PSA target can inherit from `PSA_DUAL_CORE`, then there is no nee
 ### Adding Armv8-M PSA targets
 
 An Mbed OS (NSPE) target must contain the following attributes (in addition to other target attributes defined in [porting a custom board](../porting/porting-a-custom-board.html)
-and [porting targets](../porting/porting-targets.html)):
+and [porting targets](../porting/porting-the-hal-apis.html)):
 
 * `inherits`: PSA generic target `PSA_V8_M`, unless the target has to inherit from
   one of its family targets.
@@ -481,7 +481,7 @@ To build TF-M and create an Mbed OS pull request:
 
 For more information, see:
 
-- [Macros]([extra_labels](../reference/adding-and-configuring-targets.html)).
+- [Macros(extra_labels](../reference/adding-and-configuring-targets.html)).
 - [extra_labels](../reference/adding-and-configuring-targets.html).
 - [device_has](../reference/adding-and-configuring-targets.html).
 - [Features](../reference/adding-and-configuring-targets.html).
