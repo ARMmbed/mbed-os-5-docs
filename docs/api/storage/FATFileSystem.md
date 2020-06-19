@@ -1,6 +1,6 @@
 # FATFileSystem
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_f_a_t_file_system.png)<span>FATFileSystem class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.1/mbed-os-api-doxy/classmbed_1_1_f_a_t_file_system.png)<span>FATFileSystem class hierarchy</span></span>
 
 The FAT file system is an established disk-oriented file system that you can find on Mbed OS, Windows, Linux and macOS. Due to its age and popularity, the FAT file system has become the standard for portable storage, such as flash drivers and SD cards.
 
@@ -34,11 +34,11 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ## FATFileSystem class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_f_a_t_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.1/mbed-os-api-doxy/classmbed_1_1_f_a_t_file_system.html)
 
 ## FATFileSystem example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-6.1.0/main.cpp)
 
 ## Related content
 

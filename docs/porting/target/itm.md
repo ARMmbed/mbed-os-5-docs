@@ -24,7 +24,7 @@ Some SWO viewers do not allow an arbitrary frequency to be set. Make sure that t
 
 ## Implementing the ITM API
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__itm__hal.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/group__itm__hal.html)
 
 - You must implement the function `itm_init`. When the function is called:
   - The function must initialize the debug clock for the ITM.

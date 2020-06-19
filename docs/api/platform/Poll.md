@@ -15,11 +15,11 @@ As per the POSIX specification, `poll` always indicates that ordinary files (as 
 
 ## Poll reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__poll.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/group__platform__poll.html)
 
 ## Poll example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Poll/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Poll/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Poll/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-Poll/blob/v6.1/main.cpp)
 
 ## Related content
 

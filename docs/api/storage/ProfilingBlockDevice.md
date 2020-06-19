@@ -1,6 +1,6 @@
 # ProfilingBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_profiling_block_device.png)<span>ProfilingBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.1/mbed-os-api-doxy/classmbed_1_1_profiling_block_device.png)<span>ProfilingBlockDevice class hierarchy</span></span>
 
 The ProfilingBlockDevice class provides a decorator for an existing block device object to log reads, writes and erases.
 
@@ -10,13 +10,13 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## ProfilingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_profiling_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.1/mbed-os-api-doxy/classmbed_1_1_profiling_block_device.html)
 
 ## ProfilingBlockDevice example
 
 Create a ProfilingBlockDevice, perform storage operations and report back the read, write and erase counts.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ProfilingBlockDevice/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-ProfilingBlockDevice/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ProfilingBlockDevice/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-ProfilingBlockDevice/blob/v6.1/main.cpp)
 
 ## Related content
 

@@ -1,6 +1,6 @@
 # SPI
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
 
 The SPI Interface provides a Serial Peripheral Interface Master.
 
@@ -25,10 +25,10 @@ The SPI master generates a clock to synchronously drive a serial bit stream slav
 
 ## SPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
 
 ## SPI hello, world
 
 The following example uses the WHOAMI register. The WHOAMI register is an ID register of the slave device. In other words, it's just an example that you can write to a slave's register. In this example, Mbed OS acts as the SPI master, and DigitalOut acts as the slave chip select (cs).
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SPI_HelloWorld/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-SPI_HelloWorld/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SPI_HelloWorld/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-SPI_HelloWorld/blob/v6.1/main.cpp)

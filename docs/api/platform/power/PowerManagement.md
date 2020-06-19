@@ -107,11 +107,11 @@ After the call the processor and most components will reset, but it will not aff
 
 ## Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__power__mgmt.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/group__platform__power__mgmt.html)
 
 ## Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.1/main.cpp)
 
 ## Related content
 

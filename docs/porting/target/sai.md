@@ -76,7 +76,7 @@ Hardware SAI/I2S capabilities.
 
 You can find the API and specification for the SAI API in the following class reference:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/feature-hal-spec-sai-doxy/classmbed_1_1_s_a_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/feature-hal-spec-sai-doxy/classmbed_1_1_s_a_i.html)
 
 To enable SAI support in Mbed OS, add the `SAI` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -90,4 +90,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sai*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/feature-hal-spec-sai-doxy/group__hal__sai__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/feature-hal-spec-sai-doxy/group__hal__sai__tests.html)

@@ -1,12 +1,12 @@
 # InterruptIn
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_interrupt_in.png)<span>InterruptIn class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/classmbed_1_1_interrupt_in.png)<span>InterruptIn class hierarchy</span></span>
 
 Use the InterruptIn interface to trigger an event when a digital input pin changes. You can trigger interrupts on the rising edge (change from 0 to 1) or falling edge (change from 1 to 0) of signals.
 
 ## InterruptIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_interrupt_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/classmbed_1_1_interrupt_in.html)
 
 **Warnings:**
 
@@ -22,13 +22,13 @@ To read an input, see [DigitalIn](digitalin.html).
 
 ## InterruptIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_2/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_2/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_2/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_2/blob/v6.1/main.cpp)
 
 ## InterruptIn example
 
 Try the following example to count rising edges on a pin.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_1/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_1/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-InterruptIn_ex_1/blob/v6.1/main.cpp)
 
 ## Related content
 

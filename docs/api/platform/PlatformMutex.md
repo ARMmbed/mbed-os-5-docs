@@ -1,6 +1,6 @@
 # PlatformMutex
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_platform_mutex.png)<span>PlatformMutex class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/class_platform_mutex.png)<span>PlatformMutex class hierarchy</span></span>
 
 You can use the PlatformMutex class to synchronize the execution of threads.
 
@@ -10,11 +10,11 @@ The Mbed OS drivers use the PlatformMutex class instead of [Mutex](../apis/mutex
 
 ## PlatformMutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_platform_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/class_platform_mutex.html)
 
 ## PlatformMutex example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PlatformMutex_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-PlatformMutex_ex_1/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PlatformMutex_ex_1/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-PlatformMutex_ex_1/blob/v6.1/main.cpp)
 
 ## Related content
 

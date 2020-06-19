@@ -75,23 +75,23 @@ You can use the `mbed_stats_cpu_get` function to get the uptime, idle time and s
 
 ## Mbed statistics function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__stats_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/mbed__stats_8h_source.html)
 
 ## Memory statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Utils_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Utils_ex_1/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Utils_ex_1/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-Utils_ex_1/blob/v6.1/main.cpp)
 
 ## Thread statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thread-statistics)](https://github.com/ARMmbed/mbed-os-example-thread-statistics/blob/mbed-os-6.1.0/main.cpp)
 
 ## System information example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sys-info)](https://github.com/ARMmbed/mbed-os-example-sys-info/blob/mbed-os-6.1.0/main.cpp)
 
 ## CPU statistics example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cpu-stats)](https://github.com/ARMmbed/mbed-os-example-cpu-stats/blob/mbed-os-6.1.0/main.cpp)
 
 ## Related content
 

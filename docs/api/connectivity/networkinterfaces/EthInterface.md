@@ -1,6 +1,6 @@
 # Ethernet
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_eth_interface.png)<span>EthInterface class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/class_eth_interface.png)<span>EthInterface class hierarchy</span></span>
 
 The `EthInterface` provides a C++ API for connecting to the internet over Ethernet. By default, this class does not require any configuration. It is able to pick up the default Ethernet driver for the target and select correct network stack.
 
@@ -49,13 +49,13 @@ Network interface `connect` failure causes:
 
 ## EthInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_eth_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.1/mbed-os-api-doxy/class_eth_interface.html)
 
 ## EthInterface example
 
 Here is an example of an HTTP client program. The program brings up Ethernet as the underlying network interface and uses it to perform an HTTP transaction over a TCPSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocket/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocket/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocket/tree/v6.1)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocket/blob/v6.1/main.cpp)
 
 ## Related content
 
