@@ -24,6 +24,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
+- A new [tutorial about link time optimization](../apis/link-time-optimization.html).
 - A new [PSA porting guide](../porting/porting-security.html).
 - New information about [API life cycle ](../introduction/versions-and-releases.html#the-api-life-cycle) and how to [contribute experimental APIs](../contributing/software-design.html#experimental-apis) and [use them in an application](../program-setup/build-rules.html#label-directories).
 - [Tickless mode porting updates](../porting/tickless-mode.html).
