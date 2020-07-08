@@ -40,8 +40,6 @@ LTO profile build results for [mbed-cloud-client-example](https://github.com/ARM
 | ARM - release - LTO | 57,150B | 322,500B |
 |***saved memory***| 949B | ‭31,349‬B|
 
-<span class="notes">**Note**: In LTO builds, the compiler produces bytecode/bitcode instead of regular object code. It's hard to analyze this output with object code analysis tools.</span><--Can we remove this note as it's repeated in the "Limitations" section below?-->
-
 ## Limitations
 
 - LTO slows down the build process.
