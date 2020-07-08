@@ -427,6 +427,9 @@
                                 },
                                 {
                                     "path": "docs/api/platform/runtime_stats.md"
+                                },
+                                {
+                                    "path": "docs/api/platform/link_time_optimization.md"
                                 }
                             ]
                         },
