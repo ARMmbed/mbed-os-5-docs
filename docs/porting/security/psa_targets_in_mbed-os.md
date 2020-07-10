@@ -468,7 +468,7 @@ To build TF-M and create an Mbed OS pull request:
 
     The command builds TF-M with the config `ConfigCoreIPC.cmake`, copies the TF-M binary to the location defined by the target attribute `tfm_delivery_dir`, and commits the changes to Mbed OS.
 
-    <span class="tips">**Tip:** When you run the Python script `build_tfm.py` without any options, TF-M is built for all supported targets and the secure binary (TF-M) for each target is copied to the location defined by the target attribute `tfm_delivery_dir`. When you use the `--commit` option, a new Mbed OS commit is created with the new or modified TF-M binaries and `features/FEATURE_PSA/TARGET_TFM/VERSION.txt`.</span>
+    <span class="tips">**Tip:** When you run the Python script `build_tfm.py` without any options, TF-M is built for all supported targets and the secure binary (TF-M) for each target is copied to the location defined by the target attribute `tfm_delivery_dir`. When you use the `--commit` option, a new Mbed OS commit is created with the new or modified TF-M binaries and `features/FEATURE_EXPERIMENTAL_API/FEATURE_PSA/TARGET_TFM/VERSION.txt`.</span>
 
 1. Switch to the `mbed-os` directory and check the latest commit.
 
