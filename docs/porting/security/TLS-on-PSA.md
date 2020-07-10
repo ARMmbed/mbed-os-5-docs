@@ -10,11 +10,9 @@ The version of Mbed TLS shipped in Mbed OS builds with PSA enabled by default. H
 
 ## Using PSA-enabled Mbed TLS
 
-If an application was built with Mbed TLS that was not PSA enabled, you can still use the application with PSA-enabled Mbed TLS by recompiling it against a PSA-enabled version of Mbed TLS. (Note that relinking is not enough, though.) In other words, PSA-enabled Mbed TLS is fully API compatible with non-PSA-enabled Mbed TLS but not ABI compatible. All existing (pre-PSA) APIs are preserved and continue to exist in parallel with PSA-based APIs.
+You can use PSA and non-PSA Mbed TLS interchangeably, but you must recompile your application every time you change. This is because PSA-enabled and non-PSA-enabled Mbed TLS are fully API compatible, but are not ABI compatible. <!-- All existing (pre-PSA) APIs are preserved and continue to exist in parallel with PSA-based APIs.-->
 
 _Please note that this is likely to change at a later date though, as existing interfaces are likely to be deprecated in favor of the new, PSA-based APIs - if, when and how it happens is outside the scope of this document._
-
-If your application doesn't use any of the PSA-specific APIs described below, you can use it with the version in Mbed OS by just recompiling it. (Note that relinking is not enough, though.)
 
 ## PSA-based APIs in Mbed TLS
 
