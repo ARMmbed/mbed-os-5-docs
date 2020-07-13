@@ -1,32 +1,58 @@
 <h1 id="light-control">Light control tutorial</h1>
 
-The application below demonstrates a simple light control application, where devices can control the LED status of all devices in the network. You can build the application for the unsecure 6LoWPAN-ND.
+The application below demonstrates a simple light control application, where devices can control the LED status of all other devices in the network. You can build the application for the unsecure 6LoWPAN-ND network.
 
-## Download the application
+See the [6LoWPAN overview](../reference/mesh-tech.html) for the definition of star and mesh networks.
+
+[Please install Mbed CLI to complete the tutorial](../tools/installation-and-setup.html).
+
+## Requirements
+
+This tutorial requires:
+
+- Hardware that supports entropy.
+- A radio.
+- An RF driver.
+- A separate application, `nanostack-border-router` to test the border router.
+
+## Import the application
+
+If using Mbed CLI:
 
 ```
 mbed import mbed-os-example-mesh-minimal
 cd mbed-os-example-mesh-minimal
 ```
 
-Or click `Import into Mbed IDE` in the example below:
+If using the Mbed Online Compiler, click **Import into Mbed IDE** below:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-6.0.0/mesh_led_control_example.cpp)
 
 ## Change the channel settings (optional)
 
-See the file `mbed_app.json` for an example of defining an IEEE 802.15.4 channel to use.
+See the file `mbed_app.json` in the imported folder for an example of defining an IEEE 802.15.4 channel.
 
-## Selecting optimal Nanostack configuration
+## Select the optimal Nanostack configuration
 
-To optimize the flash usage, select a proper configuration for Nanostack. The configuration depends mostly on the preferred use case.
+<!--what does that mean? what am I doing and why?-->
+
+To optimize the flash usage, set the Nanostack and [Mbed Mesh API](../apis/mesh-api.html) configuration to use. The configuration depends mostly on the preferred use case.
 
 The network is based on 6LoWPAN-ND. Select the device role:
 
-- Mesh network. A router. (default)
-- Star network. Nonrouting device. Also known as a host or sleepy host.
+- Mesh network: a router. (default)
+- Star network: nonrouting device. Also known as a host or sleepy host.
 
-Modify your `mbed_app.json` file to see which Nanostack and [Mbed Mesh API](../apis/mesh-api.html) configuration to use.
+### 6LoWPAN-ND
+
+**nsapi.default-mesh-type: LOWPAN**
+
+|Device role|`nanostack.configuration` value|`mbed-mesh-api.6lowpan-nd-device-type` value|
+|-----------|-------------------------|------------------------------------|
+|Mesh router (default) | lowpan_router | NET_6LOWPAN_ROUTER |
+|Nonrouting device | lowpan_host | NET_6LOWPAN_HOST |
+
+### Configuration example
 
 An example configuration file is provided under `configs/` directory. You may override the `mbed_app.json`. The configuration file is `configs/mesh_6lowpan.json` and is used for 6LoWPAN-ND based mesh network. For example, the `mbed_app.json` file can be set to:
 
@@ -51,69 +77,56 @@ An example configuration file is provided under `configs/` directory. You may ov
     }
 ```
 
-### Values for 6LoWPAN-ND
 
-For a 6LoWPAN-ND based network, use `nsapi.default-mesh-type: LOWPAN`.
+## Security-based hardware requirements
 
-In addition, you can use:
-
-| Device role | `nanostack.configuration` value | `mbed-mesh-api.6lowpan-nd-device-type` value |
-| --- | --- | --- |
-| Mesh router (default) | `lowpan_router` | `NET_6LOWPAN_ROUTER` |
-| Nonrouting device | `lowpan_host` | `NET_6LOWPAN_HOST` |
-
-## Requirements for hardware
-
-The networking stack in this example requires TLS functionality to be enabled on Mbed TLS. On devices where hardware entropy is not present, TLS is disabled by default. This results in compile time failures or linking failures.
+The networking stack in this example requires TLS functionality. On devices where hardware entropy is not present, TLS is disabled by default. This results in compile time failures or linking failures.
 
 To learn why entropy is required, read the [TLS porting guide](../porting/entropy-sources.html).
 
-See [Notes on different hardware](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/Hardware.md) for known combinations of development boards and RF shields that have been tested.
+See [Notes on different hardware](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/Hardware.md) for combinations of development boards and RF shields that we have tested.
 
-You also need to check how LEDs and buttons are configured for your hardware, and update the `.json` file accordingly.
+## Input and output configuration
 
-## Changing the radio driver
+Check how LEDs and buttons are configured for your hardware, and update the `.json` file accordingly.
 
-To run a 6LoWPAN-ND network, you need a working RF driver for Nanostack. This example uses the Atmel AT86RF233 by default.
+## Radio and radio driver
 
-To change the RF driver, modify the `mbed_app.json` file by setting preferred RF driver `provide_default` value to true, For example, to use MCR20a RF driver:
+To run a 6LoWPAN-ND network, you need a working RF driver for Nanostack. This example uses the Atmel AT86RF233 by default. Place the shield on top of your board.
+
+To change the RF driver, set the preferred RF driver `provide_default` value to `true` in `mbed_app.json`. For example, to use the MCR20a RF driver:
 
 ```json
 "atmel-rf.provide-default": false,
 "mcr20a.provide-default": true
 ```
 
-## Compile the application
+## Compiling and flashing the application
 
-```
-mbed compile -m K64F -t GCC_ARM
-```
+1. To compile the application:
 
-A binary is generated in the end of the build process.
+    ```
+    mbed compile -m K64F -t GCC_ARM
+    ```
 
-## Connect the RF shield to the board
-
-This example uses the Atmel AT86RF233, which you can [purchase](https://firefly-iot.com/product/firefly-arduino-shield-2-4ghz/). Place the shield on top of your board, and power it on.
-
-## Program the target
-
-Drag and drop the binary to the target to program the application.
+1. A binary is generated at the end of the build process.
+1. Connect the board to your computer, and power on the board.
+1. To program the application, drag and drop the binary to the board (shown as storage device on the computer).
 
 ## Update the firmware of the border router
+<!--do I have to do this? do I have to do this at this point in the process, or can I put it as one of the requirements that should have been listed earlier in the doc?-->
 
-This example supports the following border router:
+This example supports the [Nanostack-border-router](https://github.com/ARMmbed/nanostack-border-router).
 
-[Nanostack-border-router](https://github.com/ARMmbed/nanostack-border-router).
+The border router supports static and dynamic backhaul configuration. Use the static configuration if your network infrastructure does not supply an IPv6 address. If your network infrastructure provides IPv6 connectivity, then the border router learns an IPv6 prefix from the router advertisements, and you can use the dynamic configuration.
 
-The border router supports static and dynamic backhaul configuration. The static configuration is good for testing, but the dynamic one works if your network infrastructure is supplying an IPv6 address. Make sure that you use the appropiate mode.
+Remember to connect the Ethernet cable between the board and your router. Then power cycle on the board.
 
-Remember to connect the Ethernet cable between the border router and your router. Then power on the board.
+## Testing with border router
 
-## Testing
+By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message. 
 
-By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message.
-
-As soon as both the border router and the target are running, you can verify the correct behavior. Open a serial console, and see the IP address obtained by the device.
+As soon as both the border router and the target are running, you can verify the correct behavior<!--is this verifying the full behavior, or just that I connected to the network?-->. Open a serial console, and see the IP address obtained by the device.
 
 <span class="notes">**Note:** This application uses the baud rate of 115200.</span>
 
@@ -124,42 +137,45 @@ connected. IP = 2001:db8:a0b:12f0::1
 You can use this IP address to `ping` from your PC and verify that the connection is working correctly.
 
 ## Memory optimizations
+<!--there's no clear flow to this tutorial. Some of it is steps I need to take, and some of it is background info, but the two are not clearly flagged-->
 
-On some limited platforms, for example NCS36510 or KW24D, building this application might run out of RAM or ROM. In those cases, you can try these instructions to optimize the memory use.
+On some limited platforms, for example NCS36510 or KW24D, running this application might cause the device to run out of RAM or ROM. In those cases, you can try optimizing memory use.
 
-### Mbed TLS configuration
+### Use a customized Mbed TLS configuration
 
-You can set the custom Mbed TLS configuration by adding `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` to the `.json` file. The [example Mbed TLS configuration](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/mbedtls_config.h) minimizes the RAM and ROM use of the application. The is not guaranteed to work on every Mbed Enabled platform.
+The [example Mbed TLS configuration](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/master/mbedtls_config.h) minimizes the RAM and ROM use of the application; it saves you 8.7 kB of RAM but uses 6.8 kB of additional flash. This is not guaranteed to work on every Mbed Enabled platform.<!--what does it do? and why isn't the smaller version the default? what are its disadvantages?-->
 
-This configuration file saves you 8.7 kB of RAM but uses 6.8 kB of more flash.
+You can customize the Mbed TLS configuration by adding `"macros": ["MBEDTLS_USER_CONFIG_FILE=\"mbedtls_config.h\""]` to the `.json` file.
 
-### Disabling the LED control example
+### Disable the LED control example
 
 You can disable the LED control example by specifying `enable-led-control-example": false` in `mbed_app.json`.
 
 This saves you about 2.5 kB of flash.
 
-### Change network stack's event loop stack size
+### Change the network stack's event loop stack size
 
-Nanostack's internal event loop is shared with Mbed Client and therefore requires lots of stack to complete the security handshakes using TLS protocols. If you're not using client functionality, you can define the following to use 2 kB of stack:
+Nanostack's internal event loop is shared with Device Managmenet Client, and therefore requires lots of stack to complete the security handshakes using TLS protocols. If you're not using client functionality, you can define the following to use 2 kB of stack:
 
 `"nanostack-hal.event_loop_thread_stack_size": 2048`
 
 This saves you 4 kB of RAM.
 
-### Change Nanostack's heap size
+### Change the Nanostack's heap size
 
 Nanostack uses internal heap, which you can configure in the `mbed_app.json`:
 
+In `mbed_app.json`, you find the following line:
+
 ```
-"mbed-mesh-api.heap-size": 12000
+"mbed-mesh-api.heap-size": 15000
 ```
 
 For 6LoWPAN, you can try 12 kB. For the smallest memory use, configure the node to be in nonrouting mode. See [module-configuration](https://github.com/ARMmbed/mbed-os/tree/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api#module-configuration) for more detail.
 
-### Move Nanostack's heap inside the system heap
+### Move the Nanostack's heap to the system heap
 
-You can move Nanostack's internal heap within the system heap. This helps on devices with split RAM and on devices in which the compiler fails to fit statically allocated symbols into one section, for example, the NXP KW24D device.
+You can move the Nanostack's internal heap to the system heap. This helps on devices with split RAM, and on devices in which the compiler fails to fit statically allocated symbols into one section, for example the NXP KW24D device.
 
 The Mesh API has the [use-malloc-for-heap](https://github.com/ARMmbed/mbed-os/blob/master/features/nanostack/FEATURE_NANOSTACK/mbed-mesh-api/README.md#configurable-parameters-in-section-mbed-mesh-api) option to help this.
 
@@ -171,14 +187,16 @@ Add the following line to `mbed_app.json` to test:
 
 ### Use release profile
 
-For devices with small memory, we recommend using release profiles for building and exporting. Please see the documentation about [build profiles](../program-setup/build-profiles-and-rules.html).
+For devices with a small memory, we recommend using release profiles for building and exporting. Please see the documentation about [build profiles](../tools/build-profiles.html).
 
-Example:
+Examples:
 
 ```
-$ mbed compile -m KW24D -t ARM --profile release
+$ mbed export -m KW24D -i make_iar --profile release
+OR
+$ mbed compile -m KW24D -t IAR --profile release
 ```
 
 ## Troubleshooting
 
-If you have problems, you can review the [documentation](../debug-test/troubleshooting-common-issues.html) for suggestions on what could be wrong and how to fix it.
+If you have problems, you can review the [debugging documentation](../tutorials/debugging.html) for suggestions on what could be wrong and how to fix it.
