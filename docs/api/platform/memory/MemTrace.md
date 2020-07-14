@@ -20,7 +20,7 @@ For a step-by-step guide about how to use optimize memory using runtime memory t
 
 ## Memory tracing functions reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
 
 ## Memory tracing example
 

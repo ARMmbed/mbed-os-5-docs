@@ -1,6 +1,6 @@
 # USBCDC_ECM
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.png)<span>USBCDC_ECM class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.png)<span>USBCDC_ECM class hierarchy</span></span>
 
 The USBCDC_ECM class emulates an Ethernet interface over USB. You can use the interface to send and receive Ethernet frames over USB.
 
