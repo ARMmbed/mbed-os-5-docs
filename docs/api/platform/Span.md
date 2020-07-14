@@ -95,9 +95,9 @@ When you encode the size of the sequence viewed in the Span value, Span instance
 
 C++ code:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/blob/v6.2/main.cpp)
 
 
 C code:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_c/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Span_c/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_c/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-Span_c/blob/v6.2/main.cpp)

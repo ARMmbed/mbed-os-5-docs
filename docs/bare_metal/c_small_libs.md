@@ -83,7 +83,7 @@ This is energy efficient compared to an empty `while (true) {}` loop, which keep
 
 If your application is based on an `EventQueue`, dispatching it at the end of `main()` works as well:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/blob/v6.0/)](https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/blob/v6.2/)](https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_2/blob/v6.2/main.cpp)
 
 The call to `queue.dispatch_forever()` never returns, as long as you don't break the dispatch anywhere. The `EventQueue` class puts the system to sleep to save energy between events.
 

@@ -65,7 +65,7 @@ To bring up the network interface:
 
 This example establishes connection with the cellular network using Mbed OS CellularInterface.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cellular)](https://github.com/ARMmbed/mbed-os-example-cellular/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-cellular)](https://github.com/ARMmbed/mbed-os-example-cellular/blob/mbed-os-6.2.0/main.cpp)
 
 ## Related content
 

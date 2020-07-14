@@ -10,7 +10,7 @@ You can use the USBMouseKeyboard interface to emulate a mouse and a keyboard at 
 
 ## USBMouseKeyboard example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBMouseKeyboard/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-USBMouseKeyboard/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBMouseKeyboard/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-USBMouseKeyboard/blob/v6.2/main.cpp)
 
 ## Related content
 

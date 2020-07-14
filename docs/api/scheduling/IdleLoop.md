@@ -20,7 +20,7 @@ void main()
 
 ## Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.2/main.cpp)
 
 ## Related content
 
