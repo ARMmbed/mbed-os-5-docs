@@ -121,13 +121,12 @@
                 {
                     "title": "Build with the Online Compiler",
                     "sub_chapters": [{
-                            "title": "Importing and compiling the code",
-                            "intro": {
-                                "path": "docs/quick-start/quick-start-compiler.md"
-                            },
-                            "sources": []
-                        }
-                    ]
+                        "title": "Importing and compiling the code",
+                        "intro": {
+                            "path": "docs/quick-start/quick-start-compiler.md"
+                        },
+                        "sources": []
+                    }]
                 },
                 {
                     "title": "Further reading",
@@ -976,6 +975,12 @@
                         "path": "docs/tools/tools_intro.md"
                     },
                     "sources": []
+                },
+                {
+                    "title": "New tools temp",
+                    "sources": [{
+                        "path": "docs/tools/new_tools_temp.md"
+                    }]
                 },
                 {
                     "title": "Mbed Online Compiler",
