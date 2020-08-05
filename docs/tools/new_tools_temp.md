@@ -9,6 +9,11 @@ You'll still need Mbed CLI for older versions of Mbed OS. You can install both t
 
 # Install or upgrade
 
+Mbed Tools is Python based, so you can install it with pip.
+<!--other than being a super vague name, it's a problem that it's a single tool with a plural name. "Mbed Tools is"  just parses as an error!-->
+
+<span class="tips">**Tip:** We recommend using a virtual environment such as [Pipenv](https://github.com/pypa/pipenv/blob/master/README.md) to avoid Python dependency conflicts.</span>
+
 ## Prerequisite
 
 - Python 3. Install for [Windows](https://docs.python.org/3/using/windows.html), [Linux](https://docs.python.org/3/using/unix.html) or [macOS](https://docs.python.org/3/using/mac.html).
@@ -17,19 +22,20 @@ You'll still need Mbed CLI for older versions of Mbed OS. You can install both t
 - Ninja [Install for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
 <!--are there versions for cmake and ninja?-->
 
-## Install Mbed Tools with pip
+## Install
 
-<span class="tips">**Tip:** We recommend using a virtual environment such as [Pipenv](https://github.com/pypa/pipenv/blob/master/README.md) to avoid Python dependency conflicts.</span><!--but.... should I have put that where I told them to install Python, or is the problem that during install certain dependencies may be reinstalled?-->
+Use pip to install:
 
 - To install the latest release:
 
     ```
     python -m pip install mbed-tools
     ```
+
 - To install a specific version:
 
     ```
-    python -m pip install mbed-tools==3.1.2
+    python -m pip install mbed-tools==<version number in major.minor.patch format>
     ```
 
 - To install a pre-release or development version:
@@ -38,9 +44,9 @@ You'll still need Mbed CLI for older versions of Mbed OS. You can install both t
     python -m pip install mbed-tools --pre
     ```
 
-## Upgrade Mbed Tools with pip
+## Upgrade
 
-To upgrade your installed version (uninstall your version and install the latest version):
+Use pip to upgrade:
 
 ```
 python -m pip install mbed-tools --upgrade
