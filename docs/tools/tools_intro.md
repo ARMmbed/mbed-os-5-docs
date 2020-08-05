@@ -19,7 +19,18 @@ The Mbed Online Compiler is our in-house IDE and should be familiar to anyone wh
 
 For more information, please see the [Online Compiler page](../build-tools/mbed-online-compiler.html).
 
-## Arm Mbed CLI
+## Command line tools
+
+Mbed OS has two versions of its command line tool:
+
+- For 6.y and newer, use the new build tools.
+- For 6.x and older, use Mbed CLI.
+
+You can have both tools installed side by side, so you can work with multiple versions of Mbed OS.
+
+### Mbed Tools - Mbed OS 6.y and newer
+
+### Mbed CLI - Mbed OS 6.x and older
 
 We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI page](../tools/developing-mbed-cli.html).
 

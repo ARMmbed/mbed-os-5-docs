@@ -2,15 +2,10 @@
 
 <!--well this is a disaster-->
 
-Here be an introduction
-<!--The new Mbed Tools
+Starting with version 6.x, Mbed OS is moving from Mbed CLI to a new build tool: it's cmake-based,
 
-The existing [Mbed Tools](https://pypi.org/project/mbed-cli/) have a number of limitations. Please refer to the [blog](Blog from Jaeden) for additional information. Due to those limitations, legacy Mbed Tools cannot be extended to support cmake based build system, without additional maintenance overhead. Therefore we took the drastic decision to rewrite the tools [Mbed Tools](https://pypi.org/project/mbed-tools/) (being sure to leverage existing open source tools as far as possible to reduce maintenance costs).
+You'll still need Mbed CLI for older versions of Mbed OS. You can install both tools side by side.<!--seems like Mbed CLI also requires Python 3, so there shouldn't be any issues-->
 
-Current plan is to roll-out new [Mbed Tools](https://pypi.org/project/mbed-tools/) with Mbed OS 7.0 release which will contain the cmake related changes. The new [Mbed Tools](https://pypi.org/project/mbed-tools/) will not support Mbed OS versions prior to 7.x. Therefore new [Mbed Tools](https://pypi.org/project/mbed-tools/) **MUST** be used to build Mbed OS 7.x. The "legacy" [Mbed Tools](https://pypi.org/project/mbed-cli/) **MUST** be used to build Mbed OS versions prior to Mbed OS 7.x. It'll be possible to run both `mbed-cli` and `mbedtools` side-by-side without any python virtual environment. But we strongly recommend running `mbedtools` in virtual environment created with [pipenv](https://pypi.org/project/pipenv/).
-
-<!--the blog says "The new tools will support only the forthcoming Mbed OS 6 and versions that follow. Mbed 5.x users should continue using the existing legacy tools." whereas the text here says 7.x and newer. Which is it?-->
--->
 
 # Install or upgrade
 
@@ -19,11 +14,12 @@ Current plan is to roll-out new [Mbed Tools](https://pypi.org/project/mbed-tools
 - Python 3. Install for [Windows](https://docs.python.org/3/using/windows.html), [Linux](https://docs.python.org/3/using/unix.html) or [macOS](https://docs.python.org/3/using/mac.html).
 - Pip (if not included in your Python installation). [Install for all operating systems](https://pip.pypa.io/en/stable/installing/).
 - cmake. [Install for all operating systems](https://cmake.org/install/).
-- [Ninja]. [Install for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
+- Ninja [Install for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
+<!--are there versions for cmake and ninja?-->
 
 ## Install Mbed Tools with pip
 
-<span class="tips">**Tip:** We recommend using a virtual environment such as [Pipenv](https://github.com/pypa/pipenv/blob/master/README.md) to avoid Python dependency conflicts.</span>
+<span class="tips">**Tip:** We recommend using a virtual environment such as [Pipenv](https://github.com/pypa/pipenv/blob/master/README.md) to avoid Python dependency conflicts.</span><!--but.... should I have put that where I told them to install Python, or is the problem that during install certain dependencies may be reinstalled?-->
 
 - To install the latest release:
 
