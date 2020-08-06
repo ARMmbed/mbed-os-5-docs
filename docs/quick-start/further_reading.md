@@ -15,7 +15,7 @@
 - Tutorials:
    - [Debugging](../debug-test/index.html).
    - [Serial communications](../program-setup/serial-communication.html).
-   - [Optimizing binary size](../apis/platform-tutorials.html).
+   - [Optimizing memory and power](../apis/platform-tutorials.html).
 
 - Other resources:
    - [Components database](https://os.mbed.com/components/): libraries and example code for various hardware and software components.
