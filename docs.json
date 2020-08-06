@@ -392,7 +392,7 @@
                         "path": "docs/api/platform/platform_list.md"
                     },
                     "sub_chapters": [{
-                            "title": "Platform Concepts",
+                            "title": "Platform concepts",
                             "sources": [{
                                     "path": "docs/api/platform/platform.md"
                                 },
