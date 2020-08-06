@@ -104,7 +104,7 @@ To install `mbed-cli` bash completion:
 
 1. Clone the Mbed CLI repository: `git clone https://github.com/ARMmbed/mbed-cli`.
 1. Navigate to the `mbed-cli/tools/bash_completion` directory.
-1. Copy the `mbed` script into the  `~/.bash_completion.d` directory (you may need to create this directory first).
+1. Copy the `mbed` script into the  `~/.bash_completion.d` directory (you may need to create this directory first, and then you may also need to add a line, for example `source ~/.bash_completion.d/mbed` to `~/.bashrc`).
 1. Restart the terminal.
 
 ## Configuration options

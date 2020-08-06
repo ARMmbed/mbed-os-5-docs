@@ -48,7 +48,9 @@ To create the application using Mbed CLI:
 
 Your application is set to use the bare metal profile with the default APIs. However, this example uses APIs that are not part of the default bare metal profile. You need to manually add support for those APIs to the application (for a list of default and supported APIs, [please see our full API list](../apis/index.html)).
 
-This example depends on the `EventQueue` class, so you need to add the library that contains that class to the `mbed_app.json` file:
+To add API support, add the library name to the same `requires` array you used to set the bare metal profile. The following example shows how to find the library name, and how to add it to the array.
+
+This example depends on the `EventQueue` class, and adds the library that contains that class to the `mbed_app.json` file:
 
 1. In `mbed-os/`, locate the API and the library in which it is declared.
 
@@ -68,7 +70,7 @@ This example depends on the `EventQueue` class, so you need to add the library t
 
 1. Go back to the application's root directory.
 
-1. Open `mbed_app.json` again, and add the library to the `"requires"` field:
+1. Open `mbed_app.json` again, and add the library to the `"requires"` array:
 
     ```json
     {
