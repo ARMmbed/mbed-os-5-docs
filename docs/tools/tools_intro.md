@@ -23,7 +23,7 @@ For more information, please see the [Online Compiler page](../build-tools/mbed-
 
 Mbed OS has two versions of its command line tool:
 
-- For 6.y and newer, use the new build tools.
+- For 6.y and newer, use the new build tools or Mbed CLI.
 - For 6.x and older, use Mbed CLI.
 
 You can have both tools installed side by side, so you can work with multiple versions of Mbed OS.
