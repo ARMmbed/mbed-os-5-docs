@@ -18,7 +18,7 @@ Mbed Tools is Python based, so you can install it with pip.
 
 - Python 3. Install for [Windows](https://docs.python.org/3/using/windows.html), [Linux](https://docs.python.org/3/using/unix.html) or [macOS](https://docs.python.org/3/using/mac.html).
 - Pip (if not included in your Python installation). [Install for all operating systems](https://pip.pypa.io/en/stable/installing/).
-- cmake. [Install for all operating systems](https://cmake.org/install/).
+- cmake. [Install version 3.18.1 or newer for all operating systems](https://cmake.org/install/).
 - Ninja [Install for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
 <!--are there versions for cmake and ninja?-->
 
