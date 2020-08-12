@@ -1389,6 +1389,9 @@
                         },
                         {
                             "path": "docs/porting/connectivity/NFCEEPROMDriver.md"
+                        },
+                        {
+                            "path": "docs/porting/connectivity/ble.md"
                         }
                     ]
                 },
