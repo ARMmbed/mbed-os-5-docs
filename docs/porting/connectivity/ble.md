@@ -1,6 +1,7 @@
 # Bluetooth Low Energy (BLE)
 
-Mbed OS uses the Cordio stack for its BLE host. We recommend porting the Cordio platform<!--is that what they call it?--> to your board, or porting at the HCI level<!--what's the distinction between porting the platform and porting the HCI level? If one is ported to the board, where is the other ported to? The chip? What's the difference between porting to a whole board v porting to a chip?--> as described in the HCI documentation.
+Mbed OS uses the Cordio stack for its BLE host. We recommend porting either the full Cordio stack, or the Host Controller Interface (HCI), as explained in the Cordio documentation. If you want to port your own BLE stack to replace the Cordio stack, follow the instructions on this page. 
+
 <!--we need a decision from Andy about the Cordio docs before we start linking. Ours are 18 months old!-->
 
 ## Replacing the Cordio stack
