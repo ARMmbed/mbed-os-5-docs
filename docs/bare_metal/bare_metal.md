@@ -8,7 +8,7 @@ The Mbed OS build tools - Mbed CLI, Mbed Online Compiler and Mbed Studio - all s
 
 ## Features
 
-For a breakdown of supported APIs, please see [the full API list](../apis/index.html).
+For a breakdown of supported APIs, please see [the full API list](../apis/index.html). To enable individual APIs, [see the usage instructions](../bare-metal/using-the-bare-metal-profile.html).
 
 <span class="notes">**Note:** Because bare metal uses some APIs that Mbed OS classifies as RTOS APIs, some class names that traditionally belong in RTOS programming are used in bare metal. For example, bare metal uses the class `ThisThread` despite not using threads.</span>
 
