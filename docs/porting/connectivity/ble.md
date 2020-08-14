@@ -34,4 +34,4 @@ Place your `include`<!--adding the bunny ears just helps parse the sentence--> f
 
 The global function `createBLEInstance()` must provide your implementation of `BLEInstanceBase`.
 
-`BLEInstanceBase` must instantiate all the user interfaces and provide BLE event handling (see the BLEInstanceBase documentation for details<!--where is that?-->). `BLEInstanceBase` can also instantiate the PAL interfaces provided in `ble/internal`, depending on your implementation. They<!--who is they?--> may be used as the user interfaces, but are not required for user API level porting.
+`BLEInstanceBase` must instantiate all the user interfaces and provide BLE event handling (see the [BLEInstanceBase documentation for details](../mbed-os-api-doxy/_b_l_e_instance_base_8h_source.html)). `BLEInstanceBase` can also instantiate the PAL interfaces provided in `ble/internal`, depending on your implementation. You can use the PAL classes by inheriting from the interface classes (like the user interfaces above), but they are not required for user API level porting.
