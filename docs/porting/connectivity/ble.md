@@ -15,7 +15,7 @@ You can replace the Cordio stack by porting a complete alternative stack. You mu
 
 All the source files for Cordio are part of a library and are currently required by the BLE feature. Remove this requirement so that none of the Cordio implementations are compiled, otherwise they will conflict with your implementation.
 
-### Implementing API classes and BLEInstanceBase
+### Implementing the user interface APIs and BLEInstanceBase
 
 There are four user API files in`include/ble/`:
 
