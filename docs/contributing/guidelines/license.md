@@ -12,7 +12,7 @@ If you create new software, such as drivers, libraries and examples, you can app
 
 - For original source code, use the Apache 2.0 license.  
 
-- For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License (PBL)](https://www.mbed.com/licenses/PBL-1.0). This is designed to be compatible with Apache 2.0 and the Mbed OS codebase.
+- For binary releases (for example, private source code you can’t or don’t want to release but want to share as a binary library and headers available for others to use), consider the [Permissive Binary License (PBL)](https://os.mbed.com/licenses/permissive-binary-license/). This is designed to be compatible with Apache 2.0 and the Mbed OS codebase.
 
 - If your software incorporates or is derived from other third party open source code, please be sure to retain all notices and identify the license for the third party licensed code in the same manner as described below. You cannot change the license on someone else’s code, because you are not the copyright holder. Instead, choose a license that is compatible with the license used by the third party open source code, or use the same license as that code. For example, if your software is derived from GNU General Public License (GPL) source code, GPL requires you to license the rest of your code in that software under the GPL too. Many commercial users cannot use GPL source code in their products, so we don't recommend this license if you're not obligated to use it.
 
