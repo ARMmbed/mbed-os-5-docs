@@ -6,7 +6,7 @@ Mbed OS uses the Cordio stack for its BLE host. We recommend porting either the 
 
 ## Replacing the Cordio stack
 
-You can replace the Cordio stack by porting a complete alternative stack. You must do this at the API level<!--as opposed to which level?--> by:
+You can replace the Cordio stack by porting a complete alternative stack. You must port the full API by:
 
 1. Disabling the Cordio compilation.
 1. Implementing all the user interfaces (Gap, GattServer, GattClient, SecurityManager).
