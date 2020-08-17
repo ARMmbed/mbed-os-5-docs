@@ -49,7 +49,7 @@ This mainly involves using the API function `mbedtls_pk_setup_opaque()` to wrap 
 
 ### Application flow without PSA
 
-1. At application startup, make sure `mbedtls_platform_setup() is called if relevant.
+1. At application startup, make sure `mbedtls_platform_setup()` is called if relevant.
 1. Declare (and allocate) an object of type `mbedtls_pk_context`
 1. Load a key into that PK context, presumably using `mbedtls_pk_parse_key()`, or by generating a fresh key.
 1. Configure the pending CSR object to use that key by calling `mbedtls_x509write_csr_set_key()` on that PK context.
