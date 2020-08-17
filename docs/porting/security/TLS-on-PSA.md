@@ -6,7 +6,7 @@ The version of Mbed TLS shipped in Mbed OS builds with PSA enabled by default. H
 
 1. Clone the repository and switch to the `master` branch.
 1. Enable the `MBEDTLS_USE_PSA_CRYPTO` build-time configuration option in `include/mbedtls/config.h`, either by editing the file manually, or using the config script: `scripts/config.pl set MBEDTLS_USE_PSA_CRYPTO`.
-1. Build normally, for example (with GNU Make) make all test or (with CMake) `mkdir build && cd build && cmake .. && make all test`.
+1. Build normally, for example (with GNU Make) `make lib` or (with CMake) `mkdir build && cd build && cmake .. && make lib`.
 
 ## Using PSA-enabled Mbed TLS
 
