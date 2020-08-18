@@ -4,9 +4,9 @@
 
 The version of Mbed TLS shipped in Mbed OS builds with PSA enabled by default. However, you can build a PSA-enabled version of Mbed TLS from [our Git repository](https://github.com/ARMmbed/mbedtls):
 
-1. Clone the repository, switch to the `development-psa` branch and initialize the submodule: `git checkout development-psa && git submodule update --init`.
-1. Enable the `MBEDTLS_USE_PSA_CRYPTO` build-time configuration option in `include/mbedtls/config.h`, either by editing the file manually, or using the config script: `scripts/config.pl set MBEDTLS_USE_PSA_CRYPTO`.
-1. Build normally, for example (with GNU Make) make all test or (with CMake) `mkdir build && cd build && cmake .. && make all test`.
+1. Clone the repository and switch to the `master` branch.
+1. Enable the `MBEDTLS_USE_PSA_CRYPTO` build-time configuration option in `include/mbedtls/config.h`, either by editing the file manually, or using the config script: `scripts/config.py set MBEDTLS_USE_PSA_CRYPTO`.
+1. Build normally, for example (with GNU Make) `make lib` or (with CMake) `mkdir build && cd build && cmake .. && make lib`.
 
 ## Using PSA-enabled Mbed TLS
 
@@ -51,7 +51,7 @@ This mainly involves using the API function `mbedtls_pk_setup_opaque()` to wrap 
 
 ### Application flow without PSA
 
-1. At application startup, make sure `mbedtls_platform_setup() is called if relevant.
+1. At application startup, make sure `mbedtls_platform_setup()` is called if relevant.
 1. Declare (and allocate) an object of type `mbedtls_pk_context`
 1. Load a key into that PK context, presumably using `mbedtls_pk_parse_key()`, or by generating a fresh key.
 1. Configure the pending CSR object to use that key by calling `mbedtls_x509write_csr_set_key()` on that PK context.
