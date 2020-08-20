@@ -32,7 +32,7 @@ You can have both tools installed side by side, so you can work with multiple ve
 
 Starting with version 6.x, Mbed OS is moving from Mbed CLI to a new build tool: <!--that has no proper name yet-->. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner. <!--need better phrasing-->
 
-Mbed Tools parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a use friendly interface to CMake and Ninja so you can configure, generte and execute builds with a single command.
+Mbed Tools parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
 
 
 <span class="notes">**Note:** You'll still need Mbed CLI for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
