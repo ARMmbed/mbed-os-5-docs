@@ -114,7 +114,7 @@ To create a new Mbed OS project in a specified path:
 To create a local copy of an example application, use the `clone` command with the full GitHub URL listed below:
 
 ```
-mbed-tools clone <link to GitHub example> <PATH>
+mbed-tools clone <example> <PATH>
 ````
 
 - Blinky: [https://github.com/ARMmbed/mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
