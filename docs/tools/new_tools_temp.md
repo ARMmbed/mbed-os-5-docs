@@ -111,21 +111,21 @@ To create a new Mbed OS project in a specified path:
 
 ### Use an example application
 
-To create a local copy of an example application, use the `clone` command with the full GitHub URL listed below:
+To create a local copy of an example application, use the `clone` command with the example name listed below:
 
 ```
 mbed-tools clone <example> <PATH>
 ````
 
 - [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
-- BLE button: [https://github.com/ARMmbed/mbed-os-example-ble/tree/master/BLE_Button](https://github.com/ARMmbed/mbed-os-example-ble/tree/master/BLE_Button)
-- Cellular: [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
-- DeviceKey: [https://github.com/ARMmbed/mbed-os-example-devicekey](https://github.com/ARMmbed/mbed-os-example-devicekey)
-- KVStore: [https://github.com/ARMmbed/mbed-os-example-kvstore](https://github.com/ARMmbed/mbed-os-example-kvstore)
-- LoRaWAN: [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan)
-- Mbed Crypto: [https://github.com/ARMmbed/mbed-os-example-mbed-crypto](https://github.com/ARMmbed/mbed-os-example-mbed-crypto)
-- NFC: [https://github.com/ARMmbed/mbed-os-example-nfc](https://github.com/ARMmbed/mbed-os-example-nfc)
-- Sockets: [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
+- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble) - use the BLE button example.
+- [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
+- [mbed-os-example-devicekey](https://github.com/ARMmbed/mbed-os-example-devicekey)
+- [mbed-os-example-kvstore](https://github.com/ARMmbed/mbed-os-example-kvstore)
+- [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan)
+- [mbed-os-example-mbed-crypto](https://github.com/ARMmbed/mbed-os-example-mbed-crypto)
+- [mbed-os-example-nfc](https://github.com/ARMmbed/mbed-os-example-nfc)
+- [mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
 
 ## Configure the project
 
