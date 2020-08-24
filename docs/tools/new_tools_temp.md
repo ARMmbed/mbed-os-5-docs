@@ -117,7 +117,7 @@ To create a local copy of an example application, use the `clone` command with t
 mbed-tools clone <example> <PATH>
 ````
 
-- Blinky: [https://github.com/ARMmbed/mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
+- [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
 - BLE button: [https://github.com/ARMmbed/mbed-os-example-ble/tree/master/BLE_Button](https://github.com/ARMmbed/mbed-os-example-ble/tree/master/BLE_Button)
 - Cellular: [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
 - DeviceKey: [https://github.com/ARMmbed/mbed-os-example-devicekey](https://github.com/ARMmbed/mbed-os-example-devicekey)
