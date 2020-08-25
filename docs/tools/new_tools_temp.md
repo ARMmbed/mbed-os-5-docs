@@ -183,4 +183,4 @@ Use CMake to build your application:
 
     This generates two files: BIN and HEX in the build output directory (`cmake_build` in this example).
 
-1. Drag and drop the generated file to your board. <!--which file? is it up to them?-->
+1. Drag and drop the generated file to your board. 
