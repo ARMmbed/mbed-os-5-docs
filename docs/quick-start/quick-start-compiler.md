@@ -9,15 +9,20 @@ This page covers:
 ## Setting up
 
 1. [Create an Mbed account](https://os.mbed.com/account/signup/).
-1. If you have an Mbed Board:
+1. If you have an Mbed board:
 
-    1. Plug your Mbed board into your computer, and open its USB device folder.
+    1. Plug your Mbed board into your computer.
+
+        The board is listed as a USB device.
+    1. Open the board's USB device folder.
     1. Double click on the `MBED.HTML` file. This adds your Mbed board to the Online Compiler as a compilation target.
+
+    If your board doesn't have an `MBED.HTML` file, follow the instructions in the next step (for users who don't have a board). Instead of selecting any board, search for your board and select it.
 
 1. If you don't have a board but still want to follow the quick start:
 
     1. Go to [os.mbed.com/platforms](http://os.mbed.com/platforms).
-    1. Select a board.
+    1. Select any board.
     1. On the board page, click **Add to your Mbed Compiler**.
 
 ## Importing the code - full profile
