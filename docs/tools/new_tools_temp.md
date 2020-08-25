@@ -50,13 +50,22 @@ Use pip to install:
 
 <!--like what? when? why? should this be with installation instructions?-->
 
-To override default environment variables:
+Mbed Tools has two environment variables:
+
+- `MBED_API_AUTH_TOKEN`: Token to access private board information stored for a vendor team.
+- `MBED_DATABASE_MODE`: Use online or offline mode. Possible values:
+    - AUTO: Search the offline database first; search the online database only if the board wasn't found offline. This is the default value.
+    - ONLINE: Alway use the online database.
+    - OFFLINE: Always use the offline database.```
 
 ```
-mbed-tools env <VARIABLE>=<value>
+To list the current values:
+
+`mbed-tools env `
+
+To set values, create an `.env` file in the root directory of the project. The file should contain definitions in the `<VARIABLE>=<value>` format. 
 ```
 
-You can also use a `.env` file containing definitions in the same `<VARIABLE>=<value>` format. Note that environment variables set using the command line will override those listed in the file.
 
 ## Upgrade
 
