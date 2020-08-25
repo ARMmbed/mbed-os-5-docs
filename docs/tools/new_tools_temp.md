@@ -126,13 +126,9 @@ Mbed Tools has two environment variables that you can set for a project:
     - `ONLINE`: Alway use the online database.
     - `OFFLINE`: Always use the offline database.
 
-To list the current values:
-
-```
-mbed-tools env
-```
-
 To set values, create an `.env` file in the root directory of the project. The file should contain definitions in the `<VARIABLE>=<value>` format.
+
+For more information, use `mbed-tools env --help`
 
 ### Mbed OS configuration
 
