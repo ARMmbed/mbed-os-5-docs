@@ -46,27 +46,6 @@ Use pip to install:
     python -m pip install mbed-tools --pre
     ```
 
-## Set environment variables
-
-<!--like what? when? why? should this be with installation instructions?-->
-
-Mbed Tools has two environment variables:
-
-- `MBED_API_AUTH_TOKEN`: Token to access private board information stored for a vendor team.
-- `MBED_DATABASE_MODE`: Use online or offline mode. Possible values:
-    - AUTO: Search the offline database first; search the online database only if the board wasn't found offline. This is the default value.
-    - ONLINE: Alway use the online database.
-    - OFFLINE: Always use the offline database.```
-
-```
-To list the current values:
-
-`mbed-tools env `
-
-To set values, create an `.env` file in the root directory of the project. The file should contain definitions in the `<VARIABLE>=<value>` format. 
-```
-
-
 ## Upgrade
 
 Use pip to upgrade your version:
@@ -107,16 +86,13 @@ To create a new Mbed OS project in a specified path:
     mbed-tools init <PATH>
     ```
 
-- To create a project without downloading a copy of Mbed OS (reuse an existing copy):
+    The path can be:
+    - Absolute. `init` will create the folder if it doesn't exist.
+    - Relative.
 
-    ```
-    mbed-tools init -c <PATH>
-    ```
+    If you have already created a project folder, you can use `.`
 
-<!--this seems to be an absolute path - had to start with `~/`. Can they work with relative paths? can they work with "here" to tell mbed-tools to work in the current directory?-->
-
-
-<!--If I can't symlink - if I have to copy my local version of Mbed OS - then this is less about savings space and more about allowing me to take a non-default version of Mbed OS, then?-->
+    If you want the `init` command to create a project folder, use `.\<folder-name>`.
 
 ### Use an example application
 
@@ -136,7 +112,29 @@ mbed-tools clone <example> <PATH>
 - [mbed-os-example-nfc](https://github.com/ARMmbed/mbed-os-example-nfc)
 - [mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
 
+
 ## Configure the project
+
+
+### Project environment variables
+
+Mbed Tools has two environment variables that you can set for a project:
+
+- `MBED_API_AUTH_TOKEN`: Token to access private board information stored for a vendor team.
+- `MBED_DATABASE_MODE`: Use online or offline mode. Possible values:
+    - `AUTO`: Search the offline database first; search the online database only if the board wasn't found offline. This is the default value.
+    - `ONLINE`: Alway use the online database.
+    - `OFFLINE`: Always use the offline database.
+
+To list the current values:
+
+```
+mbed-tools env
+```
+
+To set values, create an `.env` file in the root directory of the project. The file should contain definitions in the `<VARIABLE>=<value>` format.
+
+### Mbed OS configuration
 
 The Mbed OS configuration system parses the configuration files in your project (mbed_lib.json, mbed_app.json and targets.json) for a particular target and toolchain, and outputs a CMake script. The build system uses this script to build for your target, using your toolchain.
 
@@ -190,6 +188,6 @@ Use CMake to build your application:
     cmake --build cmake_build
     ```
 
-    This generates two files: BIN and HEX in the build output directory (`cmake_build` in this example).
+    This generates two files in the build output directory (`cmake_build` in this example): HEX and BIN. <!--find a place where we explain where HEX is useful and link to it-->.
 
-1. Drag and drop the generated file to your board. 
+1. Drag and drop the generated file to your board.
