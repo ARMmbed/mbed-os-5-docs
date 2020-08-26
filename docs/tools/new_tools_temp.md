@@ -4,8 +4,7 @@
 
 Starting with version 6.x, Mbed OS is moving from Mbed CLI to a new build tool: <!--that has no proper name yet-->. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner. <!--need better phrasing-->
 
-Mbed Tools parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a use friendly interface to CMake and Ninja so you can configure, generte and execute builds with a single command.
-
+Mbed Tools parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
 
 <span class="notes">**Note:** You'll still need Mbed CLI for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
 
@@ -21,7 +20,7 @@ Mbed Tools is a Python package called `mbed-tools`, so you can install it with p
 - Python 3.6 or newer. Install for [Windows](https://docs.python.org/3/using/windows.html), [Linux](https://docs.python.org/3/using/unix.html) or [macOS](https://docs.python.org/3/using/mac.html).
 - Pip (if not included in your Python installation). [Install for all operating systems](https://pip.pypa.io/en/stable/installing/).
 - CMake. [Install version 3.18.1 or newer for all operating systems](https://cmake.org/install/).
-- Ninja [Install version 1.0 or newer for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
+- Ninja. [Install version 1.0 or newer for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
 - One of the support toolchains listed [in the build tools overview](../build-tools/index.html).
 
 ## Install
@@ -88,7 +87,7 @@ To create a new Mbed OS project in a specified path:
 
     The path can be:
     - Absolute. `init` will create the folder if it doesn't exist.
-    - Relative.
+    - Relative:
 
     If you have already created a project folder, you can use `.`
 
@@ -115,8 +114,12 @@ mbed-tools clone <example> <PATH>
 
 ## Configure the project
 
+Each project depends on two sets of configurations:
 
-### Project environment variables
+- The project's environment variables. You can use the default values.
+- The Mbed OS configuration system. You must set up your target and toolchain.
+
+### (Optional) Project environment variables
 
 Mbed Tools has two environment variables that you can set for a project:
 
@@ -128,7 +131,7 @@ Mbed Tools has two environment variables that you can set for a project:
 
 To set values, create an `.env` file in the root directory of the project. The file should contain definitions in the `<VARIABLE>=<value>` format.
 
-For more information, use `mbed-tools env --help`
+For more information, use `mbed-tools env`
 
 ### Mbed OS configuration
 
@@ -173,10 +176,10 @@ Use CMake to build your application:
     ```
     cmake -S . -B cmake_build -GNinja -DCMAKE_BUILD_TYPE=<profile>
     ```
-    - -S <path-to-source>: Path to the root directory of the CMake project. We use `.` to indicate we're building from the current directory.<!--at no point until now did we tell them to navigate to the directory, though-->
-    - -B <path-to-build>: Path to the build output directory. If the directory doesn't already exist, CMake will create it. We use `cmake_build` as the output directory name; you can use a different name.
-    - -GNinja: To use the Ninja tool.
-    - -DCMAKE_BUILD_TYPE: Build type. The value (`profile`) can be `release`, `debug` or `develop`, as [explained in program setup](../program-setup/build-profiles-and-rules.html).
+    - `-S <path-to-source>`: Path to the root directory of the CMake project. We use `.` to indicate we're building from the current directory.
+    - `-B <path-to-build>`: Path to the build output directory. If the directory doesn't already exist, CMake will create it. We use `cmake_build` as the output directory name; you can use a different name.
+    - `-GNinja`: To use the Ninja tool.
+    - `-DCMAKE_BUILD_TYPE`: Build type. The value (`profile`) can be `release`, `debug` or `develop`, as [explained in program setup](../program-setup/build-profiles-and-rules.html).
 
 1. Build:
 
@@ -187,3 +190,18 @@ Use CMake to build your application:
     This generates two files in the build output directory (`cmake_build` in this example): HEX and BIN. <!--find a place where we explain where HEX is useful and link to it-->.
 
 1. Drag and drop the generated file to your board.
+
+## Logging
+
+To specify the log level, use the verbose logging option (`-v`) before the first argument:
+
+- If you don't use `-v`, the log will show only errors.
+- `-v`: Warning and errors.
+- `-vv`: Information, warning and errors.
+- `-vvv`: Debug, information, warning and errors.
+
+For example:
+
+```
+mbed-tools -vv configure -m <target> -t <toolchain>
+```
