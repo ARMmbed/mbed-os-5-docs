@@ -134,7 +134,7 @@ For more information, use `mbed-tools env --help`
 
 The Mbed OS configuration system parses the configuration files in your project (mbed_lib.json, mbed_app.json and targets.json) for a particular target and toolchain, and outputs a CMake script. The build system uses this script to build for your target, using your toolchain.
 
-<span class="tips">**Tip:** If you're rebuilding for the same target and toolchain, you can keep using the same CMake script, so you won't have to use the `configure` command again for each build. If you change your target or toolchain, run the `configure` command again to generate a new CMake script.</span>
+<span class="tips">**Tip:** If you're rebuilding for the same target and toolchain, you can keep using the same CMake script, so you won't have to use the `configure` command again for each build. If you change any of mbed_lib.json, mbed_app.json, targets.json, target or toolchain, run the `configure` command again to generate a new CMake script.</span>
 
 1. Check your board's build target name.
 
