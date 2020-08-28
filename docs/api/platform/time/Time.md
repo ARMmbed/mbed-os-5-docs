@@ -8,11 +8,11 @@ You cannot use `time`, `mktime` and `localtime` C standard library functions in 
 
 ## Time function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/mbed__mktime_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/mbed__mktime_8h_source.html)
 
 ## Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.3/main.cpp)
 
 ## 2038
 

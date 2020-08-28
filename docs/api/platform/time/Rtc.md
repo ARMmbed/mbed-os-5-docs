@@ -10,8 +10,8 @@ RTC can keep track of time even in a powered down state if the secondary source 
 
 ## RTC function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/mbed__rtc__time_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/mbed__rtc__time_8h_source.html)
 
 ## RTC Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.3/main.cpp)

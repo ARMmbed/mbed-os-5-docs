@@ -1,6 +1,6 @@
 # SPI Flash block device
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_s_p_i_f_block_device.png)<span>SPIFBlockDevice class hierarchy</span></span>
 
 This API is a block device for NOR-based SPI flash devices that support SFDP.
 
@@ -12,11 +12,11 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## SPIFBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_s_p_i_f_block_device.html)
 
 ## SPIFBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/blob/v6.3/main.cpp)
 
 ## Related content
 

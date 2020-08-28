@@ -1,6 +1,6 @@
 # DNS Resolver
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_d_n_s.png)<span>DNS class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_d_n_s.png)<span>DNS class hierarchy</span></span>
 
 The DNS resolver provides an interface to do DNS host name resolutions. You can use DNS host name resolution to convert resource names to IP addresses. You can make DNS host name resolution after connecting the interface. You can use the returned IP address to make the socket connection.
 
@@ -38,13 +38,13 @@ Callback is called from thread context. If the callback takes more than 10ms to 
 
 ## DNS resolver class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_d_n_s.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_d_n_s.html)
 
 ## DNS resolver example
 
 This DNS resolver example makes asynchronous DNS host name resolution.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DNS_GetHostbyNameAsync/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-DNS_GetHostbyNameAsync/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DNS_GetHostbyNameAsync/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-DNS_GetHostbyNameAsync/blob/v6.3/main.cpp)
 
 ## Troubleshooting information
 

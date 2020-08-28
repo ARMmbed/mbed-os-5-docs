@@ -8,11 +8,11 @@ To configure this class, please see the [LoRa configuration documentation](../ap
 
 ## LoRaRadio class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_lo_ra_radio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_lo_ra_radio.html)
 
 ## LoRaRadio example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-6.2.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-6.3.0/main.cpp)
 
 ## Related content
 

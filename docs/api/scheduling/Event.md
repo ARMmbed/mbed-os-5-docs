@@ -6,13 +6,13 @@ The Event class is thread safe. The `post` and `cancel` APIs are IRQ safe.
 
 ## Event class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/_event_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/_event_8h_source.html)
 
 ## EventQueue example: posting events to the queue
 
 The code below demonstrates how you can instantiate, configure and post events.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Events_ex_1/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-Events_ex_1/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Events_ex_1/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-Events_ex_1/blob/v6.3/main.cpp)
 
 ## Related content
 

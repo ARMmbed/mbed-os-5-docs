@@ -36,8 +36,8 @@ Clients register for these updates by setting the Client Characteristic Configur
 
 ## GattClient class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/classble_1_1_gatt_client.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/classble_1_1_gatt_client.html)
 
 ## GattClient example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.2.0/BLE_GattClient/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.2.0/BLE_GattClient/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.3.0/BLE_GattClient/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.3.0/BLE_GattClient/source/main.cpp)

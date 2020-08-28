@@ -4,13 +4,13 @@ Use the SocketAddress class to represent the IP address and port pair of a uniqu
 
 ## SocketAddress class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_socket_address.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_socket_address.html)
 
 ## SocketAddress example
 
 Here is an example to read current UTC time. This example uses the SocketAddress class to get the server IP address and port.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/blob/v6.3/main.cpp)
 
 ## Related content
 

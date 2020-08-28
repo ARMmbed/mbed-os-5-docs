@@ -10,11 +10,11 @@ The HeartRateService class implements the Bluetooth Heart Rate service as define
 
 ## HeartRateService class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_heart_rate_service.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_heart_rate_service.html)
 
 ## HeartRateService example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.2.0/BLE_HeartRate/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.2.0/BLE_HeartRate/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.3.0/BLE_HeartRate/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.3.0/BLE_HeartRate/source/main.cpp)
 
 ## Related content
 

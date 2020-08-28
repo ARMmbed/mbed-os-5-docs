@@ -1,12 +1,12 @@
 # Wi-Fi
 
-<span class="images">![](http://os.mbed.com/docs/v6.2/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.3/mbed-os-api-doxy/class_wi_fi_interface.png)<span>WiFiInterface class hierarchy</span></span>
 
 The WifiInterface provides a simple C++ API for connecting to the internet over a Wi-Fi device.
 
 ## Wi-Fi class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.2/mbed-os-api-doxy/class_wi_fi_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.3/mbed-os-api-doxy/class_wi_fi_interface.html)
 
 ## Usage
 
@@ -60,7 +60,7 @@ This program scans for Wi-Fi access points in the area. There are multiple [Wi-F
 
 The ESP8266Interface uses AT commands over serial interface to connect to an external Wi-Fi device. The OdinWiFiInterface provides an Ethernet-like driver to the Mbed OS network stack. The network stack uses the driver to connect to Wi-Fi:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocketWiFi/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocketWiFi/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocketWiFi/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocketWiFi/blob/v6.3/main.cpp)
 
 ## Related content
 

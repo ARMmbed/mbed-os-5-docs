@@ -13,8 +13,8 @@ You can independently create, start and stop any number of Timer objects.
 
 ## Timer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/_timer_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/_timer_8h_source.html)
 
 ## Timer hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/blob/v6.3/main.cpp)

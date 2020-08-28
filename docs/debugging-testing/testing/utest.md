@@ -23,7 +23,7 @@ The order of handler execution is:
 
 This example showcases functionality and proper integration with the [Greentea testing automation framework](greentea-for-testing-applications.html), while making use of the [unity test macros](https://github.com/ARMmbed/mbed-os/tree/master/features/frameworks/unity):
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Utest_Ex_1/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-Utest_Ex_1/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Utest_Ex_1/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-Utest_Ex_1/blob/v6.3/main.cpp)
 
 
 Running this test will output the following:

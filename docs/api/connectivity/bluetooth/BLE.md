@@ -54,13 +54,13 @@ The class's member functions can be divided by purpose:
 
 ## BLE class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/classble_1_1_b_l_e.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/classble_1_1_b_l_e.html)
 
 ## Example: BLE heart rate monitor
 
 Here is an example demonstrating how to build a heart rate sensor that can be connected and monitored by a BLE client such as your phone.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.2.0/BLE_HeartRate/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.2.0/BLE_HeartRate/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.3.0/BLE_HeartRate/source)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.3.0/BLE_HeartRate/source/main.cpp)
 
 ## Related content
 

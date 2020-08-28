@@ -8,13 +8,13 @@ Socket statistics are stored in an internal data buffer and maintained for close
 
 ## SocketStats class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.2/mbed-os-api-doxy/class_socket_stats.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.3/mbed-os-api-doxy/class_socket_stats.html)
 
 ## SocketStats example
 
 Here is an example to collect socket statistics.
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-socket-stats)](https://github.com/ARMmbed/mbed-os-example-socket-stats/blob/mbed-os-6.2.0/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-socket-stats)](https://github.com/ARMmbed/mbed-os-example-socket-stats/blob/mbed-os-6.3.0/main.cpp)
 
 ## Related content
 

@@ -37,7 +37,7 @@ A callback is a user provided function that a user may pass to an API. The callb
 
 For example, the following code allows a user to provide a customized response whenever the serial line receives data:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PlatfromOverview_Callbacks/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-PlatfromOverview_Callbacks/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PlatfromOverview_Callbacks/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-PlatfromOverview_Callbacks/blob/v6.3/main.cpp)
 
 The Callback class manages C/C++ function pointers so you don't have to. If you are asking yourself why you should use the Callback class, you should read the [Importance of State](platform.html#the-importance-of-state) section.
 

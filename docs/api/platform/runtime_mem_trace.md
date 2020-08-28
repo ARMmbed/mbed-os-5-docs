@@ -44,7 +44,7 @@ Find the source of the default callback [here](https://github.com/ARMmbed/mbed-o
 
 A simple code example that uses the memory tracer on a K64F board:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/tree/v6.2)](https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/blob/v6.2/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/tree/v6.3)](https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/blob/v6.3/main.cpp)
 
 It outputs the following trace:
 
