@@ -10,7 +10,7 @@ This document will help you start using Greentea. Please see the [`htrun` docume
 
 ### Test code structure
 
-You can run tests throughout Mbed OS and for your project's code. They are located under a special directory called `TESTS`.
+Greentea tests can be created anywhere in the Mbed OS directory structure or in your project's code. They are located under a special directory called `TESTS`. By convention, greentea tests for a specific Mbed OS library should be placed in a `TESTS` folder under that library. The `mbed-os/TESTS` folder is dedicated to integration or system tests.
 
 The fact that the code is located under this directory means that it is ignored when building applications and libraries. It is only used when building tests. This is important because all tests require a `main()` function, and building them with your application would cause multiple `main()` functions to be defined.
 
@@ -43,7 +43,7 @@ Test discovery also obeys the same rules that are used when building your projec
 For example, if you place a test under the directory `FEATURE_BLE` with the following path:
 
 ```
-myproject/mbed-os/features/FEATURE_BLE/TESTS/ble_tests/unit_test
+myproject/mbed-os/connectivity/FEATURE_BLE/tests/TESTS/ble_tests/unit_test
 ```
 
 This test case is only discovered if the target being tested supports the BLE feature. Otherwise, the test is ignored.
@@ -149,7 +149,8 @@ To interact with the host test from the device, you can use two functions: `gree
 
 ### Creating the host test
 
-This example writes an integration test that sends `hello` to the host and waits until it receives `world`. Create a file called `hello_world_tests.py` in the `TESTS/host_tests` folder, and fill it with:
+This example writes an integration test that sends `hello` to the host and waits until it receives `world`.
+Create `host_tests` directory under `mbed-os/TESTS/`, if it does not exist and create a file called `hello_world_tests.py` in the `mbed-os/TESTS/host_tests` folder, and fill it with:
 
 ```py
 from mbed_host_tests import BaseHostTest
@@ -189,7 +190,7 @@ This registers one function you can call from the device: `init`. The function c
 
 ### Creating the Greentea test
 
-This example writes the embedded part of this test. Create a new file `main.cpp` in `TESTS/tests/integration-test`, and fill it with:
+This example writes the embedded part of this test. Create a new file `main.cpp` under `TESTS/integration/test_case` directory, and fill it with:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/blob/v6.0/main.cpp)
 
@@ -198,7 +199,7 @@ You see the calls to and from the host through the `greentea_send_kv` and `green
 Run the test:
 
 ```
-$ mbed test -v -n tests-tests-integration-test
+$ mbed test -v -n tests-integration-test_case
 ```
 
 ## Debugging tests
@@ -269,13 +270,13 @@ You can use the `--compile-list` argument to list all available tests:
 
 ```
 $ mbed test --compile-list
-[mbed] Working path "/Users/janjon01/repos/first-greentea-test" (program)
+[mbed] Working path "/Users/janjon01/mbed-os" (program)
 Test Case:
-    Name: mbed-os-components-storage-blockdevice-component_flashiap-tests-filesystem-fopen
-    Path: ./mbed-os/components/storage/blockdevice/COMPONENT_FLASHIAP/TESTS/filesystem/fopen
+    Name: storage-blockdevice-component_sd-tests-tests-filesystem-fopen
+    Path: ./storage/blockdevice/COMPONENT_SD/tests/TESTS/filesystem/fopen
 Test Case:
-    Name: mbed-os-features-cellular-tests-api-cellular_device
-    Path: ./mbed-os/features/cellular/TESTS/api/cellular_device
+    Name: connectivity-lorawan-tests-tests-lorawan-loraradio
+    Path: ./connectivity/lorawan/tests/TESTS/lorawan/loraradio
 
 ...
 ```
@@ -288,22 +289,22 @@ The default action of Greentea using `mbed test` is to execute all tests found. 
 
 ### Limiting tests
 
-You can select test cases by name using the `-n` argument. This command executes all tests named `tests-mbedmicro-rtos-mbed-mail` from all builds in the test specification:
+You can select test cases by name using the `-n` argument. This command executes all tests named `platform-tests-tests-mbed_platform-atomic` from all builds in the test specification:
 
 ```
-$ mbed test -n tests-mbedmicro-rtos-mbed-mail
+$ mbed test -n platform-tests-tests-mbed_platform-atomic
 ```
 
-When using the `-n` argument, you can use the `*` character as a wildcard. This command executes all tests that start with `tests-` and have `-rtos-` in them.
+When using the `-n` argument, you can use the `*` character as a wildcard. This command executes all tests that start with `tests-` and have `-mbed_platform-` in them.
 
 ```
-$ mbed test -n tests-*-rtos-*
+$ mbed test -n tests-*-mbed_platform-*
 ```
 
-You can use a comma (`,`) to separate test names (argument `-n`) and build names (argument `-t`). This command executes the tests `tests-mbedmicro-rtos-mbed-mail` and `tests-mbed_drivers-c_strings` for the `K64F-ARM` and `K64F-GCC_ARM` builds in the test specification:
+You can use a comma (`,`) to separate test names (argument `-n`) and build names (argument `-t`). This command executes the tests `platform-tests-tests-mbed_platform-atomic` and `drivers-tests-tests-mbed_drivers-c_strings` for the `K64F-ARM` and `K64F-GCC_ARM` builds in the test specification:
 
 ```
-$ mbed test -n tests-mbedmicro-rtos-mbed-mail,tests-mbed_drivers-c_strings -t K64F-ARM,K64F-GCC_ARM
+$ mbed test -n platform-tests-tests-mbed_platform-atomic,drivers-tests-tests-mbed_drivers-c_strings -t K64F-ARM,K64F-GCC_ARM
 ```
 
 ### Selecting platforms
@@ -393,19 +394,19 @@ Place this file in your root folder, and name it `test_spec.json`.
             "base_path": "./BUILD/K64F/ARM",
             "baud_rate": 9600,
             "tests": {
-                "tests-mbedmicro-rtos-mbed-mail": {
+                "platform-tests-tests-mbed_platform-atomic": {
                     "binaries": [
                         {
                             "binary_type": "bootable",
-                            "path": "./BUILD/K64F/ARM/tests-mbedmicro-rtos-mbed-mail.bin"
+                            "path": "./BUILD/K64F/ARM/platform/tests/tests/mbed_platform/atomic/atomic.bin"
                         }
                     ]
                 },
-                "tests-mbed_drivers-c_strings": {
+                "drivers-tests-tests-mbed_drivers-c_strings": {
                     "binaries": [
                         {
                             "binary_type": "bootable",
-                            "path": "./BUILD/K64F/ARM/tests-mbed_drivers-c_strings.bin"
+                            "path": "./BUILD/K64F/ARM/drivers/tests/tests/mbed_drivers/c_strings/c_strings.bin"
                         }
                     ]
                 }
@@ -417,11 +418,11 @@ Place this file in your root folder, and name it `test_spec.json`.
             "base_path": "./BUILD/K64F/GCC_ARM",
             "baud_rate": 9600,
             "tests": {
-                "tests-mbedmicro-rtos-mbed-mail": {
+                "platform-tests-tests-mbed_platform-atomic": {
                     "binaries": [
                         {
                             "binary_type": "bootable",
-                            "path": "./BUILD/K64F/GCC_ARM/tests-mbedmicro-rtos-mbed-mail.bin"
+                            "path": "./BUILD/K64F/GCC_ARM/platform/tests/tests/mbed_platform/atomic/atomic.bin"
                         }
                     ]
                 }
@@ -439,10 +440,10 @@ mbedgt: using multiple test specifications from current directory!
         using 'BUILD\tests\K64F\ARM\test_spec.json'
         using 'BUILD\tests\K64F\GCC_ARM\test_spec.json'
 mbedgt: available tests for built 'K64F-GCC_ARM', location 'BUILD/tests/K64F/GCC_ARM'
-        test 'tests-mbedmicro-rtos-mbed-mail'
+        test 'platform-tests-tests-mbed_platform-atomic'
 mbedgt: available tests for built 'K64F-ARM', location 'BUILD/tests/K64F/ARM'
-        test 'tests-mbed_drivers-c_strings'
-        test 'tests-mbedmicro-rtos-mbed-mail'
+        test 'drivers-tests-tests-mbed_drivers-c_strings'
+        test 'platform-tests-tests-mbed_platform-atomic'
 ```
 
 
