@@ -77,7 +77,7 @@ The full build process is:
 
 When building an Mbed application, the presence of an `mbed_app.json` file allows you to set or override different configuration settings from libraries and targets. However, because the tests share a common build, this can cause issues when tests have different configurations that affect the OS.
 
-The build system looks for an `mbed_app.json` file in your shared project files (any directory not inside of a `TESTS` folder). If the system finds it, then this configuration file is used for both the non-test code and each test case inside your project's source tree. If there is more than one `mbed_app.json` file in the source tree, then the configuration system will error.
+The build system looks for an `mbed_app.json` file in your shared project files (any directory not inside of a `TESTS` folder). If the system finds it, then this configuration file is used for both the non-test code and each test case inside your project's source tree. If there is more than one `mbed_app.json` file in the source tree, then the configuration system will throw an error.
 
 If you need to test with multiple configurations, then you can use the `--app-config` option. This overrides the search for an `mbed_app.json` file and uses the configuration file that you specify for the build.
 
@@ -150,7 +150,7 @@ To interact with the host test from the device, you can use two functions: `gree
 ### Creating the host test
 
 This example writes an integration test that sends `hello` to the host and waits until it receives `world`.
-Create `host_tests` directory under `mbed-os/TESTS/`, if it does not exist and create a file called `hello_world_tests.py` in the `mbed-os/TESTS/host_tests` folder, and fill it with:
+Create an `host_tests` directory under `mbed-os/TESTS/`, if it does not exist and create a file called `hello_world_tests.py` in the `mbed-os/TESTS/host_tests` folder, and fill it with:
 
 ```py
 from mbed_host_tests import BaseHostTest
@@ -190,7 +190,7 @@ This registers one function you can call from the device: `init`. The function c
 
 ### Creating the Greentea test
 
-This example writes the embedded part of this test. Create a new file `main.cpp` under `TESTS/integration/test_case` directory, and fill it with:
+This example writes the embedded part of this test. Create a new file `main.cpp` under the `TESTS/integration/test_case` directory, and fill it with:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/blob/v6.0/main.cpp)
 
@@ -281,7 +281,7 @@ Test Case:
 ...
 ```
 
-After compilation, you can use the `--run-list` argument to list all tests that are ready to be ran.
+After compilation, you can use the `--run-list` argument to list all tests that are ready to be run.
 
 ### Executing all tests
 
