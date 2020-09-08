@@ -77,7 +77,7 @@ The build system automatically generates names of test suites. The name is const
 
 ## Unit testing with Mbed CLI
 
-Mbed CLI supports unit tests through `mbed test --unittests` command. To learn how to use unit tests with Mbed CLI, please see the [unit testing documentation section](../build-tools/test-and-debug.html). For other information on using Mbed CLI, please see the [CLI documentation in handbook](../build-tools/mbed-cli.html).
+Mbed CLI supports unit tests through the `mbed test --unittests` command. To learn how to use unit tests with Mbed CLI, please see the [unit testing documentation section](../build-tools/test-and-debug.html). For other information on using Mbed CLI, please see the [CLI documentation in handbook](../build-tools/mbed-cli.html).
 
 ### Writing unit tests
 
@@ -253,7 +253,7 @@ Use Mbed CLI to build and run unit tests. For advanced use, you can run CMake an
 
 1. Create a build directory: `mkdir UNITTESTS/build`.
 1. Move to the build directory: `cd UNITTESTS/build`.
-1. Run CMake using a relative path to `UNITTESTS` folder as the argument. So from `UNITTESTS/build` use `cmake ..`:
+1. Run CMake using a relative path to the `UNITTESTS` folder as the argument. So from `UNITTESTS/build` use `cmake ..`:
    - Add `-g [generator]` if generating files other than Unix Makefiles. For example, for MinGW, use `-g "MinGW Makefiles"`.
    - Add `-DCMAKE_MAKE_PROGRAM=<value>`, `-DCMAKE_CXX_COMPILER=<value>` and `-DCMAKE_C_COMPILER=<value>` to use a specific Make program and compilers.
    - Add `-DCMAKE_BUILD_TYPE=Debug` for a debug build.
