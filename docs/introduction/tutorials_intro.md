@@ -56,6 +56,8 @@ These tutorials show you how to install, export a project to and start a debuggi
 
 - [Pelion Device Management](https://github.com/ARMmbed/mbed-os-example-pelion)
 - [AWS MQTT broker](https://github.com/ARMmbed/mbed-os-example-for-aws)
+- [Azure IoT Hub](https://github.com/ARMmbed/mbed-os-example-for-azure)
+- [Google Cloud IoT core](https://github.com/ARMmbed/mbed-os-example-for-google-iot-cloud)
 
 ## Migrating
 
