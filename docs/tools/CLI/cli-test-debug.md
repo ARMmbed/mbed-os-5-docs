@@ -48,7 +48,7 @@ Allocated Stack: 32768 bytes
 Total Static RAM memory (data + bss): 6568 bytes
 Total RAM memory (data + bss + heap + stack): 104876 bytes
 Total Flash memory (text + data + misc): 48357 bytes
-Image: build\tests\K64F\GCC_ARM\TESTS\mbedmicro-rtos-mbed\mutex\TESTS-unit-myclass.bin
+Image: BUILD/tests/K64F/GCC_ARM/rtos/tests/TESTS/mbed_rtos/mutex/TESTS-unit-myclass.bin
 ...[SNIP]...
 mbedgt: test suite report:
 +--------------+---------------+---------------------------------+--------+--------------------+-------------+
