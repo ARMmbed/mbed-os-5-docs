@@ -6,7 +6,9 @@ The simplest way to debug your code is to augment your code with [printf](../tut
 
 ## Debugging from an IDE
 
-Keil uVision natively supports debugging Mbed OS applications. To set up uVision, read [Debugging with Keil uVision](../debug-test/keil-uvision.html).
+Mbed Studio and Keil uVision natively support debugging Mbed OS applications:
+* To set up Mbed Studio, read [Mbed Studio's documentation](https://os.mbed.com/docs/mbed-studio/current/monitor-debug/debugging-with-mbed-studio.html).
+* To set up uVision, read [Debugging with Keil uVision](../debug-test/keil-uvision.html).
 
 Mbed also supports debugging using any IDE that supports GDB. To set up the debugger, first read [Setting up your local debug toolchain](../debug-test/setting-up-a-local-debug-toolchain.html). Then read the section for your specific IDE. The same principles apply to any unlisted IDEs that supports GDB:
 
