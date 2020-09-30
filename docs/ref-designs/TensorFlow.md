@@ -19,8 +19,6 @@ The guide has step by step instructions for installing and running the applicati
 
 Here is what you will need to complete the guide:
 
-* Git.
-
 * Ubuntu 20.04 LTS. If you are using a Windows machine, install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)<!--originally you said 6.0 - that version's support ended in July. Can they install the latest version, or do they need 6.0 specifically?--> and then [Install Ubunto on it](https://www.virtualbox.org/wiki/Linux_Downloads).
 
 * [Mbed CLI (version 1.10.4)](../build-tools/install-and-set-up.html).
@@ -33,13 +31,19 @@ Here is what you will need to complete the guide:
     mbed config -G GCC_ARM_PATH <path_to_your_arm_toolchain>/bin
     ```
 
-* Make 3.82 or newer.<!--I got this as an error message when I tried to build with 3.81--><!--Was a bit surprised GNU didn't update this - I can't seem to update it for whatever reason and so now I'm stuck-->
+* Make 3.82 or newer (if you are using an older version, see the troubleshooting section for instructions).
+
+    <span class="notes">**Note**: On a Mac, you might have to use gmake instead of make.</span>
+
+* Python 2.7. We recommend [using pyenv to manage Python versions](https://pypi.org/project/pyenv/).<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
+
+* Git.
+
+* xxd.<!--unless is exists by default on all Linux computers?-->
 
 * A development board that can run [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers#supported_platforms). We tested on the [NXP FRDM-K66F](https://os.mbed.com/platforms/FRDM-K66F/) development board.
 
 * A mini-USB cable.
-
-* Python 2.7. We recommend [using pyenv to manage Python versions](https://pypi.org/project/pyenv/).<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
 
 <!--MarkDown doesn't support embedded YouTube players, which is one reason I removed the videos. Another is that it's better practice to link to official sites, not to videos uploaded by "unofficial" users who may remove them without warning and may, for all we know, be in legal disputes with the companies who created those products (I admit that isn't very likely with "how to install" videos). Also, not sure these videos will work in all countries.-->
 ### Download, build and install the application
@@ -68,9 +72,7 @@ Here is what you will need to complete the guide:
     cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
     ```
 
-1. Execute the following (on an environment that runs Python 2.7):<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
-<!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
-<!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
+1. Execute the following (on an environment that runs Python 2.7):
 
     ```
     mbed config root .
@@ -80,7 +82,11 @@ Here is what you will need to complete the guide:
     mbed compile -m K66F -t GCC_ARM
     ```
 
-    For some compilers<!--well we only support two, and you specifically asked for GNU, so in what case will this happen?-->, you may get a compilation error in `mbed_rtc_time.cpp`. Go to  `mbed-os/platform/mbed_rtc_time.h`  and comment out line 32 and line 37:
+    <!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
+    <!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
+    <!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
+
+    For some compilers<!--we only support two, and you specifically asked for GNU, so in what case will this happen?-->, you may get a compilation error in `mbed_rtc_time.cpp`. Go to  `mbed-os/platform/mbed_rtc_time.h`  and comment out line 32 and line 37:
 
     ```
     //#if !defined(__GNUC__) || defined(__CC_ARM) || defined(__clang__) struct timeval {
@@ -93,7 +99,7 @@ Here is what you will need to complete the guide:
 
     Your board appears as storage on your computer. If your system does not recognize the board with the `mbed detect` command, follow the instructions for setting up [DAPLink](https://armmbed.github.io/DAPLink/?board=FRDM-K66F).
 
-1. Flash the application to the device:
+1. Flash the application to the board:
     <!--I compiled two steps ago - that probably needs to be removed-->
     ```
     mbed compile -m K66F -t GCC_ARM –flash
@@ -114,9 +120,9 @@ Here is what you will need to complete the guide:
 
     When you have copied the file, the LEDs on the board start flashing, and the board will eventually reboot with the sample program running.<!--this contradicts your request to disconnect USB and connect power to cycle the app-->
 
-1. Disconnect the device from USB to power it down.
-1. Connect the device's power cable to start running the model.
-1. To view output, connect your device to a serial port. The baud rate is 9600.
+1. Disconnect the board from USB to power it down.
+1. Connect the board's power cable to start running the model.
+1. To view output, connect your board to a serial port. The baud rate is 9600.
 
     For example, if you're on Linux and the serial device is `/dev/ttyACM0`, run:
 
@@ -124,7 +130,7 @@ Here is what you will need to complete the guide:
     sudo screen /dev/ttyACM0 9600
     ```
 
-1. Speak to your device: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port:
+1. Speak into the board's microphone: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port:
 
     ```
     Heard yes (208) @116448ms  
@@ -144,7 +150,7 @@ The application samples audio from the microphone on the K66F. The audio is run 
 
 Here are descriptions of some interesting source files:
 
--   [nxp_k66f/audio_provider.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/nxp_k66f/audio_provider.cc): Captures audio from the microphone on the device.
+-   [nxp_k66f/audio_provider.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/nxp_k66f/audio_provider.cc): Captures audio from the microphone on the board.
 
 -   [micro_features/micro_features_generator.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc): Uses a Fast Fourier transform to create a spectrogram from audio.
 
@@ -164,7 +170,7 @@ While they are often applied to images, which are 2D grids of pixels, a convolut
 
 The following image is a visual representation of the audio. The network in our sample has learned which features in this image come together to represent a "yes", and which come together to represent a "no".
 
-![Spectrogram of "yes" and "no"](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/spectogram2.jpeg?auto=compress,format&w=680&h=510&fit=max)
+<span class="images">![Spectrogram of "yes" and "no"](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/spectogram2.jpeg?auto=compress,format&w=680&h=510&fit=max)</span>
 
 To generate this spectrogram, we use an interesting technique that is described in the next section.
 
@@ -176,7 +182,7 @@ To create each row, we run a 30ms slice of audio input through a Fast Fourier tr
 
 To build the entire 2D array, we combine the results of running the Fast Fourier transform on 49 consecutive 30ms slices of audio, with each slice overlapping the last by 10ms, as illustrated below:
 
-![Diagram of audio sampling](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/fft.jpeg?auto=compress,format&w=680&h=510&fit=max)
+<span class="images">![Diagram of audio sampling](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/fft.jpeg?auto=compress,format&w=680&h=510&fit=max)</span>
 
 You can see how the 30ms sample window is moved forward by 20ms each time until it has covered the full one-second sample. The resulting spectrogram is passed into the convolutional model.
 
@@ -194,189 +200,195 @@ The RespondToCommand method in [command_responder.cc](https://github.com/tensorf
 
 ## Retrain the machine learning model
 
-The model that we are using for speech recognition was trained on a dataset of one-second spoken commands called the [Speech Commands Dataset](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html). The dataset includes examples of the following ten different words:
+The model that we are using for speech recognition was trained on a dataset of one-second spoken commands called the [Speech Commands Dataset](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html). The dataset contains examples of ten words: yes, no, up, down, left, right, on, off, stop, go.
 
-yes, no, up, down, left, right, on, off, stop, go
+While the model in this sample was originally trained to recognise “yes” and “no”, the TensorFlow Lite for Microcontrollers source contains scripts that make it easy to retrain the model to classify any other combination of these words.
 
-While the model in this sample was originally trained to recognize “yes” and “no”, the TensorFlow Lite for Microcontrollers source contains scripts that make it easy to retrain the model to classify any other combination of these words.
+We are going to use another pre-trained model to recognise “up” and “down”:
 
-We are going to use another pre-trained model to recognize “up” and “down”, instead. If you are interested in the full flow including the training of the model refer to the [Supplementary information: model training](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/supplementary-information-model-training) section of this guide.
+1. Look at how the TensorFlow model gets converted to the TensorFlow Lite format.
+1. Download a model that has been trained and frozen using TensorFlow.
+1. Convert the TensorFlow Lite model into a C source file.
+1. Modify the code and deploy to the board.
 
-To build our new ML application we will now follow these steps:
+<span class="tips">**Tip:** Building TensorFlow and training the model will each take a couple of hours on an average computer. We will not perform this at this stage. If you are interested in the full flow, including the training of the model, refer to the [Supplementary information: model training](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/supplementary-information-model-training) guide.</span>
 
--   Download a pretrained model that has been trained and frozen using TensorFlow.
+## Background: Converting the trained model
 
--   Look at how the TensorFlow model gets converted to the TensorFlow Lite format.
+To get a converted model that can run on the controller itself from the trained model, we need to run a conversion script: the [TensorFlow Lite converter](https://www.tensorflow.org/lite/convert). This tool makes our model as small and efficient as possible, and converts it to a TensorFlow Lite FlatBuffer. To reduce the size of the model, we used a technique called [quantization](https://www.tensorflow.org/lite/performance/post_training_quantization). All weights and activations in the model get converted from 32-bit floating point format to an 8-bit and fixed-point format, as you can see in the following command:
 
--   Convert the TensorFlow Lite model into a C source file.
+<span class="images">![Convert the model to the TensorFlow Lite format code](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/convert_model.png)</span>
 
--   Modify the code and deploy to the device.
+This conversion will not only reduce the size of the network traffic, but will also avoid the more computationally expensive floating points.
 
+To save time, in this guide we skip the conversion step and instead download a converted model.
 
-Note: Building TensorFlow and training the model will each take a couple of hours on an average computer. We will not perform this at this stage. For a full guide on how to do this, refer to the [Supplementary information: model training](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/supplementary-information-model-training) section in this guide.
+## Downloading the model and creating a C file
 
-## Convert the model
+1. Download the [tiny_conv.tflite file](https://developer.arm.com/-/media/Files/downloads/Machine%20learning%20how-to%20guides/tiny_conv.tflite?revision=495eb362-4325-49b8-b3ba-3141df0c9b95&la=en&hash=0F37BA2C5DE95A1561979CDD18973171767A47C3).
+1. Convert this model into a C file that works with Mbed OS projects.
 
-Starting from the trained model to obtain a converted model that can run on the controller itself, we need to run a conversion script: the [TensorFlow Lite converter](https://www.tensorflow.org/lite/convert). This tool uses clever tricks to make our model as small and efficient as possible, and to convert it to a TensorFlow Lite FlatBuffer. To reduce the size of the model, we used a technique called [quantization](https://www.tensorflow.org/lite/performance/post_training_quantization). All weights and activations in the model get converted from 32-bit floating point format to an 8-bit and fixed-point format, as you can see in the following command:
+    Use a tool called xxd to generate a file called `model.cc`:
 
-![Convert the model to the TensorFlow Lite format code image](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/convert_model.png)
-This conversion will not only reduce the size of the network, but will avoid floating point computations that are more computationally expensive.
+    ```
+    xxd -i  tiny_conv.tflite > ../micro_features/model.cc
+    ```
 
-To save time, we will skip this step and instead download the [tiny_conv.tflite](https://developer.arm.com/-/media/Files/downloads/Machine%20learning%20how-to%20guides/tiny_conv.tflite?revision=495eb362-4325-49b8-b3ba-3141df0c9b95&la=en&hash=0F37BA2C5DE95A1561979CDD18973171767A47C3).
+1. Update `model.cc` so that it is compatible with our code:
 
-The final step in the process is to convert this model into a C file that we can drop into our Mbed project.
+    1. Open the file. The top two lines should look similar to the following code, although the exact variable name and hex values may be different:
 
-To do this conversion, we will use a tool called xxd. Issue the following command:
+        ```
+        const  unsigned  char  g_model[] DATA_ALIGN_ATTRIBUTE = {  
+        0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
+        ```
 
-```
-xxd -i  tiny_conv.tflite > ../micro_features/model.cc
-```
+    1. Add the `include` from the following snippet and change the variable declaration without changing the hex values:
 
-Next, we need to update model.cc so that it is compatible with our code. First, open the file. The top two lines should look similar to the following code, although the exact variable name and hex values may be different:
+        ```
+        #include "tensorflow/lite/micro/examples/micro_speech/micro_features/model.h"  
+        const unsigned char g_tiny_conv_micro_features_model_data[] = {  
+        0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
+        ```
 
-```
-const  unsigned  char  g_model[] DATA_ALIGN_ATTRIBUTE = {  
-0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
-```
+    1. Go to the bottom of the file and find the unsigned int variable:
 
-You need to add the include from the following snippet and change the variable declaration without changing the hex values:
+        ```
+        unsigned int tiny_conv_tflite_len = 18216;
+        ```
 
-```
-#include "tensorflow/lite/micro/examples/micro_speech/micro_features/model.h"  
-const unsigned char g_tiny_conv_micro_features_model_data[] = {  
-0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
-```
+    1. Change the declaration to the following code, but do not change the number assigned to it, even if your number is different from the one in this guide:
 
-Next, go to the very bottom of the file and find the unsigned int variable.
+        ```
+        const int g_tiny_conv_micro_features_model_data_len = 18216;
+        ```
 
-```
-unsigned int tiny_conv_tflite_len = 18216;
-```
+    1. Save the file.
 
-Change the declaration to the following code, but do not change the number assigned to it, even if your number is different from the one in this guide.
+1. Copy the `tiny_conv_micro_features_model_data.cc` <!--where is this file? it's not the one I was just editing-->file into the `tensorflow/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed/tensorflow/lite/micro/examples/micro_speech/micro_features` directory.
 
-```
-const int g_tiny_conv_micro_features_model_data_len = 18216;
-```
+## Modify the application code
 
-Finally, save the file, then copy the ```tiny_conv_micro_features_model_data.cc```file into the ```tensorflow/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed/tensorflow/lite/micro/examples/micro_speech/micro_features``` directory.
+If you build and run your code now, your ML model knows the words “up” and “down”, but your application assumes that the words are “yes” and “no”. Let’s update the references and the user interface so that the appropriate words are printed.
 
-## Modify the device code
+1. Navigate to the `tensorflow/lite/micro/examples/micro_speech/` directory and open the file `micro_features/micro_model_settings.cc`.
 
-If you build and run your code now, your device should respond to the words “up” and “down”. However, the code was written to assume that the words are “yes” and “no”. Let’s update the references and the user interface so that the appropriate words are printed.
+    You see the following category labels:
 
-First, go to the following directory:
+    ```
+    const char* kCategoryLabels[kCategoryCount] = {  
+    "silence",  
+    "unknown",  
+    "yes",  
+    "no",  
+    };
+    ```
 
-```tensorflow/lite/micro/examples/micro_speech/```
+    The code uses this array to map the output of the model to the correct value. Because we specified our wanted_words<!--is that underscore correct?--> as “up, down” in the training script, we should update this array to reflect these words in the same order.
 
-and open the file:
+1. Edit the code so that "up" replaces "yes" and "down" replaces "no":
 
-```micro_features/micro_model_settings.cc```
+    ```
+    const char* kCategoryLabels[kCategoryCount] = {  
+    "silence",  
+    "unknown",  
+    "up",  
+    "down",  
+    };
+    ```
 
-You will see the following category labels:
-```
-const char* kCategoryLabels[kCategoryCount] = {  
-"silence",  
-"unknown",  
-"yes",  
-"no",  
-};
-```
-The code uses this array to map the output of the model to the correct value. Because we specified our wanted_words as “up, down”in the training script, we should update this array to reflect these words in the same order. Edit the code so it appears as follows:
-```
-const char* kCategoryLabels[kCategoryCount] = {  
-"silence",  
-"unknown",  
-"up",  
-"down",  
-};
-```
-Next, we will update the code in command_responder.cc to reflect these new labels, modifying the if statements and the DisplayStringAt call:
-```
-void RespondToCommand(tflite::ErrorReporter* error_reporter,  
-int32_t current_time, const char* found_command,  
-uint8_t score, bool is_new_command) {  
-if (is_new_command) {  
-error_reporter->Report("Heard %s (%d) @%dms", found_command, score,  
-current_time);  
-if(strcmp(found_command, "up") == 0) {  
-lcd.Clear(0xFF0F9D58);  
-lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard up", CENTER_MODE);  
-} else if(strcmp(found_command, "down") == 0) {  
-lcd.Clear(0xFFDB4437);  
-lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard down", CENTER_MODE);  
-} else if(strcmp(found_command, "unknown") == 0) {  
-lcd.Clear(0xFFF4B400);  
-lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard unknown", CENTER_MODE);  
-} else {  
-lcd.Clear(0xFF4285F4);  
-lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard silence", CENTER_MODE);  
-}  
-}  
-}
-```
+1. Update the code in `command_responder.cc` to reflect these new labels, modifying the if statements and the DisplayStringAt call:
 
-Now that we have updated the code, go back to the mbed directory:
+    ```
+    void RespondToCommand(tflite::ErrorReporter* error_reporter,  
+    int32_t current_time, const char* found_command,  
+    uint8_t score, bool is_new_command) {  
+        if (is_new_command) {  
+            error_reporter->Report("Heard %s (%d) @%dms", found_command, score,  
+            current_time);  
+        if(strcmp(found_command, "up") == 0) {  
+            lcd. Clear(0xFF0F9D58);  
+            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard up", CENTER_MODE);  
+        } else if(strcmp(found_command, "down") == 0) {  
+            lcd.Clear(0xFFDB4437);  
+            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard down", CENTER_MODE);  
+        } else if(strcmp(found_command, "unknown") == 0) {  
+            lcd.Clear(0xFFF4B400);  
+            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard unknown", CENTER_MODE);  
+        } else {  
+            lcd.Clear(0xFF4285F4);  
+            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard silence", CENTER_MODE);  
+            }  
+        }  
+    }
+    ```
+<!--I added indents - I assumed their lack was a result of copy/paste destroying something, not a decision-->
 
-```
-cd <path_to_tensorflow>/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
-```
+1. Navigate back to the mbed directory:
 
-and run the following command to rebuild the project:
+    ```
+    cd <path_to_tensorflow>/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
+    ```
 
-```mbed compile -m K66F -t GCC_ARM```
+1. Rebuilt the project:
 
-Finally, copy the binary to the USB storage of the device, using the same method that you used earlier. You should now be able to say “up” and “down” to update the display.
+    ```
+    mbed compile -m K66F -t GCC_ARM
+    ```
+
+1. Copy the binary to the USB storage of the device<!--why aren't we using flash?-->, using the same method that you used earlier.
+
+You can now say “up” and “down” to update the display.
 
 ## Troubleshooting
 
 We have found some common errors that users face and have listed them here to help you get started with your application as quickly as possible.
-If you encounter:
 
-```Mbed CLI issues or Error: collect2: error: ld returned 1 exit status```
+- If you encounter:
 
-Purge the cache with the following command:
+    ```
+    Mbed CLI issues or Error: collect2: error: ld returned 1 exit status
+    ```
 
-```mbed cache purge```
+    Purge the cache with the following command:
 
-You probably also have a stale BUILD folder. Clean up your directory and try again:
+    ```
+    mbed cache purge
+    ```
 
-```rm -rf BUILD```
+    You probably also have a stale BUILD folder. Clean up your directory and try again:
 
-Error: Prompt wrapping around line
+    ```
+    rm -rf BUILD
+    ```
 
-If your terminal is wrapping your text as show here:
+- If your terminal is wrapping your text as show here:
 
-![Error prompt wrapping around line image](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/troubleshooting.png)
+    <span class="images">![Error prompt wrapping around line](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/troubleshooting.png)</span>
 
-In your terminal type:
+    In your terminal, type:
 
-```export PS1='\u@\h: '```
+    ```
+    export PS1='\u@\h: '
+    ```
 
-For a more minimalist type:
+    For a more minimalist type:
 
-```export PS1='> '```
+    ```
+    export PS1='> '
+    ```
 
-Error: "Requires make version 3.82 or later (current is 3.81)"
+- Error: `Requires make version 3.82 or later (current is 3.81)`
 
-If you encounter this error, install the brew and make by typing the following code:
+    If you encounter this error, install Brew and Make:
 
-```
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-```
+    ```
+    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-```
-brew install make
-```
+    brew install make
+    ```
+- Error: `-bash: mbed: command not found`
 
-**Note**: On a Mac, you might have to use gmake instead of make, to run your commands.
+    Your Mbed CLI installation isn't working properly. We recommend [using the installers](../build-tools/install-and-set-up.html).
 
-Error: -bash: mbed: command not found
-
-If you encounter this error, try the following fixes.
-
-For Mac:
-
-We recommend using the [installer](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/tag/v0.0.10) and running the downloaded Mbed CLI App. This app will automatically launch a shell with all the dependencies solved for you.
-
-If installed manually, make sure to follow these [instructions](https://os.mbed.com/docs/mbed-os/v5.12/tools/macos.html).
+    If you installed manually, make sure to follow the [instructions for configuring the compiler location](../build-tools/install-and-set-up.html).
