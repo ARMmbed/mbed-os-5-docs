@@ -8,7 +8,7 @@ This is especially exciting for IoT, because lower network use means lower power
 
 In this guide, you will learn how to perform machine learning inference on an Arm Cortex-M microcontroller with TensorFlow Lite for Microcontrollers. You will deploy a sample application we wrote that uses the microphone on the K66F and a TensorFlow machine learning model to detect the words “yes” and “no”.
 
-The guide has step by step instructions for installing and running the application, followed by information about how TensorFlow and the application work.
+The guide has step by step instructions for installing and running the application, followed by information about how TensorFlow and the application work. Finally, it shows you how to retrain the ML model with new words.
 
 ## Using the example application
 
@@ -71,13 +71,13 @@ Here is what you will need to complete the guide:
 1. Execute the following (on an environment that runs Python 2.7):<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
 <!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
 <!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
+
     ```
     mbed config root .
 
     mbed deploy
 
     mbed compile -m K66F -t GCC_ARM
-
     ```
 
     For some compilers<!--well we only support two, and you specifically asked for GNU, so in what case will this happen?-->, you may get a compilation error in `mbed_rtc_time.cpp`. Go to  `mbed-os/platform/mbed_rtc_time.h`  and comment out line 32 and line 37:
@@ -98,6 +98,21 @@ Here is what you will need to complete the guide:
     ```
     mbed compile -m K66F -t GCC_ARM –flash
     ```
+1. Deploy the example to your K66F<!--but we flshed already. What are we doing here?-->
+
+    Copy the binary file that we built earlier to the USB storage.
+
+    Note: if you have skipped the previous steps<!--which ones?-->, download the [binary file]() to proceed.
+
+    The file is at:
+
+    ```
+    cp ./BUILD/K66F/GCC_ARM/mbed.bin /Volumes/K66F/
+    ```
+
+    Depending on your operating system <!--aren't we making everyone use Linux?-->, the exact copy command and paths may vary.
+
+    When you have copied the file, the LEDs on the board start flashing, and the board will eventually reboot with the sample program running.<!--this contradicts your request to disconnect USB and connect power to cycle the app-->
 
 1. Disconnect the device from USB to power it down.
 1. Connect the device's power cable to start running the model.
@@ -109,111 +124,73 @@ Here is what you will need to complete the guide:
     sudo screen /dev/ttyACM0 9600
     ```
 
-1. Speak to your device: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port.
+1. Speak to your device: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port:
 
+    ```
+    Heard yes (208) @116448ms  
+    Heard unknown (241) @117984ms  
+    Heard no (201) @124992ms
+    ```
+
+Congratulations! You are now running a machine learning model that can recognise keywords on an Arm Cortex-M4 microcontroller, directly on your K66F.
+
+It is easy to change the behavior of our program, but is it difficult to modify the machine learning model itself? The answer is no, and the section [Retrain the machine learning model](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/retrain-the-machine-learning-model) will show you how. First, let's review what the application is doing - and how.
 
 ## How TensorFlow and the application work
 
-While you wait for the project to download, let’s explore the project files on [GitHub](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/micro_speech) and learn how this TensorFlow Lite for Microcontrollers example works.
+Let’s explore the project files on [for the speech example](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/micro_speech) and learn how this TensorFlow Lite for Microcontrollers example works.
 
-The code samples audio from the microphone on the K66F. The audio is run through a Fast Fourier transform to create a spectrogram. The spectrogram is then fed into a pre-trained machine learning model. The model uses a [convolutional neural network](https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks) to identify whether the sample represents either the command “yes” or “no”, silence, or an unknown input. We will explore how this works in more detail later in the guide.
+The application samples audio from the microphone on the K66F. The audio is run through a Fast Fourier transform to create a spectrogram. The spectrogram is then fed into a pre-trained machine learning model. The model uses a [convolutional neural network](https://developers.google.com/machine-learning/practica/image-classification/convolutional-neural-networks) to identify whether the sample represents “yes”, “no”, an unknown input or silence. We will explore how this works in more detail later in the guide.
 
 Here are descriptions of some interesting source files:
 
--   nxp_k66f[/audio_provider.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/nxp_k66f/audio_provider.cc) captures audio from the microphone on the device.
+-   [nxp_k66f/audio_provider.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/nxp_k66f/audio_provider.cc): Captures audio from the microphone on the device.
 
--   [micro_features/micro_features_generator.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc): uses a Fast Fourier transform to create a spectrogram from audio.
+-   [micro_features/micro_features_generator.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc): Uses a Fast Fourier transform to create a spectrogram from audio.
 
--   [micro_features/model.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/model.cc). This file is the machine learning model itself, represented by a large array of unsigned char values.
+-   [micro_features/model.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/model.cc): This file is the machine learning model itself, represented by a large array of unsigned char values.
 
--   [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc) is called every time a potential command has been identified.
+-   [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc): Called every time a potential command has been identified.
 
--   [main.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/main.cc). This file is the entry point for the Mbed program, which runs the machine learning model using TensorFlow Lite for Microcontrollers.
-
-
-## Project structure
-While the project builds, we can look in more detail at how it works.
+-   [main.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/main.cc): The entry point for the Mbed OS program, which runs the machine learning model using TensorFlow Lite for Microcontrollers.
 
 ### Convolutional neural networks
+
 Convolutional networks are a type of deep neural network. These networks are designed to identify features in multidimensional vectors. The information in these vectors is contained in the relationships between groups of adjacent values.
 
-These networks are usually used to analyze images. An image is a good example of the multidimensional vectors described above, in which a group of adjacent pixels might represent a shape, a pattern, or a texture. During training, a convolutional network can identify these features and learn what they represent. The network can learn how simple image features, like lines or edges, fit together into more complex features, like an eye, or an ear. The network can also learn, how those features are combined to form an input image, like a photo of a human face. This means that a convolutional network can learn to distinguish between different classes of input image, for example a photo of a person and a photo of a dog.
+These networks are usually used to analyse images. An image is a good example of the multidimensional vectors described above, in which a group of adjacent pixels might represent a shape, a pattern, or a texture. During training, a convolutional network can identify these features and learn what they represent. The network can learn how simple image features, like lines or edges, fit together into more complex features, like an eye or an ear. The network can also learn how those features are combined to form an input image, like a photo of a human face. This means that a convolutional network can learn to distinguish between different classes of input image, for example a photo of a person and a photo of a dog.
 
-While they are often applied to images, which are 2D grids of pixels, a convolutional network can be used with any multidimensional vector input. In the example we are building in this guide, a convolutional network has been trained on a spectrogram that represents 1 second of audio bucketed into multiple frequencies.
+While they are often applied to images, which are 2D grids of pixels, a convolutional network can be used with any multidimensional vector input. In the example in this guide, a convolutional network has been trained on a spectrogram that represents 1 second of audio bucketed into multiple frequencies.
 
 The following image is a visual representation of the audio. The network in our sample has learned which features in this image come together to represent a "yes", and which come together to represent a "no".
 
-![enter image description here](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/spectogram2.jpeg?auto=compress,format&w=680&h=510&fit=max)
+![Spectrogram of "yes" and "no"](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/spectogram2.jpeg?auto=compress,format&w=680&h=510&fit=max)
 
 To generate this spectrogram, we use an interesting technique that is described in the next section.
 
-## Feature generation with Fast Fourier transform
+### Feature generation with Fast Fourier transform
+
 In our code, each spectrogram is represented as a 2D array, with 43 columns and 49 rows. Each row represents a 30ms sample of audio that is split into 43 frequency buckets.
 
-To create each row, we run a 30ms slice of audio input through a Fast Fourier transform. Fast Fourier transform analyzes the frequency distribution of audio in the sample and creates an array of 256 frequency buckets, each with a value from 0 to 255. These buckets are averaged together into groups of 6, leaving us with 43 buckets. The code in the file [micro_features/micro_features_generator.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc) performs this action.
+To create each row, we run a 30ms slice of audio input through a Fast Fourier transform. Fast Fourier transform analyses the frequency distribution of audio in the sample and creates an array of 256 frequency buckets, each with a value from 0 to 255. These buckets are averaged together into groups of 6, leaving us with 43 buckets. The code in the file [micro_features/micro_features_generator.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc) performs this action.
 
-To build the entire 2D array, we combine the results of running the Fast Fourier transform on 49 consecutive 30ms slices of audio, with each slice overlapping the last by 10ms. The following diagram should make this clearer:
-![enter image description here](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/fft.jpeg?auto=compress,format&w=680&h=510&fit=max)
+To build the entire 2D array, we combine the results of running the Fast Fourier transform on 49 consecutive 30ms slices of audio, with each slice overlapping the last by 10ms, as illustrated below:
+
+![Diagram of audio sampling](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/fft.jpeg?auto=compress,format&w=680&h=510&fit=max)
 
 You can see how the 30ms sample window is moved forward by 20ms each time until it has covered the full one-second sample. The resulting spectrogram is passed into the convolutional model.
 
-## Recognition and windowing
+### Recognition and windowing
+
 The process of capturing one second of audio and converting it into a spectrogram leaves us with something that our ML model can interpret. The model outputs a probability score for each category it understands (yes, no, unknown, and silence). The probability score indicates whether the audio is likely to belong to that category.
 
-The model was trained on one-second samples of audio. In the training data, the word “yes” or “no” is spoken at the start of the sample, and the entire word is contained within that one-second. However, when this code is running, there is no guarantee that a user will begin speaking at the very beginning of our one-second sample.
+The model was trained on the one-second samples of audio we saw above. In the training data, the word “yes” or “no” is spoken at the start of the sample, and the entire word is contained within that one-second. However, when the application is running, there is no guarantee that a user will begin speaking at the very beginning of our one-second sample. If the user starts saying “yes” at the end of the sample instead of the beginning, the model might not be able to understand the word. This is because the model uses the position of the features within the sample to help predict which word was spoken.
 
-If the user starts saying “yes” at the end of the sample instead of the beginning, the model might not be able to understand the word. This is because the model uses the position of the features within the sample to help predict which word was spoken.
+To solve this problem, our code runs inference as often as it can<!--here you lost me, probably because I don't deal with ML - is this in the training again? where is it getting new samples?-->, depending on the speed of the device, and averages all of the results within a rolling 1000ms window. The code in the file [recognize_commands.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.cc) performs this action. When the average for a given category in a set of predictions goes above the threshold<!--lost me here too - are we talking about training or recognising actual users?-->, as defined in [recognize_commands.h](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.h), we can assume a valid result.
 
-To solve this problem, our code runs inference as often as it can, depending on the speed of the device, and averages all of the results within a rolling 1000ms window. The code in the file [recognize_commands.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.cc) performs this action. When the average for a given category in a set of predictions goes above the threshold, as defined in [recognize_commands.h](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.h), we can assume a valid result.
+### Interpreting the results
 
-## Interpreting the results
-
-The RespondToCommand method in [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc) is called when a command has been recognized. Currently, this results in a line being printed to the serial port. Later in this guide, we will modify the code to display the result on the screen.
-
-## Deploy the example to your K66F
-
-In the previous section of this guide, we explained the build process for a keyword spotting example application.
-
-Now that the build has completed, we will look in this section of the guide at how to deploy the binary to the K66F and test to see if it works.
-
-First, plug in your K66F board via USB. The board should show up on your machine as a USB mass storage device. Copy the binary file that we built earlier to the USB storage.
-
-Note: if you have skipped the previous steps, download the [binary file]() to proceed.
-
-Use the following command:
-
-```
-cp ./BUILD/K66F/GCC_ARM/mbed.bin /Volumes/K66F/
-```
-
-Depending on your platform, the exact copy command and paths may vary. When you have copied the file, the LEDs on the board should start flashing, and the board will eventually reboot with the sample program running.
-
-## Test keyword spotting
-
-The program outputs recognition results to its serial port. To see the output of the program, we will need to establish a serial connection with the board at 9600 baud.
-
-The board’s USB UART shows up as  ```/dev/tty.usbmodemXXXXXXX```.We can use ‘screen’ to access the serial console. Although, ‘screen’ is not installed on Linux by default, you can use apt-get install screen to install the package.
-
-Run the following command in a separate terminal:
-
-```
-screen /dev/tty.usbmodemXXXXXX 9600
-```
-
-**Note**: this command may very depending on where your board is plugged.
-
-Try saying the word “yes” several times. You should see some output like the following:
-
-```
-Heard yes (208) @116448ms  
-Heard unknown (241) @117984ms  
-Heard no (201) @124992ms
-
-```
-
-Congratulations! You are now running a machine learning model that can recognize keywords on an Arm Cortex-M4 microcontroller, directly on your K66F.
-
-It is easy to change the behavior of our program, but is it difficult to modify the machine learning model itself? The answer is no, and the next section of this guide, [Retrain the machine learning model](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/retrain-the-machine-learning-model), will show you how.
+The RespondToCommand method in [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc) is called when a command a user speals has been recognised. Currently, this results in a line being printed to the serial port. Later in this guide, we will modify the code to display the result on the screen.
 
 ## Retrain the machine learning model
 
