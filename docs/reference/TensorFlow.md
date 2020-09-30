@@ -1,5 +1,5 @@
 # Overview
-
+<!--https://github.com/COTASPAR/K66F/blob/master/README.md-->
 As an IoT developer, you might think of machine learning as a server-side technology. In the traditional view, sensors on your device capture data and send it to the cloud, where Machine Learning (ML) models on hefty machines make sense of it. A network connection is obligatory, and you are going to expect some latency, not to mention hosting costs.
 
 But more and more, developers want to deploy their ML models to the edge, on IoT devices themselves. If you bring ML closer to your sensors, you remove your reliance on a network connection, and you can achieve much lower latency without a round trip to the server.
@@ -16,9 +16,8 @@ With the launch of TensorFlow Lite for Microcontrollers, developers can run mach
 
 [![An introduction to TensorFlow Lite](http://img.youtube.com/vi/DKosV_-4pdQ/0.jpg)](http://www.youtube.com/watch?v=DKosV_-4pdQ)
 
-# Getting Started
 
-**Before you begin**
+## Before you begin
 
 Here is what you will need to complete the guide:
 
@@ -44,8 +43,7 @@ For Windows users, install Ubuntu 20.04 LTS in a VirtualBox. Refer to the follow
 
 [Watch here](http://www.youtube.com/watch?v=x5MhydijWmc)
 
-
-**Getting started**
+## Getting Started
 
 TensorFlow Lite for Microcontrollers supports several devices out of the box, and is relatively easy to extend to new devices. For this guide, we will focus on the **NXP FRDM K66F**.
 
@@ -64,7 +62,7 @@ To do this, we will show you how to complete the following steps:
 
 3.  Use new trained models to recognize different words
 
-# Download and build the sample application
+### Download and build the sample application
 
 **Install Arm toolchain and Mbed CLI**
 -   Download [Arm cross compilation](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) toolchain. Select the correct toolchain for the OS that your computer is running. For Windows users, if you have already set up the Linux virtual environment, install the toolchain there.
@@ -82,11 +80,13 @@ To do this, we will show you how to complete the following steps:
 **Important:** We recommend running the following commands from inside the Mbed CLI terminal that gets launched with the Mbed CLI Application. This is because it will be much quicker to set up, because it resolves all your environment dependencies automatically.
 
 
-# Build and compile micro speech example
+### Build and compile micro speech example
 
 Navigate to the directory where you keep code projects. Run the following command to download TensorFlow Lite source code.
 
-```git clone https://github.com/tensorflow/tensorflow.git```
+```
+git clone https://github.com/tensorflow/tensorflow.git
+```
 
 While you wait for the project to download, let’s explore the project files on [GitHub](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/micro_speech) and learn how this TensorFlow Lite for Microcontrollers example works.
 
@@ -107,21 +107,31 @@ Here are descriptions of some interesting source files:
 
 After the project has downloaded, you can run the following commands to navigate into the project directory and build it:
 
-```cd tensorflow```
+```
+cd tensorflow
+```
 
 
-```make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project```
+```
+make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project
+```
 
 This will create a folder in ```tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed```  that contains the source and header files, Mbed driver files, and a README.
 
-```cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed```
+```
+cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
+```
 
   Execute the following while remembering to use Python 2.7 (you can do this by using a virtual environment with pip):
-```mbed config root . ```
 
-```mbed deploy```
+```
+mbed config root .
 
-```mbed compile -m K66F -t GCC_ARM```
+mbed deploy
+
+mbed compile -m K66F -t GCC_ARM
+
+```
 
 For some Mbed compilers, you may get compile error in mbed_rtc_time.cpp. Go to  mbed-os/platform/mbed_rtc_time.h  and comment line 32 and line 37:
 
@@ -138,17 +148,21 @@ Connect the USB cable to the micro USB port. When the Ethernet port is facing to
 
 Now, we are ready to flash the device:
 
-```mbed compile -m K66F -t GCC_ARM –flash```
+```
+mbed compile -m K66F -t GCC_ARM –flash
+```
 
 Disconnect USB cable from the device to power down the device and connect back the power cable to start running the model.
 
 Connect to serial port with baud rate of 9600 and correct serial device to view the output from the MCU. In linux, you can run the following screen command if the serial device is  /dev/ttyACM0:
 
-```sudo screen /dev/ttyACM0 9600```
+```
+sudo screen /dev/ttyACM0 9600
+```
 
 Saying "Yes" will print "Yes" and "No" will print "No" on the serial port.
 
-# Project structure
+## Project structure
 While the project builds, we can look in more detail at how it works.
 
 ### Convolutional neural networks
@@ -164,7 +178,7 @@ The following image is a visual representation of the audio. The network in our 
 
 To generate this spectrogram, we use an interesting technique that is described in the next section.
 
-# Feature generation with Fast Fourier transform
+## Feature generation with Fast Fourier transform
 In our code, each spectrogram is represented as a 2D array, with 43 columns and 49 rows. Each row represents a 30ms sample of audio that is split into 43 frequency buckets.
 
 To create each row, we run a 30ms slice of audio input through a Fast Fourier transform. Fast Fourier transform analyzes the frequency distribution of audio in the sample and creates an array of 256 frequency buckets, each with a value from 0 to 255. These buckets are averaged together into groups of 6, leaving us with 43 buckets. The code in the file [micro_features/micro_features_generator.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/micro_features/micro_features_generator.cc) performs this action.
@@ -174,7 +188,7 @@ To build the entire 2D array, we combine the results of running the Fast Fourier
 
 You can see how the 30ms sample window is moved forward by 20ms each time until it has covered the full one-second sample. The resulting spectrogram is passed into the convolutional model.
 
-# Recognition and windowing
+## Recognition and windowing
 The process of capturing one second of audio and converting it into a spectrogram leaves us with something that our ML model can interpret. The model outputs a probability score for each category it understands (yes, no, unknown, and silence). The probability score indicates whether the audio is likely to belong to that category.
 
 The model was trained on one-second samples of audio. In the training data, the word “yes” or “no” is spoken at the start of the sample, and the entire word is contained within that one-second. However, when this code is running, there is no guarantee that a user will begin speaking at the very beginning of our one-second sample.
@@ -183,11 +197,11 @@ If the user starts saying “yes” at the end of the sample instead of the begi
 
 To solve this problem, our code runs inference as often as it can, depending on the speed of the device, and averages all of the results within a rolling 1000ms window. The code in the file [recognize_commands.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.cc) performs this action. When the average for a given category in a set of predictions goes above the threshold, as defined in [recognize_commands.h](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/recognize_commands.h), we can assume a valid result.
 
-# Interpreting the results
+## Interpreting the results
 
 The RespondToCommand method in [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc) is called when a command has been recognized. Currently, this results in a line being printed to the serial port. Later in this guide, we will modify the code to display the result on the screen.
 
-# Deploy the example to your K66F
+## Deploy the example to your K66F
 
 In the previous section of this guide, we explained the build process for a keyword spotting example application.
 
@@ -199,11 +213,13 @@ Note: if you have skipped the previous steps, download the [binary file]() to pr
 
 Use the following command:
 
-```cp ./BUILD/K66F/GCC_ARM/mbed.bin /Volumes/K66F/```
+```
+cp ./BUILD/K66F/GCC_ARM/mbed.bin /Volumes/K66F/
+```
 
 Depending on your platform, the exact copy command and paths may vary. When you have copied the file, the LEDs on the board should start flashing, and the board will eventually reboot with the sample program running.
 
-# Test keyword spotting
+## Test keyword spotting
 
 The program outputs recognition results to its serial port. To see the output of the program, we will need to establish a serial connection with the board at 9600 baud.
 
@@ -211,7 +227,9 @@ The board’s USB UART shows up as  ```/dev/tty.usbmodemXXXXXXX```.We can use �
 
 Run the following command in a separate terminal:
 
-```screen /dev/tty.usbmodemXXXXXX 9600```
+```
+screen /dev/tty.usbmodemXXXXXX 9600
+```
 
 **Note**: this command may very depending on where your board is plugged.
 
@@ -228,7 +246,7 @@ Congratulations! You are now running a machine learning model that can recognize
 
 It is easy to change the behavior of our program, but is it difficult to modify the machine learning model itself? The answer is no, and the next section of this guide, [Retrain the machine learning model](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/retrain-the-machine-learning-model), will show you how.
 
-# Retrain the machine learning model
+## Retrain the machine learning model
 
 The model that we are using for speech recognition was trained on a dataset of one-second spoken commands called the [Speech Commands Dataset](https://ai.googleblog.com/2017/08/launching-speech-commands-dataset.html). The dataset includes examples of the following ten different words:
 
@@ -251,7 +269,7 @@ To build our new ML application we will now follow these steps:
 
 Note: Building TensorFlow and training the model will each take a couple of hours on an average computer. We will not perform this at this stage. For a full guide on how to do this, refer to the [Supplementary information: model training](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/supplementary-information-model-training) section in this guide.
 
-# Convert the model
+## Convert the model
 
 Starting from the trained model to obtain a converted model that can run on the controller itself, we need to run a conversion script: the [TensorFlow Lite converter](https://www.tensorflow.org/lite/convert). This tool uses clever tricks to make our model as small and efficient as possible, and to convert it to a TensorFlow Lite FlatBuffer. To reduce the size of the model, we used a technique called [quantization](https://www.tensorflow.org/lite/performance/post_training_quantization). All weights and activations in the model get converted from 32-bit floating point format to an 8-bit and fixed-point format, as you can see in the following command:
 
@@ -264,30 +282,40 @@ The final step in the process is to convert this model into a C file that we can
 
 To do this conversion, we will use a tool called xxd. Issue the following command:
 
-```xxd -i  tiny_conv.tflite > ../micro_features/model.cc```
+```
+xxd -i  tiny_conv.tflite > ../micro_features/model.cc
+```
 
 Next, we need to update model.cc so that it is compatible with our code. First, open the file. The top two lines should look similar to the following code, although the exact variable name and hex values may be different:
+
 ```
 const  unsigned  char  g_model[] DATA_ALIGN_ATTRIBUTE = {  
 0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
 ```
+
 You need to add the include from the following snippet and change the variable declaration without changing the hex values:
+
 ```
 #include "tensorflow/lite/micro/examples/micro_speech/micro_features/model.h"  
 const unsigned char g_tiny_conv_micro_features_model_data[] = {  
 0x18, 0x00, 0x00, 0x00, 0x54, 0x46, 0x4c, 0x33, 0x00, 0x00, 0x0e, 0x00,
 ```
+
 Next, go to the very bottom of the file and find the unsigned int variable.
+
 ```
 unsigned int tiny_conv_tflite_len = 18216;
 ```
+
 Change the declaration to the following code, but do not change the number assigned to it, even if your number is different from the one in this guide.
+
 ```
 const int g_tiny_conv_micro_features_model_data_len = 18216;
 ```
+
 Finally, save the file, then copy the ```tiny_conv_micro_features_model_data.cc```file into the ```tensorflow/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed/tensorflow/lite/micro/examples/micro_speech/micro_features``` directory.
 
-# Modify the device code
+## Modify the device code
 
 If you build and run your code now, your device should respond to the words “up” and “down”. However, the code was written to assume that the words are “yes” and “no”. Let’s update the references and the user interface so that the appropriate words are printed.
 
@@ -341,17 +369,20 @@ lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard silence", CENTER_MODE);
 }  
 }
 ```
+
 Now that we have updated the code, go back to the mbed directory:
+
 ```
 cd <path_to_tensorflow>/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
 ```
+
 and run the following command to rebuild the project:
 
 ```mbed compile -m K66F -t GCC_ARM```
 
 Finally, copy the binary to the USB storage of the device, using the same method that you used earlier. You should now be able to say “up” and “down” to update the display.
 
-# Troubleshooting
+## Troubleshooting
 
 We have found some common errors that users face and have listed them here to help you get started with your application as quickly as possible.
 If you encounter:
