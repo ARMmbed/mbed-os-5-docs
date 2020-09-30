@@ -1,92 +1,118 @@
-# Overview
+# Machine learning with TensorFlow and Mbed OS
 <!--https://github.com/COTASPAR/K66F/blob/master/README.md-->
-As an IoT developer, you might think of machine learning as a server-side technology. In the traditional view, sensors on your device capture data and send it to the cloud, where Machine Learning (ML) models on hefty machines make sense of it. A network connection is obligatory, and you are going to expect some latency, not to mention hosting costs.
+As an IoT developer, you might think of machine learning as a server-side technology: sensors on your device capture data and send it to the cloud, where Machine Learning (ML) models on hefty machines make sense of it. A network connection is obligatory, and you are going to expect some latency, not to mention hosting costs.
 
-But more and more, developers want to deploy their ML models to the edge, on IoT devices themselves. If you bring ML closer to your sensors, you remove your reliance on a network connection, and you can achieve much lower latency without a round trip to the server.
+But with the launch of [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers), you can run machine learning inference on extremely low-powered devices, like the Cortex-M microcontroller series. You can deploy your ML models to the IoT devices themselves, bring ML closer to your sensors, remove your reliance on a network connection, and skip the round trip to the server for lower latency.
 
-This is especially exciting for IoT, because less network utilization means lower power consumption. Also, you can better guarantee the security and privacy of your users, since you do not need to send data back to the cloud unless you know for sure that it is relevant.
+This is especially exciting for IoT, because lower network use means lower power consumption. You can also better guarantee the security and privacy of your users, since you do not need to send data back to the cloud unless you know for sure that it is relevant.
 
-In the following guide, you will learn how you can perform machine learning inference on an Arm Cortex-M microcontroller with TensorFlow Lite for Microcontrollers.
+In this guide, you will learn how to perform machine learning inference on an Arm Cortex-M microcontroller with TensorFlow Lite for Microcontrollers. You will deploy a sample application we wrote that uses the microphone on the K66F and a TensorFlow machine learning model to detect the words “yes” and “no”.
 
-**About TensorFlow Lite**
+The guide has step by step instructions for installing and running the application, followed by information about how TensorFlow and the application work.
 
-TensorFlow Lite is a set of tools for running machine learning models on-device. TensorFlow Lite powers billions of mobile app installs, including Google Photos, Gmail, and devices made by Nest and Google Home.
+## Using the example application
 
-With the launch of TensorFlow Lite for Microcontrollers, developers can run machine learning inference on extremely low-powered devices, like the Cortex-M microcontroller series. Watch the video to learn more about the announcement:
+<!--this needs to move-->
+**Important:** We recommend running the following commands from inside the Mbed CLI terminal that gets launched with the Mbed CLI Application. This is because it will be much quicker to set up, because it resolves all your environment dependencies automatically.
 
-[![An introduction to TensorFlow Lite](http://img.youtube.com/vi/DKosV_-4pdQ/0.jpg)](http://www.youtube.com/watch?v=DKosV_-4pdQ)
-
-
-## Before you begin
+### Prerequisites
 
 Here is what you will need to complete the guide:
 
-* Computer that supports Mbed CLI (version 1.10.4)
+* Git.
 
-* NXP FRDM K66F
+* Ubuntu 20.04 LTS. If you are using a Windows machine, install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)<!--originally you said 6.0 - that version's support ended in July. Can they install the latest version, or do they need 6.0 specifically?--> and then [Install Ubunto on it](https://www.virtualbox.org/wiki/Linux_Downloads).
 
-* Mini-USB cable
+* [Mbed CLI (version 1.10.4)](../build-tools/install-and-set-up.html).
 
-* Python 2.7. Using pyenv is recommended to manage python versions.
+* The [GNU Arm Embedded](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) toolchain [that Mbed CLI supports](../build-tools/index.html).<!--Mbed OS supports ARMC 6.14, and many users rely on it. Can they use it?--> For Windows users, if you have already set up the Linux virtual environment, install the toolchain there.
 
-For Windows users, install Ubuntu 20.04 LTS in a VirtualBox. Refer to the following videos to set up:
+    Configure Mbed CLI to find your GNU installation:
 
-**How to install VirtalBox 6.0.10 on Windows 10**
+    ```    
+    mbed config -G GCC_ARM_PATH <path_to_your_arm_toolchain>/bin
+    ```
 
-![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/8mns5yqMfZk/0.jpg)
+* Make 3.82 or newer.<!--I got this as an error message when I tried to build with 3.81--><!--Was a bit surprised GNU didn't update this - I can't seem to update it for whatever reason and so now I'm stuck-->
 
-[Watch here](http://www.youtube.com/watch?v=8mns5yqMfZk)
+* A development board that can run [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers#supported_platforms). We tested on the [NXP FRDM-K66F](https://os.mbed.com/platforms/FRDM-K66F/) development board.
 
-**How to install Ubuntu 20.04 on VirtualBox in Windows 10**
+* A mini-USB cable.
 
-![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/x5MhydijWmc/0.jpg)
+* Python 2.7. We recommend [using pyenv to manage Python versions](https://pypi.org/project/pyenv/).<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
 
-[Watch here](http://www.youtube.com/watch?v=x5MhydijWmc)
+<!--MarkDown doesn't support embedded YouTube players, which is one reason I removed the videos. Another is that it's better practice to link to official sites, not to videos uploaded by "unofficial" users who may remove them without warning and may, for all we know, be in legal disputes with the companies who created those products (I admit that isn't very likely with "how to install" videos). Also, not sure these videos will work in all countries.-->
+### Download, build and install the application
 
-## Getting Started
+1. Navigate to the directory where you keep code projects.
+1. Download the TensorFlow Lite source code:
 
-TensorFlow Lite for Microcontrollers supports several devices out of the box, and is relatively easy to extend to new devices. For this guide, we will focus on the **NXP FRDM K66F**.
+    ```
+    git clone https://github.com/tensorflow/tensorflow.git
+    ```
 
-![IMAGE ALT TEXT HERE](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/nxp_k66f_board.jpeg)
+1. Navigate into the project directory and build it:
+
+    ```
+    cd tensorflow
+
+    make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project
+    ```
+    <!--I got a "no such file or directory error". I think it's because there was already `cd tensorflow` and then the path in the command also has `tensorflow`. Removing `tensorflow` from the path removed the error-->
+
+    This creates a folder in `tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed` that contains the source and header files for the example application, Mbed OS driver files, and a README.
+
+1. Navigate into the `mbed` folder:
+
+    ```
+    cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
+    ```
+
+1. Execute the following (on an environment that runs Python 2.7):<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
+<!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
+<!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
+    ```
+    mbed config root .
+
+    mbed deploy
+
+    mbed compile -m K66F -t GCC_ARM
+
+    ```
+
+    For some compilers<!--well we only support two, and you specifically asked for GNU, so in what case will this happen?-->, you may get a compilation error in `mbed_rtc_time.cpp`. Go to  `mbed-os/platform/mbed_rtc_time.h`  and comment out line 32 and line 37:
+
+    ```
+    //#if !defined(__GNUC__) || defined(__CC_ARM) || defined(__clang__) struct timeval {
+    time_t  tv_sec; int32_t tv_usec;
+    };
+    //#endif
+    ```
+
+1. Connect your board to your computer over USB. On your board, when the Ethernet port is facing you, the micro USB port is to its left.
+
+    Your board appears as storage on your computer. If your system does not recognize the board with the `mbed detect` command, follow the instructions for setting up [DAPLink](https://armmbed.github.io/DAPLink/?board=FRDM-K66F).
+
+1. Flash the application to the device:
+    <!--I compiled two steps ago - that probably needs to be removed-->
+    ```
+    mbed compile -m K66F -t GCC_ARM –flash
+    ```
+
+1. Disconnect the device from USB to power it down.
+1. Connect the device's power cable to start running the model.
+1. To view output, connect your device to a serial port. The baud rate is 9600.
+
+    For example, if you're on Linux and the serial device is `/dev/ttyACM0`, run:
+
+    ```
+    sudo screen /dev/ttyACM0 9600
+    ```
+
+1. Speak to your device: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port.
 
 
-We will deploy a sample application that uses the microphone on the K66F and a TensorFlow machine learning model to detect the words “yes” and “no”.
-
-To do this, we will show you how to complete the following steps:
-
-1.  Download and build the sample application
-
-
-2.  Deploy the sample to your K66F
-
-
-3.  Use new trained models to recognize different words
-
-### Download and build the sample application
-
-**Install Arm toolchain and Mbed CLI**
--   Download [Arm cross compilation](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) toolchain. Select the correct toolchain for the OS that your computer is running. For Windows users, if you have already set up the Linux virtual environment, install the toolchain there.
-
--   To build and deploy the application, we will use the [Mbed CLI](https://github.com/ARMmbed/mbed-cli). We recommend that you install Mbed CLI with our installer. If you need more customization, you can perform a manual install. Although this is not recommended.  
-
-    If you do not already have Mbed CLI installed, download the installer:  
-
-    [Mac installer](https://github.com/ARMmbed/mbed-cli-osx-installer/releases/tag/v0.0.10)
--   After Mbed CLI is installed, tell Mbed where to find the Arm embedded toolchain.  
-  ```    
- mbed config -G GCC_ARM_PATH <path_to_your_arm_toolchain>/bin
- ```
-
-**Important:** We recommend running the following commands from inside the Mbed CLI terminal that gets launched with the Mbed CLI Application. This is because it will be much quicker to set up, because it resolves all your environment dependencies automatically.
-
-
-### Build and compile micro speech example
-
-Navigate to the directory where you keep code projects. Run the following command to download TensorFlow Lite source code.
-
-```
-git clone https://github.com/tensorflow/tensorflow.git
-```
+## How TensorFlow and the application work
 
 While you wait for the project to download, let’s explore the project files on [GitHub](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/lite/micro/examples/micro_speech) and learn how this TensorFlow Lite for Microcontrollers example works.
 
@@ -104,63 +130,6 @@ Here are descriptions of some interesting source files:
 
 -   [main.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/main.cc). This file is the entry point for the Mbed program, which runs the machine learning model using TensorFlow Lite for Microcontrollers.
 
-
-After the project has downloaded, you can run the following commands to navigate into the project directory and build it:
-
-```
-cd tensorflow
-```
-
-
-```
-make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project
-```
-
-This will create a folder in ```tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed```  that contains the source and header files, Mbed driver files, and a README.
-
-```
-cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
-```
-
-  Execute the following while remembering to use Python 2.7 (you can do this by using a virtual environment with pip):
-
-```
-mbed config root .
-
-mbed deploy
-
-mbed compile -m K66F -t GCC_ARM
-
-```
-
-For some Mbed compilers, you may get compile error in mbed_rtc_time.cpp. Go to  mbed-os/platform/mbed_rtc_time.h  and comment line 32 and line 37:
-
-```
-//#if !defined(__GNUC__) || defined(__CC_ARM) || defined(__clang__) struct timeval {
-time_t  tv_sec; int32_t tv_usec;
-};
-//#endif
-```
-
-If your system does not recognize the board with the mbed detect command. Follow the instructions for setting up [DAPLink](https://armmbed.github.io/DAPLink/?board=FRDM-K66F) for the [K66F](https://os.mbed.com/platforms/FRDM-K66F/).
-
-Connect the USB cable to the micro USB port. When the Ethernet port is facing towards you, the micro USB port is left of the Ethernet port.
-
-Now, we are ready to flash the device:
-
-```
-mbed compile -m K66F -t GCC_ARM –flash
-```
-
-Disconnect USB cable from the device to power down the device and connect back the power cable to start running the model.
-
-Connect to serial port with baud rate of 9600 and correct serial device to view the output from the MCU. In linux, you can run the following screen command if the serial device is  /dev/ttyACM0:
-
-```
-sudo screen /dev/ttyACM0 9600
-```
-
-Saying "Yes" will print "Yes" and "No" will print "No" on the serial port.
 
 ## Project structure
 While the project builds, we can look in more detail at how it works.
