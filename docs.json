@@ -94,6 +94,13 @@
                     "sources": []
                 },
                 {
+                  "title": "Build with Mbed Studio",
+                  "intro": {
+                    "path": "docs/quick-start/cli_setting_up.md"
+                  },
+                  "sources": []
+                },
+                {
                     "title": "Build with Mbed CLI",
                     "sub_chapters": [{
                             "title": "Installing Mbed CLI",
