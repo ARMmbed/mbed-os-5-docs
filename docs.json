@@ -96,7 +96,7 @@
                 {
                   "title": "Build with Mbed Studio",
                   "intro": {
-                    "path": "docs/quick-start/cli_setting_up.md"
+                    "path": "docs/quick-start/studio.md"
                   },
                   "sources": []
                 },
