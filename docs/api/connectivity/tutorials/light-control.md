@@ -124,7 +124,7 @@ Remember to connect the Ethernet cable between the board and your router. Then p
 
 ## Testing with border router
 
-By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message. 
+By default, the application is built for the LED control demo, in which the device sends a multicast message to all devices in the network when the button is pressed. All devices that receive the multicast message will change the LED status (red LED on/off) to the state defined in the message.
 
 As soon as both the border router and the target are running, you can verify the correct behavior<!--is this verifying the full behavior, or just that I connected to the network?-->. Open a serial console, and see the IP address obtained by the device.
 
@@ -139,7 +139,7 @@ You can use this IP address to `ping` from your PC and verify that the connectio
 ## Memory optimizations
 <!--there's no clear flow to this tutorial. Some of it is steps I need to take, and some of it is background info, but the two are not clearly flagged-->
 
-On some limited platforms, for example NCS36510 or KW24D, running this application might cause the device to run out of RAM or ROM. In those cases, you can try optimizing memory use.
+On some limited boards, for example NCS36510 or KW24D, running this application might cause the device to run out of RAM or ROM. In those cases, you can try optimizing memory use.
 
 ### Use a customized Mbed TLS configuration
 

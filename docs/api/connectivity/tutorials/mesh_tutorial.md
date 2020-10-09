@@ -150,7 +150,7 @@ There are many configuration options available for the border router. This table
 | mesh-mode           | Type of Mesh network, can be either `LOWPAN_WS` or `LOWPAN_ND`. |
 | backhaul-dynamic-bootstrap | By default set to `true` to learn backhaul-prefix from backbone IPv6 Router Advertisement (RA). Set to `false` to use static backhaul-prefix configured in `backhaul-prefix` field. |
 
-The `target_overrides` section in `mbed_app.json` allows you to overwrite platform specific default values:
+The `target_overrides` section in `mbed_app.json` allows you to overwrite board specific default values:
 
 | Configuration value      | Description |
 |------------------------------------|-------------------|

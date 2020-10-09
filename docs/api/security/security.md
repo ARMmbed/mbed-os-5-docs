@@ -4,9 +4,9 @@ The Mbed implementation of the Platform Security Architecture (PSA) provides roo
 
 When Mbed OS is running on a PSA Security Model compliant target, the Mbed implementation of PSA helps to protect cryptographic assets, credentials and critical code sections by providing an isolation between a Secure Processing Environment (SPE) and a Non-Secure Processing Environment (NSPE). The Secure Partition Manager (SPM), which uses the target's hardware features, manages the isolation. The SPM provides standardized Inter-Process Communication (IPC) APIs that you can use regardless of system architecture (v8M, TEE on Cortex-A) or inside another chip.
 
-The Mbed implementation of PSA bridges the differences between PSA platforms and non-PSA platforms for application developers, allowing them to use the same standard PSA APIs on both platform types.
+The Mbed implementation of PSA bridges the differences between PSA boards and non-PSA boards for application developers, allowing them to use the same standard PSA APIs on both board types.
 
-The Mbed implementation of PSA allows you to choose the platform type at later phase according to the final application threat model.
+The Mbed implementation of PSA allows you to choose the board type at later phase according to the final application threat model.
 
 <span class="images">![diagram](../../images/PSA-standardized-Interfaces-diagram.png)<span>PSA diagram</span></span>
 
@@ -20,19 +20,19 @@ The SPM provides hardware-enforced partitions for individual code blocks by limi
 
 The SPM and the secure partitions are located in the SPE, isolating them from the NSPE, which contains the application firmware, OS kernel and libraries and other nonsecure hardware resources.
 
-A secure partition is a container for one or more root of trust services, and a platform may have multiple secure partitions. Secure partitions provide the execution environment for security functionality.
+A secure partition is a container for one or more root of trust services, and a board may have multiple secure partitions. Secure partitions provide the execution environment for security functionality.
 
-Platform hardware, such as the Security Attribution Unit (SAU) and Memory Protection Unit (MPU) in the ARMv8-M platforms, enforces the separation of partitions. Other platforms may use different mechanisms to provide equivalent isolation for the partitions.
+Board hardware, such as the Security Attribution Unit (SAU) and Memory Protection Unit (MPU) in the ARMv8-M boards, enforces the separation of partitions. Other boards may use different mechanisms to provide equivalent isolation for the partitions.
 
-## Platform types
+## Board types
 
-The Mbed implementation of PSA supports the following platform types:
+The Mbed implementation of PSA supports the following board types:
 
-- Non-PSA platform: These are single core ARMv7-M targets. On these targets, the Mbed implementation of PSA provides the same PSA services exposing PSA APIs as it would on PSA targets. The PSA emulation layer allows seamless software portability to more security-oriented targets.
+- Non-PSA boards: These are single core ARMv7-M targets. On these targets, the Mbed implementation of PSA provides the same PSA services exposing PSA APIs as it would on PSA targets. The PSA emulation layer allows seamless software portability to more security-oriented targets.
 
 - Asymmetric Multiprocessing (AMP) systems: Multicore ARMv7-M targets (for example, PSoC6 featuring CM4 and CM0+ cores). On these targets, one of the cores is dedicated to PSA use only and implements SPE. The Mbed implementation of PSA provides PSA API proxy implementation on a nonsecure core, which redirects execution to the SPE.
 
-- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for these platforms is based on a *specialized* [TrustedFirmware-M](https://www.trustedfirmware.org) implementation.
+- ARMv8-M: Generation of ARM processors featuring TrustZone-M architecture. PSA support for these boards is based on a *specialized* [TrustedFirmware-M](https://www.trustedfirmware.org) implementation.
 
 ## RoT services
 

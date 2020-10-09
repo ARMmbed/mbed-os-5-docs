@@ -10,7 +10,7 @@ Mbed CLI provides the subcommand `mbed device-management` to manage devices (`mb
 
 To use the `mbed dm` command to update a device, your device must be running an application with Device Management Client and a supported managed or unmanaged bootloader.
 
-This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://www.pelion.com/docs/device-management/current/connecting/device-management-client-tutorials.html) on one of our reference platforms.
+This command only works for devices running Device Management Client, and the application is combined with a bootloader. To test this feature, you can run the [Device Management Client Example](https://github.com/ARMmbed/mbed-cloud-client-example) or [using our tutorials](https://www.pelion.com/docs/device-management/current/connecting/device-management-client-tutorials.html) on one of our reference boards.
 
 ## Project setup
 

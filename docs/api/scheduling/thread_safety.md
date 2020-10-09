@@ -6,7 +6,7 @@ This document introduces the Arm Mbed OS RTOS and [thread safety mechanisms](#th
 
 ## RTOS
 
-Real time operating system (RTOS) support is a standard feature of the platform, so developers can take advantage of a flexible programming model based on multiple threads.
+Real time operating system (RTOS) support is a standard feature of Mbed OS, so developers can take advantage of a flexible programming model based on multiple threads.
 
 As with any multithreaded environment, Mbed developers need to use various synchronization primitives to ensure their code doesn’t include race conditions or other concurrency problems. They also need to understand what thread-safety guarantees the Mbed OS APIs provide when they use them. This is particularly important for code that runs in response to a hardware interrupt service routine (ISR), which needs to be carefully designed so as not to compromise the thread safety of the whole system.
 

@@ -2,7 +2,7 @@
 
 Mbed OS provides various storage solutions, all built on top of the [BlockDevice interface](../apis/blockdevice-apis.html).
 
-When you add a new platform, you must add the supported block devices to the list of components in the `targets.json` file. The block devices are located in the [components folder]( https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice). To enable a block device in the `COMPONENT_<component name>` folder, add the `<component name>` string to the component list for the target in the `targets.json` file. For example, for the internal memory block device, `COMPONENT_FLASHIAP`, add `"components_add": ["FLASHIAP"]` to your target section in the `targets.json` file.
+When you add a new board, you must add the supported block devices to the list of components in the `targets.json` file. The block devices are located in the [components folder]( https://github.com/ARMmbed/mbed-os/tree/master/components/storage/blockdevice). To enable a block device in the `COMPONENT_<component name>` folder, add the `<component name>` string to the component list for the target in the `targets.json` file. For example, for the internal memory block device, `COMPONENT_FLASHIAP`, add `"components_add": ["FLASHIAP"]` to your target section in the `targets.json` file.
 
 For more information about existing storage solutions in Mbed OS, see the [Storage API page](../apis/data-storage.html).
 

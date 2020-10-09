@@ -23,7 +23,7 @@ If using the Online Compiler, click the **Import into Mbed IDE** button below:
 
 1. To compile the application:
 
-   - If using Mbed CLI, invoke `mbed compile`, and specify the name of your platform and toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5 and FRDM-K64F:
+   - If using Mbed CLI, invoke `mbed compile`, and specify the name of your target and toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5 and FRDM-K64F:
 
    ```
    mbed compile -m K64F -t ARM
@@ -53,7 +53,7 @@ The alarm isn't set to a timestamp; it counts down from the moment it's activate
 
 ## Extending the application
 
-You can set the alarm to a specific time by relying on either the platform's RTC or the [time API](../apis/time.html). You will need to set the time on each reset, or rely on an internet connection and fetch the time.
+You can set the alarm to a specific time by relying on either the board's RTC or the [time API](../apis/time.html). You will need to set the time on each reset, or rely on an internet connection and fetch the time.
 
 ## Troubleshooting
 

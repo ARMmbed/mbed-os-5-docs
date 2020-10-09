@@ -245,7 +245,7 @@ Now that the device is registered in The Things Network, you can start writing c
 Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](../build-tools/index.html)).
 
 1. [Sign up](https://os.mbed.com/account/signup/?next=%2F) for an account on Arm Mbed, which hosts the Online Compiler.
-1. Find your development board on [the platforms page](https://os.mbed.com/platforms/).
+1. Find your development board on [the boards page](https://os.mbed.com/platforms/).
 1. Click **Add to your Mbed Compiler**.
 1. Go to [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
 1. Click **Import this program**.

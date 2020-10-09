@@ -14,10 +14,10 @@ Memory for the RTOS primitives is allocated as part of the C++ objects on the st
 
 Platforms using RTOS, including Mbed OS, need a mechanism for counting the time and scheduling tasks. A timer that generates periodic interrupts and is called system tick timer usually does this. Under Mbed OS, we call this mechanism the RTOS ticker.
 
-SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS platforms
+SysTick is a standard timer available on most Cortex-M cores. Its main purpose is to raise an interrupt with set frequency (usually 1ms). In addition, many Mbed OS boards
 implement timers as part of peripherals. Mbed OS supports using SysTick or the peripheral timers as RTOS ticker.
 
-The Mbed OS platforms uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](lowpowerticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
+Mbed OS uses SysTick as the default RTOS ticker, but if you want to use one of the peripheral timers as your RTOS ticker, you can override the default SysTick timer. For example, see [Low Power Ticker](lowpowerticker.html) on how to use an external low power timer to perform power efficient timing operations that only require millisecond accuracy.
 
 ## Default timeouts
 

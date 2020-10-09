@@ -4,7 +4,7 @@ Arm Mbed Crypto is the reference implementation of the cryptography interface of
 
 <span class="notes">**Note:** The version of Mbed Crypto shipping with Mbed OS implements PSA Crypto API v1.0b1.</span>
 
-We have adapted and [integrated Mbed Crypto with Mbed OS](https://github.com/ARMmbed/mbed-os/blob/master/features/mbedtls/mbed-crypto). On PSA platforms that support it, Mbed Crypto comes integrated with Mbed OS to leverage the platform's segmented architecture and isolate cryptographic keys and operations from applications.
+We have adapted and [integrated Mbed Crypto with Mbed OS](https://github.com/ARMmbed/mbed-os/blob/master/features/mbedtls/mbed-crypto). On PSA boards that support it, Mbed Crypto comes integrated with Mbed OS to leverage the board's segmented architecture and isolate cryptographic keys and operations from applications.
 
 You can import Mbed Crypto from its standalone [release](https://github.com/ARMmbed/mbed-crypto). Mbed Crypto as integrated with Mbed OS does not include all test code or scripts used in the development of the library. You can find all of these in the standalone release.
 

@@ -7,7 +7,7 @@ Use the DigitalInOut interface as a bidirectional digital pin:
 
 You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
-<span class="notes">**Note:** Some platforms have a time delay when switching between input and output.</span>
+<span class="notes">**Note:** Some boards have a time delay when switching between input and output.</span>
 
 ## DigitalInOut class reference
 

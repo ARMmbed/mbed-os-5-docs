@@ -6,7 +6,7 @@ Bluetooth low energy (BLE) is a low power wireless technology standard for build
 
 Arm Mbed BLE, also called `BLE_API`, is the Bluetooth Low Energy software solution for Mbed. Many Mbed [targets and components](https://os.mbed.com/platforms/?mbed-enabled=15&connectivity=3) support Mbed BLE. Developers can use it to create new BLE enabled applications.
 
-Mbed’s `BLE_API` interfaces with the BLE controller on the platform. It hides the BLE stack’s complexity behind C++ abstractions and is compatible with all BLE-enabled Mbed platforms. The Mbed OS `BLE_API` automatically configuring the clocks, timers and other hardware peripherals to work at their lowest power consumption.
+Mbed’s `BLE_API` interfaces with the BLE controller on the board. It hides the BLE stack’s complexity behind C++ abstractions and is compatible with all BLE-enabled Mbed board. The Mbed OS `BLE_API` automatically configuring the clocks, timers and other hardware peripherals to work at their lowest power consumption.
 
 ## `BLE_API`, bridges and stacks
 
@@ -15,7 +15,7 @@ Mbed’s `BLE_API` interfaces with the BLE controller on the platform. It hides 
 You can build a BLE application using Mbed OS, `BLE_API` and a controller-specific Bluetooth stack together with some bridge software to adapt it to `BLE_API`:
 
 - `BLE_API` as described above.
-- The bridge software is specific to each vendor’s platform. It provides the instantiations for the interfaces `BLE_API` offers and helps drive the underlying controller and Bluetooth stack.
+- The bridge software is specific to each vendor’s board. It provides the instantiations for the interfaces `BLE_API` offers and helps drive the underlying controller and Bluetooth stack.
 - The Bluetooth stack implements the Bluetooth protocol and is specific to the controller, so a vendor using different controllers may provide different stacks.
 
 ## Inside `BLE_API`

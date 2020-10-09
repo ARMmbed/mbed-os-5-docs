@@ -18,7 +18,7 @@ Arm Mbed OS provides a generic API that serves as a template for any LoRa RF dri
 
 <span class="images">![](../../images/lora_radio_inherit.png)<span>Figure 1. Existing Mbed LoRa RF drivers inherit from the LoRaRadio class.</span></span>
 
-For a reference implementation, please see the existing [LoRa RF drivers](https://github.com/ARMmbed/mbed-semtech-lora-rf-drivers). Construction of a LoRaRadio object is a matter of taste. The existing reference drivers allow construction of the LoRaRadio object with full pin definitions to make sure that the driver is usable across platforms with any pin combination. You are free to use any form of construction as long as you provide a LoRaRadio object down to the Arm Mbed LoRaWAN stack. Use of an instance of the `LoRaRadio` class for a third party LoRaWAN stack is beyond the scope of this documentation.
+For a reference implementation, please see the existing [LoRa RF drivers](https://github.com/ARMmbed/mbed-semtech-lora-rf-drivers). Construction of a LoRaRadio object is a matter of taste. The existing reference drivers allow construction of the LoRaRadio object with full pin definitions to make sure that the driver is usable across boards with any pin combination. You are free to use any form of construction as long as you provide a LoRaRadio object down to the Arm Mbed LoRaWAN stack. Use of an instance of the `LoRaRadio` class for a third party LoRaWAN stack is beyond the scope of this documentation.
 
 For API use cases, details, explanation and meaning, please see the `LoRaRadio` class reference below. We carefully planned and designed the data structures provided in [LoRaRadio.h](../mbed-os-api-doxy/_lo_ra_radio_8h_source.html). They carry most of what you need to write your LoRa RF driver.
 
@@ -26,7 +26,7 @@ For API use cases, details, explanation and meaning, please see the `LoRaRadio` 
 
 ## Device design guide for LoRaWAN stack
 
-The vision driving Arm Mbed OS entails one operating system for myriad IoT technologies encompassing a multitude of devices or platforms. However, it does not limit the user to design something specific or tailored to his or her needs. You can derive from the `LoRaWANInterface` class and override the APIs provided there to integrate a third party stack.
+The vision driving Arm Mbed OS entails one operating system for myriad IoT technologies encompassing a multitude of boards. However, it does not limit the user to design something specific or tailored to his or her needs. You can derive from the `LoRaWANInterface` class and override the APIs provided there to integrate a third party stack.
 
 This subsection discusses how you can integrate the LoRaWAN stack in the devices on the system level.
 

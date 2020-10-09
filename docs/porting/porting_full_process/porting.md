@@ -224,7 +224,7 @@ Serial port porting can be done in two stages: synchronous UART and asynchronous
 
 ## Low power ticker
 
-<span class="notes">**Note**: Low power ticker is mandatory for any platform that supports it.</span>
+<span class="notes">**Note**: Low power ticker is mandatory for any board that supports it.</span>
 
 [Low power ticker porting instructions](../porting/low-power-ticker.html).
 
@@ -286,7 +286,7 @@ You can now try running the example applications for your connectivity methods. 
 
 Flash drivers are required by Device Management Client.
 
-There are two ways to implement flash API: using CMSIS flash algorithms or vanilla C source code. We recommend using vanilla C source code, because it's easier to maintain and upgrade. It's also more portable across different platforms.
+There are two ways to implement flash API: using CMSIS flash algorithms or vanilla C source code. We recommend using vanilla C source code, because it's easier to maintain and upgrade. It's also more portable across different boards.
 
 ## Bootloader
 

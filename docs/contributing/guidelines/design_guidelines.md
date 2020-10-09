@@ -250,7 +250,7 @@ Mbed OS provides a powerful configuration system for application development. Ho
 - Config options should not change the behavior of the API.
     - Prefer multiple classes where different functionality is needed in the user API.
 - Targets and applications should be able to override each configuration.
-- The default choice of optimization should be size, on all platforms.
+- The default choice of optimization should be size, on all boards.
 
 [Full documentation](../program-setup/advanced-configuration.html).
 

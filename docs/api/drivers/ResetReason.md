@@ -1,6 +1,6 @@
 # ResetReason
 
-When the system restarts, the system registers contain the reason for the restart at boot time in a platform specific manner. This API provides a generic method of fetching the reason for the restart.
+When the system restarts, the system registers contain the reason for the restart at boot time in a board specific manner. This API provides a generic method of fetching the reason for the restart.
 
 You can use the ResetReason interface to determine the cause of the last system reset in a portable fashion.
 

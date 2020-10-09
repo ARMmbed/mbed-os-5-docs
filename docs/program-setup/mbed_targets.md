@@ -127,7 +127,7 @@ When you use target inheritance, you may alter the values of `extra_labels` usin
 
 ### features, features_add and features_remove
 
-The list of _features_ enables software features on a platform. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources. Unlike `extra_labels`, the build system recognizes a fixed set of values in the `features` list. The build system recognizes the following features:
+The list of _features_ enables software features on a board. Like `extra_labels`, `features` makes the build system aware of additional directories it must scan for resources. Unlike `extra_labels`, the build system recognizes a fixed set of values in the `features` list. The build system recognizes the following features:
 
 - `BOOTLOADER`.
 - `BLE`.
@@ -186,7 +186,7 @@ This section, in an `mbed_app.json` file, sets the clock source to `RC` on all t
 
 The list in `device_has` defines what hardware a device has.
 
-Mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular platform. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
+Mbed, libraries and application source code can then select different implementations of drivers based on hardware availability; selectively compile drivers for existing hardware only; or run only the tests that apply to a particular board. The values in `device_has` are available in C, C++ and assembly language as `DEVICE_` prefixed macros.
 
 ### is_disk_virtual
 
@@ -259,7 +259,7 @@ The `device_name` key in `targets.json` is `MK20DX256xxx7` for any target that u
 
 ### detect_code
 
-The `detect_code` contains four ASCII characters containing only hexadecimal values (A-F and 0-9). This code is the same for all platforms of the same type. `Mbed LS` no longer uses this field to identify the platform. Instead, `Mbed LS` has its [own database](https://github.com/ARMmbed/mbed-os-tools/blob/master/src/mbed_os_tools/detect/platform_database.py) of detect codes.
+The `detect_code` contains four ASCII characters containing only hexadecimal values (A-F and 0-9). This code is the same for all boards of the same type. `Mbed LS` no longer uses this field to identify the board. Instead, `Mbed LS` has its [own database](https://github.com/ARMmbed/mbed-os-tools/blob/master/src/mbed_os_tools/detect/platform_database.py) of detect codes.
 
 ### OUTPUT_EXT
 

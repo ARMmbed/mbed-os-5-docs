@@ -28,7 +28,7 @@ There are two methods of importing the code into the online compiler: directly f
 	<span class="images">![](../../images/new.png)<span>Triggering a new program</span>
 
 1. The **Create new program** pop-up opens.
-	1. Select your platform (board).
+	1. Select your board.
 	1. You can create from an existing template or from an empty program.
 	1. Enter a unique name.
 
