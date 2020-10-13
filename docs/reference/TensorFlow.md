@@ -55,10 +55,26 @@ Here is what you will need to complete the guide:
     git clone https://github.com/tensorflow/tensorflow.git
     ```
 
-1. Navigate into the project directory and build it:
+1. Navigate into the project directory:
 
     ```
-    cd tensorflow
+    cd tensorflow/tensorflow/lite/micro/mbed/
+    ```
+    
+1. Change the DebugLog function to use UnbufferedSerial instead since the Serial API was deprecated in Mbed OS 6:
+    ```
+    nano debug_log.cc
+    
+    extern "C" void DebugLog(const char* s) {
+    UnbufferedSerial pc(USBTX, USBRX,9600);
+    FILE *out = fdopen(&pc,"w");
+    fprintf(out, s);
+     }
+    ```
+1. Build the project
+
+    ```
+    cd ../../../../
 
     make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project
     ```
@@ -71,64 +87,24 @@ Here is what you will need to complete the guide:
     ```
     cd tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
     ```
-
-1. Execute the following (on an environment that runs Python 2.7):
+1. Connect your board to your computer over USB. On your board, when the Ethernet port is facing you, the micro USB port is to its left.
+    Your board appears as storage on your computer. If your system does not recognize the board with the `mbed detect` command, follow the instructions for setting up [DAPLink](https://armmbed.github.io/DAPLink/?board=FRDM-K66F).
+    
+1. Execute the following to flash the application onto the board:
 
     ```
     mbed config root .
 
     mbed deploy
+    
+    mbed update mbed-os-6.3.0
 
-    mbed compile -m K66F -t GCC_ARM
+    mbed compile -m K66F -t GCC_ARM --flash --sterm
     ```
 
     <!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
     <!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
     <!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
-
-    For some compilers<!--we only support two, and you specifically asked for GNU, so in what case will this happen?-->, you may get a compilation error in `mbed_rtc_time.cpp`. Go to  `mbed-os/platform/mbed_rtc_time.h`  and comment out line 32 and line 37:
-
-    ```
-    //#if !defined(__GNUC__) || defined(__CC_ARM) || defined(__clang__) struct timeval {
-    time_t  tv_sec; int32_t tv_usec;
-    };
-    //#endif
-    ```
-
-1. Connect your board to your computer over USB. On your board, when the Ethernet port is facing you, the micro USB port is to its left.
-
-    Your board appears as storage on your computer. If your system does not recognize the board with the `mbed detect` command, follow the instructions for setting up [DAPLink](https://armmbed.github.io/DAPLink/?board=FRDM-K66F).
-
-1. Flash the application to the board:
-    <!--I compiled two steps ago - that probably needs to be removed-->
-    ```
-    mbed compile -m K66F -t GCC_ARM –flash
-    ```
-1. Deploy the example to your K66F<!--but we flshed already. What are we doing here?-->
-
-    Copy the binary file that we built earlier to the USB storage.
-
-    Note: if you have skipped the previous steps<!--which ones?-->, download the [binary file]() to proceed.
-
-    The file is at:
-
-    ```
-    cp ./BUILD/K66F/GCC_ARM/mbed.bin /Volumes/K66F/
-    ```
-
-    Depending on your operating system <!--aren't we making everyone use Linux?-->, the exact copy command and paths may vary.
-
-    When you have copied the file, the LEDs on the board start flashing, and the board will eventually reboot with the sample program running.<!--this contradicts your request to disconnect USB and connect power to cycle the app-->
-
-1. Disconnect the board from USB to power it down.
-1. Connect the board's power cable to start running the model.
-1. To view output, connect your board to a serial port. The baud rate is 9600.
-
-    For example, if you're on Linux and the serial device is `/dev/ttyACM0`, run:
-
-    ```
-    sudo screen /dev/ttyACM0 9600
-    ```
 
 1. Speak into the board's microphone: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port:
 
