@@ -23,7 +23,7 @@ Hardware MPU capabilities.
 
 You can find the API and specification for the MPU API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__hal__mpu.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.4/mbed-os-api-doxy/group__hal__mpu.html)
 
 To enable MPU support in Mbed OS, add the `MPU` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -41,4 +41,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-mpu*"
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/group__hal__mpu__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.4/mbed-os-api-doxy/group__hal__mpu__tests.html)

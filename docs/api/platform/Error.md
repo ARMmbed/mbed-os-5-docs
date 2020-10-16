@@ -124,7 +124,7 @@ Error handling implementation in Mbed OS keeps track of previous errors in the s
 
 See the below link to learn more about the APIs related to error history:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Extending error codes
 
@@ -179,7 +179,7 @@ Crash reporting feature also provides APIs to read and clear error context infor
 
 The below link provides the documentation for all the APIs that Mbed OS provides for error definitions and handling:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Error handling API examples
 
@@ -434,13 +434,13 @@ void clear_reboot_count() {
 
 The example application below demonstrates usage of error handling APIs:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-error-handling)](https://github.com/ARMmbed/mbed-os-example-error-handling/blob/mbed-os-6.4.0/main.cpp)
 
 ## Crash reporting example
 
 The example application below demonstrates the crash reporting feature:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-6.0.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-crash-reporting)](https://github.com/ARMmbed/mbed-os-example-crash-reporting/blob/mbed-os-6.4.0/main.cpp)
 
 ## List of Mbed OS defined error codes and descriptions
 
@@ -521,7 +521,7 @@ For each of the above mentioned error codes, a corresponding system error status
 
 See the below Doxygen file for additional information regarding error code definitions:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__error_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/mbed__error_8h_source.html)
 
 ## Related content
 

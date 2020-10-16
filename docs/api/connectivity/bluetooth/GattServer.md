@@ -37,8 +37,8 @@ The term characteristic value update represents Characteristic Value Notificatio
 
 ## GattServer class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_gatt_server.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/classble_1_1_gatt_server.html)
 
 ## GattServer example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_GattServer/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_GattServer/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.4.0/BLE_GattServer/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.4.0/BLE_GattServer/source/main.cpp)

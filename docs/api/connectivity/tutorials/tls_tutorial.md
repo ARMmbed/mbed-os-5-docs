@@ -90,7 +90,7 @@ With everything in place, you can now set up a TLS socket connection. On the Mbe
 
 You set up a TLS socket in the same way as you set up a TCP socket, except you call `set_root_ca_cert` with the root CA string.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TLS_Communication/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-TLS_Communication/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TLS_Communication/tree/v6.4)](https://github.com/ARMmbed/mbed-os-snippet-TLS_Communication/blob/v6.4/main.cpp)
 
 
 This now makes the request and returns the content of the file.

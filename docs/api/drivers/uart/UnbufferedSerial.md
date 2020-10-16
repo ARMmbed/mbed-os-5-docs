@@ -1,6 +1,6 @@
 # UnbufferedSerial
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.png)<span>`UnbufferedSerial` class hierarchy</span></span>
 
 The UnbufferedSerial class provides UART functionality with an API similar to the [BufferedSerial](../apis/serial-uart-apis.html) class. The classes also share the same default configurations.
 
@@ -12,11 +12,11 @@ You can view more information about the configurable settings and functions in t
 
 ## Class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/classmbed_1_1_unbuffered_serial.html)
 
 ## UnbufferedSerial Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/tree/v6.4)](https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/blob/v6.4/main.cpp)
 
 ## Mbed OS use
 

@@ -1,6 +1,6 @@
 # FlashSimBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.4/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.png)<span>FlashSimBlockDevice class hierarchy</span></span>
 
 The FlashSimBlockDevice class is a block device adapator, whose purpose is to simulate the behavior of a flash component if the underlying block device doesn't support such a behavior. This includes the following:
 
@@ -17,13 +17,13 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## FlashSimBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.4/mbed-os-api-doxy/classmbed_1_1_flash_sim_block_device.html)
 
 ## FlashSimBlockDevice example
 
 This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html) and turns it into a simulated flash BD.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/tree/v6.4)](https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/blob/v6.4/main.cpp)
 
 ## Related content
 

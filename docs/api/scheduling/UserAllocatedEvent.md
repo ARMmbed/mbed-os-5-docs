@@ -15,13 +15,13 @@ The UserAllocatedEvent class is thread safe. The `call`, `try_call` and `cancel`
 
 ## UserAllocatedEvent class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classevents_1_1_user_allocated_event.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/classevents_1_1_user_allocated_event.html)
 
 ## Static EventQueue example: posting user allocated events to the queue
 
 This example demonstrates how you can instantiate, configure and post events:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/tree/v6.4)](https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/blob/v6.4/main.cpp)
 
 ## Related content
 

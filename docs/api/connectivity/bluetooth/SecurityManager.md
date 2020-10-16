@@ -46,10 +46,10 @@ The simplest example is a pairing of a device with no IO capabilities and no OOB
 
 ## SecurityManager class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_security_manager.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.4/mbed-os-api-doxy/classble_1_1_security_manager.html)
 
 ## SecurityManager example
 
 The SecurityManager example demonstrates both a central and a peripheral connecting, performing basic pairing and setting up link security.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_SM/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_SM/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.4.0/BLE_SM/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.4.0/BLE_SM/source/main.cpp)

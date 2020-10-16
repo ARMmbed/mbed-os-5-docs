@@ -6,7 +6,7 @@ The wait_us and wait_ns functions provide precise wait capabilities. These funct
 
 ## Wait function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/development/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/v6.4/mbed-os-api-doxy/mbed__wait__api_8h_source.html)
 
 ## Example
 
