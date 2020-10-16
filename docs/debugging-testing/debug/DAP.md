@@ -6,7 +6,7 @@ The software project is complemented by a series of reference designs for creati
 
 ## DAPLink features
 
-A DAPLink debug probe connects to your host computer through USB and connects to your target system (the one to be programmed and debugged) through a standard [Cortex debug connector](http://infocenter.arm.com/help/topic/com.arm.doc.faqs/attached/13634/cortex_debug_connectors.pdf). It provides three main features - all over a single USB connection.
+A DAPLink debug probe connects to your host computer through USB and connects to your target system (the one to be programmed and debugged) through a standard Cortex debug connector. It provides three main features - all over a single USB connection.
 
 ### HID interface
 
