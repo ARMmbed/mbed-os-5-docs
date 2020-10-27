@@ -977,12 +977,6 @@
                     "sources": []
                 },
                 {
-                    "title": "New tools temp",
-                    "sources": [{
-                        "path": "docs/tools/new_tools_temp.md"
-                    }]
-                },
-                {
                     "title": "Mbed Online Compiler",
                     "sub_chapters": [{
                             "title": "Getting started",
@@ -1043,62 +1037,73 @@
                     }]
                 },
                 {
-                    "title": "Mbed CLI",
+                    "title": "Mbed CLI 2",
+                    "intro" : "docs/tools/mbed_cli_2/intro.md",
+                    "sources": [{
+                        "path": "docs/tools/mbed_cli_2/install.md"
+                    },
+                    {
+                        "path": "docs/tools/mbed_cli_2/use.md"
+                    }
+                  ]
+                },
+                {
+                    "title": "Mbed CLI 1",
                     "intro": {
-                        "path": "docs/tools/CLI/cli.md"
+                        "path": "docs/tools/mbed_cli_1/cli.md"
                     },
                     "sub_chapters": [{
                             "title": "Install and set up",
                             "intro": {
-                                "path": "docs/tools/CLI/cli-setup/cli-reqs.md"
+                                "path": "docs/tools/mbed_cli_1/cli-setup/cli-reqs.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Create",
                             "intro": {
-                                "path": "docs/tools/CLI/cli-create.md"
+                                "path": "docs/tools/mbed_cli_1/cli-create.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Compile",
                             "intro": {
-                                "path": "docs/tools/CLI/cli-compile.md"
+                                "path": "docs/tools/mbed_cli_1/cli-compile.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Test and debug",
                             "intro": {
-                                "path": "docs/tools/CLI/cli-test-debug.md"
+                                "path": "docs/tools/mbed_cli_1/cli-test-debug.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Build profiles",
                             "sources": [{
-                                "path": "docs/tools/CLI/build_profiles_elsewhere.md"
+                                "path": "docs/tools/mbed_cli_1/build_profiles_elsewhere.md"
                             }]
                         },
                         {
                             "title": "Update devices",
                             "intro": {
-                                "path": "docs/tools/CLI/cli-device-management.md"
+                                "path": "docs/tools/mbed_cli_1/cli-device-management.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Collaborate",
                             "intro": {
-                                "path": "docs/tools/CLI/cli-collaborate.md"
+                                "path": "docs/tools/mbed_cli_1/cli-collaborate.md"
                             },
                             "sources": []
                         },
                         {
                             "title": "Troubleshoot",
                             "intro": {
-                                "path": "docs/tools/CLI/troubleshooting.md"
+                                "path": "docs/tools/mbed_cli_1/troubleshooting.md"
                             },
                             "sources": []
                         }
