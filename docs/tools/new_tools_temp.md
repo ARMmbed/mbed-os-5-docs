@@ -102,7 +102,7 @@ mbed-tools clone <example> <PATH>
 ````
 
 - [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
-- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble) - use the BLE button example.
+- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble) - use the BLE LED example.
 - [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
 - [mbed-os-example-devicekey](https://github.com/ARMmbed/mbed-os-example-devicekey)
 - [mbed-os-example-kvstore](https://github.com/ARMmbed/mbed-os-example-kvstore)
