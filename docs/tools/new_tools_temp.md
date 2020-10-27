@@ -199,11 +199,37 @@ Use CMake to build your application:
     cmake --build cmake_build
     ```
 
-    This generates two files in the build output directory (`cmake_build` in this example): HEX and BIN. 
-    
+    This generates two files in the build output directory (`cmake_build` in this example): HEX and BIN.
+
     Which format you flash to your device depends on your requirements. For example, use the BIN file if you want to completely replace the contents of the flash device. If you want to retain some of the flash devices contents, you'll need to flash to an address other than the flash's starting address, so you'll need to use the HEX file (which contains the starting address). Note that we assume your board is running DAPLink for flash programming. If you are using another tool, please check your tool's documentation for file type support.
 
 1. Drag and drop the generated file to your board.
+
+
+## Mbed OS Configuration and building the project
+
+We can use a single command which will configure (set up your target and toolchain) and build the project.
+
+1. To build and configure:
+
+    ```
+    mbed-tools build -m <target> -t <toolchain>
+    ```
+    - -t: The toolchain you are using to build your app
+    - -m: A build target for an Mbed-enabled device
+
+    Example for FRDM-K64F and GCC:
+
+    ```
+    mbed-tools build -m K64F -t GCC_ARM
+    ```
+
+1. To perform an iterative build on previously configured target:
+
+    ```
+    mbed-tools build
+    ```
+
 
 ## Logging
 
