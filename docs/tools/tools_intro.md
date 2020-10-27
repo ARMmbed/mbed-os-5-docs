@@ -34,13 +34,13 @@ Starting with version 6.x, Mbed OS is moving to Mbed CLI 2. It uses Ninja as a b
 
 Mbed CLI 2 parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
 
-For more information, see the [Mbed CLI 2 page]().
+For more information, see the [Mbed CLI 2 page](../build-tools/mbed-cli-2.html).
 
 <span class="notes">**Note:** You'll still need Mbed CLI 1 for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
 
 ### Mbed CLI 1 - Mbed OS 6.x and older
 
-A Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI 1 page](../tools/developing-mbed-cli.html).
+A Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI 1 page](../build-tools/mbed-cli-1.html).
 
 ### Compiler versions
 
