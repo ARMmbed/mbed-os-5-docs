@@ -231,6 +231,14 @@ We can use a single command which will configure (set up your target and toolcha
     ```
 
 
+## List library dependencies of an application
+
+All library dependencies can be listed with their URL and Git references as follows:
+
+```
+mbed-tools libs
+```
+
 ## Logging
 
 To specify the log level, use the verbose logging option (`-v`) before the first argument:
