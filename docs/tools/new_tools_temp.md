@@ -89,9 +89,15 @@ To create a new Mbed OS project in a specified path:
     - Absolute. `init` will create the folder if it doesn't exist.
     - Relative:
 
-        If you have already created a project folder, you can use `.`
+    If you have already created a project folder, you can use `.`
 
-        If you want the `init` command to create a project folder, use `.\<folder-name>`.
+    If you want the `init` command to create a project folder, use `.\<folder-name>`.
+
+- To create a project without downloading a copy of Mbed OS (reuse an existing copy):
+
+    ```
+    mbed-tools init -c <PATH>
+    ```
 
 ### Use an example application
 
