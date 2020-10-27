@@ -23,23 +23,22 @@ For more information, please see the [Online Compiler page](../build-tools/mbed-
 
 Mbed OS has two versions of its command line tool:
 
-- For 6.y and newer, use the new build tools or Mbed CLI.
-- For 6.x and older, use Mbed CLI.
+- For 6.y and newer, use Mbed CLI 1 or Mbed CLI 2.
+- For 6.x and older, use Mbed CLI 1.
 
 You can have both tools installed side by side, so you can work with multiple versions of Mbed OS.
 
-### Mbed Tools - Mbed OS 6.y and newer
+### Mbed CLI 2 - Mbed OS 6.y and newer
 
-Starting with version 6.x, Mbed OS is moving from Mbed CLI to a new build tool: <!--that has no proper name yet-->. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner. <!--need better phrasing-->
+Starting with version 6.x, Mbed OS is moving to Mbed CLI 2. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner.
 
-Mbed Tools parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
+Mbed CLI 2 parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
 
+<span class="notes">**Note:** You'll still need Mbed CLI 1 for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
 
-<span class="notes">**Note:** You'll still need Mbed CLI for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
+### Mbed CLI 1 - Mbed OS 6.x and older
 
-### Mbed CLI - Mbed OS 6.x and older
-
-We created the Mbed command-line tool (Mbed CLI), a Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI page](../tools/developing-mbed-cli.html).
+A Python-based tool, specifically for Mbed OS. For more information, see the [Mbed CLI page](../tools/developing-mbed-cli.html).
 
 ### Compiler versions
 

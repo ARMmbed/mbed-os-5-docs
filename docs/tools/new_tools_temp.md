@@ -1,17 +1,14 @@
-# New tools - draft
+# Mbed CLI 2
 
-<!--this currently duplicates the intro in the general Tools Intro page-->
+Starting with version 6.x, Mbed OS is moving to Mbed CLI 2. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner. 
 
-Starting with version 6.x, Mbed OS is moving from Mbed CLI to a new build tool: <!--that has no proper name yet-->. It uses Ninja as a build system, and CMake to generate the build environment and manage the build process in a compiler-independent manner. <!--need better phrasing-->
+Mbed CLI 2 parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
 
-Mbed Tools parses the Mbed OS build configuration and outputs it to a format CMake can read. It also provides a user friendly interface to CMake and Ninja so you can configure, generate and execute builds with a single command.
-
-<span class="notes">**Note:** You'll still need Mbed CLI for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
+<span class="notes">**Note:** You'll still need Mbed CLI 1 for older versions of Mbed OS (6.x and older). You can install both tools side by side.</span>
 
 # Install or upgrade
 
-Mbed Tools is a Python package called `mbed-tools`, so you can install it with pip.
-<!--other than being a super vague name, it's a problem that it's a single tool with a plural name. "Mbed Tools is"  just parses as an error!-->
+Mbed CLI 2 is a Python package called `mbed-tools`, so you can install it with pip.
 
 <span class="tips">**Tip:** We recommend using a virtual environment to avoid any Python dependency conflicts. We recommend the [Pipenv](https://github.com/pypa/pipenv/blob/master/README.md) tool to manage your virtual development environment.
 
@@ -55,7 +52,7 @@ python -m pip install mbed-tools --upgrade
 
 # Use
 
-Currently, the new Mbed Tools supports three boards: `K64F`, `DISCO_L475VG_IOT01A` and `NRF52840_DK`.
+Currently, Mbed CLI 2 supports three boards: `K64F`, `DISCO_L475VG_IOT01A` and `NRF52840_DK`.
 
 For help:
 
@@ -86,12 +83,13 @@ To create a new Mbed OS project in a specified path:
     ```
 
     The path can be:
+
     - Absolute. `init` will create the folder if it doesn't exist.
     - Relative:
 
-    If you have already created a project folder, you can use `.`
+        - If you have already created a project folder, you can use `.`
 
-    If you want the `init` command to create a project folder, use `.\<folder-name>`.
+        - If you want the `init` command to create a project folder, use `.\<folder-name>`.
 
 - To create a project without downloading a copy of Mbed OS (reuse an existing copy):
 
@@ -127,7 +125,7 @@ Each project depends on two sets of configurations:
 
 ### (Optional) Project environment variables
 
-Mbed Tools has two environment variables that you can set for a project:
+Mbed CLI 2 has two environment variables that you can set for a project:
 
 - `MBED_API_AUTH_TOKEN`: Token to access private board information stored for a vendor team.
 - `MBED_DATABASE_MODE`: Use online or offline mode. Possible values:
@@ -135,21 +133,17 @@ Mbed Tools has two environment variables that you can set for a project:
     - `ONLINE`: Alway use the online database.
     - `OFFLINE`: Always use the offline database.
 
-These variables can be set either directly via environment variables
-or using a `.env` file containing the variable definitions as follows:
+You can set these variables either directly, using environment variables, or indirectly using a `.env` file containing the variable definitions:
 
 ```
 VARIABLE1=<value>
 VARIABLE2=<value>
 ```
 
-Environment variables take precedence, meaning the values set in the file will be overriden
-by any values previously set in your environment.
+Environment variables take precedence, meaning values previously set in your environment will override the values set in the file.
 
-**Warning**:
-Do not upload `.env` files containing private tokens to version control.
-If you use this package as a dependency of your project, please ensure to include the
-`.env` in your `.gitignore`.
+<span class="warning">**Warning**: Do not upload `.env` files containing private tokens to version control. If you use this package as a dependency for your project, please ensure to include the
+`.env` in your `.gitignore`.</span>
 
 ### Mbed OS configuration
 
@@ -211,35 +205,34 @@ Use CMake to build your application:
 
 1. Drag and drop the generated file to your board.
 
+## Configure and build in a single step
 
-## Mbed OS Configuration and building the project
+You can use a single command to configure (set up your target and toolchain) and build the project at once:
 
-We can use a single command which will configure (set up your target and toolchain) and build the project.
+```
+mbed-tools build -m <target> -t <toolchain>
+```
 
-1. To build and configure:
+- `-t`: The toolchain you are using to build your project.
+- `-m`: A build target for an Mbed-enabled device.
 
-    ```
-    mbed-tools build -m <target> -t <toolchain>
-    ```
-    - -t: The toolchain you are using to build your app
-    - -m: A build target for an Mbed-enabled device
+Example for FRDM-K64F and GCC:
 
-    Example for FRDM-K64F and GCC:
+```
+mbed-tools build -m K64F -t GCC_ARM
+```
 
-    ```
-    mbed-tools build -m K64F -t GCC_ARM
-    ```
+## Iterative builds on configured projects
 
-1. To perform an iterative build on previously configured target:
+To perform an iterative build on a previously configured project:
 
-    ```
-    mbed-tools build
-    ```
-
+```
+mbed-tools build
+```
 
 ## List library dependencies of an application
 
-All library dependencies can be listed with their URL and Git references as follows:
+To list all library dependencies with their URL and Git reference:
 
 ```
 mbed-tools libs
