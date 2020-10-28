@@ -2,7 +2,7 @@
 
 Mbed CLI 2 is a Python package called `mbed-tools`, so you can install it with pip.
 
-<span class="tips">**Tip:** We recommend using a virtual environment to avoid any Python dependency conflicts. We recommend the [Pipenv](https://github.com/pypa/pipenv/blob/master/README.md) tool to manage your virtual development environment.
+<span class="tips">**Tip:** We recommend using a virtual environment to avoid Python dependency conflicts.</span>
 
 ## Prerequisite
 
