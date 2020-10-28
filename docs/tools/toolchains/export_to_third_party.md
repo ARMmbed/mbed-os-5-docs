@@ -28,7 +28,7 @@ The export process generates a ZIP archive with a project file matching your sel
 
 ## Exporting from Arm Mbed CLI
 
-[Mbed CLI](../build-tools/mbed_cli_1) currently supports [exporting](../build-tools/third-party-build-tools.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
+[Mbed CLI](../build-tools/mbed_cli_1.html) currently supports [exporting](../build-tools/third-party-build-tools.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
 
 For example, to export to uVision5 with the K64F target, run:
 

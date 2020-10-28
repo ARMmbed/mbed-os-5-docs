@@ -6,7 +6,7 @@
 
 **Application** - An executable software module built out of libraries that acts as a final product.
 
-**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](../build-tools/mbed_cli_1), packaged as `mbed-cli`.
+**Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](../build-tools/mbed_cli_1.html), packaged as `mbed-cli`.
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
