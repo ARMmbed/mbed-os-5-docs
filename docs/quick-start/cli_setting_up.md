@@ -1,4 +1,4 @@
-<h1 id="cli-setup">Installing Mbed CLI</h1>
+<h1 id="cli-setup">Installing Mbed CLI 1</h1>
 
 The setup process for Arm Mbed CLI depends on your operating system. We recommend using our installers, but have also provided links to manual installation instructions.
 

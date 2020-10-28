@@ -178,7 +178,7 @@ To perform an iterative build on a previously configured project:
 mbed-tools build
 ```
 
-## List library dependencies of an application
+## List an application's library dependencies
 
 To list all library dependencies with their URL and Git reference:
 
