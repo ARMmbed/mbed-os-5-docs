@@ -1038,14 +1038,16 @@
                 },
                 {
                     "title": "Mbed CLI 2",
-                    "intro" : "docs/tools/mbed_cli_2/intro.md",
-                    "sources": [{
-                        "path": "docs/tools/mbed_cli_2/install.md"
+                    "intro": {
+                        "path": "docs/tools/mbed_cli_2/intro.md"
                     },
-                    {
-                        "path": "docs/tools/mbed_cli_2/use.md"
-                    }
-                  ]
+                    "sources": [{
+                            "path": "docs/tools/mbed_cli_2/install.md"
+                        },
+                        {
+                            "path": "docs/tools/mbed_cli_2/use.md"
+                        }
+                    ]
                 },
                 {
                     "title": "Mbed CLI 1",
