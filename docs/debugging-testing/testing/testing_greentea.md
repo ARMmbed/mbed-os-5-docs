@@ -58,7 +58,7 @@ A test case is named by its position in your project's file structure. For insta
 
 ### Building tests
 
-You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the [CLI documentation](../build-tools/mbed_cli_1.html).
+You can build tests through Arm Mbed CLI. For information on using Mbed CLI, please see the [CLI documentation](../build-tools/mbed-cli-1.html).
 
 When you build tests for a target and a toolchain, the script first discovers the available tests and then builds them in parallel. You can also create a **test specification** file, which our testing tools can use to run automated hardware tests. For more information on the test specification file, please see the [Greentea documentation](https://github.com/ARMmbed/mbed-os-tools/tree/master/packages/mbed-greentea#test-specification-json-formatted-input).
 
