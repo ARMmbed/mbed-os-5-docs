@@ -182,7 +182,7 @@ You can add the BOOTLOADER feature into `mbed_app.json` located in the root appl
 
 Alternatively, you can add `-C 'target.features_add=["BOOTLOADER"]'` to your `mbed compile` command-line arguments.
 
-Please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-feature-bootloader) for an example on how to use the bootloader feature.
+Please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader) for an example on how to use the bootloader feature.
 
 There are two ways to add support for new targets:
 
