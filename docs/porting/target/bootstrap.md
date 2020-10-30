@@ -28,7 +28,7 @@ If you are updating your own linker script, you must:
     - Arm - The boot stack is the `ARM_LIB_STACK` region.
     - GCC_ARM - The boot stack starts at the symbol `__StackLimit` and ends at the symbol `__StackTop`.
 - Add defines for a relocatable application - `MBED_APP_START` and `MBED_APP_SIZE`.
-- Add the define for boot stack size - `MBED_BOOT_STACK_SIZE`.
+- Add the define for boot stack size - `MBED_CONF_TARGET_BOOT_STACK_SIZE`.
 - Add preprocessing directive `#! armcc -E` (ARM compiler only).
 
 If you are using the below linker script, then you need to update all the defines in the `/* Device specific values */` section for your target.
@@ -54,9 +54,9 @@ If you are using the below linker script, then you need to update all the define
   #define MBED_APP_SIZE  MBED_ROM_SIZE
 #endif
 
-#if !defined(MBED_BOOT_STACK_SIZE)
+#if !defined(MBED_CONF_TARGET_BOOT_STACK_SIZE)
 /* This value is normally defined by the tools to 0x1000 for bare metal and 0x400 for RTOS */
-  #define MBED_BOOT_STACK_SIZE  0x400
+  #define MBED_CONF_TARGET_BOOT_STACK_SIZE  0x400
 #endif
 
 /* Round up VECTORS_SIZE to 8 bytes */
@@ -74,10 +74,10 @@ LR_IROM1  MBED_APP_START  MBED_APP_SIZE  {
     .ANY (+RW +ZI)
   }
 
-  ARM_LIB_HEAP  AlignExpr(+0, 16)  EMPTY  (MBED_RAM_START + MBED_RAM_SIZE - MBED_BOOT_STACK_SIZE - AlignExpr(ImageLimit(RW_IRAM1), 16))  { ; Heap growing up
+  ARM_LIB_HEAP  AlignExpr(+0, 16)  EMPTY  (MBED_RAM_START + MBED_RAM_SIZE - MBED_CONF_TARGET_BOOT_STACK_SIZE - AlignExpr(ImageLimit(RW_IRAM1), 16))  { ; Heap growing up
   }
 
-  ARM_LIB_STACK  (RAM_START + RAM_SIZE)  EMPTY  -MBED_BOOT_STACK_SIZE  { ; Stack region growing down
+  ARM_LIB_STACK  (RAM_START + RAM_SIZE)  EMPTY  -MBED_CONF_TARGET_BOOT_STACK_SIZE  { ; Stack region growing down
   }
 }
 ```
@@ -102,10 +102,10 @@ if (!isdefinedsymbol(MBED_APP_SIZE)) {
     define symbol MBED_APP_SIZE = MBED_ROM_SIZE;
 }
 
-if (!isdefinedsymbol(MBED_BOOT_STACK_SIZE)) {
+if (!isdefinedsymbol(MBED_CONF_TARGET_BOOT_STACK_SIZE)) {
     /* This value is normally defined by the tools
         to 0x1000 for bare metal and 0x400 for RTOS */
-    define symbol MBED_BOOT_STACK_SIZE = 0x400;
+    define symbol MBED_CONF_TARGET_BOOT_STACK_SIZE = 0x400;
 }
 
 /* Round up VECTORS_SIZE to 8 bytes */
@@ -117,7 +117,7 @@ define memory mem with size = 4G;
 define region ROM_region = mem:[from MBED_APP_START size MBED_APP_SIZE];
 define region RAM_region = mem:[from RAM_REGION_START size RAM_REGION_SIZE];
 
-define block CSTACK    with alignment = 8, size = MBED_BOOT_STACK_SIZE   { };
+define block CSTACK    with alignment = 8, size = MBED_CONF_TARGET_BOOT_STACK_SIZE   { };
 define block HEAP      with alignment = 8, size = HEAP_SIZE     { };
 
 initialize by copy { readwrite };
@@ -150,10 +150,10 @@ GCC linker script template:
   #define MBED_APP_SIZE  MBED_ROM_SIZE
 #endif
 
-#if !defined(MBED_BOOT_STACK_SIZE)
+#if !defined(MBED_CONF_TARGET_BOOT_STACK_SIZE)
     /* This value is normally defined by the tools
        to 0x1000 for bare metal and 0x400 for RTOS */
-    #define MBED_BOOT_STACK_SIZE 0x400
+    #define MBED_CONF_TARGET_BOOT_STACK_SIZE 0x400
 #endif
 
 /* Round up VECTORS_SIZE to 8 bytes */
@@ -300,7 +300,7 @@ SECTIONS
         __end__ = .;
         PROVIDE(end = .);
         *(.heap*)
-        . = ORIGIN(RAM) + LENGTH(RAM) - MBED_BOOT_STACK_SIZE;
+        . = ORIGIN(RAM) + LENGTH(RAM) - MBED_CONF_TARGET_BOOT_STACK_SIZE;
         __HeapLimit = .;
     } > RAM
 
@@ -315,7 +315,7 @@ SECTIONS
     /* Set stack top to end of RAM, and stack limit move down by
      * size of stack_dummy section */
     __StackTop = ORIGIN(RAM) + LENGTH(RAM);
-    __StackLimit = __StackTop - MBED_BOOT_STACK_SIZE;
+    __StackLimit = __StackTop - MBED_CONF_TARGET_BOOT_STACK_SIZE;
     PROVIDE(__stack = __StackTop);
 
     /* Check if data + heap + stack exceeds RAM limit */
