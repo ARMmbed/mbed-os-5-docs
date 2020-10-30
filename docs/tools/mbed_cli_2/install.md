@@ -14,6 +14,14 @@ Mbed CLI 2 is a Python package called `mbed-tools`, so you can install it with p
 
 ## Install
 
+Some header files and static libraries are required by Pip and is done by python development package.
+
+For example on Ubuntu:
+
+    ```
+    sudo apt-get install python-dev
+    ```
+
 Use pip to install:
 
 - To install the latest release:
