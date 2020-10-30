@@ -19,7 +19,7 @@ Some header files and static libraries are required by Pip and is done by python
 For example on Ubuntu:
 
     ```
-    sudo apt-get install python-dev
+    sudo apt-get install python3-dev
     ```
 
 Use pip to install:
