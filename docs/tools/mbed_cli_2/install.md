@@ -42,7 +42,7 @@ Use pip to install:
     python -m pip install mbed-tools --pre
     ```
 
-<span class="tips">**Tip:** On a Unix-like system, you may need to ensure that `~/.local/bin` is accessible and in your path. </span>
+<span class="tips">**Tip:** On a Unix-like system, ensure that `~/.local/bin` is accessible and in your path. </span>
 
 ## Upgrade
 
