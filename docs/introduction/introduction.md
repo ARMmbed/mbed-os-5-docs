@@ -18,7 +18,7 @@ We release Mbed OS under an Apache 2.0 license, so you can confidently use it in
 
 Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, on Mbed CLI, Mbed Studio and the Mbed Online Compiler.
 
-| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/build-with-the-online-compiler.html) |  [Build with Mbed CLI](../quick-start/build-with-mbed-cli.html) |
+| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/build-with-the-online-compiler.html) |  [Build with Mbed CLI 1](../quick-start/build-with-mbed-cli.html) |
 | --- | --- | --- |
 | Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 

@@ -6,7 +6,7 @@ For most users on Windows, macOS and Linux, we recommend **Mbed Studio**, which 
 
 If you prefer to work online, use the **Mbed Online Compiler**, which lets you write and build applications using a web browser with no additional setup.
 
-If you are an experienced developer, you can also set up the command line tools manually by installing **Mbed CLI**, a compiler toolchain, a debugger and source control management.
+If you are an experienced developer, you can also set up the command line tools manually by installing **Mbed CLI 1** or **Mbed CLI 2**, a compiler toolchain, a debugger and source control management.
 
 For more information, see [the build tool documentation](../build-tools/index.html).
 

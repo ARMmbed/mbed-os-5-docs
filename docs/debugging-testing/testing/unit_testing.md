@@ -30,7 +30,7 @@ Detailed instructions for supported operating systems are below.
    sudo easy_install pip
    ```
 
-1. Install Gcovr and [Mbed CLI](../build-tools/mbed-cli.html) with `pip install "gcovr>=4.1" mbed-cli`.
+1. Install Gcovr and [Mbed CLI](../build-tools/mbed-cli-1.html) with `pip install "gcovr>=4.1" mbed-cli`.
 
 ### Installing dependencies on macOS
 
@@ -46,7 +46,7 @@ In a terminal window:
    sudo easy_install pip
    ```
 
-1. Install Gcovr and [Mbed CLI](../build-tools/mbed-cli.html) with `pip install "gcovr>=4.1" mbed-cli`.
+1. Install Gcovr and [Mbed CLI](../build-tools/mbed-cli-1.html) with `pip install "gcovr>=4.1" mbed-cli`.
 1. (Optional) Install GCC with `brew install gcc`.
 
 ### Installing dependencies on Windows
@@ -57,7 +57,7 @@ In a terminal window:
 1. Download CMake binaries from https://cmake.org/download/, and run the installer.
 1. Download Python 2.7 or Python 3 from https://www.python.org/getit/, and run the installer.
 1. Add MinGW, CMake and Python into system PATH.
-1. Install Gcovr and [Mbed CLI](../build-tools/mbed-cli.html) with `pip install "gcovr>=4.1" mbed-cli`.
+1. Install Gcovr and [Mbed CLI](../build-tools/mbed-cli-1.html) with `pip install "gcovr>=4.1" mbed-cli`.
 
 ## Test code structure
 

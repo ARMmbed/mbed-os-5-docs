@@ -1,6 +1,6 @@
 {
     "reference/mesh-tech.html": "apis/6LoWPAN-ND-tech.html",
-    "tools/developing-arm-mbed-cli.html": "build-tools/mbed-cli.html",
+    "tools/developing-arm-mbed-cli.html": "build-tools/mbed-cli-1.html",
     "tools/windows.html": "build-tools/install-and-set-up.html",
     "tools/macos.html": "build-tools/install-and-set-up.html",
     "tools/linux.html": "build-tools/install-and-set-up.html",
@@ -170,11 +170,12 @@
     "apis/batteryservice.html" : "apis/bluetooth-apis.html",
     "apis/messagebuilder.html" : "apis/nfc-apis.html",
     "reference/using-small-c-libraries.html" : "bare-metal/using-small-c-libraries.html",
-    "tools/developing-mbed-cli.html" :  "build-tools/mbed-cli.html",
+    "tools/developing-mbed-cli.html" :  "build-tools/mbed-cli-1.html",
     "apis/using-mbed-tls-to-communicate-securely.html" : "apis/tls-tutorial.html",
     "introduction/how-we-release-arm-mbed-os.html" : "introduction/versions-and-releases.html",
     "apis/quadspi.html" : "apis/spi-apis.html",
     "apis/mesh.html" : "apis/mesh-api.html",
     "apis/dns.html" : "apis/dns-apis.html",
-    "porting/psa-compliance-port.html" : "porting/porting-security.html"
+    "porting/psa-compliance-port.html" : "porting/porting-security.html",
+    "build-tools/mbed-cli.html" : "build-tools/mbed-cli-1.html"
 }
