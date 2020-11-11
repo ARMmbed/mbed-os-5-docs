@@ -113,7 +113,7 @@ Here is what you will need to complete the guide:
     Heard unknown (241) @117984ms  
     Heard no (201) @124992ms
     ```
-
+the output shows found_command, score and current_time as described in the command_responder.cc file.
 Congratulations! You are now running a machine learning model that can recognise keywords on an Arm Cortex-M4 microcontroller, directly on your K66F.
 
 It is easy to change the behavior of our program, but is it difficult to modify the machine learning model itself? The answer is no, and the section [Retrain the machine learning model](https://developer.arm.com/solutions/machine-learning-on-arm/developer-material/how-to-guides/build-arm-cortex-m-voice-assistant-with-google-tensorflow-lite/retrain-the-machine-learning-model) will show you how. First, let's review what the application is doing - and how.
