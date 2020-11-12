@@ -23,6 +23,7 @@ They can include:
 - Deprecation of functionality (with an alternative functionality provided).
 - Configuration changes.
 
+Occasionally, new features aren't added directly through a feature release. Instead, a tag is created on the feature branch to informally release the feature. Tags are prefixed with "feature-" and follow the semantic versioning convention.
 ## Patch release
 
 Patch releases occur on the third Wednesday of every month. They are also backward compatible (source compatible). The last digit in the release number indicates the patch release. In Mbed OS 5.2.3, `3` shows the patch release is the third release in Mbed 5.2.
@@ -46,7 +47,7 @@ Two weeks before each feature release, we implement a code freeze on the master 
 
 For patch releases, code freeze occurs the Thursday before the release. Patch releases also go through exporter tests and nightly CI tests.
 
-After all tests return no errors, we release the latest updates. You can find the most recent release in the `mbed-os` repository with the `latest` tag. A release note accompanies each release. The release notes for major and feature releases are longer and give an overview of the new features. The release notes for the patch releases include only a list of changes and known issues, if applicable. You can find our release notes on [the releases page](https://os.mbed.com/releases/) and on [the blog](https://os.mbed.com/blog/).
+After all tests return no errors, we release the latest updates. You can find the most recent release in the `latest` branch of the `mbed-os` repository. A release note accompanies each release. The release notes for major and feature releases are longer and give an overview of the new features. The release notes for the patch releases include only a list of changes and known issues, if applicable. You can find our release notes on [the releases page](https://os.mbed.com/releases/) and on [the blog](https://os.mbed.com/blog/).
 
 ## The API life cycle
 

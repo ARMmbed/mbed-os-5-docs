@@ -149,7 +149,9 @@ This can be any change in the functionality, including adding a new feature, a n
 
 A feature contribution contains a new API, capability or behavior. It does not break backward compatibility with existing APIs, capabilities or behaviors. New feature contributions are very welcome in Mbed OS. However, because they add capability to the codebase, a new feature may introduce bugs and a support burden. New features should also come with documentation, support for most targets and comprehensive test coverage. Feature PRs are treated cautiously, and new features require a new minor version for the codebase. 
 
-We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or Mbed OS technical leads may create the new branches by following the naming convention: "feature-" prefix.
+We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or Mbed OS technical leads may create the new branches by following the naming convention: "feature-" prefix. A feature branch exists as long as the feature is in development; when it is ready for release, the branch will be merged back into the Mbed OS release branch. This does not happen in some cases, instead, tags are used to informally release the feature on the branch.
+
+
 
 Each feature has a Mbed OS technical lead. This person is responsible for:
 
@@ -238,7 +240,7 @@ Maintainers merge pull requests because they have write access to the main maste
 
 ### Releases
 
-When we merge a pull request that we will publish in a patch release, we tag it with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features are only published in feature releases.
+When we merge a pull request that we will publish in a patch release, we tag it with the specific patch release version. This is the release in which we first publish this pull request. For patch releases, we allow only bug fixes, new targets and enhancements to existing functionality. New features are typically published in feature releases.
 
 The release tag has the format:
 
