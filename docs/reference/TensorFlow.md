@@ -1,5 +1,4 @@
 # Machine learning with TensorFlow and Mbed OS
-<!--https://github.com/COTASPAR/K66F/blob/master/README.md-->
 As an IoT developer, you might think of machine learning as a server-side technology: sensors on your device capture data and send it to the cloud, where Machine Learning (ML) models on hefty machines make sense of it. A network connection is obligatory, and you are going to expect some latency, not to mention hosting costs.
 
 But with the launch of [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers), you can run machine learning inference on extremely low-power devices, like Arm Cortex-M series-based microcontrollers. You can deploy your ML models to the IoT devices themselves, bringing ML closer to your sensors, remove your reliance on a network connection, and skip the round trip to the server for lower latency whilst having the benefit of reducing your power consumption compared to transferring data over a wireless connection.
@@ -12,7 +11,6 @@ The guide has step by step instructions for installing and running the applicati
 
 ## Using the example application
 
-<!--this needs to move-->
 **Important:** We recommend running the following commands from inside the Mbed CLI terminal that gets launched with the Mbed CLI Application. This is because it will be much quicker to set up, because it resolves all your environment dependencies automatically.
 
 ### Prerequisites
@@ -75,8 +73,7 @@ Here is what you will need to complete the guide:
 
     make -f tensorflow/lite/micro/tools/make/Makefile TARGET=mbed TAGS="nxp_k66f" generate_micro_speech_mbed_project
     ```
-    <!--I got a "no such file or directory error". I think it's because there was already `cd tensorflow` and then the path in the command also has `tensorflow`. Removing `tensorflow` from the path removed the error-->
-
+    
     This creates a folder in `tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed` that contains the source and header files for the example application, Mbed OS driver files, and a README.
 
 1. Navigate into the `mbed` folder:
@@ -99,9 +96,6 @@ Here is what you will need to complete the guide:
     mbed compile -m K66F -t GCC_ARM --flash --sterm
     ```
    <span class="notes">**Note**: The `mbed config root .` command is a non-standard method used by TensorFlow to initialize the project in the current directoy. The typical way for mbed projects to do this is with the use of `mbed init`. </span>
-    
-    <!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
-    <!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
 
 1. Speak into the board's microphone: Saying "Yes" will print "Yes" and "No" will print "No" on the serial port:
 
@@ -257,7 +251,7 @@ If you build and run your code now, your ML model knows the words “up” and �
     };
     ```
 
-    The code uses this array to map the output of the model to the correct value. Because we specified our `WANTED_WORDS`<!--is that underscore correct?--> as “up, down” in the training script, we should update this array to reflect these words in the same order.
+    The code uses this array to map the output of the model to the correct value. Because we specified our `WANTED_WORDS` as “up, down” in the training script, we should update this array to reflect these words in the same order.
 
 1. Edit the code so that "up" replaces "yes" and "down" replaces "no":
 
