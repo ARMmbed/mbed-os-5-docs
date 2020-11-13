@@ -143,7 +143,7 @@ While they are often applied to images, which are 2D grids of pixels, a convolut
 
 The following image is a visual representation of the audio. The network in our sample has learned which features in this image come together to represent a "yes", and which come together to represent a "no".
 
-<span class="images">![Spectrogram of "yes" and "no"](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/spectogram2.jpeg?auto=compress,format&w=680&h=510&fit=max)</span>
+<span class="images">![Spectrogram of "yes" and "no"](./images/spectogram2.jpeg?auto=compress,format&w=680&h=510&fit=max)</span>
 
 To generate this spectrogram, we use an interesting technique that is described in the next section.
 
@@ -155,7 +155,7 @@ To create each row, we run a 30ms slice of audio input through a Fast Fourier tr
 
 To build the entire 2D array, we combine the results of running the Fast Fourier transform on 49 consecutive 30ms slices of audio, with each slice overlapping the last by 10ms, as illustrated below:
 
-<span class="images">![Diagram of audio sampling](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/fft.jpeg?auto=compress,format&w=680&h=510&fit=max)</span>
+<span class="images">![Diagram of audio sampling](./images/fft.jpeg?auto=compress,format&w=680&h=510&fit=max)</span>
 
 You can see how the 30ms sample window is moved forward by 20ms each time until it has covered the full one-second sample. The resulting spectrogram is passed into the convolutional model.
 
@@ -190,7 +190,7 @@ We are going to use another pre-trained model to recognise “up” and “down�
 
 To get a converted model that can run on the controller itself from the trained model, we need to run a conversion script: the [TensorFlow Lite converter](https://www.tensorflow.org/lite/convert). This tool makes our model as small and efficient as possible, and converts it to a TensorFlow Lite FlatBuffer. To reduce the size of the model, we used a technique called [quantization](https://www.tensorflow.org/lite/performance/post_training_quantization). All weights and activations in the model get converted from 32-bit floating point format to an 8-bit and fixed-point format, as you can see in the following command:
 
-<span class="images">![Convert the model to the TensorFlow Lite format code](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/convert_model.png)</span>
+<span class="images">![Convert the model to the TensorFlow Lite format code](./images/convert_model.png)</span>
 
 This conversion will not only reduce the size of the network traffic, but will also avoid the more computationally expensive floating points.
 
@@ -310,7 +310,7 @@ We have found some common errors that users face and have listed them here to he
 
 - If your terminal is wrapping your text as show here:
 
-    <span class="images">![Error prompt wrapping around line](https://raw.githubusercontent.com/COTASPAR/K66F/master/images/troubleshooting.png)</span>
+    <span class="images">![Error prompt wrapping around line](./images/troubleshooting.png)</span>
 
     In your terminal, type:
 
