@@ -169,7 +169,7 @@ To solve this problem, our code runs inference as often as it can<!--here you lo
 
 ### Interpreting the results
 
-The RespondToCommand method in [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc) is called when a command a user speals has been recognised. Currently, this results in a line being printed to the serial port. Later in this guide, we will modify the code to display the result on the screen.
+The RespondToCommand method in [command_responder.cc](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/micro/examples/micro_speech/command_responder.cc) is called when a command has been recognized. This results in a line being printed to the serial port. 
 
 ## Retrain the machine learning model
 
