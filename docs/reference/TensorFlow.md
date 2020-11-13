@@ -238,7 +238,7 @@ To save time, in this guide we skip the conversion step and instead download a c
 
     1. Save the file.
 
-1. Copy the `tiny_conv_micro_features_model_data.cc` <!--where is this file? it's not the one I was just editing-->file into the `tensorflow/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed/tensorflow/lite/micro/examples/micro_speech/micro_features` directory.
+1. Copy the `model.cc` file into the `tensorflow/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed/tensorflow/lite/micro/examples/micro_speech/micro_features` directory.
 
 ## Modify the application code
 
