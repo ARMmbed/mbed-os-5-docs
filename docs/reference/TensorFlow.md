@@ -2,7 +2,7 @@
 <!--https://github.com/COTASPAR/K66F/blob/master/README.md-->
 As an IoT developer, you might think of machine learning as a server-side technology: sensors on your device capture data and send it to the cloud, where Machine Learning (ML) models on hefty machines make sense of it. A network connection is obligatory, and you are going to expect some latency, not to mention hosting costs.
 
-But with the launch of [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers), you can run machine learning inference on extremely low-powered devices, like the Cortex-M microcontroller series. You can deploy your ML models to the IoT devices themselves, bring ML closer to your sensors, remove your reliance on a network connection, and skip the round trip to the server for lower latency.
+But with the launch of [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers), you can run machine learning inference on extremely low-power devices, like Arm Cortex-M series-based microcontrollers. You can deploy your ML models to the IoT devices themselves, bringing ML closer to your sensors, remove your reliance on a network connection, and skip the round trip to the server for lower latency. A primary benefit of doing local inference is that you're reducing your power consumption compared to transferring data over a wireless connection for instance.
 
 This is especially exciting for IoT, because lower network use means lower power consumption. You can also better guarantee the security and privacy of your users, since you do not need to send data back to the cloud unless you know for sure that it is relevant.
 
