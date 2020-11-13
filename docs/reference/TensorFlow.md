@@ -257,7 +257,7 @@ If you build and run your code now, your ML model knows the words “up” and �
     };
     ```
 
-    The code uses this array to map the output of the model to the correct value. Because we specified our wanted_words<!--is that underscore correct?--> as “up, down” in the training script, we should update this array to reflect these words in the same order.
+    The code uses this array to map the output of the model to the correct value. Because we specified our `WANTED_WORDS`<!--is that underscore correct?--> as “up, down” in the training script, we should update this array to reflect these words in the same order.
 
 1. Edit the code so that "up" replaces "yes" and "down" replaces "no":
 
