@@ -94,12 +94,12 @@ Here is what you will need to complete the guide:
 
     mbed deploy
     
-    mbed update mbed-os-6.3.0
+    mbed update mbed-os-6.4.0
 
     mbed compile -m K66F -t GCC_ARM --flash --sterm
     ```
-
-    <!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
+   <span class="notes">**Note**: The `mbed config root .` command is a non-standard method used by TensorFlow to initialize the project in the current directoy. The typical way for mbed projects to do this is with the use `mbed init`. </span>
+    
     <!--need to explain what `config root .` and `deploy` do and why we need them - neither one is part of a standard workflow where you use Mbed CLI to import an application, so this is a special case-->
     <!--and why are we compiling here? We compile again two steps down, with the flash parameter-->
 
