@@ -280,7 +280,7 @@ If you build and run your code now, your ML model knows the words “up” and �
 1. Rebuilt the project:
 
     ```
-    mbed compile -m K66F -t GCC_ARM
+    mbed compile -m K66F -t GCC_ARM --flash --sterm
     ```
 
 1. Copy the binary to the USB storage of the device<!--why aren't we using flash?-->, using the same method that you used earlier.
