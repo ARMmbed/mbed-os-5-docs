@@ -230,7 +230,7 @@ To save time, in this guide we skip the conversion step and instead download a c
         unsigned int tiny_conv_tflite_len = 18216;
         ```
 
-    1. Change the declaration to the following code, but do not change the number assigned to it, even if your number is different from the one in this guide:
+    1. Change the declaration to the following code, but do not change the value assigned to it, as it is automatically generated to indicate the size of the model. Even if your number is different from the one in this guide:"
 
         ```
         const int g_tiny_conv_micro_features_model_data_len = 18216;
