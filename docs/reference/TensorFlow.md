@@ -19,11 +19,9 @@ The guide has step by step instructions for installing and running the applicati
 
 Here is what you will need to complete the guide:
 
-* Ubuntu 20.04 LTS. If you are using a Windows machine, install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)<!--originally you said 6.0 - that version's support ended in July. Can they install the latest version, or do they need 6.0 specifically?--> and then [Install Ubunto on it](https://www.virtualbox.org/wiki/Linux_Downloads).
-
 * [Mbed CLI (version 1.10.4)](../build-tools/install-and-set-up.html).
 
-* The [GNU Arm Embedded](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) toolchain [that Mbed CLI supports](../build-tools/index.html).<!--Mbed OS supports ARMC 6.14, and many users rely on it. Can they use it?--> For Windows users, if you have already set up the Linux virtual environment, install the toolchain there.
+* The [GNU Arm Embedded](https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm/downloads) toolchain [that Mbed CLI supports](../build-tools/index.html).
 
     Configure Mbed CLI to find your GNU installation:
 
@@ -35,17 +33,16 @@ Here is what you will need to complete the guide:
 
     <span class="notes">**Note**: On a Mac, you might have to use gmake instead of make.</span>
 
-* Python 2.7. We recommend [using pyenv to manage Python versions](https://pypi.org/project/pyenv/).<!--The install page for Mbed CLI now requires 3.7. Why are we asking for 2.7?-->
+* Python 3.7. 
 
-* Git.
-
-* xxd.<!--unless is exists by default on all Linux computers?-->
+* [xxd](https://www.tutorialspoint.com/unix_commands/xxd.htm) which is a command-line utility that creates a hex dump of a given file or standard input. It can also convert a hex dump back to its original binary form.
 
 * A development board that can run [TensorFlow Lite for Microcontrollers](https://www.tensorflow.org/lite/microcontrollers#supported_platforms). We tested on the [NXP FRDM-K66F](https://os.mbed.com/platforms/FRDM-K66F/) development board.
 
 * A mini-USB cable.
 
-<!--MarkDown doesn't support embedded YouTube players, which is one reason I removed the videos. Another is that it's better practice to link to official sites, not to videos uploaded by "unofficial" users who may remove them without warning and may, for all we know, be in legal disputes with the companies who created those products (I admit that isn't very likely with "how to install" videos). Also, not sure these videos will work in all countries.-->
+    <span class="notes">**Note**: This tutorial has been tested on Ubuntu 20.04 LTS. If you are using a Windows machine, we recommend using virtualization software to create a virtual Linux machine to run this tutorial.</span>
+
 ### Download, build and install the application
 
 1. Navigate to the directory where you keep code projects.
