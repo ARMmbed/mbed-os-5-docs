@@ -270,32 +270,6 @@ If you build and run your code now, your ML model knows the words “up” and �
     };
     ```
 
-1. Update the code in `command_responder.cc` to reflect these new labels, modifying the if statements and the DisplayStringAt call:
-
-    ```
-    void RespondToCommand(tflite::ErrorReporter* error_reporter,  
-    int32_t current_time, const char* found_command,  
-    uint8_t score, bool is_new_command) {  
-        if (is_new_command) {  
-            error_reporter->Report("Heard %s (%d) @%dms", found_command, score,  
-            current_time);  
-        if(strcmp(found_command, "up") == 0) {  
-            lcd. Clear(0xFF0F9D58);  
-            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard up", CENTER_MODE);  
-        } else if(strcmp(found_command, "down") == 0) {  
-            lcd.Clear(0xFFDB4437);  
-            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard down", CENTER_MODE);  
-        } else if(strcmp(found_command, "unknown") == 0) {  
-            lcd.Clear(0xFFF4B400);  
-            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard unknown", CENTER_MODE);  
-        } else {  
-            lcd.Clear(0xFF4285F4);  
-            lcd.DisplayStringAt(0, LINE(5), (uint8_t *)"Heard silence", CENTER_MODE);  
-            }  
-        }  
-    }
-    ```
-<!--I added indents - I assumed their lack was a result of copy/paste destroying something, not a decision-->
 
 1. Navigate back to the mbed directory:
 
