@@ -277,13 +277,12 @@ If you build and run your code now, your ML model knows the words “up” and �
     cd <path_to_tensorflow>/tensorflow/lite/micro/tools/make/gen/mbed_cortex-m4/prj/micro_speech/mbed
     ```
 
-1. Rebuilt the project:
+1. Rebuild the project:
 
     ```
     mbed compile -m K66F -t GCC_ARM --flash --sterm
     ```
 
-1. Copy the binary to the USB storage of the device<!--why aren't we using flash?-->, using the same method that you used earlier.
 
 You can now say “up” and “down” to update the display.
 
