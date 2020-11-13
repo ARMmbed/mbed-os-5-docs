@@ -351,15 +351,7 @@ We have found some common errors that users face and have listed them here to he
     export PS1='> '
     ```
 
-- Error: `Requires make version 3.82 or later (current is 3.81)`
 
-    If you encounter this error, install Brew and Make:
-
-    ```
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-    brew install make
-    ```
 - Error: `-bash: mbed: command not found`
 
     Your Mbed CLI installation isn't working properly. We recommend [using the installers](../build-tools/install-and-set-up.html).
