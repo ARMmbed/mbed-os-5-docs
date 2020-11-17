@@ -151,13 +151,15 @@ A feature contribution contains a new API, capability or behavior. It does not b
 
 We initially implement new features on separate branches in the Mbed OS repository. Mbed OS maintainers or Mbed OS technical leads may create the new branches by following the naming convention: "feature-" prefix. A feature branch exists as long as the feature is in development; when it is ready for release, the branch will be merged back into the Mbed OS release branch. This does not happen in some cases, instead, tags are used to informally release the feature on the branch.
 
-
-
 Each feature has a Mbed OS technical lead. This person is responsible for:
 
 - Rebasing often to track master development.
 - Reviewing any addition to the feature branch.
 - Approving all feature change pull requests.
+
+Feature branches do not need to comply with our workflow. They are an exception, along with the following: 
+- Merging pull requests to feature branches by a tech lead.
+- Cases where breaking CI is possible (it is recommended to fix errors but not always feasible).
 
 #### Major update
 
