@@ -22,7 +22,7 @@ For a reference implementation, please see the existing [LoRa RF drivers](https:
 
 For API use cases, details, explanation and meaning, please see the `LoRaRadio` class reference below. We carefully planned and designed the data structures provided in [LoRaRadio.h](../mbed-os-api-doxy/_lo_ra_radio_8h_source.html). They carry most of what you need to write your LoRa RF driver.
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_lo_ra_radio.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.5/mbed-os-api-doxy/class_lo_ra_radio.html)
 
 ## Device design guide for LoRaWAN stack
 
