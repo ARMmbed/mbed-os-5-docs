@@ -40,4 +40,4 @@ Clients register for these updates by setting the Client Characteristic Configur
 
 ## GattClient example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_GattClient/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_GattClient/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.5.0/BLE_GattClient/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.5.0/BLE_GattClient/source/main.cpp)
