@@ -1451,6 +1451,9 @@
                 },
                 {
                     "path": "docs/ref-designs/going_to_production.md"
+                },
+                {
+                    "path": "docs/reference/TensorFlow.md"
                 }
             ]
         },
