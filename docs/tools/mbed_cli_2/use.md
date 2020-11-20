@@ -51,7 +51,7 @@ To create a local copy of an example application, use the `import` command with 
 
 ```
 mbed-tools import <example> <PATH>
-````
+```
 
 - [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
 - [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble) - use the BLE Advertising example.
@@ -63,6 +63,22 @@ mbed-tools import <example> <PATH>
 - [mbed-os-example-nfc](https://github.com/ARMmbed/mbed-os-example-nfc)
 - [mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
 
+### Use a specific Mbed program library
+
+A Mbed program can use library dependencies at the revision specified in the ".lib" files.
+This ensures all dependencies are resolved and the versions are synchronised to the version specified in the library reference.
+
+    ```
+    mbed-tools deploy <PATH>
+    ```
+
+    - `<path>`: Path to the Mbed project [default: CWD]
+
+- To force overwrite local uncommitted changes of the library dependencies.
+
+    ```
+    mbed-tools deploy -f
+    ```
 
 ## Configure the project
 
