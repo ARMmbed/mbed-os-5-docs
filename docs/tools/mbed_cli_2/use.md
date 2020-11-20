@@ -10,10 +10,10 @@ For help:
     mbed-tools --help
     ```
 
-- To get help for a specific command, use `mbed-tools <command> --help`. For example, for helping with listing connected devices (the `devices` command):
+- To get help for a specific command, use `mbed-tools <command> --help`. For example, for helping with listing connected devices (the `detect` command):
 
     ```
-    mbed-tools devices --help
+    mbed-tools detect --help
     ```
 
 ## Create a project
@@ -27,30 +27,30 @@ To create a new Mbed OS project in a specified path:
 - To create the project and download a new copy of Mbed OS (latest official release):
 
     ```
-    mbed-tools init <PATH>
+    mbed-tools new <PATH>
     ```
 
     The path can be:
 
-    - Absolute. `init` will create the folder if it doesn't exist.
+    - Absolute. `new` will create the folder if it doesn't exist.
     - Relative:
 
         - If you have already created a project folder, you can use `.`
 
-        - If you want the `init` command to create a project folder, use `.\<folder-name>`.
+        - If you want the `new` command to create a project folder, use `.\<folder-name>`.
 
 - To create a project without downloading a copy of Mbed OS (reuse an existing copy):
 
     ```
-    mbed-tools init -c <PATH>
+    mbed-tools new -c <PATH>
     ```
 
 ### Use an example application
 
-To create a local copy of an example application, use the `clone` command with the example name listed below:
+To create a local copy of an example application, use the `import` command with the example name listed below:
 
 ```
-mbed-tools clone <example> <PATH>
+mbed-tools import <example> <PATH>
 ````
 
 - [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
@@ -101,10 +101,10 @@ The Mbed OS configuration system parses the configuration files in your project 
 
 1. Check your board's build target name.
 
-    Connect your board over USB and run the `devices` command:
+    Connect your board over USB and run the `detect` command:
 
     ```
-    mbed-tools devices
+    mbed-tools detect
 
     Board name    Serial number             Serial port             Mount point(s)    Build target(s)
     ------------  ------------------------  ----------------------  ----------------  -----------------
@@ -158,7 +158,7 @@ Use CMake to build your application:
 You can use a single command to configure (set up your target and toolchain) and build the project at once:
 
 ```
-mbed-tools build -m <target> -t <toolchain>
+mbed-tools compile -m <target> -t <toolchain>
 ```
 
 - `-t`: The toolchain you are using to build your project.
@@ -167,7 +167,7 @@ mbed-tools build -m <target> -t <toolchain>
 Example for FRDM-K64F and GCC:
 
 ```
-mbed-tools build -m K64F -t GCC_ARM
+mbed-tools compile -m K64F -t GCC_ARM
 ```
 
 ## Iterative builds on configured projects
@@ -175,7 +175,7 @@ mbed-tools build -m K64F -t GCC_ARM
 To perform an iterative build on a previously configured project:
 
 ```
-mbed-tools build
+mbed-tools compile
 ```
 
 ## List an application's library dependencies
