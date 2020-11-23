@@ -52,4 +52,4 @@ The simplest example is a pairing of a device with no IO capabilities and no OOB
 
 The SecurityManager example demonstrates both a central and a peripheral connecting, performing basic pairing and setting up link security.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_SM/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_SM/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_SecurityAndPrivacy/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_SecurityAndPrivacy/source/main.cpp)
