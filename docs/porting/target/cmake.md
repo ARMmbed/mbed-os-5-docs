@@ -1,20 +1,59 @@
 # CMake target porting
 
-## Add CMakeLists.txt
+You can use conditional inclusion based on
+`MBED_TARGET_LABELS` or `MBED_TOOLCHAIN` or similar available CMake variables.
 
-Add `CMakeLists.txt` to folders where target's files are located. Please follow logical directory structure (do not create more `CMakeLists.txt` than are required). If there is 3rd party driver, it should have own `CMakeLists.txt`.
+## targets CMakelists structure
+
+### Vendor targets
+
+`targets/CMakeLists.txt` contains vendors selection.
+
+```
+if("Cypress" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(TARGET_Cypress/TARGET_PSOC6)   
+endif()
+```
+
+### MCU family targets
+
+`targets/TARGET_Cypress/TARGET_PSOC6` contains different MCU families. This is implementation specific folder. It can include 3rd party drivers, components, sub-MCU families.
+
+```
+add_subdirectory(common)
+add_subdirectory(psoc6pdl)
+
+target_include_directories(mbed-core
+    INTERFACE
+        .
+)
+
+target_sources(mbed-core
+    INTERFACE
+        analogin_api.cpp
+)
+```
+
+## Add target's CMakeLists.txt
+
+Add `CMakeLists.txt` to folders where target's files are located. Please follow logical directory structure and do not create more `CMakeLists.txt` than it is required. 
+If there is 3rd party driver, it should have own `CMakeLists.txt`.
 
 The directory tree could look like:
 
 ```
-/targets/new_target/CMakeLists.txt
-/targets/new_target/drivers/CMakeLists.txt
+# This is new vendor's CMakeLists
+/targets/new_vendor/CMakeLists.txt
+# This is driver's CMakeLists
+/targets/new_vendor/driver/CMakeLists.txt
+# This is target's CMakeLists
+/targets/new_vendor/new_target/CMakeLists.txt
+
 ```
 
-## Add your sources and includes
+### Add your sources and includes
 
-New directory is added using  `add_subdirectory`. You can use conditional inclusion based on
-`MBED_TARGET_LABELS` or `MBED_TOOLCHAIN` or similar available CMake variables.
+New directory is added using  `add_subdirectory`.
 
 ```
 # add sdk_driver only for specific target
