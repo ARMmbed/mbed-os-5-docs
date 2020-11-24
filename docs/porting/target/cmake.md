@@ -5,11 +5,11 @@ You can use conditional inclusion based on
 
 Important variables we provide for targets:
 
-`MBED_TARGET_LABELS` - Target's labels coming from targets.json
-`MBED_TARGET_DEFINITIONS` - Definitions coming from targets.json
-`MBED_CONFIG_DEFINITIONS` - Config definitions prefixed with `-D`
-`MBED_TARGET_SUPPORTED_C_LIBS` - C libraries supported (small/std)
-`MBED_TARGET_SUPPORTED_APPLICATION_PROFILES` - Application profiles supported (bare-metal/full)
+- `MBED_TARGET_LABELS` - Target's labels coming from targets.json
+- `MBED_TARGET_DEFINITIONS` - Definitions coming from targets.json
+- `MBED_CONFIG_DEFINITIONS` - Config definitions prefixed with `-D`
+- `MBED_TARGET_SUPPORTED_C_LIBS` - C libraries supported (small/std)
+- `MBED_TARGET_SUPPORTED_APPLICATION_PROFILES` - Application profiles supported (bare-metal/full)
 
 ## targets CMakelists structure
 
