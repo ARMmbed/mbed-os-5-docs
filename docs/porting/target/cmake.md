@@ -4,6 +4,13 @@
 
 Add `CMakeLists.txt` to folders where target's files are located. Please follow logical directory structure (do not create more `CMakeLists.txt` than are required). If there is 3rd party driver, it should have own `CMakeLists.txt`.
 
+The directory tree could look like:
+
+```
+/targets/new_target/CMakeLists.txt
+/targets/new_target/drivers/CMakeLists.txt
+```
+
 ## Add your sources and includes
 
 New directory is added using  `add_subdirectory`. You can use conditional inclusion based on
