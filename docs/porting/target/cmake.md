@@ -117,6 +117,10 @@ endif()
 set_property(GLOBAL PROPERTY MBED_TARGET_LINKER_FILE ${CMAKE_CURRENT_SOURCE_DIR}/${LINKER_FILE})
 ```
 
+#### ARMClang .sct file
+
+ARMClang6 requires updated preprocessor command in a scatter file. It is the very first line in the scatter file. Replace `armcc -E` with `#! armclang -E --target=arm-arm-none-eabi -x c -mcpu=cortex-m4` where `-mcpu` is set according to a target.
+
 ### Adding pre-compiled target libraries
 
 Pre-compiled libraries are added using `target_link_libraries`. The path must be prefixed with
