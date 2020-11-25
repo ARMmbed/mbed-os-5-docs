@@ -12,7 +12,7 @@ The `ScopedRamExecutionLock` class provides an RAII object for enabling executio
 
 This example shows how you can enable execution from RAM from main:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ScopedRamExecutionLock/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-ScopedRamExecutionLock/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-ScopedRamExecutionLock/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-ScopedRamExecutionLock/blob/v6.5/main.cpp)
 
 ## Related content
 

@@ -22,13 +22,13 @@ You can create any number of Ticker objects, allowing multiple outstanding inter
 
 Try this program to set up a Ticker to repeatedly invert an LED:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Ticker_HelloWorld/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Ticker_HelloWorld/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Ticker_HelloWorld/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Ticker_HelloWorld/blob/v6.5/main.cpp)
 
 ## Ticker examples
 
 Use this example to attach a member function to a ticker:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Ticker_Example/tree/v6.0)](https://github.com/ARMmbed/mbed-os-snippet-Ticker_Example/blob/v6.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Ticker_Example/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Ticker_Example/blob/v6.5/main.cpp)
 
 ## Related content
 
