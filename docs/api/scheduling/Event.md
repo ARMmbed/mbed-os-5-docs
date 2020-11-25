@@ -1,6 +1,6 @@
 # Event
 
-The Event class provides APIs to configure events `delay` and `period` timings. The timings use the std::chrono::duration class provided by the <utility> library. You can use `post` API to post an event to the underlying EventQueue, and you can use `cancel` to cancel the most recently posted event.
+The Event class provides APIs to configure events `delay` and `period` timings. The timings use the `std::chrono::duration` class provided by the `<utility>` library. You can use `post` API to post an event to the underlying EventQueue, and you can use `cancel` to cancel the most recently posted event.
 
 The Event class is thread safe. The `post` and `cancel` APIs are IRQ safe.
 
