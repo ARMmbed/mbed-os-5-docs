@@ -38,6 +38,12 @@ Clients register for these updates by setting the Client Characteristic Configur
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_gatt_client.html)
 
-## GattClient example
+## GattClient examples
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_GattClient/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.0.0/BLE_GattClient/source/main.cpp)
+### Characteristic writes
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.5.0/BLE_GattClient_CharacteristicWrite/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.5.0/BLE_GattClient_CharacteristicWrite/source/main.cpp)
+
+### Characteristic updates
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.5.0/BLE_GattClient_CharacteristicUpdates/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.5.0/BLE_GattClient_CharacteristicUpdates/source/main.cpp)
