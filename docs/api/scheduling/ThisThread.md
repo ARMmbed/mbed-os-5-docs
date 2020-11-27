@@ -12,7 +12,7 @@ Unlike the [Thread](../apis/thread.html) API, which allows you to create, join a
 
 Spawn a thread to blink for 5 seconds before setting a flag to trigger the thread to terminate.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-thisthread/)](https://github.com/ARMmbed/mbed-os-example-thisthread/blob/master/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/threading_example/APIs_RTOS/ThisThread_Blinky)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/threading_example/APIs_RTOS/ThisThread_Blinky/main.cpp)
 
 ## Related content
 
