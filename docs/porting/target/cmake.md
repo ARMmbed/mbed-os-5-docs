@@ -1,134 +1,124 @@
 # CMake target porting
 
-You can use conditional inclusion based on
-`MBED_TARGET_LABELS` or `MBED_TOOLCHAIN` or similar available CMake variables.
 
-Important variables we provide for targets:
+Important variables provided by for Mbed target:
 
-- `MBED_TARGET_LABELS` - Target's labels coming from targets.json
-- `MBED_TARGET_DEFINITIONS` - Definitions coming from targets.json
-- `MBED_CONFIG_DEFINITIONS` - Config definitions prefixed with `-D`
-- `MBED_TARGET_SUPPORTED_C_LIBS` - C libraries supported (small/std)
-- `MBED_TARGET_SUPPORTED_APPLICATION_PROFILES` - Application profiles supported (bare-metal/full)
+- `MBED_TARGET_LABELS`: a list of labels added to a given Mbed target coming from the Mbed target default configuration file `targets.json`.
+- `MBED_TARGET_DEFINITIONS`: a list of macro definitions added to a given Mbed target coming from the Mbed target default configuration file `targets.json`.
 
-## targets CMakelists structure
+- `MBED_CONFIG_DEFINITIONS`: a list of macro definitions added to a given Mbed target coming from various Mbed library configuration files.
+- `MBED_TARGET_SUPPORTED_C_LIBS`: a list of C library types supported by a given Mbed target coming from the Mbed target default configuration file `targets.json`.
+- `MBED_TARGET_SUPPORTED_APPLICATION_PROFILES` a list of application profiles supported by a given Mbed target coming from the Mbed target default configuration file `targets.json`.
 
-### Vendor targets
+## Mbed targets CMake input file structure
 
-`targets/CMakeLists.txt` contains vendors selection.
+### Vendor selection
+
+Vendor selection is handled in [`targets/CMakeLists.txt`](LINK) using a conditional statement to verify that one of the labels used by a given Mbed target match a given partner directory. The matching directory is added to directories to build.
 
 ```
 if("Cypress" IN_LIST MBED_TARGET_LABELS)
-    add_subdirectory(TARGET_Cypress/TARGET_PSOC6)   
+    add_subdirectory(TARGET_Cypress)   
 endif()
 ```
-
+Add an `elseif` conditional statement to add a vendor directory.
 ### MCU family targets
 
-`targets/TARGET_Cypress/TARGET_PSOC6` contains different MCU families. This is implementation specific folder. It can include 3rd party drivers, components, sub-MCU families.
+`targets/TARGET_<VENDOR_NAME>` usually contains different MCU or Mbed target families. The structure of the vendor directory is up to the vendor but it is preferable that it has logical separation separations.
+For example, the content of `targets/TARGET_Cypress/TARGET_PSOC6` can be listed as follows:
 
 ```
-add_subdirectory(common)
-add_subdirectory(psoc6pdl)
+if("SCL" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(COMPONENT_SCL EXCLUDE_FROM_ALL)
+endif()
 
+if("WHD" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(COMPONENT_WHD EXCLUDE_FROM_ALL)
+    add_subdirectory(common/COMPONENT_WHD EXCLUDE_FROM_ALL)
+endif()
+
+if("CY8CKIT064B0S2_4343W" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(TARGET_CY8CKIT064B0S2_4343W)
+elseif("CY8CKIT_062S2_43012" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(TARGET_CY8CKIT_062S2_43012)
+...
+endif()
+
+# Add the include directories accessible from this directory that are not specific to an MCU family or Mbed target
 target_include_directories(mbed-core
     INTERFACE
-        .
+        ...
 )
 
+# Add the source files accessible from this directory that are not specific to an MCU family or Mbed target
 target_sources(mbed-core
     INTERFACE
-        analogin_api.cpp
+        ...
 )
 ```
 
 ## Add target's CMakeLists.txt
 
-Add `CMakeLists.txt` to folders where target's files are located. Please follow logical directory structure and do not create more `CMakeLists.txt` than it is required. 
-If there is 3rd party driver, it should have own `CMakeLists.txt`.
+Add `CMakeLists.txt` files to the top level directory of a given vendor directory. List all files found in the directory in this CMake input source file, adding additional CMake input source file if it is MCU or Mbed target specific and has a great number of files which will make the top level `CMakeLists.txt` too complex. Think when you decide to create functions in a computer software code to remove complexity.
 
-The directory tree could look like:
-
-```
-# This is new vendor's CMakeLists
-/targets/new_vendor/CMakeLists.txt
-# This is driver's CMakeLists
-/targets/new_vendor/driver/CMakeLists.txt
-# This is target's CMakeLists
-/targets/new_vendor/new_target/CMakeLists.txt
-
-```
+See [`targets/TARGET_Cypress`](LINK) for examples.
 
 ### Add your sources and includes
 
-New directory is added using  `add_subdirectory`.
+A whole directory can be added to the build using `add_subdirectory` if it is specific to an MCU family (or Mbed target) and has a complex structure containing more directories and files. Otherwise simply list the files contained in the directory.
+See an example below:
 
 ```
-# add sdk_driver only for specific target
-if("NEW_TARGET" IN_LIST MBED_TARGET_LABELS)
-    add_subdirectory(sdk_driver)
+if("<VENDOR_MCU_VARIANT>" IN_LIST MBED_TARGET_LABELS)
+    add_subdirectory(TARGET_<VENDOR_MCU_VARIANT>)
 endif()
 
-add_subdirectory(driver_always_added)
-```
-
-Sources are added using `target_sources` where all code files must be added for `mbed-core` library.
-
-```
-target_sources(mbed-core
-    INTERFACE
-        analogin_api.c
-        pinmap.c
-        port_api.c
-        pwmout_api.c
-        reset_reason.c
-        rtc_api.c
-        serial_api.c
-        sleep.c
-        spi_api.c
-        us_ticker.c
-        watchdog_api.c
-)
-```
-
-Include paths are added using `target_include_directories`.
-
-```
 target_include_directories(mbed-core
     INTERFACE
         .
-        device
-        driver/sdk
+        subdirectory
+)
+
+target_sources(mbed-core
+    INTERFACE
+        file1.c
+
+        subdirectory/file2.c
 )
 ```
 
+Sources are listed using CMake's `target_sources()` function and added to the `mbed-core` CMake target as shown above. Header files are not explicitly listed, the directory they can be found is listed instead. This is also shown above.
+
+
 ### Linker script file
 
-Each target must set global property `MBED_TARGET_LINKER_FILE`. The path must be prefixed with
-`${CMAKE_CURRENT_SOURCE_DIR}`.
+A global CMake property named `MBED_TARGET_LINKER_FILE` must be set for each linker file. This linker file must be listed with its absolute path, this is achieved by adding the sub-path obtained by the CMake variable `${CMAKE_CURRENT_SOURCE_DIR}`.
+e.g
 
 ``` 
-if(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
-    set(LINKER_FILE device/TOOLCHAIN_GCC_ARM/NEW_TARGET.ld)
+if(${MBED_TOOLCHAIN} STREQUAL "ARM")
+    set(LINKER_FILE relative/path/to/TOOLCHAIN_ARM_STD/linker_file.sct)
 elseif(${MBED_TOOLCHAIN} STREQUAL "ARM")
-    set(LINKER_FILE device/TOOLCHAIN_ARM_STD/NEW_TARGET.sct)
+    set(LINKER_FILE relative/path/to/TOOLCHAIN_GCC_ARM/linker_file.ld)
 endif()
 
 set_property(GLOBAL PROPERTY MBED_TARGET_LINKER_FILE ${CMAKE_CURRENT_SOURCE_DIR}/${LINKER_FILE})
 ```
 
-#### ARMClang .sct file
+#### ARMClang linker file
 
-ARMClang6 requires updated preprocessor command in a scatter file. It is the very first line in the scatter file. Replace `armcc -E` with `#! armclang -E --target=arm-arm-none-eabi -x c -mcpu=cortex-m4` where `-mcpu` is set according to a target.
+The shebang in the ARM toolchain linker file, also known as scatter file, needs to update the interpreter program from `armcc` to `armclang` and pass it different optional arguments.
+Replace `armcc -E` with `#! armclang -E --target=arm-arm-none-eabi -x c -mcpu=<CORE_TYPE_FLAG>` where <CORE_TYPE_FLAG> is the MCU core type for a given Mbed target. Once you have determined which MCU core your Mbed target is based on, head to [tools/cmake/cores/](LINK) and open the CMake module your Mbed target is based on and look what the `-mcpu` is set to.
 
 ### Adding pre-compiled target libraries
 
-Pre-compiled libraries are added using `target_link_libraries`. The path must be prefixed with
-`${CMAKE_CURRENT_SOURCE_DIR}`.
+Pre-compiled libraries and object files are listed using CMake's `target_link_libraries()` function with an absolute path of the file added.
+e.g
 
 ```
 target_link_libraries(mbed-core
     INTERFACE
-        ${CMAKE_CURRENT_SOURCE_DIR}/pre_compiled_driver
+        ${CMAKE_CURRENT_SOURCE_DIR}/libprecompiled.ar
+        ${CMAKE_CURRENT_SOURCE_DIR}/file_object.o
 )
 ```
