@@ -194,6 +194,14 @@ To perform an iterative build on a previously configured project:
 mbed-tools compile
 ```
 
+## Flashing the built program
+
+You can flash the built program to the connected target by adding the -f/--flash argument to the compile command:
+
+```
+mbed-tools compile -f
+```
+
 ## List an application's library dependencies
 
 To list all library dependencies with their URL and Git reference:
