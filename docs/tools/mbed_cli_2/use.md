@@ -202,14 +202,6 @@ You can flash the built program to the connected target by adding the -f/--flash
 mbed-tools compile -f
 ```
 
-## List an application's library dependencies
-
-To list all library dependencies with their URL and Git reference:
-
-```
-mbed-tools libs
-```
-
 ## Logging
 
 To specify the log level, use the verbose logging option (`-v`) before the first argument:
