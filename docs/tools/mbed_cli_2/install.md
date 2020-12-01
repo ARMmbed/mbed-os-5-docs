@@ -8,7 +8,7 @@ Mbed CLI 2 is a Python package called `mbed-tools`, so you can install it with p
 
 - Python 3.6 or newer. Install for [Windows](https://docs.python.org/3/using/windows.html), [Linux](https://docs.python.org/3/using/unix.html) or [macOS](https://docs.python.org/3/using/mac.html).
 - Pip (if not included in your Python installation). [Install for all operating systems](https://pip.pypa.io/en/stable/installing/).
-- CMake. [Install version 3.18.1 or newer for all operating systems](https://cmake.org/install/).
+- CMake. [Install version 3.19.0 or newer for all operating systems](https://cmake.org/install/).
 - Ninja. [Install version 1.0 or newer for all operating systems](https://github.com/ninja-build/ninja/wiki/Pre-built-Ninja-packages).
 - One of the support toolchains listed [in the build tools overview](../build-tools/index.html).
 

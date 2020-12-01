@@ -10,10 +10,10 @@ For help:
     mbed-tools --help
     ```
 
-- To get help for a specific command, use `mbed-tools <command> --help`. For example, for helping with listing connected devices (the `devices` command):
+- To get help for a specific command, use `mbed-tools <command> --help`. For example, for helping with listing connected devices (the `detect` command):
 
     ```
-    mbed-tools devices --help
+    mbed-tools detect --help
     ```
 
 ## Create a project
@@ -27,34 +27,34 @@ To create a new Mbed OS project in a specified path:
 - To create the project and download a new copy of Mbed OS (latest official release):
 
     ```
-    mbed-tools init <PATH>
+    mbed-tools new <PATH>
     ```
 
     The path can be:
 
-    - Absolute. `init` will create the folder if it doesn't exist.
+    - Absolute. `new` will create the folder if it doesn't exist.
     - Relative:
 
         - If you have already created a project folder, you can use `.`
 
-        - If you want the `init` command to create a project folder, use `.\<folder-name>`.
+        - If you want the `new` command to create a project folder, use `.\<folder-name>`.
 
 - To create a project without downloading a copy of Mbed OS (reuse an existing copy):
 
     ```
-    mbed-tools init -c <PATH>
+    mbed-tools new -c <PATH>
     ```
 
 ### Use an example application
 
-To create a local copy of an example application, use the `clone` command with the example name listed below:
+To create a local copy of an example application, use the `import` command with the example name listed below:
 
 ```
-mbed-tools clone <example> <PATH>
-````
+mbed-tools import <example> <PATH>
+```
 
 - [mbed-os-example-blinky](https://github.com/ARMmbed/mbed-os-example-blinky)
-- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble) - use the BLE LED example.
+- [mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble) - use the BLE Advertising example.
 - [mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular)
 - [mbed-os-example-devicekey](https://github.com/ARMmbed/mbed-os-example-devicekey)
 - [mbed-os-example-kvstore](https://github.com/ARMmbed/mbed-os-example-kvstore)
@@ -63,6 +63,22 @@ mbed-tools clone <example> <PATH>
 - [mbed-os-example-nfc](https://github.com/ARMmbed/mbed-os-example-nfc)
 - [mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
 
+### Use a specific Mbed program library
+
+A Mbed program can use library dependencies at the revision specified in the ".lib" files.
+This ensures all dependencies are resolved and the versions are synchronised to the version specified in the library reference.
+
+    ```
+    mbed-tools deploy <PATH>
+    ```
+
+    - `<path>`: Path to the Mbed project [default: CWD]
+
+- To force overwrite local uncommitted changes of the library dependencies.
+
+    ```
+    mbed-tools deploy -f
+    ```
 
 ## Configure the project
 
@@ -101,10 +117,10 @@ The Mbed OS configuration system parses the configuration files in your project 
 
 1. Check your board's build target name.
 
-    Connect your board over USB and run the `devices` command:
+    Connect your board over USB and run the `detect` command:
 
     ```
-    mbed-tools devices
+    mbed-tools detect
 
     Board name    Serial number             Serial port             Mount point(s)    Build target(s)
     ------------  ------------------------  ----------------------  ----------------  -----------------
@@ -158,7 +174,7 @@ Use CMake to build your application:
 You can use a single command to configure (set up your target and toolchain) and build the project at once:
 
 ```
-mbed-tools build -m <target> -t <toolchain>
+mbed-tools compile -m <target> -t <toolchain>
 ```
 
 - `-t`: The toolchain you are using to build your project.
@@ -167,7 +183,7 @@ mbed-tools build -m <target> -t <toolchain>
 Example for FRDM-K64F and GCC:
 
 ```
-mbed-tools build -m K64F -t GCC_ARM
+mbed-tools compile -m K64F -t GCC_ARM
 ```
 
 ## Iterative builds on configured projects
@@ -175,7 +191,7 @@ mbed-tools build -m K64F -t GCC_ARM
 To perform an iterative build on a previously configured project:
 
 ```
-mbed-tools build
+mbed-tools compile
 ```
 
 ## List an application's library dependencies
