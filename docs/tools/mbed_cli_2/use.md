@@ -202,6 +202,16 @@ You can flash the built program to the connected target by adding the -f/--flash
 mbed-tools compile -f
 ```
 
+## Opening a serial terminal
+
+You can open a serial terminal to the connected target by adding the `--sterm` argument to the compile command:
+
+```
+mbed-tools compile -m K64F -t GCC_ARM --sterm --baudrate 9600
+```
+
+When the terminal is running you can enter CTRL+H to show the help menu.
+
 ## Logging
 
 To specify the log level, use the verbose logging option (`-v`) before the first argument:
