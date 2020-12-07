@@ -14,16 +14,22 @@ To use the ATCmdParser, the entity creating the ATCmdParser object passes a refe
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_a_t_cmd_parser.html)
 
-## ATCmdParser examples
+## ATCmdParser Example
 
-### Example 1
+The following is a program that uses the `ATCmdParser` class to communicate with a ESP8266 Wi-Fi module. ESP8266 is a Wi-Fi module that can be connected to an SoC over UART for Wi-Fi support.
+This program retrieves the FW version of the module using AT commands. 
+
+The output of the application can be viewed in a serial terminal with the
+following settings:
+* **Baud rate:** 9600
+* **Data bits:** 8
+* **Stop bits:** 1
+* **Parity:** None
 
 [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/at_cmd_example/APIs_Platform/AT_CmdParser)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/at_cmd_example/APIs_Platform/AT_CmdParser/main.cpp)
 
-### Example 2
-
-You can find another real world example in the Wi-Fi driver implementation for an [ESP8266 device](https://github.com/ARMmbed/mbed-os/blob/master/components/wifi/esp8266-driver). ESP8266 is a Wi-Fi module that you can connect to an SoC over UART for Wi-Fi support.
+The diagram below shows how the [ESP8266 Wi-Fi driver](https://github.com/ARMmbed/mbed-os/tree/master/connectivity/drivers/wifi/esp8266-driver) uses the `ATCmdParser` class to communicate with an ESP8266 device.
 
 <span class="images">![](../../images/atcmdparser_esp8266.png)</span>
 
-The above diagram shows how the ESP8266 Wi-Fi driver uses ATCmdParser to communicate with an ESP8266 device.
+
