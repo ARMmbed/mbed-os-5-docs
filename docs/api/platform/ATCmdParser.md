@@ -26,7 +26,7 @@ following settings:
 * **Stop bits:** 1
 * **Parity:** None
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/at_cmd_example/APIs_Platform/AT_CmdParser)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/at_cmd_example/APIs_Platform/AT_CmdParser/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-examples-docs_only/master/APIs_Platform/AT_CmdParser)](https://github.com/ARMmbed/mbed-os-examples-docs_only/blob/master/APIs_Platform/AT_CmdParser/main.cpp)
 
 The diagram below shows how the [ESP8266 Wi-Fi driver](https://github.com/ARMmbed/mbed-os/tree/master/connectivity/drivers/wifi/esp8266-driver) uses the `ATCmdParser` class to communicate with an ESP8266 device.
 
