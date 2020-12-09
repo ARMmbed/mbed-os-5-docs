@@ -61,9 +61,12 @@ Here is what you will need to complete the guide:
     nano debug_log.cc
     
     extern "C" void DebugLog(const char* s) {
-    UnbufferedSerial pc(USBTX, USBRX,9600);
-    FILE *out = fdopen(&pc,"w");
-    fprintf(out, s);
+        static UnbufferedSerial pc(USBTX, USBRX,9600);
+        static FILE *out = nullptr;
+        if(out == nullptr) {
+            out = fdopen(&pc, "w");
+        }
+        fprintf(out, s);
      }
     ```
 1. Build the project
