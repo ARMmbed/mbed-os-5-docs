@@ -12,9 +12,9 @@ It is also possible to instantiate single objects of the classes detailed below 
 
 Classes implementing KVStore API:
 
-- Tiny Database Storage (TDBStore): A lightweight module that stores data on a flash storage. It is part of the KVStore class family, so it supports the get/set interface. It is designed to optimize performance (speed of access), reduce wearing of the flash and minimize storage overhead. It is also resilient to power failures.
+- Tiny Database Storage (TDBStore): A lightweight module that stores data on a block device. It is part of the KVStore class family, so it supports the get/set interface. It is designed to optimize performance (speed of access), reduce wearing of the storage and minimize storage overhead. It is also resilient to power failures.
 
-   - Requirements and assumptions: TDBStore assumes that the underlying block device is fully dedicated for it (starting offset 0). If you want to dedicate only a part of the device to TDBStore, then use a sliced block device, typically with `SlicingBlockDevice`. This feature requires a flash based block device, such as `FlashIAPBlockDevice` or `SpifBlockDevice`. It can work on top of block devices that don't need erasing before writes, such as `HeapBlockDevice` or `SDBlockDevice`, but requires a flash simulator layer for this purpose, like the one offered by `FlashSimBlockDevice`.
+   - Requirements and assumptions: TDBStore assumes that the underlying block device is fully dedicated for it (starting offset 0). If you want to dedicate only a part of the device to TDBStore, then use a sliced block device, typically with `SlicingBlockDevice`.
 
 - FileSystemStore: A lightweight implementation of the KVStore interface over file systems.
 
