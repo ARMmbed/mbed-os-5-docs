@@ -48,7 +48,7 @@ Hardware low power ticker capabilities.
 
 You can find the API and specification for the low power ticker API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__lp__ticker.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/group__hal__lp__ticker.html)
 
 To enable low power ticker support in Mbed OS, add the `LPTICKER` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -62,8 +62,8 @@ mbed test -t <toolchain> -m <target> -n tests-mbed_hal-common_ticker*,tests-mbed
 
 You can read more about the test cases:
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__lp__ticker.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/group__hal__lp__ticker.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/group__hal__ticker__tests.html)
 
- [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__lp__ticker__tests.html)
+ [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/group__hal__lp__ticker__tests.html)

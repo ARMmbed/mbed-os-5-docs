@@ -1,6 +1,6 @@
 # CAN
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_c_a_n.png)<span>CAN class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/classmbed_1_1_c_a_n.png)<span>CAN class hierarchy</span></span>
 
 Controller-Area Network (CAN) is a bus standard that allows microcontrollers and devices to communicate with each other without going through a host computer.
 
@@ -8,7 +8,7 @@ Controller-Area Network (CAN) is a bus standard that allows microcontrollers and
 
 ## CAN class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_c_a_n.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/classmbed_1_1_c_a_n.html)
 
 ## CAN hello, world
 

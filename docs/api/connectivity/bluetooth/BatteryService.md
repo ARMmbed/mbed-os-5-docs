@@ -8,7 +8,7 @@ The BatteryService class implements the Bluetooth Battery Service as defined by 
 
 ## BatteryService class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_battery_service.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.6/mbed-os-api-doxy/class_battery_service.html)
 
 ## Related content
 
