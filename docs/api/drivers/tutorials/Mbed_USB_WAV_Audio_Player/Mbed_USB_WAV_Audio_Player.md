@@ -81,7 +81,7 @@ If USB properties of the Mbed USB WAV Audio Player are altered, such as the samp
 
 ## main.cpp
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_wav_audio_player/blob/v6.6/main.cpp)
 
 ## Example WAV file  
 

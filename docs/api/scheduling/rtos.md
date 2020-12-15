@@ -44,7 +44,7 @@ A `Thread` can be in the following states:
 
 Each `Thread` can wait for signals and be notified of events:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flags/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Flags/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flags/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Flags/blob/v6.6/main.cpp)
 
 ## Status and error codes
 

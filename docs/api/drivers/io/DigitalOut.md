@@ -8,4 +8,4 @@ Use the DigitalOut interface to configure and control a digital output pin by se
 
 ## DigitalOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/blob/v6.6/main.cpp)

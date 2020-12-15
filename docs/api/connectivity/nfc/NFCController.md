@@ -12,7 +12,7 @@ To use an NFC controller, you must initiate the instance with a driver instance,
 
 ## NFCController example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-NFCController/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-NFCController/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-NFCController/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-NFCController/blob/v6.6/main.cpp)
 
 A delegate mechanism handles events throughout the API.
 

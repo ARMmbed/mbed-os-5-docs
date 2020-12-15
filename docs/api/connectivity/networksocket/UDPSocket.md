@@ -18,7 +18,7 @@ If you prefer to use `send()` and `recv()` functions and work only with one peer
 
 This UDP example reads the current UTC time by sending a request to the NIST Internet Time Service:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/blob/v6.6/main.cpp)
 
 ## Related content
 

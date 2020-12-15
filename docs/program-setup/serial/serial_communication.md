@@ -14,7 +14,7 @@ This allows you to:
 
 This program prints a "Hello World!" message that you can view on a serial terminal. Mbed OS redirects any `printf()` statements to the board's debug USB serial.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Serial_STDOUT/blob/v6.6/main.cpp)
 
 ## Viewing output in a serial terminal
 
@@ -70,7 +70,7 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 ### Echo back characters you type
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Serial_EchoBack/blob/v6.6/main.cpp)
 
 ### Use the U and D keys to make LED1 brighter or dimmer
 
@@ -78,14 +78,14 @@ If you're not sure how to build these examples and run them on your board, pleas
 
 <span class="images">![](../../images/NUCLEOF401RE.png)<span>The pin map of the NUCLEO-F401RE shows LED1 on the Pwm pin.</span></span>
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Serial_LEDControl/blob/v6.6/main.cpp)
 
 ### Pass characters in both directions
 
 Tie pins together to see characters echoed back.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Serial_PassCharacters/blob/v6.6/main.cpp)
 
 ### Read to a buffer
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Serial_ReadToBuffer/blob/v6.6/main.cpp)

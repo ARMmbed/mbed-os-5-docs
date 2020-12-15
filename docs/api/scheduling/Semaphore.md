@@ -14,4 +14,4 @@ A semaphore manages thread access to a pool of shared resources of a certain typ
 
 Use Semaphore to protect printf().
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Semaphore/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Semaphore/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Semaphore/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Semaphore/blob/v6.6/main.cpp)

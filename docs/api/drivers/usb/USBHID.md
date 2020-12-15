@@ -12,13 +12,13 @@ You can use the USBHID class to turn an Mbed board into an HID (Human Interface 
 
 ### main.cpp   
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBHID/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-USBHID/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBHID/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-USBHID/blob/v6.6/main.cpp)
 
 ### USBHID.py   
 
 To use this script, first flash the Mbed board with the code above. Connect the target's USB to the host computer. Then run this script. The script will send 8 bytes of data (1 2 3 4 5 6 7 8) to the Mbed board and will read and print the data sent to the host computer by the Mbed board.   
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBHID/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-USBHID/blob/v6.5/USBHID.py)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBHID/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-USBHID/blob/v6.6/USBHID.py)
 
 ## Related content
 

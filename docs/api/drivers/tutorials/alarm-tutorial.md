@@ -17,7 +17,7 @@ cd mbed-os-example-alarm
 
 If using the Online Compiler, click the **Import into Mbed IDE** button below:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Alarm/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Alarm/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Alarm/tree/v6.6)](https://github.com/ARMmbed/mbed-os-snippet-Alarm/blob/v6.6/main.cpp)
 
 ## Compile and flash to your board
 
