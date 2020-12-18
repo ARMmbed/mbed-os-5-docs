@@ -1,8 +1,8 @@
 # RTC
 
-The RTC (Real-Time Clock) provides mechanisms to set the current time of the hardware RTC with `set_time` API. The time is set as an offset measured in seconds from the time epoch (Unix Epoch - January 1, 1970).
+The RTC (Real-Time Clock) provides mechanisms to set the current time of the hardware RTC with `set_time` API. The time is set as an offset measured in seconds from the time epoch (Unix Epoch - January 1, 1970). [Time](../apis/time.html) provides more information about C `date` and `time` standard library functions.
 
-You can use the `attach_rtc` API to hook external RTC for using C time functions. It provides you with `init()`, `read()`, `write()` and `isenabled()` functions to be attached. [Time](../apis/time.html) provides more information about C `date` and `time` standard library functions.
+<span class="notes">**Note:** If your MCU does not have an RTC nor an LPTICKER, you need to provide hooks to the external RTC you are using to the `attach_rtc` API. See the [platform RTC API](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__rtc__time.html) for more details about that function.</span>
 
 RTC class APIs are thread safe.
 
