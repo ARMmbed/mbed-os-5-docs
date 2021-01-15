@@ -19,7 +19,6 @@ The current maintainers are:
 
 - [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
 - [Martin Kojtal](https://os.mbed.com/users/Kojto).
-- [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 ## Contributions
 
