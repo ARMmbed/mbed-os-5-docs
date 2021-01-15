@@ -292,7 +292,7 @@ The [documentation repository](https://github.com/ARMmbed/mbed-os-5-docs) uses s
 
 ## Deprecated repositories
 
-If repository contains the following note in Readme.md, it was archived (read-only). This means the repository is no longer maintained.
+If repository contains the following note in Readme.md, it was archived (read-only). The repository is no longer maintained.
 
 ```
 ## Deprecation note!
