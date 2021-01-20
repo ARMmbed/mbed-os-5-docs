@@ -6,7 +6,8 @@ The EventQueue class provides a flexible queue for scheduling events. You can us
 
 The EventQueue class is thread and ISR safe.
 
-You can use the `dispatch` and `dispatch_forever` APIs to execute pending events. `break_dispatch` is to terminate the execution of events in the specified EventQueue.
+You can use the `dispatch`, `dispatch_once`  and `dispatch_forever` APIs to execute pending events. 
+`break_dispatch` is to terminate the execution of events in the specified EventQueue.
 
 ## Shared event queues
 
