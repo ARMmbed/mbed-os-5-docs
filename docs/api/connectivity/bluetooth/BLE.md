@@ -52,6 +52,38 @@ The class's member functions can be divided by purpose:
 1. Construct a service class and add it to the BLE stack.
 1. Push notifications when the characteristic's value changes.
 
+## Tracing
+
+To debug issues (or to understand what the stack is doing) it may be helpful to enable tracing.
+
+Traces can be turned on by overriding configuration options in you mbed_app.json:
+
+```
+    "target_overrides": {
+        "*": {
+            "mbed-trace.enable": true,
+            "mbed-trace.max-level": "TRACE_LEVEL_DEBUG",
+            "cordio.trace-hci-packets": true,
+            "cordio.trace-cordio-wsf-traces": true,
+            "ble.trace-human-readable-enums": true
+        }
+    }
+```
+
+and compiling your application with `--profile debug`. Please note that with all options enabled your application may become too big - disable some options or lower the `mbed-trace.max-level`. Detailed documentation is available in the tracing [README.md](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed-trace/README.md).
+
+All BLE modules contain tracing, each of the modules prefixed with a unique tag:
+- `BLE ` - general BLE traces  
+- `BLGA` - GAP
+- `BLGS` - GATT Server
+- `BLGC` - GATT Client
+- `BLSM` - Security Manager
+- `BLDB` - Security Database
+- `BLHC` - HCI
+- `BLCO` - Cordio stack
+
+Any contributions to BLE should include appropriate tracing code.
+
 ## BLE class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_b_l_e.html)
