@@ -18,7 +18,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This BufferedBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html), whose read size is 256 bytes and program size is 512 bytes, and shows how one can read or program this block device with much smaller read/program sizes, using BufferedBlockDevice.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BufferedBlockDevice/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-BufferedBlockDevice/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BufferedBlockDevice/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-BufferedBlockDevice/blob/v6.7/main.cpp)
 
 ## Related content
 

@@ -18,5 +18,5 @@ If you fail to refresh the watchdog periodically, it resets the system after a s
 
 This example creates a watchdog timer that expires after five seconds and that you can refresh by pushing BUTTON1 on the target board:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/blob/v6.7/main.cpp)
 

@@ -111,7 +111,7 @@ After the call the processor and most components will reset, but it will not aff
 
 ## Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.7/main.cpp)
 
 ## Related content
 

@@ -17,7 +17,7 @@ Use the LowPowerTimeout interface to set up an interrupt to call a function afte
 
 Set up a time out to invert an LED after a given time:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-lowpowerTimeout_ex_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-lowpowerTimeout_ex_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-lowpowerTimeout_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-lowpowerTimeout_ex_1/blob/v6.7/main.cpp)
 
 ## Related content
 

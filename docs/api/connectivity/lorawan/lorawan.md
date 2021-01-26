@@ -12,7 +12,7 @@ To configure this class, please see the [LoRa configuration documentation](../ap
 
 Please visit our Arm Mbed Online Compiler example, and follow the instructions in the `README.md`.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-6.5.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-lorawan)](https://github.com/ARMmbed/mbed-os-example-lorawan/blob/mbed-os-6.7.0/main.cpp)
 
 ## Related content
 
