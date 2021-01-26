@@ -1,6 +1,6 @@
 <h1 id="cellular-api">Cellular</h1>
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_cellular_interface.png)<span>CellularInterface class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/class_cellular_interface.png)<span>CellularInterface class hierarchy</span></span>
 
 
 <span class="notes">**Note:** Some functions, variables or types have been deprecated. Please see the class reference linked below for details.</span>
@@ -51,7 +51,7 @@ You can use and extend a cellular interface in various different ways. For examp
 
 ## CellularInterface class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_cellular_interface.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/class_cellular_interface.html)
 
 ## Usage
 

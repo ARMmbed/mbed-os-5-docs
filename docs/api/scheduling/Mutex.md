@@ -1,6 +1,6 @@
 # Mutex
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
 
 A Mutex is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
@@ -25,7 +25,7 @@ If synchronization is required in ISR, consider using semaphores.
 
 ## Mutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 
 ## Mutex example
 

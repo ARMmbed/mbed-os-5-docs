@@ -4,7 +4,7 @@ The Kernel namespace implements interfaces to attach a function to some kernel e
 
 ## Kernel namespace reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/namespacertos_1_1_kernel.html)
 
 ## Kernel::Clock example
 

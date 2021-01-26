@@ -1,6 +1,6 @@
 # BusIn
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_bus_in.png)<span>BusIn class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/classmbed_1_1_bus_in.png)<span>BusIn class hierarchy</span></span>
 
 With the BusIn API, you can combine a number of DigitalIn pins to read them at once. This abstraction is useful for checking multiple inputs together as single interface instead of individual pins.
 
@@ -12,7 +12,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalIn in the BusIn.
 
 ## BusIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_bus_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/classmbed_1_1_bus_in.html)
 
 ## BusIn hello, world
 
