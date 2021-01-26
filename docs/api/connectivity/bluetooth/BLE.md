@@ -74,13 +74,15 @@ and compiling your application with `--profile debug`. Please note that with all
 
 All BLE modules contain tracing, each of the modules prefixed with a unique tag:
 - `BLE ` - general BLE traces  
-- `BLGA` - GAP
+- `BLGP` - GAP
 - `BLGS` - GATT Server
 - `BLGC` - GATT Client
 - `BLSM` - Security Manager
 - `BLDB` - Security Database
 - `BLHC` - HCI
 - `BLCO` - Cordio stack
+- `BLDM` - GAP pal
+- `BLAT` - ATT client
 
 Any contributions to BLE should include appropriate tracing code.
 
