@@ -217,7 +217,7 @@ Each state is time-boxed. In most cases, sufficient time is provided to move to 
 </center>
 
 
-If the pull request is idle in a state for longer than the allowed time, our bot will add the 'stale' label alongside a comment nudging the user to carry out any necessary work. This label will only be removed when the action required to move the pull request forward is completed. 
+If the pull request is idle in a state for longer than the allowed time, our bot will add the 'stale' label alongside a comment nudging the user or reviewer to carry out any necessary work. This label will only be removed when the action required to move the pull request forward is completed. 
 
 Pull requests are closed if they are idle for more than two weeks. The author or the maintainer can reopen it at any time.
 
