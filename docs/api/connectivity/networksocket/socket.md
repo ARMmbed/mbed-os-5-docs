@@ -30,12 +30,13 @@ Not all protocols implement every function from the Socket API. For example, UDP
 
 ## Socket example
 
-Here is a client example of HTTP transaction over TCPSocket:
+Here is a client example of HTTP transaction over TCPSocket or TLSSocket:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-tls-socket/blob/mbed-os-6.7.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-6.7.0/source/main.cpp)
 
 ## Related content
 
 - [TCPSocket](tcpsocket.html) API reference.
-- [UDPSocket](tcpsocket.html) API reference.
+- [UDPSocket](udpsocket.html) API reference.
+- [TLSSocket](../secure-socket/tlssocket.html) API reference.
 - [Socket](../apis/connectivity-architecture.html#socket-api) architecture.
