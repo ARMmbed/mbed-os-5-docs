@@ -68,13 +68,9 @@ A few micro:bit How To videos:
 
 [Use the generic Mbed border router and create a 6LoWPAN-ND or Thread network](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-mesh-minimal/). Your 6LoWPAN or Thread devices can access to internet using this gateway.
 
-### Sockets
+### Sockets and Wi-Fi
 
 [Perform a transaction over TCP using the network-socket API](https://github.com/ARMmbed/mbed-os-example-sockets).
-
-### Wi-Fi
-
-[Perform simple HTTP operations using the Wi-Fi interface](https://github.com/ARMmbed/mbed-os-example-wifi).
 
 ### Bluetooth Low Energy (BLE)
 

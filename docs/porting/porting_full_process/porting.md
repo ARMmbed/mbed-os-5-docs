@@ -275,7 +275,6 @@ If the hardware supports TRNG, you must port it before running Device Management
 You can now try running the example applications for your connectivity methods. For example:
 
 - [https://github.com/ARMmbed/mbed-os-example-ble](https://github.com/ARMmbed/mbed-os-example-ble).
-- [https://github.com/ARMmbed/mbed-os-example-wifi](https://github.com/ARMmbed/mbed-os-example-wifi).
 - [https://github.com/ARMmbed/mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
 - [https://github.com/ARMmbed/mbed-os-example-cellular](https://github.com/ARMmbed/mbed-os-example-cellular).
 - [https://github.com/ARMmbed/mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets).
