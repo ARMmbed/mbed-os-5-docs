@@ -22,7 +22,7 @@ You can configure the mesh interface by providing values in `mbed_app.json`, as 
 
 The following code snippet illustrates how you can use the MeshInterface API:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Mesh_Ex1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Mesh_Ex1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Mesh_Ex1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Mesh_Ex1/blob/v6.7/main.cpp)
 
 
 ## Related content

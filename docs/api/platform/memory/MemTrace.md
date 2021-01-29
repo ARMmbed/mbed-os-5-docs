@@ -24,7 +24,7 @@ For a step-by-step guide about how to use optimize memory using runtime memory t
 
 ## Memory tracing example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/blob/v6.7/main.cpp)
 
 ## Related content
 

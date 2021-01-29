@@ -105,7 +105,7 @@ Netmask: 255.255.255.0
 Gateway: 172.20.51.254
 sent 58 [GET / HTTP/1.1]
 recv 181 [HTTP/1.1 200 OK]
-External IP address: 217.140.106.54
+External IP address: 217.140.106.74
 Done
 ```
 

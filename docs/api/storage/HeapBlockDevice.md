@@ -30,11 +30,11 @@ You can view more information about the configurable settings and functions in t
 
 Create a HeapBlockDevice, program it, read the block back and clean up.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/blob/v6.7/main.cpp)
 
 The HeapBlockDevice used with MBRBlockDevice showcases partitioning.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/blob/v6.7/main.cpp)
 
 ## Related content
 

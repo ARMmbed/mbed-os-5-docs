@@ -16,7 +16,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## SPIFBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-SPIFBlockDevice/blob/v6.7/main.cpp)
 
 ## Related content
 

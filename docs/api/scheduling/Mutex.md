@@ -31,7 +31,7 @@ If synchronization is required in ISR, consider using semaphores.
 
 Use Mutex to protect printf().
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Mutex/tree/v6.5)](https://github.com/ARMmbed/mbed-os-snippet-Mutex/blob/v6.5/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Mutex/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Mutex/blob/v6.7/main.cpp)
 
 <span class="notes">**Note:** C standard library Mutexes<br>The Arm C standard library already has Mutexes in place to protect the access to `stdio`, so on the LPC1768 the above example is not necessary. On the other hand, the LPC11U24 does not provide default `stdio` Mutexes, making the above example a necessity.</br></span>
 
