@@ -76,12 +76,15 @@ Follow these steps to create a custom port for Mbed OS:
    1. The `detect_code` changes from `0764` to `1234`. The `detect_code` is a
       unique four-digit hexadecimal value, also called a `Platform ID`, that
       identifies the board to the Mbed OS test tools. For Mbed Enabled boards,
-      this number is exposed through the debug interface with Mbed CLI by
-      typing `mbedls`.
-   1. The `macros_add` section changes to remove `USBHOST_OTHER` because the
-      new board does not use USB.
-   1. The `device_has_add` section changes to remove the `ANALOGOUT`, `CAN`,
-      and `USBDEVICE` drivers because the new board doesn't use those features.
+      this number is exposed through the debug interface with Mbed CLI 2 by
+      typing `mbed-tools detect`.
+   1. The `device_has_add` section changes to remove `USBDEVICE` because the
+      new board doesn't use that feature.
+   1. Add a `device_has_remove` section to remove `ANALOGOUT`, `ANALOGIN`,
+      `CAN`, `I2CSLAVE`, and `I2C_ASYNC` because the new board doesn't use
+      those features. The reason why `device_has_remove` is used in this case
+      is because the new board is inheriting from the MCU Family configuration
+      `MCU_STM32L475xG`, which has those device features by default.
 
    After making changes, the full contents look like this:
 
@@ -186,6 +189,30 @@ target.
      and their association with peripherals.
    - `PinNames.h` sets macros for pins that define their function.
 
+1. Create a new CMakeLists.txt file within your new `TARGET_IMAGINARYBOARD`
+   directory. This will describe your target and how to build for it. This
+   CMakeLists.txt file should have at a minimum a new library target, as well
+   as a list of which files or include directories your target needs. The
+   ['target_link_libraries()'](https://cmake.org/cmake/help/latest/command/target_link_libraries.html)
+   directive should specify which MCU CMake target your custom board depends
+   on, so you'll enter here the MCU CMake target name you noted previously.
+
+   ```
+   add_library(mbed-imaginaryboard INTERFACE)
+
+   target_sources(mbed-imaginaryboard
+       INTERFACE
+           PeripheralPins.c
+   )
+
+   target_include_directories(mbed-imaginaryboard
+       INTERFACE
+           .
+   )
+
+   target_link_libraries(mbed-imaginaryboard INTERFACE mbed-stm32l475xg)
+   ```
+
 ### Customizing
 
 1. Modify the files.
@@ -236,9 +263,20 @@ target.
    This blinks an LED. If `LED1` is not defined, inspect `PinNames.h` for a
    valid pin definition for an available LED.
 
+   Edit your application's CMakeLists.txt file to let CMake know about the
+   directory where your new board is described. Add the subdirectory where your
+   new custom board is described in your application's CMakeLists.txt file,
+   above where Mbed OS is added.
+
+   ```
+   add_subdirectory(TARGET_IMAGINARYBOARD) # This is the new line to add
+   add_subdirectory(${MBED_PATH})          # This line already exists
+   ```
+
    Your directory now looks something like this:
 
    ```
+   CMakeLists.txt
    custom_targets.json
    main.cpp
    mbed_app.json
