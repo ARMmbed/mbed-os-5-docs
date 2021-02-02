@@ -261,6 +261,7 @@ We may add additional suffixes, which could represent a release candidate, alpha
 We use many other labels to summarize the scope and effect of the changes:
 
 - *needs: preceding PR* - Cannot yet be merged because it has a dependency on another pull request that needs to merge first.
+- *needs: architectural review* - A major pull request or feature update that changes the architecture, and requires review from internal teams.
 - *do not merge* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
