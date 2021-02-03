@@ -4,7 +4,7 @@ All code changes and additions to Mbed OS are handled through GitHub. If you wan
 
 ## Mbed OS maintainers
 
-The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code.
+The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code. They carry out pull request reviews at least twice a week.
 
 Responsibilities:
 
@@ -97,14 +97,6 @@ The following template is automatically provided when you raise a pull request a
 
     ----------------------------------------------------------------------------------------------------------------
     ## Release Notes (*required for feature/major PRs*)
-
-
-    #### Summary of changes
-
-    #### Impact of changes
-
-    #### Migration actions required
-
 
 ### Description field
 
