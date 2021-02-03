@@ -19,7 +19,6 @@ The current maintainers are:
 
 - [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
 - [Martin Kojtal](https://os.mbed.com/users/Kojto).
-- [Kevin Bracey](https://os.mbed.com/users/kjbracey).
 
 ## Contributions
 
@@ -290,3 +289,21 @@ The [documentation repository](https://github.com/ARMmbed/mbed-os-5-docs) uses s
 - *wait to merge* - This pull request is a work in progress and is not yet ready for full review. 
 - *Scripting work - not for writers* - This issue requires a change too large or frequent for us to do manually. Instead, a script needs to be created to fix this issue.
 - *help wanted* - The documentation team does not know how to answer this question and welcomes help in answering it.
+
+## Deprecated repositories
+
+If repository contains the following note in Readme.md, it was archived (read-only). The repository is no longer maintained.
+
+```
+## Deprecation note!
+
+**Please note: This repository is deprecated and it is no longer actively maintained**.
+```
+
+To deprecate a repository, please do:
+
+1. Add deprecation note to Readme.md in the repository. 
+1. Add "DEPRECATED:" to "About" section (it is useful in Github search).
+1. Set repository to read only (Github archive option).
+1. Update references in our CI or documentation (deprecation notice or updated references to available replacement).
+
