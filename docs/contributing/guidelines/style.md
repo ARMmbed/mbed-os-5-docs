@@ -163,6 +163,14 @@ Below is an example of typical namespace use in a source file:
 
 All functions and methods should contain documentation using Doxygen.
 
+### Tracing
+
+Mbed OS offers a tracing facility through `mbed-trace/mbed_trace.h`. It offers several levels of tracing and toggling groups.
+
+For details please refer to the documentation in the [README.md](https://github.com/ARMmbed/mbed-os/blob/master/platform/mbed-trace/README.md) file in the Mbed OS repository.
+
+Please consider adding traces to your code. Make sure the group you use is unique. If the module you're working on already has traces, adding traces with your changes is required. 
+
 ## Compiler settings
 
 All C and C++ code submitted to Mbed OS must compile with GCC Arm Embedded and Arm Compiler 6. Mbed OS:
