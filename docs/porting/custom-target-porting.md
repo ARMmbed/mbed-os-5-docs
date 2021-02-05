@@ -32,7 +32,7 @@ Follow these steps to create a custom port for Mbed OS:
 
 ### Preparing
 
-1. [Install Mbed CLI](../build-tools/install-and-set-up.html) if you don't
+1. [Install Mbed CLI 2](../build-tools/mbed-cli-2.html) if you don't
    already have it.
 
 1. (Optional) Create a new Mbed program (for example,
@@ -42,7 +42,7 @@ Follow these steps to create a custom port for Mbed OS:
    CLI command in a command terminal:
 
    ```
-   mbed new --program mbed-os-imaginary-port
+   mbed-tools new mbed-os-imaginary-port
    ```
 
    This command creates a new program folder called `mbed-os-imaginary-port`
@@ -290,7 +290,7 @@ target.
 1. Compile the application:
 
    ```
-   mbed compile -m IMAGINARYBOARD -t <toolchain>
+   mbed-tools compile -m IMAGINARYBOARD -t <toolchain>
    ```
 
    When successful, it compiles, links and generates a `.bin` file (or `.hex`
@@ -299,7 +299,7 @@ target.
    For example, it prints to the screen:
 
    ```
-   Image: .\BUILD\IMAGINARYBOARD\GCC_ARM\mbed-os-imaginary-port.bin
+   -- built: /path/to/mbed-os-imaginary-port/cmake_build/IMAGINARYBOARD/develop/GCC_ARM/mbed-os-imaginary-port.bin
    ```
 
 1. Program the board.
@@ -324,6 +324,11 @@ target.
    Press the reset button on the board. You should see the LED blinking.
 
 1. (Optional) Run automated tests.
+
+   <span class="notes">**Note:** Running automated tests on your board
+   currently is easiest with Mbed CLI 1, at least until [the `test` subcommand
+   is added to Mbed CLI 2](https://github.com/ARMmbed/mbed-tools/issues/151).
+   The following instructions are for testing using Mbed CLI 1.</span>
 
    With an Mbed Enabled debug interface, you can also run the Mbed OS automated
    tests on your port. Because a new board has a new name unknown to the Mbed
