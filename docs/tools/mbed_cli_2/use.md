@@ -186,11 +186,19 @@ Example for FRDM-K64F and GCC:
 mbed-tools compile -m K64F -t GCC_ARM
 ```
 
+### Building for multiple targets
+
+You can build an Mbed project for multiple targets, with different profiles and toolchains, without affecting other builds. The `compile` subcommand will create and build into a different subdirectory for each combination:
+
+```
+cmake_build/<target>/<profile>/<toolchain>/
+```
+
 ## Iterative builds on configured projects
 
 If you have already made a build for the Mbed target and toolchain that you're using, `compile` will perform an iterative build.
 
-To force a rebuild of the project, include the --clean argument:
+To force a rebuild of the project for a target and toolchain, include the --clean argument:
 
 ```
 mbed-tools compile -m <target> -t <toolchain> --clean
