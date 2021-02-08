@@ -188,10 +188,12 @@ mbed-tools compile -m K64F -t GCC_ARM
 
 ## Iterative builds on configured projects
 
-To perform an iterative build on a previously configured project:
+If you have already made a build for the Mbed target and toolchain that you're using, `compile` will perform an iterative build.
+
+To force a rebuild of the project, include the --clean argument:
 
 ```
-mbed-tools compile
+mbed-tools compile -m <target> -t <toolchain> --clean
 ```
 
 ## Flashing the built program
@@ -199,7 +201,7 @@ mbed-tools compile
 You can flash the built program to the connected target by adding the -f/--flash argument to the compile command:
 
 ```
-mbed-tools compile -f
+mbed-tools compile -m <target> -t <toolchain> -f
 ```
 
 ## Opening a serial terminal
