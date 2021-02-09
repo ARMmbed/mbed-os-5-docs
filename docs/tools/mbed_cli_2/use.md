@@ -139,7 +139,7 @@ The Mbed OS configuration system parses the configuration files in your project 
 
     ```
     mbed-tools configure -m K64F -t GCC_ARM
-    mbed_config.cmake has been generated and written to '/Users/UserName/Development/Blinky/.mbedbuild'
+    mbed_config.cmake has been generated and written to '/Users/UserName/Development/Blinky/cmake_build/K64F/develop/GCC_ARM/mbed_config.cmake'
     ```
 
 ## Build the project
