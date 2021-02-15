@@ -16,7 +16,7 @@ Before reading this document, please read [porting a custom board](../porting/po
 To help create PSA targets, we have added a few generic targets to `targets/targets.json`:
 
 * `PSA_Target`: Root level PSA target.
-* `PSA_V7_M`: Single v7-M generic PSA target, which doesn't employ hardware isolation between the NSPE and the SPE. PSA secure service emulation enables PSA API compatibility.
+* `PSA_V7_M`: Single v7-M generic PSA target, which doesn't employ hardware isolation between the NSPE and the SPE, so TF-M is not supported. PSA secure service emulation enables PSA API compatibility.
 * `PSA_DUAL_CORE`: Dual-core generic PSA target. A dual-core PSA target has at least two cores that are either Armv7-M or Armv6-M. One core will be used for the SPE and another for the NSPE. Hardware isolation between the cores enables PSA compliance. On dual-core targets, TF-M
 runs on the SPE and provides PSA services, and Mbed OS runs on the NSPE.
 * `PSA_V8_M`: Armv8-M generic PSA target, which employs hardware to isolate the NSPE from the SPE. TF-M runs on the SPE and provides PSA services, and Mbed OS runs on the NSPE.
@@ -39,10 +39,10 @@ Example of a single-core Armv7-M PSA target's inheritance:
     }
 ```
 
-### Adding single-core PSA targets
+### Adding single-core (non-TF-M) PSA targets
 
 Mbed OS's PSA service emulation provides PSA compatibility for single-core PSA
-targets.
+targets which do not support TF-M.
 
 The following example shows a PSA-enabled single-core target, `K64F`:
 
@@ -163,16 +163,20 @@ In this case, you must add the following additional attributes:
         ]
 ```
 
-### Adding dual-core PSA targets
+### Adding TF-M (dual-core or Armv8-M) PSA targets
 
-A target can be categorized as a dual-core target if it has at least two cores that are either Armv7-M or Armv6-M. On dual-core PSA targets, TF-M runs on the SPE and provides PSA services.
+An Mbed OS (NSPE) target that supports TF-M must contain the following attributes (in addition to other target attributes defined in [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-the-hal-apis.html)):
 
-An Mbed OS (NSPE) target must contain the following attributes (in addition to other target attributes defined in [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-the-hal-apis.html)):
-
-* `inherits`: PSA generic target `PSA_DUAL_CORE`, unless the target has to inherit
+* `inherits`: PSA generic target `PSA_DUAL_CORE` or `PSA_V8_M`, unless the target has to inherit
   from one of its family targets.
+* `extra_labels`: `TARGET_`[label] paths to enable.
+  * `TFM_LATEST`: If the current version of TF-M (that Mbed OS is integrated with) is supported by the target. The current version is indicated in [mbed-os-tf-m-regression-tests](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests).
+  * `TFM_V`[major]`_`[minor]: If a legacy release of TF-M is supported by the target.
+* `macros_add`: C/C++ macros that are globally set during compilation.
+  * `BL2`: If the TF-M bootloader is supported by the target.
+  * `MCUBOOT_IMAGE_NUMBER=2`: If the secure and non-secure images are in two separate bootloader slots.
 * `tfm_target_name`: Target name in TF-M.
-* `tfm_bootloader_supported`: If TF-M bootloader is supported by the target.
+* `tfm_bootloader_supported`: If the TF-M bootloader is supported by the target.
 
     The supported values are `true` and `false`.
 * `tfm_supported_toolchains`: Supported TF-M toolchains.
@@ -183,108 +187,11 @@ An Mbed OS (NSPE) target must contain the following attributes (in addition to o
     The supported values are `ARMCLANG` and `GNUARM`.
 * `tfm_delivery_dir`: The directory to which TF-M binaries will be copied.
 * `TFM_OUTPUT_EXT`: Optional attribute that indicates the output extension of the TF-M secure binary.
+* `post_binary_hook`:
+  * `function`: The target's post binary hook ([class].[method]) in `tools/targets/__init__.py` for image signing, required if the TF-M bootloader support is supported.
+* `secure_image_filename`: The file name of the TF-M secure binary, to be signed by the post binary hook.
 
-The following example shows a PSA enabled dual-core target, `PSoC64`:
-
-```json
-    "CY8CKIT_064S2_4343W": {
-        "inherits": [
-            "MCU_PSOC6_M4"
-        ],
-        "features_add": [
-            "BLE",
-            "PSA"
-        ],
-        "components_add": [
-            "WHD",
-            "4343W",
-            "CYW43XXX"
-        ],
-        "components_remove": [
-            "QSPIF"
-        ],
-        "supported_form_factors": [
-            "ARDUINO"
-        ],
-        "device_has_remove": [
-            "ANALOGOUT",
-            "QSPI"
-        ],
-        "extra_labels_add": [
-            "PSOC6_02",
-            "MXCRYPTO_02",
-            "CORDIO",
-            "TFM",
-            "TFM_DUALCPU"
-        ],
-        "macros_add": [
-            "CYB0644ABZI_S2D44",
-            "CYBSP_WIFI_CAPABLE",
-            "TFM_MULTI_CORE_MULTI_CLIENT_CALL=1"
-        ],
-        "detect_code": [
-            "190A"
-        ],
-        "post_binary_hook": {
-            "function": "PSOC6Code.sign_image"
-        },
-        "forced_reset_timeout": 5,
-        "overrides": {
-            "network-default-interface-type": "WIFI"
-        },
-        "program_cycle_s": 10,
-        "tfm_target_name": "psoc64",
-        "tfm_bootloader_supported": false,
-        "tfm_default_toolchain": "GNUARM",
-        "tfm_supported_toolchains": [
-            "GNUARM"
-        ],
-        "tfm_delivery_dir": "TARGET_Cypress/TARGET_PSOC6/TARGET_CY8CKIT_064S2_4343W",
-        "TFM_OUTPUT_EXT": "hex"
-    }
-```
-
-Please note the config options `macros_add`, `extra_labels_add` and `device_has_remove`. To add or remove `macros`, `extra_labels` or target capabilities, a PSA target definition must use
-[macros/extra_labels/device_has]`_add` or [macros/extra_labels/device_has]`_remove` (not `macros`, `extra_labels` or `device_has`).
-
-To add or remove a feature, use `feature_`[add/remove].
-
-By default, a TF-M build generates a `bin` file. If the target requires a `hex` file, you need to add the attribute `"TFM_OUTPUT_EXT": "hex"` to the target definition. The build script will convert `bin` to `hex`, then copy the `hex` to `tfm_delivery_dir`.
-
-This dual-core PSA target doesn't inherit from `PSA_DUAL_CORE` because it has to inherit from one of its family targets. Hence, we have added additional attributes:
-
-```json
-        "features_add": [
-            "PSA"
-        ],
-        "extra_labels_add": [
-            "TFM",
-            "TFM_DUALCPU"
-        ]
-```
-
-If a dual-core PSA target can inherit from `PSA_DUAL_CORE`, then there is no need to add these additional attributes.
-
-### Adding Armv8-M PSA targets
-
-An Mbed OS (NSPE) target must contain the following attributes (in addition to other target attributes defined in [porting a custom board](../porting/porting-a-custom-board.html)
-and [porting targets](../porting/porting-the-hal-apis.html)):
-
-* `inherits`: PSA generic target `PSA_V8_M`, unless the target has to inherit from
-  one of its family targets.
-* `tfm_target_name`: Target name in TF-M.
-* `tfm_bootloader_supported`: If TF-M bootloader is supported by the target.
-
-    The supported values are `true` and `false`.
-* `tfm_supported_toolchains`: Supported TF-M toolchains.
-
-    The supported values are `ARMCLANG` and `GNUARM`.
-* `tfm_default_toolchain`: Default TF-M toolchain.
-
-     The supported values are `ARMCLANG` and `GNUARM`.
-
-* `tfm_delivery_dir`: The directory to which TF-M binary will be copied.
-* `TFM_OUTPUT_EXT`: Optional attribute that indicates the output extension of the TF-M secure binary.
+**Note**: When `inherits` is used, some of attributes are set by the PSA generic target.
 
 The following example shows a PSA-enabled Armv8-M PSA target, `ARM_MUSCA_A1`:
 
@@ -345,7 +252,7 @@ To add or remove a feature, use `feature_`[add/remove].
 
 By default, a TF-M build generates a `bin` file. If the target requires a `hex` file, you need to add the attribute `"TFM_OUTPUT_EXT": "hex"` to the target definition. The build script will convert `bin` to `hex`, then copy the `hex` to `tfm_delivery_dir`. You must also update `secure_image_filename` to match the new file extension.
 
-If an Armv8-M PSA target cannot inherit from `PSA_V8_M` because it has to inherit from one of its family targets, you must add the following attributes:
+If a PSA target cannot inherit from `PSA_V8_M` or `PSA_DUAL_CORE` because it has to inherit from one of its family targets, you must declare PSA and TF-M attributes manually. For example,
 
 ```json
         "features_add": [
@@ -353,9 +260,11 @@ If an Armv8-M PSA target cannot inherit from `PSA_V8_M` because it has to inheri
         ],
         "extra_labels_add": [
             "TFM",
+            "TFM_LATEST",
             "TFM_V8M"
         ]
 ```
+(Please adjust the TF-M version and target architecture accordingly.)
 
 ## Build and validation
 
