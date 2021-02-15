@@ -375,73 +375,7 @@ An example of `mbed_app.json`:
 
 ## Build and validation
 
-The Python script `build_tfm.py` automates building TF-M and copying the TF-M binary to the location defined by the target attribute `tfm_delivery_dir`. Another Python script, `build_psa_compliance.py`, automates
-building PSA API compliance tests.
-
-The [mbed-os-tf-m-regression-tests repository](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests) contains build scripts, TF-M regression tests and PSA API compliance tests.
-
-### Building TF-M and running regression tests
-
-To build TF-M and regression tests:
-
-1. Clone the [mbed-os-tf-m-regression-tests](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests) repository.
-1. Update `mbed-os.lib` to the copy of Mbed OS that contains new target support, including the `targets.json` changes described in this document.
-1. Run:
-
-    ```
-    mbed deploy
-    ```
-
-1. Run:
-
-    ```
-    python3 build_tfm.py -m <new target> -t <toolchain> -c ConfigRegressionIPC.cmake
-    ```
-
-    The command builds a TF-M binary the service necessary to run regression tests.
-
-    <span class="notes">**Note:** Use this `ConfigRegressionIPC.cmake` only to run regression tests. The secure binary copied to Mbed OS (when you are ready to merge your new target) must be generated using the config option `ConfigCoreIPC.cmake`.</span>
-
-1. Ensure the TF-M binary was copied to the location defined by the target attribute `tfm_delivery_dir`. If no binary was created or copied, please raise an [issue on the Mbed OS repository](https://github.com/ARMmbed/mbed-os).
-
-1. To build Mbed OS and run regression tests, run:
-
-    ```
-    mbed compile -m <new target> -t <toolchain>
-    ```
-1. Flash the regression tests binary to the target and ensure all regression tests pass.
-
-### Building TF-M and running PSA compliance tests
-
-To build TF-M and compliance tests:
-
-1. Switch to the `mbed-os-tf-m-regression-tests` directory.
-1. Edit `mbed_app.json` and set:
-
-    - `regression-test` to `0`.
-    - `psa-compliance-test` to `1`.
-1. Run:
-
-    ```
-    python3 build_psa_compliance.py -m <new target> -t <toolchain> -s CRYPTO
-    ```
-
-    The command builds PSA API compliance tests for the crypto suite.
-1. Run:
-
-   ```
-   python3 build_tfm.py -m <new target> -t <toolchain> -c configs/ConfigPsaApiTestIPC.cmake -s CRYPTO
-   ```
-
-   The command builds TF-M including PSA API compliance tests.
-1. To build Mbed OS and run PSA API compliance tests, run:
-
-    ```
-    mbed compile -m <new target> -t <toolchain>
-    ```
-1. Flash the PSA API compliance tests binary to the target and ensure all PSA API compliance tests pass.
-
-    <span class="notes">**Note:** Any PSA API compliance tests that fail in the TF-M example application will fail in Mbed OS as well.</span>
+The [mbed-os-tf-m-regression-tests repository](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests) contains build scripts, TF-M regression tests and PSA API compliance tests. Please follow instructions there to build and validate your TF-M target.
 
 ### Building TF-M and creating an Mbed OS pull request
 
@@ -456,7 +390,7 @@ To build TF-M and create an Mbed OS pull request:
     python3 build_tfm.py -m <new target> -t <toolchain> --commit
     ```
 
-    The command builds TF-M with the config `ConfigCoreIPC.cmake`, copies the TF-M binary to the location defined by the target attribute `tfm_delivery_dir`, and commits the changes to Mbed OS.
+    The command builds TF-M with the config `CoreIPC`, copies the TF-M binary to the location defined by the target attribute `tfm_delivery_dir`, and commits the changes to Mbed OS.
 
     <span class="tips">**Tip:** When you run the Python script `build_tfm.py` without any options, TF-M is built for all supported targets and the secure binary (TF-M) for each target is copied to the location defined by the target attribute `tfm_delivery_dir`. When you use the `--commit` option, a new Mbed OS commit is created with the new or modified TF-M binaries and `features/FEATURE_EXPERIMENTAL_API/FEATURE_PSA/TARGET_TFM/VERSION.txt`.</span>
 
