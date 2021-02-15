@@ -35,7 +35,7 @@ To create a new Mbed OS project in a specified path:
     - Absolute. `new` will create the folder if it doesn't exist.
     - Relative:
 
-        - If you have already created a project folder, you can use `.`
+        - If you have already created a project folder, you can use `.`, then update file CMakeLists.txt with: `set(APP_TARGET <created a project folder>` )
 
         - If you want the `new` command to create a project folder, use `.\<folder-name>`.
 
