@@ -39,16 +39,6 @@ Example of a single-core Armv7-M PSA target's inheritance:
     }
 ```
 
-### Naming convention for dual-core and Armv8-M targets
-
-As explained above, dual-core and Armv8-M PSA targets require only an NSPE target name. For Armv8-M non-PSA targets, you can define both SPE and NSPE target names.
-
-The naming convention is:
-
-- `TargetName`: PSA non-secure target (NSPE).
-- `TargetName_NPSA_S`: Non-PSA secure target.
-- `TargetName_NPSA`: Non-PSA non-secure target.
-
 ### Adding single-core PSA targets
 
 Mbed OS's PSA service emulation provides PSA compatibility for single-core PSA
