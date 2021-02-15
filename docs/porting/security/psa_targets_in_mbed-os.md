@@ -357,22 +357,6 @@ If an Armv8-M PSA target cannot inherit from `PSA_V8_M` because it has to inheri
         ]
 ```
 
-## Enabling PSA at application level
-
-Having an entropy source is crucial for Mbed TLS and PSA. The [entropy source porting document](../porting/entropy-sources.html) discusses why and how to add an entropy source.
-
-If your target doesn't have a True Random Number Generator (TRNG), configure it as a non-PSA target in `targets/targets.json`. In this scenario, if an application wants to use the target as a PSA target, then it is the application's responsibility to provide an entropy source and mark that target as a PSA target at the application level. To enable PSA for a target from an application, use the config option [target_overrides](../reference/configuration.html).
-
-An example of `mbed_app.json`:
-
-```json
-"target_overrides": {
-    "K64F": {
-        "inherits": ["PSA_V7_M"]
-    }
-}
-```
-
 ## Build and validation
 
 The [mbed-os-tf-m-regression-tests repository](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests) contains build scripts, TF-M regression tests and PSA API compliance tests. Please follow instructions there to build and validate your TF-M target.
