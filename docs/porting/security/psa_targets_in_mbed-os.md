@@ -1,6 +1,6 @@
 # Porting PSA targets
 
-This document describes the process of adding new PSA targets to Mbed OS, focusing on target configurations, build and validation. Mbed OS relies on [TF-M](https://git.trustedfirmware.org/trusted-firmware-m.git/tree/) for its implementation of PSA, so the PSA target you are adding to Mbed OS **must** already be supported by TF-M.
+This document describes the process of adding new PSA targets to Mbed OS, focusing on target configurations, build and validation.
 
 Before reading this document, please read [porting a custom board](../porting/porting-a-custom-board.html) and [porting targets](../porting/porting-the-hal-apis.html), which provide step-by-step instructions to porting a new target to Mbed OS.
 
@@ -16,7 +16,7 @@ Before reading this document, please read [porting a custom board](../porting/po
 To help create PSA targets, we have added a few generic targets to `targets/targets.json`:
 
 * `PSA_Target`: Root level PSA target.
-* `PSA_V7_M`: Single v7-M generic PSA target, which doesn't employ hardware isolation between the NSPE and the SPE, so TF-M is not supported. PSA secure service emulation enables PSA API compatibility.
+* `PSA_V7_M`: Single-core v7-M generic PSA target, which doesn't employ hardware isolation between the NSPE and the SPE, so TF-M is not supported. PSA secure service emulation enables PSA API compatibility.
 * `PSA_DUAL_CORE`: Dual-core generic PSA target. A dual-core PSA target has at least two cores that are either Armv7-M or Armv6-M. One core will be used for the SPE and another for the NSPE. Hardware isolation between the cores enables PSA compliance. On dual-core targets, TF-M
 runs on the SPE and provides PSA services, and Mbed OS runs on the NSPE.
 * `PSA_V8_M`: Armv8-M generic PSA target, which employs hardware to isolate the NSPE from the SPE. TF-M runs on the SPE and provides PSA services, and Mbed OS runs on the NSPE.
