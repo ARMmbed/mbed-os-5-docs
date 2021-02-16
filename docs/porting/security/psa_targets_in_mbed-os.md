@@ -193,26 +193,30 @@ An Mbed OS (NSPE) target that supports TF-M must contain the following attribute
 
 **Note**: When `inherits` is used, some of attributes are set by the PSA generic target.
 
-The following example shows a PSA-enabled Armv8-M PSA target, `ARM_MUSCA_A1`:
+The following example shows a PSA-enabled Armv8-M PSA target, `ARM_MUSCA_S1`:
 
 ```json
-    "ARM_MUSCA_A1": {
+    "ARM_MUSCA_S1": {
         "inherits": [
             "PSA_V8_M"
         ],
         "default_toolchain": "ARMC6",
-        "forced_reset_timeout": 7,
+        "features_add": [
+            "EXPERIMENTAL_API"
+        ],
+        "forced_reset_timeout": 20,
         "release_versions": [
             "5"
         ],
         "core": "Cortex-M33-NS",
         "supported_toolchains": [
             "ARMC6",
-            "GCC_ARM",
-            "IAR"
+            "GCC_ARM"
         ],
         "device_has_add": [
             "INTERRUPTIN",
+            "I2C",
+            "I2CSLAVE",
             "LPTICKER",
             "SERIAL",
             "SLEEP",
@@ -222,33 +226,35 @@ The following example shows a PSA-enabled Armv8-M PSA target, `ARM_MUSCA_A1`:
             "__STARTUP_CLEAR_BSS",
             "MBED_FAULT_HANDLER_DISABLED",
             "CMSIS_NVIC_VIRTUAL",
-            "LPTICKER_DELAY_TICKS=1",
-            "MBED_MPU_CUSTOM"
+            "LPTICKER_DELAY_TICKS=3",
+            "MBED_MPU_CUSTOM",
+            "BL2",
+            "MCUBOOT_IMAGE_NUMBER=2"
         ],
         "extra_labels_add": [
             "ARM_SSG",
-            "MUSCA_A1",
-            "MUSCA_A1_NS"
+            "MUSCA_S1"
         ],
         "post_binary_hook": {
-            "function": "ArmMuscaA1Code.binary_hook"
+            "function": "ArmMuscaS1Code.binary_hook"
         },
         "secure_image_filename": "tfm_s.bin",
-        "tfm_target_name": "MUSCA_A",
+        "tfm_target_name": "musca_s1",
         "tfm_bootloader_supported": true,
         "tfm_default_toolchain": "ARMCLANG",
         "tfm_supported_toolchains": [
             "ARMCLANG",
             "GNUARM"
         ],
-        "tfm_delivery_dir": "TARGET_ARM_SSG/TARGET_MUSCA_A1"
+        "tfm_delivery_dir": "TARGET_ARM_SSG/TARGET_MUSCA_S1",
+        "detect_code": [
+            "5009"
+        ]
     }
 ```
 
-Please note the config options `macros_add`, `extra_labels_add` and `device_has_remove`. To add or remove `macros`, `extra_labels` or target capabilities, a PSA target definition must use
-[macros/extra_labels/device_has]`_add` or [macros/extra_labels/device_has]`_remove` (not `macros`, `extra_labels` or `device_has`).
-
-To add or remove a feature, use `feature_`[add/remove].
+Please note the config options `features_add`, `macros_add`, `extra_labels_add` and `device_has_add`. To add or remove `features`, `macros`, `extra_labels` or target capabilities, a PSA target definition must use
+[features/macros/extra_labels/device_has]`_add` or [features/macros/extra_labels/device_has]`_remove` (not `features`, `macros`, `extra_labels` or `device_has`).
 
 By default, a TF-M build generates a `bin` file. If the target requires a `hex` file, you need to add the attribute `"TFM_OUTPUT_EXT": "hex"` to the target definition. The build script will convert `bin` to `hex`, then copy the `hex` to `tfm_delivery_dir`. You must also update `secure_image_filename` to match the new file extension.
 
