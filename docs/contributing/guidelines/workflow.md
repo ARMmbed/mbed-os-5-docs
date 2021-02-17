@@ -36,7 +36,7 @@ You can submit Mbed OS bugs directly on [GitHub](https://github.com/ARMmbed/mbed
 
 The bug report should be reproducible (fails for others) and specific (where and how it fails). We will close insufficient bug reports.
 
-We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarcom bot adds an internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx" and provides labels showing the current state of the mirrored issues.
+We copy issues reported on GitHub to our internal tracker and regularly triage them. Our ciarmcom bot adds an internal tracking reference to each issue: "Internal Jira reference: https://jira.arm.com/browse/MBOTRIAGE-xxxx" and provides labels showing the current state of the mirrored issues.
 
 ## Guidelines for GitHub pull requests
 
@@ -195,9 +195,22 @@ Each pull request goes through the following workflow:
 
 Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify.yml file. The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from the mergify bot.
 
-Each state is time-boxed. In most cases, this is sufficient time to move to another state. The pull request can be closed if no update is provided within the time frame.
+Each state is time-boxed. In most cases, sufficient time is provided to move to another state. The ciarmcom bot periodically checks that pending activities on pull requests are completed in a timely manner. 
+<center>
 
-If a pull request is idle for more than two weeks, it will be closed. The author or the maintainer can reopen it at any time.
+| State           | Limit (days)  |
+| --------------- |:-------------:|
+| needs: work     | 10            |
+| needs: review   | 3             |
+| needs: CI       | 1             |
+| ready for merge | 1             |
+
+</center>
+
+
+If the pull request is idle in a state for longer than the allowed time, our bot will add the 'stale' label alongside a comment nudging the user or reviewer to carry out any necessary work. This label will only be removed when the action required to move the pull request forward is completed. 
+
+Pull requests are closed if they are idle for more than two weeks. The author or the maintainer can reopen it at any time.
 
 ### Reviews
 
@@ -210,7 +223,7 @@ Mergify dismisses a reviewer's status after any change to the pull request commi
 
 ### The Continuous Integration (CI) testing
 
-There are many [CI systems available](../contributing/ci.html) for testing Mbed OS pull requests and braches. Which CI tests we run against a particular pull request depends on the effect that it has on the code base. Irrespective of which CI tests run, Mbed OS has an all-green policy, meaning that all triggered CI jobs must pass before we merge the pull request.
+There are many [CI systems available](../contributing/ci.html) for testing Mbed OS pull requests and branches. Which CI tests we run against a particular pull request depends on the effect that it has on the code base. Irrespective of which CI tests run, Mbed OS has an all-green policy, meaning that all triggered CI jobs must pass before we merge the pull request.
 
 - Label: `needs: CI`.
 - Time: One day for CI to complete and report back results.
