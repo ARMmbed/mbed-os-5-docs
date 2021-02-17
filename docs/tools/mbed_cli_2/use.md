@@ -139,7 +139,7 @@ The Mbed OS configuration system parses the configuration files in your project 
 
     ```
     mbed-tools configure -m K64F -t GCC_ARM
-    mbed_config.cmake has been generated and written to '/Users/UserName/Development/Blinky/.mbedbuild'
+    mbed_config.cmake has been generated and written to '/Users/UserName/Development/Blinky/cmake_build/K64F/develop/GCC_ARM/mbed_config.cmake'
     ```
 
 ## Build the project
@@ -186,12 +186,22 @@ Example for FRDM-K64F and GCC:
 mbed-tools compile -m K64F -t GCC_ARM
 ```
 
-## Iterative builds on configured projects
+### Building for multiple targets
 
-To perform an iterative build on a previously configured project:
+You can build an Mbed project for multiple targets, with different profiles and toolchains, without affecting other builds. The `compile` subcommand will create and build into a different subdirectory for each combination:
 
 ```
-mbed-tools compile
+cmake_build/<target>/<profile>/<toolchain>/
+```
+
+## Iterative builds on configured projects
+
+If you have already made a build for the Mbed target and toolchain that you're using, `compile` will perform an iterative build.
+
+To force a rebuild of the project for a target and toolchain, include the --clean argument:
+
+```
+mbed-tools compile -m <target> -t <toolchain> --clean
 ```
 
 ## Flashing the built program
@@ -199,7 +209,7 @@ mbed-tools compile
 You can flash the built program to the connected target by adding the -f/--flash argument to the compile command:
 
 ```
-mbed-tools compile -f
+mbed-tools compile -m <target> -t <toolchain> -f
 ```
 
 ## Opening a serial terminal
