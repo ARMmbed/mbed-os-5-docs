@@ -4,7 +4,7 @@ All code changes and additions to Mbed OS are handled through GitHub. If you wan
 
 ## Mbed OS maintainers
 
-The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code.
+The maintainers are a small group of Mbed OS engineers who are responsible for the Mbed OS codebase. Their primary role is to progress contributions, both internal and external, from the initial pull request state through to released code. They carry out pull request reviews at least twice a week.
 
 Responsibilities:
 
@@ -96,14 +96,6 @@ The following template is automatically provided when you raise a pull request a
 
     ----------------------------------------------------------------------------------------------------------------
     ## Release Notes (*required for feature/major PRs*)
-
-
-    #### Summary of changes
-
-    #### Impact of changes
-
-    #### Migration actions required
-
 
 ### Description field
 
@@ -260,6 +252,7 @@ We may add additional suffixes, which could represent a release candidate, alpha
 We use many other labels to summarize the scope and effect of the changes:
 
 - *needs: preceding PR* - Cannot yet be merged because it has a dependency on another pull request that needs to merge first.
+- *needs: architectural review* - A major pull request or feature update that changes the architecture, and requires review from internal teams.
 - *do not merge* - Contains changes that may be in a draft state and submitted purely for review, or may contain breaking changes that have not been considered.
 - *devices: 'name'* - Specifically affects the named device(s).
 - *component: 'name'* - Specifically affects the named component. Component names follow the structure of Mbed OS (for example `ble`, `storage`, `tls`).
