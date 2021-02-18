@@ -60,6 +60,10 @@ For a breakdown of supported APIs, please see [the full API list](../apis/index.
             <td>&#10007;</td>
         </tr>
         <tr>
+            <td>LoRa</td>
+            <td>&#10004; (can be manually enabled)</td>
+        </tr>
+        <tr>
             <td>LWIP stack</td>
             <td>&#10007;</td>
         </tr>
