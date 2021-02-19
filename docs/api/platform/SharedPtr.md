@@ -11,7 +11,7 @@ When `ptr` is passed around by a value, the copy constructor and destructor mana
 
 ## SharedPtr class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_shared_ptr.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.8/mbed-os-api-doxy/classmbed_1_1_shared_ptr.html)
 
 ## Shared pointer example
 

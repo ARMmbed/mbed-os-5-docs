@@ -15,7 +15,7 @@ As per the POSIX specification, `poll` always indicates that ordinary files (as 
 
 ## Poll reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__poll.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.8/mbed-os-api-doxy/group__platform__poll.html)
 
 ## Poll example
 
