@@ -10,7 +10,7 @@ Use the SocketAddress class to represent the IP address and port pair of a uniqu
 
 Here is an example to read current UTC time. This example uses the SocketAddress class to get the server IP address and port.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/tree/v6.8)](https://github.com/ARMmbed/mbed-os-snippet-UDPSocket/blob/v6.8/main.cpp)
 
 ## Related content
 

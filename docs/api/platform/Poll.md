@@ -19,7 +19,7 @@ As per the POSIX specification, `poll` always indicates that ordinary files (as 
 
 ## Poll example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Poll/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Poll/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Poll/tree/v6.8)](https://github.com/ARMmbed/mbed-os-snippet-Poll/blob/v6.8/main.cpp)
 
 ## Related content
 
