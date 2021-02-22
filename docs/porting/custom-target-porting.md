@@ -87,54 +87,41 @@ Follow these steps to create a custom port for Mbed OS:
 
    ```
    {
-     "IMAGINARYBOARD": {
-         "components_add": ["QSPIF", "FLASHIAP"],
-         "inherits": ["FAMILY_STM32"],
-         "core": "Cortex-M4F",
-         "extra_labels_add": ["STM32L4", "STM32L475xG", "STM32L475VG"],
-         "config": {
-             "clock_source": {
-                 "help": "Mask value : USE_PLL_HSE_EXTC (need HW patch) | USE_PLL_HSE_XTAL (need HW patch) | USE_PLL_HSI | USE_PLL_MSI",
-                 "value": "USE_PLL_MSI",
-                 "macro_name": "CLOCK_SOURCE"
-             },
-             "lpticker_lptim": {
-                 "help": "This target supports LPTIM. Set value 1 to use LPTIM for LPTICKER, or 0 to use RTC wakeup timer",
-                 "value": 1
-             }
-         },
-         "overrides": { "lpticker_delay_ticks": 4 },
-         "detect_code": ["1234"],
-         "macros_add": [
-             "MBED_TICKLESS",
-             "MBED_SPLIT_HEAP"
-         ],
-         "device_has_add": [
-             "CRC",
-             "TRNG",
-             "FLASH",
-             "QSPI",
-             "MPU"
-         ],
-         "device_has_remove": [
-             "ANALOGIN",
-             "I2CSLAVE",
-             "I2C_ASYNCH"
-         ],
-         "release_versions": ["2", "5"],
-         "device_name": "STM32L475VG",
-         "bootloader_supported": true
-     }
+       "IMAGINARYBOARD": {
+           "inherits": [
+               "MCU_STM32L475xG"
+           ],
+           "components_add": [
+               "BlueNRG_MS",
+               "QSPIF"
+           ],
+           "extra_labels_add": [
+               "CORDIO",
+               "MX25R6435F"
+           ],
+           "supported_form_factors": [
+               "ARDUINO"
+           ],
+           "detect_code": [
+               "1234"
+           ],
+           "device_has_add": [
+               "QSPI"
+           ],
+           "device_has_remove": [
+               "ANALOGOUT",
+               "ANALOGIN",
+               "CAN",
+               "I2CSLAVE",
+               "I2C_ASYNC"
+           ],
+           "features": [
+               "BLE"
+           ],
+           "device_name": "STM32L475VG"
+       }
    }
    ```
-
-#### Additions
-
-A new section, `device_has_remove`, was added. This removes the `ANALOGIN`,
-`I2CSLAVE` and `I2C_ASYNCH` drivers because these features are also not used.
-The reason why `device_has_remove` is used in this case is because the board is
-inheriting from the MCU Family configuration `FAMILY_STM32`, which has those
-drivers added by default.
 
 #### Other possible additions
 
@@ -151,7 +138,7 @@ Other changes you may need include:
 #### Where other configurations live
 
 All the other configurations for the board are inherited from the MCU Family
-configuration called `FAMILY_STM32`.
+configuration called `MCU_STM32L475xG`.
 
 ## Configuring the target code directories
 
@@ -189,19 +176,15 @@ target.
    `mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L475xG/TARGET_DISCO_L475VG_IOT01A`.
    You should find the following files or similar:
 
-   `PeripheralNames.h`, `PeripheralPins.c`, `PinNames.h`, `system_clock.c`
+   `PeripheralPinMaps.h`, `PeripheralPins.c`, `PinNames.h`
 
 1. Copy the files into your new `TARGET_IMAGINARYBOARD` directory.
 
    The files provide these capabilities:
 
-   - `PeripheralNames.h` describes the available peripherals and their base
-     addresses.
-   - `PeripheralPins.c` describes the available pins and their association with
-     peripherals.
+   - `PeripheralPinMaps.h` and `PeripheralPins.c` describe the available pins
+     and their association with peripherals.
    - `PinNames.h` sets macros for pins that define their function.
-   - `system_clock.c` vendor specific file that initializes the system and sets
-     up the clocks.
 
 ### Customizing
 
