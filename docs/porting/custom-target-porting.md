@@ -239,13 +239,12 @@ target.
    Your directory now looks something like this:
 
    ```
+   custom_targets.json
    main.cpp
-   custom_target.json
-   TARGET_IMAGINARYBOARD
-   mbed-os
-   .mbed
-   mbed_settings.py
+   mbed_app.json
+   mbed-os/
    mbed-os.lib
+   TARGET_IMAGINARYBOARD/
    ```
 
 ## Testing your code
