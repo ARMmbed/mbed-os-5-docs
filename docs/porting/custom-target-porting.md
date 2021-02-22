@@ -159,7 +159,7 @@ In some cases, the target source code directories follow a similar structure to
 the target configuration, but they could have a few more levels.
 
 For example, in the `mbed-os/targets` folder, the target directories for
-DISCO_L475VG_IOT01A follow this pattern:
+`DISCO_L475VG_IOT01A` follow this pattern:
 
    ```
    mbed-os
