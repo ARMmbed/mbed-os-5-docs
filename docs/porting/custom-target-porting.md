@@ -186,7 +186,7 @@ target.
    your project to store the source files for your board.
 
 1. Inspect the files at
-   `mbed-os\targets\TARGET_STM\TARGET_STM32L4\TARGET_STM32L475xG\TARGET_DISCO_L475VG_IOT01A`.
+   `mbed-os/targets/TARGET_STM/TARGET_STM32L4/TARGET_STM32L475xG/TARGET_DISCO_L475VG_IOT01A`.
    You should find the following files or similar:
 
    `PeripheralNames.h`, `PeripheralPins.c`, `PinNames.h`, `system_clock.c`
