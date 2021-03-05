@@ -63,6 +63,13 @@ mbed-tools import <example> <PATH>
 - [mbed-os-example-nfc](https://github.com/ARMmbed/mbed-os-example-nfc)
 - [mbed-os-example-sockets](https://github.com/ARMmbed/mbed-os-example-sockets)
 
+Mbed CLI 2 will automatically use a shallow clone of git repositories whenever
+it can (with `import`, `deploy`, and other applicable commands) to speed up
+library and application management tasks. This will provide you with a local
+copy of a git repository that contains only a single branch. If you'd like to
+`git checkout` other versions manually, you'll need to convert your local
+repository into a complete copy using `git fetch --unshallow`.
+
 ### Use a specific Mbed program library
 
 A Mbed program can use library dependencies at the revision specified in the ".lib" files.
