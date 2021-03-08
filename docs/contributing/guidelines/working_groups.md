@@ -1,6 +1,6 @@
 # Working Groups
 
-Mbed OS has a number of established working groups aimed at improving and building new services and features. The working groups bring together like-minded individuals and teams of similar interests and provide a platform to share feedback and discuss what can be delivered as a community.
+Mbed OS has a number of established working groups aimed at improving and building new services and features. The working groups bring together like-minded individuals and teams of similar interests, providing a platform to share feedback and discuss what can be delivered as a community.
 
 You can join a working group by contributing ideas, initiating discussions and sharing your latest projects. We welcome all forms of contributions to the working groups.
 
