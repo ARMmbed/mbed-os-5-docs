@@ -1,8 +1,8 @@
 # Contributing to Mbed OS
 
-Mbed OS is an open source, device software ecosystem for the internet of things. Contributions are an important part of the ecosystem, and our goal is to make it as simple as possible to become a contributor.
+Mbed OS is an open source, device software ecosystem for the Internet of Things (IoT). Contributions are an important part of the ecosystem, and our goal is to make it as simple as possible to become a contributor.
 
-You can make contributions to source code and documentation. We develop both on GitHub. Mbed uses the same open source license for contributions (inbound) as it uses for the the project (outbound). Our default and preferred software license is Apache License version 2.0 (Apache-2.0).
+You can make contributions to the source code and documentation that we develop on GitHub. Mbed uses the same open source license for contributions (inbound) as it uses for the the project (outbound). Our default and preferred software license is Apache License version 2.0 (Apache-2.0).
 
 To encourage collaboration, as well as robust, consistent and maintainable code, we have built a set of guidelines for contributing to Mbed.
 

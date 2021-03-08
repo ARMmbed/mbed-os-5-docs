@@ -1240,6 +1240,9 @@
                 },
                 {
                     "path": "docs/contributing/guidelines/ci.md"
+                },
+                {
+                    "path": "docs/contributing/guidelines/working_groups.md"
                 }
             ]
         },
