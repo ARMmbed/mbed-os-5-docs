@@ -191,7 +191,7 @@ An Mbed OS (NSPE) target that supports TF-M must contain the following attribute
   * `function`: The target's post binary hook ([class].[method]) in `tools/targets/__init__.py` for image signing, required if the TF-M bootloader support is supported.
 * `secure_image_filename`: The file name of the TF-M secure binary, to be signed by the post binary hook.
 
-**Note**: When `inherits` is used, some of attributes are set by the PSA generic target.
+<span class="notes">**Note:** When `inherits` is used, some of attributes are set by the PSA generic target.
 
 The following example shows a PSA-enabled Armv8-M PSA target, `ARM_MUSCA_S1`:
 
@@ -283,6 +283,9 @@ The [mbed-os-tf-m-regression-tests repository](https://github.com/ARMmbed/mbed-o
 To build TF-M and create an Mbed OS pull request:
 
 1. Switch to the `mbed-os-tf-m-regression-tests` directory.
+
+1. Add your target to `tfm_ns_import.yaml`. You can take the existing target `ARM_MUSCA_S1` as an example and adjust the target name.
+
 1. Run:
 
     ```
@@ -295,8 +298,18 @@ To build TF-M and create an Mbed OS pull request:
 
 1. Switch to the `mbed-os` directory and check the latest commit.
 
-   If everything looks good, push the changes to your fork of Mbed OS.
-1. Create an Mbed OS pull request against [https://github.com/ARMmbed/mbed-os](https://github.com/ARMmbed/mbed-os).
+1. In the directory of your target, create or update `CMakeLists.txt` to define how CMake builds your target. Make sure it links `s_veneers.o` to your target and calls `mbed_post_build_tfm_sign_image()` which generates a ready-to-flash image containing the bootloader + signed TF-M secure binary + signed Mbed OS application.
+
+    You can take a look at `targets/TARGET_ARM_SSG/TARGET_MUSCA_S1/CMakeLists.txt` as an example.
+
+1. Switch back to the `mbed-os-tf-m-regression-tests` directory, and follow `README.md` to build and run all tests _manually_.
+
+    Ensure the test results are consistent with what you get from the vanilla TF-M tests (i.e. without Mbed OS integration). Some tests may be expected to fail.
+
+    Once you have the expected results, you can add them to `test/logs/<new target>/` to enable _automated_ testing. The logs should be minimal and based on regular expressions, see `test/logs/ARM_MUSCA_S1/` for example.
+
+
+1. If everything looks good, push the changes to your forks of [Mbed OS](https://github.com/ARMmbed/mbed-os) and [mbed-os-tf-m-regression-tests](https://github.com/ARMmbed/mbed-os-tf-m-regression-tests) and create pull requests against our official repositories.
 
     <span class="tips">**Tip:** See the [contributing guide](../contributing/index.html) for more information about pull requests.</span>
 
