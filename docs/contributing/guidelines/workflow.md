@@ -49,7 +49,8 @@ Pull requests on GitHub have to meet the following requirements to keep the code
 - Because we use GitHub, special commit tags that other projects may use, such as “Reviewed-by”, or “Signed-off-by”, are redundant and should be omitted. GitHub tracks who reviewed what and when.
 - Prefixing your commit message with a domain is acceptable, and we recommend doing so when it makes sense. However, prefixing the domain with the name of the repo is not useful. For example, making a commit entitled "mbed-drivers: Fix doppelwidget frobulation" to the `mbed-drivers` repo is not acceptable because it is already understood that the commit applies to `mbed-drivers`. Renaming the commit to "doppelwidget: Fix frobulation" would be better, if we presume that "doppelwidget" is a meaningful domain for changes, because it communicates that the change applies to the doppelwidget area of `mbed-drivers`.
 - All new features and enhancements require documentation, tests and user guides for us to accept them. Please link each pull request to all relevant documentation and test pull requests.
-- Avoid merging commmits. (Always rebase when possible.)
+- Avoid merging commits. (Always rebase when possible.)
+- Avoid force pushing when making review changes, unless you're cleaning up your branch's history once the changes have been approved.
 - Comment in the pull request on every change (rebase or new commits). This helps reviewers to be up to date with changes
 - Pull requests should fix a bug, add a feature or refactor.
    The only exceptions are third-party version updates (for example, Mbed TLS or Nanostack releases for Mbed OS). These updates should provide Mbed OS release notes in the pull request description, or link to an external changelog or release notes.
@@ -193,7 +194,7 @@ Each pull request goes through the following workflow:
 
 ## Pull request states
 
-Mergify bot drives our workflow. The mergify rules are defined in the Mbed OS repository in the .mergify.yml file. The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from the mergify bot.
+Mergify bot drives our workflow. Its settings are defined in the file [`mergify.yml`](https://github.com/ARMmbed/mbed-os/blob/master/.mergify.yml). The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from the mergify bot.
 
 Each state is time-boxed. In most cases, sufficient time is provided to move to another state. The ciarmcom bot periodically checks that pending activities on pull requests are completed in a timely manner. 
 <center>
@@ -216,10 +217,10 @@ Pull requests are closed if they are idle for more than two weeks. The author or
 
 All pull requests must be reviewed. The Arm Mbed CI bot determines the most suitable person to review the pull request (based on the files changed) and tags that person accordingly. A PR creator can request specific reviewers by @ tagging people or teams in the *Reviewers* section of the pull request template. For example, @personA @TeamB.
 
-Mergify dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
+Mergify dismisses a reviewer's status after any change to the pull request commit history (such as adding a new commit or rebasing). As mentioned above, it is important that you not force push to your branch when your PR is undergoing review. This is discouraged because it may cause the reviewers comment history to be lost, and have other unintended effects. Smaller changes, such as documentation edits or rebases on top of latest master, only require additional review by maintainers. Their approval is sufficient because a team assigned as a reviewer already approved the pull request.
 
 - Label: `needs: review`.
-- Time: Three days for reviewers to leave feedback after the autoreviewer bot has added the label.
+- Time: Three days for reviewers to leave feedback after the auto-reviewer bot has added the label.
 
 ### The Continuous Integration (CI) testing
 
