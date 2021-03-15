@@ -66,7 +66,7 @@ The default value of data length supported by all controllers is 23 octets. If b
 
 ## GAP class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_gap.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.9/mbed-os-api-doxy/classble_1_1_gap.html)
 
 
 ## GAP example

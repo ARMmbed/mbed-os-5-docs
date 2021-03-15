@@ -36,7 +36,7 @@ This parameter is used in the iterator `kv_iterator_open` function to define the
 
 ## Static Global API class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.9/mbed-os-api-doxy/kvstore__global__api_8h_source.html)
 
 ## Static Global API example
 

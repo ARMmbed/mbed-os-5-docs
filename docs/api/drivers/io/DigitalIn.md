@@ -6,7 +6,7 @@ You can use any of the numbered Arm Mbed pins as a DigitalIn.
 
 ## DigitalIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.9/mbed-os-api-doxy/classmbed_1_1_digital_in.html)
 
 ## DigitalIn hello, world
 
