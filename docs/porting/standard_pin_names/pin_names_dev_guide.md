@@ -12,7 +12,7 @@ Note there might be separate documents for pin names that apply to specific conn
 
 ### LEDs
 
-LEDs that are available on a board will be defined as `LEDx` e.g. `LED1`, `LED2`, ...
+Available onboard LEDs are defined as `LEDx` e.g. `LED1`, `LED2`, ...
 
 The detection of available LEDs at application level can be done as follows:
 
