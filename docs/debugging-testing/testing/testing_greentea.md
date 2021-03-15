@@ -105,7 +105,7 @@ first-greentea-test/
 
 In this folder, create a file `main.cpp`. You can use UNITY, utest and the Greentea client to write your test:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_1/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_1/blob/v6.9/main.cpp)
 
 
 ### Running the test
@@ -192,7 +192,7 @@ This registers one function you can call from the device: `init`. The function c
 
 This example writes the embedded part of this test. Create a new file `main.cpp` under the `TESTS/integration/test_case` directory, and fill it with:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-Greentea_Ex_2/blob/v6.9/main.cpp)
 
 You see the calls to and from the host through the `greentea_send_kv` and `greentea_parse_kv` functions. Note the `GREENTEA_SETUP` call. This specifies which host test to use, and the test is then automatically loaded when running (based on the Python name).
 

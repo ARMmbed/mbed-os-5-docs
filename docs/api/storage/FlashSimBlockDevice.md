@@ -23,7 +23,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 This FlashSimBlockDevice example takes a [HeapBlockDevice](heapblockdevice.html) and turns it into a simulated flash BD.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-FlashSimBlockDevice/blob/v6.9/main.cpp)
 
 ## Related content
 

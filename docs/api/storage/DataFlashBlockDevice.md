@@ -18,7 +18,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## DataFlashBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/blob/v6.9/main.cpp)
 
 ## Related content
 

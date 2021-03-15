@@ -10,7 +10,7 @@ The USBKeyboard class provides the functionality of a keyboard. You can send key
 
 ## USBKeyboard example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBKeyboard/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-USBKeyboard/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBKeyboard/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-USBKeyboard/blob/v6.9/main.cpp)
 
 ## Related content
 

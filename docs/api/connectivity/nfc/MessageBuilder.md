@@ -8,7 +8,7 @@ Mbed OS provides this API to construct NDEF messages, the common data format exc
 
 ## MessageBuilder example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MessageBuilder/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-MessageBuilder/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MessageBuilder/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-MessageBuilder/blob/v6.9/main.cpp)
 
 ## Related content
 

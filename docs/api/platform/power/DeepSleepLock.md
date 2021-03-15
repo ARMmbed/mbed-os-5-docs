@@ -12,7 +12,7 @@ The `DeepSleepLock` class provides an RAII object for disabling sleep. In other 
 
 This example shows how you can lock deep sleep to decrease interrupt latency at the expense of increased power consumption.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DeepSleepLock_Example_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-DeepSleepLock_Example_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DeepSleepLock_Example_1/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-DeepSleepLock_Example_1/blob/v6.9/main.cpp)
 
 ## Related content
 

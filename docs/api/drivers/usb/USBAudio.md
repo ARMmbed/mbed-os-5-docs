@@ -12,16 +12,16 @@ You can use the USBAudio interface to send and receive audio data over USB. Once
 
 This example outputs an audio square wave over USB.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_square_wave/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_square_wave/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_square_wave/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_square_wave/blob/v6.9/main.cpp)
 
 ## USBAudio loopback example
 
 This example loops input audio to the Mbed board back to the host PC, so that you may record the audio or listen to it through headphones or speakers.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_loopback_example/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_loopback_example/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBAudio_loopback_example/tree/v6.9)](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_loopback_example/blob/v6.9/main.cpp)
 
 ## USBAudio play sound data example
 
 This example loads raw audio data to your board's flash. That data then plays on the host PC over USB. We have tested this example with the NXP FRDM-K64F, which has 1 MB of flash memory. If you are using a board that has less than 1 MB of flash memory, delete data from the end of the `data` array, and set `NUM_ELEMENTS` accordingly until the program size is small enough to flash without exceeding storage. Follow the link below, and click Ctrl + s to save the raw code view for `main.cpp`.   
 
-### [main.cpp](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_play_sound/blob/v6.7/main.cpp)
+### [main.cpp](https://github.com/ARMmbed/mbed-os-snippet-USBAudio_play_sound/blob/v6.9/main.cpp)

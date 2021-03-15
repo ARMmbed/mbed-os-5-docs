@@ -21,7 +21,7 @@ Please make sure to enable TLS by configuring:
         }
 ```
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-6.7.0/source/main.cpp)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-6.7.0/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-6.9.0/source/main.cpp)](https://github.com/ARMmbed/mbed-os-example-sockets/blob/mbed-os-6.9.0/source/main.cpp)
 
 ## Related content
 

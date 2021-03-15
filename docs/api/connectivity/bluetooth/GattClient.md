@@ -42,8 +42,8 @@ Clients register for these updates by setting the Client Characteristic Configur
 
 ### Characteristic writes
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattClient_CharacteristicWrite/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattClient_CharacteristicWrite/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.9.0/BLE_GattClient_CharacteristicWrite/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.9.0/BLE_GattClient_CharacteristicWrite/source/main.cpp)
 
 ### Characteristic updates
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattClient_CharacteristicUpdates/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattClient_CharacteristicUpdates/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.9.0/BLE_GattClient_CharacteristicUpdates/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.9.0/BLE_GattClient_CharacteristicUpdates/source/main.cpp)
