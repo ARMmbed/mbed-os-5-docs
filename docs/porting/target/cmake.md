@@ -105,17 +105,15 @@ A whole directory can be added to the build using `add_subdirectory()` if it is 
 See an example below:
 
 ```
-if("<VENDOR_MCU_VARIANT>" IN_LIST MBED_TARGET_LABELS)
-    add_subdirectory(TARGET_<VENDOR_MCU_VARIANT>)
-endif()
+add_subdirectory(TARGET_<VENDOR_MCU_VARIANT> EXCLUDE_FROM_ALL)
 
-target_include_directories(mbed-core
+target_include_directories(mbed-<vendor-mcu-variant>
     INTERFACE
         .
         subdirectory
 )
 
-target_sources(mbed-core
+target_sources(mbed-<vendor-mcu-variant>
     INTERFACE
         file1.c
 
@@ -128,17 +126,27 @@ Sources are listed using CMake's `target_sources()` function and added to the `m
 
 ### Linker script file
 
-A global CMake property named `MBED_TARGET_LINKER_FILE` must be set for each linker file. This linker file must be listed with its absolute path, this is achieved by adding the sub-path obtained by the CMake variable `${CMAKE_CURRENT_SOURCE_DIR}`.
+A function `mbed_set_linker_script` must be invoked for each linker file. The linker file must be listed with its absolute path, this is achieved by adding the sub-path obtained by the CMake variable `${CMAKE_CURRENT_SOURCE_DIR}`.
 e.g
 
 ``` 
+add_library(mbed-cysbsyskit-01-cm4 INTERFACE)
+
 if(${MBED_TOOLCHAIN} STREQUAL "ARM")
-    set(LINKER_FILE relative/path/to/TOOLCHAIN_ARM_STD/linker_file.sct)
+    set(LINKER_FILE_CM4 device/COMPONENT_CM4/TOOLCHAIN_ARM/cy8c6xxa_cm4_dual.sct)
+    set(STARTUP_FILE_CM4 device/COMPONENT_CM4/TOOLCHAIN_ARM/startup_psoc6_02_cm4.S)
 elseif(${MBED_TOOLCHAIN} STREQUAL "GCC_ARM")
-    set(LINKER_FILE relative/path/to/TOOLCHAIN_GCC_ARM/linker_file.ld)
+    set(LINKER_FILE_CM4 device/COMPONENT_CM4/TOOLCHAIN_GCC_ARM/cy8c6xxa_cm4_dual.ld)
+    set(STARTUP_FILE_CM4 device/COMPONENT_CM4/TOOLCHAIN_GCC_ARM/startup_psoc6_02_cm4.S)
 endif()
 
-set_property(GLOBAL PROPERTY MBED_TARGET_LINKER_FILE ${CMAKE_CURRENT_SOURCE_DIR}/${LINKER_FILE})
+target_sources(mbed-cysbsyskit-01-cm4
+    INTERFACE
+        device/COMPONENT_CM4/system_psoc6_cm4.c
+        ${STARTUP_FILE_CM4}
+)
+
+mbed_set_linker_script(mbed-cysbsyskit-01-cm4 ${CMAKE_CURRENT_SOURCE_DIR}/${LINKER_FILE_CM4})
 ```
 
 #### ARMClang linker file
@@ -152,7 +160,7 @@ Pre-compiled libraries and object files are listed using CMake's `target_link_li
 e.g
 
 ```
-target_link_libraries(mbed-core
+target_link_libraries(mbed-cysbsyskit-01-cm4
     INTERFACE
         ${CMAKE_CURRENT_SOURCE_DIR}/libprecompiled.ar
         ${CMAKE_CURRENT_SOURCE_DIR}/file_object.o
