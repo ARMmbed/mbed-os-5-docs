@@ -6,7 +6,7 @@ Platform code should be portable across different Mbed supported boards with the
 
 This document provides general developer guidelines on pin names that apply to all boards but it's not specific to any type of connector.
 
-Note there might be separate documents for pin names that apply to specific connectors.
+**_NOTE:_** there might be separate documents for pin names that apply to specific connectors.
 
 ## Standard Pin Names
 
