@@ -2,7 +2,7 @@
 
 ### Overview and assumptions
 
-Mbed OS is designed so that application code written in the platform is portable across different Mbed supported boards with the same hardware capabilities or interfaces.
+Platform code should be portable across different Mbed supported boards with the same hardware capabilities or interfaces.
 
 This document provides general developer guidelines on pin names that apply to all boards but it's not specific to any type of connector.
 
