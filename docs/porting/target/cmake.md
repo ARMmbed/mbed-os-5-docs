@@ -21,7 +21,7 @@ Every Mbed CMake target should be prefixed with `mbed-`. Mbed boards listed in `
 
 ### Vendor selection
 
-Vendor selection is handled in [`targets/CMakeLists.txt`](https://github.com/ARMmbed/mbed-os/blob/master/targets/CMakeLists.txt). The matching directory is added to directories to build.
+Vendor selection is handled in [`targets/CMakeLists.txt`](https://github.com/ARMmbed/mbed-os/blob/master/targets/CMakeLists.txt). A subdirectory is added to the build if one of the CMake targets it contains is referenced.
 e.g
 
 ```
