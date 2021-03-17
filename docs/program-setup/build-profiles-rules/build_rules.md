@@ -29,3 +29,27 @@ TESTS
 ```
 
 None of these files are included in a build run with `mbed compile`. When running `mbed test` or `mbed test --compile`, the `TESTS/events/queue` test case compiles without the sources from `TESTS/events/timing` or `TESTS/integration/basic`.
+
+The similar naming is true also for UNITTESTS.
+
+```
+UNITTESTS
+├── events
+│  ├── queue
+│  │  └── main.cpp
+│  └── timing
+│     └── main.cpp
+├── host_tests
+│  ├── ...
+│  └── timing_drift_auto.py
+├── integration
+│  └── basic
+│     └── main.cpp
+└── network
+   ├── emac
+   │  ├── ...
+   │  └── main.cpp
+   └── wifi
+      ├── ...
+      └── main.cpp
+```
