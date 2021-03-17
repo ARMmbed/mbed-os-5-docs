@@ -5,25 +5,6 @@ We recommend using small C libraries with the bare metal profile. These are vers
 
 Both the `ARM` and `GCC_ARM` toolchains support code-optimized versions of their C standard libraries, `microlib` and `newlib-nano`.
 
-## Building with the small C libraries
-
-You can build with the smaller C libraries by creating an `mbed_app.json` with the following contents:
-
- ```
- {
-  "requires": ["bare-metal"],
-  "target_overrides": {
-    "*": {
-      "target.c_lib": "small"
-    }
-  }
-}
-```
-
-This links your application with `microlib` for the `ARM` toolchain and `newlib-nano` for the `GCC_ARM` toolchain.
-
-<span class="notes">**Note:** If your application uses the Arm microlib, it should not return from `main()`. Please see [non-returning main() below](#non-returning-main) for advice.</span>
-
 ## Newlib-nano
 
 [Newlib-nano](https://community.arm.com/developer/ip-products/system/b/embedded-blog/posts/shrink-your-mcu-code-size-with-gcc-arm-embedded-4-7) is an open source C library targeting embedded microcontrollers. It is based on newlib but is much smaller. One restriction is that newlib-nano is not thread-safe, so an application that uses the RTOS should not use it.

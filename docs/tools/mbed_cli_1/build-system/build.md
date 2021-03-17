@@ -257,3 +257,22 @@ Make release builds by using:
 ```
 $ mbed export -i uvision -m K64F --profile release
 ```
+
+## Building with the small C libraries
+
+You can build with the smaller C libraries by creating an `mbed_app.json` with the following contents:
+
+ ```
+ {
+  "requires": ["bare-metal"],
+  "target_overrides": {
+    "*": {
+      "target.c_lib": "small"
+    }
+  }
+}
+```
+
+This links your application with `microlib` for the `ARM` toolchain and `newlib-nano` for the `GCC_ARM` toolchain.
+
+<span class="notes">**Note:** If your application uses the Arm microlib, it should not return from `main()`. Please see [non-returning main() below](#non-returning-main) for advice.</span>
