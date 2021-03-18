@@ -1,4 +1,4 @@
-# Python build tools
+# Python-based build tools
 
 This document describes python build tools located in Mbed Os under tools directory. They are used by Mbed CLI 1.
 
