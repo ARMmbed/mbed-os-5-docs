@@ -82,7 +82,7 @@ This hierarchy minimizes the changes you need to make to your existing library.
 
 The recommended pattern for designing 3rd-party libraries that take advantage of driver polymorphism is to use _pointers_ to the _interface_ of the driver you're using. For example, we can refactor the `LEDAnimator` class to the following:
 
-```
+```c++
 class LEDAnimator {
 
     /**
@@ -127,7 +127,7 @@ The inheritance of a driver from the new driver interface is conditional upon `F
 
 When `FEATURE_EXPERIMENTAL_API` is disabled, the following type alias is made instead:
 
-```
+```c++
 using mbed::interface::DigitalOut = mbed::DigitalOut;
 ```
 
@@ -150,6 +150,6 @@ The latter effect allows us to minimize the impact of virtual inheritance on exe
 
 To improve the compiler's ability to optimize calls to a polymorphic driver in this way, you should use the following guidelines when designing your 3rd-party libraries:
 
-When your library **does not** have any high speed requirements, you should use a pointer to the _driver interface_ (eg: `mbed::interface::DigitalOut*`). This gives your library maximum flexibility by allowing it to use polymorphic subtypes of the given interface.
+When your library **does not** have any high speed requirements, you should use a pointer/reference to the _driver interface_ (eg: `mbed::interface::DigitalOut*`). This gives your library maximum flexibility by allowing it to use polymorphic subtypes of the given interface.
 
 When your library **does** have high speed requirements (such as the "bit-banged" example mentioned previously), you should use a pointer/reference to Mbed's driver implementation type _directly_ (eg: `mbed::DigitalOut*`). Since the compiler knows the concrete type is Mbed's implementation (which is `final`), it _may_ inline calls to that type, maintaining the execution speed possible with polymorphism disabled.
