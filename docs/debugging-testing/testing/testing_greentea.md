@@ -12,6 +12,32 @@ This document will help you start using Greentea. Please see the [`htrun` docume
 
 Greentea tests can be created anywhere in the Mbed OS directory structure or in your project's code. They are located under a special directory called `TESTS`. By convention, greentea tests for a specific Mbed OS library should be placed in a `TESTS` folder under that library. The `mbed-os/TESTS` folder is dedicated to integration or system tests.
 
+Functional tests are organized into test cases and test suite directories within a `TESTS` directory. Each test suite is a subdirectory of the `TESTS`, and each test case is a subdirectory of a test suite. When tests build, each test case compiles independently. The test suite `host_tests` is reserved for scripts that run and validate a test case. The following tree is a reduced version of the tests subdirectory of Mbed OS:
+
+```
+TESTS
+├── events
+│  ├── queue
+│  │  └── main.cpp
+│  └── timing
+│     └── main.cpp
+├── host_tests
+│  ├── ...
+│  └── timing_drift_auto.py
+├── integration
+│  └── basic
+│     └── main.cpp
+└── network
+   ├── emac
+   │  ├── ...
+   │  └── main.cpp
+   └── wifi
+      ├── ...
+      └── main.cpp
+```
+
+None of these files are included in a build run with `mbed compile`. When running `mbed test` or `mbed test --compile`, the `TESTS/events/queue` test case compiles without the sources from `TESTS/events/timing` or `TESTS/integration/basic`.
+
 The fact that the code is located under this directory means that it is ignored when building applications and libraries. It is only used when building tests. This is important because all tests require a `main()` function, and building them with your application would cause multiple `main()` functions to be defined.
 
 The macro `MBED_TEST_MODE` is defined when building tests with Mbed CLI versions 1.9.0 and later. You can wrap your application's `main()` function in a preprocessor check to prevent multiple `main()` functions from being defined:

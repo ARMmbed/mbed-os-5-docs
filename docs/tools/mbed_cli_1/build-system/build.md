@@ -1,4 +1,77 @@
-# Build rules
+# Python-based build tools
+
+This document describes python build tools located in Mbed Os under tools directory. They are used by Mbed CLI 1.
+
+## User-defined build profile
+
+As mentioned above, the __build profile__ defines the set of flags that is passed to the underlying compiler suite. You can also create a custom or user-defined __build profile__ using a JSON file according to the __build profile__ format mentioned in [JSON build profile format](#JSON-build-profile-format).
+
+These flags stored in the JSON file are merged with other JSON files of the same structure when multiple `--profile` arguments are passed on the command line.
+
+### JSON build profile format
+
+The __build profiles__ are JSON files with the root object containing key-value pairs for each supported toolchain, such as `GCC_ARM`. Each key is a toolchain name and every value contains a mapping from a flag type to a list of flags that should be passed to the corresponding part of the compiler suite.
+
+The required flag types are:
+
+| Key      | Description                           |
+|:---------|:--------------------------------------|
+| `asm`    | Flags for the Assembler               |
+| `c`      | Flags for the C Compiler              |
+| `common` | Flags for both the C and C++ Compilers|
+| `cxx`    | Flags for the C++ Compiler            |
+| `ld`     | Flags for the Linker                  |
+
+### Example
+
+An example of a __build profile__:
+
+```json
+{
+    "GCC_ARM": {
+        "common": ["-c", "-Wall", "-Wextra",
+                   "-Wno-unused-parameter", "-Wno-missing-field-initializers",
+                   "-fmessage-length=0", "-fno-exceptions", "-fno-builtin",
+                   "-ffunction-sections", "-fdata-sections", "-funsigned-char",
+                   "-MMD", "-fno-delete-null-pointer-checks",
+                   "-fomit-frame-pointer", "-Os"],
+        "asm": ["-x", "assembler-with-cpp"],
+        "c": ["-std=gnu99"],
+        "cxx": ["-std=gnu++98", "-fno-rtti", "-Wvla"],
+        "ld": ["-Wl,--gc-sections", "-Wl,--wrap,main", "-Wl,--wrap,_malloc_r",
+               "-Wl,--wrap,_free_r", "-Wl,--wrap,_realloc_r",
+               "-Wl,--wrap,_calloc_r", "-Wl,--wrap,exit", "-Wl,--wrap,atexit"]
+    },
+    "ARM": {
+        "common": ["-c", "--gnu", "-Otime", "--split_sections",
+                   "--apcs=interwork", "--brief_diagnostics", "--restrict",
+                   "--multibyte_chars", "-O3"],
+        "asm": [],
+        "c": ["--md", "--no_depend_system_headers", "--c99", "-D__ASSERT_MSG"],
+        "cxx": ["--cpp", "--no_rtti", "--no_vla"],
+        "ld": []
+    },
+    "IAR": {
+        "common": [
+            "--no_wrap_diagnostics", "non-native end of line sequence", "-e",
+            "--diag_suppress=Pa050,Pa084,Pa093,Pa082", "-Oh"],
+        "asm": [],
+        "c": ["--vla"],
+        "cxx": ["--guard_calls", "--no_static_destruction"],
+        "ld": ["--skip_dynamic_initialization", "--threaded_lib"]
+    }
+}
+```
+
+In the above example, you can tell that:
+
+- `GCC_ARM`, `ARM` and `IAR` compiler suites are supported.
+- The `ARM` C and C++ compilers use optimization level `-O3`.
+- The `IAR` linker skips dynamic initialization.
+
+And so on.
+
+## Build rules
 
 The Mbed OS build tools scan your project for source files every time you compile. This document describes the rules that the build tools use to decide which source files to include in each build. The Mbed OS build tools use the [target configuration](adding-and-configuring-targets.html) found in `targets.json`, `mbed_app.json` and `mbed_lib.json` as input to these rules. If you are looking for how to pass options to the compilers, please see the [build profiles documentation](../program-setup/build-profiles-and-rules.html).
 
@@ -111,34 +184,6 @@ The toolchain labeled directories are used for toolchain specific files, such as
 
 When compiling with `-t GCC_ARM` or `mbed toolchain GCC_ARM`, source files found within `TOOLCHAIN_GCC` and `TOOLCHAIN_GCC_ARM` are included, and files found within `TOOLCHAIN_IAR` and `TOOLCHAIN_ARM` are not.
 
-## Test directories
-
-Functional tests are organized into test cases and test suite directories within a `TESTS` directory. Each test suite is a subdirectory of the `TESTS`, and each test case is a subdirectory of a test suite. When tests build, each test case compiles independently. The test suite `host_tests` is reserved for scripts that run and validate a test case. The following tree is a reduced version of the tests subdirectory of Mbed OS:
-
-```
-TESTS
-├── events
-│  ├── queue
-│  │  └── main.cpp
-│  └── timing
-│     └── main.cpp
-├── host_tests
-│  ├── ...
-│  └── timing_drift_auto.py
-├── integration
-│  └── basic
-│     └── main.cpp
-└── network
-   ├── emac
-   │  ├── ...
-   │  └── main.cpp
-   └── wifi
-      ├── ...
-      └── main.cpp
-```
-
-None of these files are included in a build run with `mbed compile`. When running `mbed test` or `mbed test --compile`, the `TESTS/events/queue` test case compiles without the sources from `TESTS/events/timing` or `TESTS/integration/basic`.
-
 ## .mbedignore
 
 The `.mbedignore` rules override other rules for excluding files from a build. Files matching patterns in an `.mbedignore` file are excluded from a build even if a label rule or a test directory would include the file.
@@ -185,4 +230,30 @@ After applying the first rule, the actual patterns used internally for matching 
 source/obsolete/*.c
 source/obsolete/*.h
 source/obsolete/second_level/*.c
+```
+
+## Debug builds
+
+After you've set up your [local debug toolchain](../program-setup/build-profiles-and-rules.html), you need firmware that includes program symbols (an `.elf` file). Because the Arm Mbed Online Compiler only produces binaries that omit the program symbols, you need to compile locally using [Arm Mbed CLI](../build-tools/mbed-cli-1.html).
+
+<span class="notes">**Note:** Make sure to do a clean build when switching to and from debug and release by removing the `BUILD` folder.</span>
+
+## Compile command
+
+```
+$ mbed compile --profile mbed-os/tools/profiles/debug.json
+```
+
+## Exporting with debug symbols
+
+You can also enable debug symbols when [exporting your project](../build-tools/third-party-build-tools.html) by using:
+
+```
+$ mbed export -i uvision -m K64F --profile debug
+```
+
+Make release builds by using:
+
+```
+$ mbed export -i uvision -m K64F --profile release
 ```

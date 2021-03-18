@@ -63,6 +63,25 @@ In a terminal window:
 
 Find unit tests in the Mbed OS repository under the `UNITTESTS` folder of each library. We recommend unit test files use an identical directory path as the file under test. This makes it easier to find unit tests for a particular class or a module. For example, if the file you're testing is `some/example/path/ClassName.cpp`, then all the test files are in the `UNITTESTS/some/example/path/ClassName` directory. Each test suite needs to have its own `unittest.cmake` file for test configuration.
 
+```
+UNITTESTS
+├── events
+│  ├── queue
+│  │  └── main.cpp
+│  └── timing
+│     └── main.cpp
+├── integration
+│  └── basic
+│     └── main.cpp
+└── network
+   ├── emac
+   │  ├── ...
+   │  └── main.cpp
+   └── wifi
+      ├── ...
+      └── main.cpp
+```
+
 All the class stubs should be located in the Mbed OS root directory `UNITTESTS/stubs`. Multiple test suites can use a single stub class, which should follow the naming convention `ClassName_stub.cpp` for the source file and `ClassName_stub.h` for the header file. Use the actual header files for the unit tests, and don't stub headers if possible. The stubbed headers reside in the `UNITTESTS/target_h` directory.
 
 ### Test discovery
