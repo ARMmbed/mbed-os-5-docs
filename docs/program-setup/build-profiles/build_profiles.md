@@ -30,5 +30,5 @@ Arm Mbed OS defines three collections of toolchain flags used during the build. 
 
 ### Custom profile
 
-[Mbed CLI 1](../mbed_cli_1/build-system/build.html)
-[Mbed CLI 2](../mbed_cli_1/build-system/toolchain.html)
+[Mbed CLI 1](TODO_CMAKE:../mbed_cli_1/build-system/build.html)
+[Mbed CLI 2](TODO_CMAKE:../mbed_cli_1/build-system/toolchain.html)
