@@ -11,7 +11,7 @@ Here is a code snippet that can work for both Mbed OS profiles; it prints text a
 
 <span class="notes">**Note:** To be compatible with Arm microlib, a bare metal application should not return from `main()`. In this example, the `queue.dispatch_forever()` call never returns. For more details, see [Non-returning main()](../bare-metal/using-small-c-libraries.html).</span>
 
-## How to switch to baremetal
+## Creating a bare metal application
 
 [Mbed CLI 1](TODO_CMAKE: add link here)
 [Mbed CLI 2](TODO_CMAKE: add link here)
