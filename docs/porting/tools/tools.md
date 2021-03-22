@@ -1,4 +1,4 @@
 <h1 id="contributing-tools">Tools</h1>
 
-This section describes the tools modifications you need to make when adding a new target to Mbed OS and when making other tools contributions. When adding a new target to Mbed OS, you must [add a new target to Mbed-ls](mbed-ls.html). Further, this section includes instructions for [contributing to the Mbed HDK](arm-mbed-hdk.html)
+This section describes the tools modifications you need to make when adding a new target to Mbed OS and when making other tools contributions. When adding a new target to Mbed OS, you must [add a new target to Mbed-ls](mbed-ls.html). Further, this section includes instructions on [contributing to the Mbed HDK](arm-mbed-hdk.html)
 
