@@ -2,9 +2,9 @@
 
 ## Postbuild scripts
 
-Mbed OS includes tools for building itself in the `tools` directory. These build tools include target-specific postbuild scripts. When adding a target, you may need to add a postbuild script. Use a postbuild script to modify a linked application binary in ways that the linker cannot, such as inserting a checksum at a specific offset. Postbuild scripts are rarely exportable, and you should use them only when you have exhausted all other options.
+Mbed OS includes scripts to allow projects to be configured and built. These scripts include Mbed board specific post-build scripts. You may add a script if an Mbed board requires some additional operations to be performed on its artefacts after building. Said operations may modify the artefacts in ways that the toolchain is unable to such as inserting a checksum at a specific offset. Post-build scripts should only be used if the operation cannot be performed with the toolchain by adding additional flags.
 
-The tools include postbuild scripts for tasks that modify an application binary after it is linked. These tasks are written in Python as static methods of a class within the `tools.targets` module. The tasks are specified as `Class.method` in `targets.json`.
+The post-build scripts are written in Python and are located in `tools/targets`. Each script defines a class containing the various operations it can perform as methods. A particular post-build operation can be associated with an Mbed board in `targets/targets.json` by adding the `post_binary_hook` attribute with a value specified as `<CLASS>.<METHOD>`.
 
 The tools call the static method with 4 parameters:
 
@@ -15,7 +15,7 @@ The tools call the static method with 4 parameters:
 
 ## Implementation
 
-To add a postbuild script, add a class with a single method into the `tools/targets/__init__.py` python file, such as:
+To add a post-build script, add a class with methods defining the operation in `tools/targets/__init__.py` such as:
 
 ```python
 class LPCTargetCode(object):
@@ -28,13 +28,13 @@ class LPCTargetCode(object):
         patch(binf)
 ```
 
-A target that needs this postbuild script run must contain this snippet in `targets/targets.json`:
+Associate the post build operation to an Mbed board in `targets/targets.json` as follows:
 
 ```JSON
 "post_binary_hook": {"function": "LPCTargetCode.lpc_patch"}
 ```
 
-When implementing a postbuild script, please be aware of the following considerations:
+Be aware of the following considerations:
 
 - You may use a `.` in a project name.
 - You may change the output file type to any of binary, Intel Hex and `.elf`.
