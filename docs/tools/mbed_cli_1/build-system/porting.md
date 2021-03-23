@@ -1,4 +1,46 @@
-# Adding exporters
+# Porting
+
+## Postbuild scripts
+
+Mbed OS includes scripts to allow projects to be configured and built. These scripts include Mbed board specific post-build scripts. You may add a script if an Mbed board requires some additional operations to be performed on its artefacts after building. Said operations may modify the artefacts in ways that the toolchain is unable to such as inserting a checksum at a specific offset. Post-build scripts should only be used if the operation cannot be performed with the toolchain by adding additional flags.
+
+The post-build scripts are written in Python and are located in `tools/targets`. Each script defines a class containing the various operations it can perform as methods. A particular post-build operation can be associated with an Mbed board in `targets/targets.json` by adding the `post_binary_hook` attribute with a value specified as `<CLASS>.<METHOD>`.
+
+The tools call the static method with 4 parameters:
+
+* Toolchain object. You may use this object for logging.
+* Resources object used for this build. This contains all of the C, C++ and ASM sources.
+* Path to the `.elf` file the linker generates.
+* Path to the binary file generated after link, or the `.elf` file if the code did not generate a binary.
+
+## Implementation
+
+To add a post-build script, add a class with methods defining the operation in `tools/targets/__init__.py` such as:
+
+```python
+class LPCTargetCode(object):
+    """General LPC Target patching"""
+    @staticmethod
+    def lpc_patch(t_self, resources, elf, binf):
+        """Patch an elf file"""
+        t_self.debug("LPC Patch: %s" % os.path.split(binf)[1])
+        from .LPC import patch
+        patch(binf)
+```
+
+Associate the post build operation to an Mbed board in `targets/targets.json` as follows:
+
+```JSON
+"post_binary_hook": {"function": "LPCTargetCode.lpc_patch"}
+```
+
+Be aware of the following considerations:
+
+- You may use a `.` in a project name.
+- You may change the output file type to any of binary, Intel Hex and `.elf`.
+- The Arm compiler generates a directory containing a `.bin` file for each loadable section when there is more than one loadable section.
+
+## Adding exporters
 
 This is a guide for adding exporters to the Arm Mbed OS tools. First, this document describes what an exporter is and what rules it follows. Then, it covers the structure of the export subsystem and the individual exporter. Finally, this document gives some implementation suggestions.
 
@@ -217,33 +259,33 @@ LD      = arm_none_eabi_gcc
 all: $(PROJECT).bin $(PROJECT).hex size
 
 .asm.o:
-	+@$(call MAKEDIR,$(dir $@))
-	+@echo "Assemble: $(notdir $<)"
-	@$(AS) -c $(INCLUDE_PATHS) -o $@ $<
+    +@$(call MAKEDIR,$(dir $@))
+    +@echo "Assemble: $(notdir $<)"
+    @$(AS) -c $(INCLUDE_PATHS) -o $@ $<
 
 .s.o:
-	+@$(call MAKEDIR,$(dir $@))
-	+@echo "Assemble: $(notdir $<)"
-	@$(AS) -c $(INCLUDE_PATHS) -o $@ $<
+    +@$(call MAKEDIR,$(dir $@))
+    +@echo "Assemble: $(notdir $<)"
+    @$(AS) -c $(INCLUDE_PATHS) -o $@ $<
 
 .S.o:
-	+@$(call MAKEDIR,$(dir $@))
-	+@echo "Assemble: $(notdir $<)"
-	@$(AS) -c $(INCLUDE_PATHS) -o $@ $<
+    +@$(call MAKEDIR,$(dir $@))
+    +@echo "Assemble: $(notdir $<)"
+    @$(AS) -c $(INCLUDE_PATHS) -o $@ $<
 
 .c.o:
-	+@$(call MAKEDIR,$(dir $@))
-	+@echo "Compile: $(notdir $<)"
-	@$(CC) $(INCLUDE_PATHS) -o $@ $<
+    +@$(call MAKEDIR,$(dir $@))
+    +@echo "Compile: $(notdir $<)"
+    @$(CC) $(INCLUDE_PATHS) -o $@ $<
 
 .cpp.o:
-	+@$(call MAKEDIR,$(dir $@))
-	+@echo "Compile: $(notdir $<)"
-	@$(CPP) $(INCLUDE_PATHS) -o $@ $<
+    +@$(call MAKEDIR,$(dir $@))
+    +@echo "Compile: $(notdir $<)"
+    @$(CPP) $(INCLUDE_PATHS) -o $@ $<
 
 $(PROJECT).elf: $(OBJECTS) $(SYS_OBJECTS) $(LINKER_SCRIPT)
-	+@echo "link: $(notdir $@)"
-	@$(LD) -T $(filter %{{link_script_ext}}, $^) $(LIBRARY_PATHS) --output $@ $(filter %.o, $^) $(LIBRARIES)
+    +@echo "link: $(notdir $@)"
+    @$(LD) -T $(filter %{{link_script_ext}}, $^) $(LIBRARY_PATHS) --output $@ $(filter %.o, $^) $(LIBRARIES)
 ```
 
 ## Suggested implementation
