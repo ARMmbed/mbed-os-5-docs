@@ -8,10 +8,10 @@ The post-build scripts are written in Python and are located in `tools/targets`.
 
 The tools call the static method with 4 parameters:
 
- 1) Toolchain object. You may use this object for logging.
- 2) Resources object used for this build. This contains all of the C, C++ and ASM sources.
- 3) Path to the `.elf` file the linker generates.
- 4) Path to the binary file generated after link, or the `.elf` file if the code did not generate a binary.
+* Toolchain object. You may use this object for logging.
+* Resources object used for this build. This contains all of the C, C++ and ASM sources.
+* Path to the `.elf` file the linker generates.
+* Path to the binary file generated after link, or the `.elf` file if the code did not generate a binary.
 
 ## Implementation
 
