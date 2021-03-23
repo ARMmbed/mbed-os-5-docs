@@ -266,6 +266,16 @@
                             ]
                         },
                         {
+                            "title": "Standard Pin Names Developer Guide",
+                            "sources": [{
+                                    "path": "docs/porting/standard_pin_names/pin_names_dev_guide.md"
+                                },
+                                {
+                                    "path": "docs/porting/standard_pin_names/pin_names_dev_guide_arduino.md"
+                                }
+                            ]
+                        },
+                        {
                             "title": "Serial (UART) APIs",
                             "sources": [{
                                     "path": "docs/api/drivers/uart/BufferedSerial.md"
@@ -1304,6 +1314,9 @@
                         },
                         {
                             "path": "docs/porting/target/gpio.md"
+                        },
+                        {
+                            "path": "docs/porting/standard_pin_names/pin_names_porting.md"
                         },
                         {
                             "path": "docs/porting/target/rtc.md"
