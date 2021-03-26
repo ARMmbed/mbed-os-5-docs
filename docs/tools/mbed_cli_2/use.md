@@ -129,9 +129,9 @@ The Mbed OS configuration system parses the configuration files in your project 
     ```
     mbed-tools detect
 
-    Board name    Serial number             Serial port             Mount point(s)    Build target(s)
-    ------------  ------------------------  ----------------------  ----------------  -----------------
-    FRDM-K64F     024002017BD34E0F862DB3B7  /dev/tty.usbmodem14402  /Volumes/MBED     K64F
+    Board name    Serial number             Serial port             Mount point(s)    Build target(s)    Interface Version
+    ------------  ------------------------  ----------------------  ----------------  -----------------  -------------------
+    FRDM-K64F     024002017BD34E0F862DB3B7  /dev/tty.usbmodem14402  /Volumes/MBED     K64F               0221
     ```
 1. To prepare the Mbed configuration information for use with a specific target and toolchain, navigate to the project's root folder and run:
 
