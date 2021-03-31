@@ -169,7 +169,9 @@ Total flash memory (text + data): 44554(-1010) bytes
 Run FPGA tests to check whether your implementation is valid:
 
 ```
- mbed test -t ARM -m K64F -n tests-mbed_hal_fpga_ci_test_shield*
+mbed test -n "hal-tests-tests*fpga*" --app-config TESTS/configs/fpga.json
 ```
+
+The `FPGA_FORCE_ALL_PORTS` macro can be defined to force all peripherals to be tested. Some FPGA tests only test one by default, to save time.
 
 <span class="notes">**Note:** Your target must be ready to run FPGA Test Shield tests.</span>
