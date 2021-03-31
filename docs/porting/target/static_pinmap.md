@@ -174,4 +174,8 @@ mbed test -n "hal-tests-tests*fpga*" --app-config TESTS/configs/fpga.json
 
 The `FPGA_FORCE_ALL_PORTS` macro can be defined to force all peripherals to be tested. Some FPGA tests only test one by default, to save time.
 
+```
+mbed test -n "hal-tests-tests*fpga*" --app-config TESTS/configs/fpga.json -DFPGA_FORCE_ALL_PORTS
+```
+
 <span class="notes">**Note:** Your target must be ready to run FPGA Test Shield tests.</span>
