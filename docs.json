@@ -101,11 +101,11 @@
                   "sources": []
                 },
                 {
-                    "title": "Build with Mbed CLI",
+                    "title": "Build with Mbed CLI 1",
                     "sub_chapters": [{
-                            "title": "Installing Mbed CLI",
+                            "title": "Installing Mbed CLI 1",
                             "intro": {
-                                "path": "docs/quick-start/cli_setting_up.md"
+                                "path": "docs/tools/mbed_cli_1/cli-setup/cli-reqs.md"
                             },
                             "sources": []
                         },
@@ -113,6 +113,24 @@
                             "title": "Compiling the code",
                             "intro": {
                                 "path": "docs/quick-start/cli_code.md"
+                            },
+                            "sources": []
+                        }
+                    ]
+                },
+                {
+                    "title": "Build with Mbed CLI 2",
+                    "sub_chapters": [{
+                            "title": "Installing Mbed CLI 2",
+                            "intro": {
+                                "path": "docs/tools/mbed_cli_2/install.md"
+                            },
+                            "sources": []
+                        },
+                        {
+                            "title": "Compiling the code",
+                            "intro": {
+                                "path": "docs/tools/mbed_cli_2/use.md"
                             },
                             "sources": []
                         }
