@@ -78,6 +78,8 @@ Call the bootloader to start the main program:
 mbed_start_application(POST_APPLICATION_ADDR);
 ```
 
+For an example showing how to create a bootloader, see the [mbed-os-example-bootloader](https://github.com/armmbed/mbed-os-example-bootloader) repository.
+
 ### Creating the main program
 
 To create an application using a bootloader, you must first have created the bootloader binary and added it to the current project. You must then specify the bootloader image in `mbed_app.json` in the `target_override` section:
@@ -179,6 +181,8 @@ You can add the BOOTLOADER feature into `mbed_app.json` located in the root appl
    ```
 
 Alternatively, you can add `-C 'target.features_add=["BOOTLOADER"]'` to your `mbed compile` command-line arguments.
+
+Please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader) for an example on how to use the bootloader feature.
 
 There are two ways to add support for new targets:
 

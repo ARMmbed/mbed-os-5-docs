@@ -45,6 +45,11 @@ A few micro:bit How To videos:
 
 [Get the FAT file system working on an Mbed OS platform](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-fat-filesystem/).
 
+#### Bootloader
+
+- [Create a bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader/).
+- [Use a blinky application with a prebuilt bootloader](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-bootloader-blinky/).
+
 ### mbed Client
 
 [Getting started](https://os.mbed.com/teams/mbed-os-examples/code/mbed-os-example-client/): a basic example of mbed Client for Mbed OS. It demonstrates how to register a device with Mbed Device Connector, how to read and write values and how to deregister.
