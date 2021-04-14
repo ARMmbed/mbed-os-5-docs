@@ -28,4 +28,4 @@ View the full C++ API:
 
 ## Flash IAP example
 
-For an example that uses the `FlashIAP` driver, please see the [bootloader example](https://github.com/ARMmbed/mbed-os-example-bootloader).
+For a program that uses the `FlashIAP` driver, please see the [Mbed Stress Test](https://github.com/ARMmbed/mbed-stress-test).
