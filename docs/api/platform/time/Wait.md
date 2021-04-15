@@ -10,7 +10,7 @@ The wait_us and wait_ns functions provide precise wait capabilities. These funct
 
 ## Example
 
-[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/wait_ex_1/)](https://os.mbed.com/teams/mbed_example/code/wait_ex_1/file/4f0543415053/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://os.mbed.com/teams/mbed_example/code/wait_ex_1/)](https://os.mbed.com/teams/mbed_example/code/wait_ex_1/file/4f0543415053/main.cpp/)
 
 ## Related content
 
