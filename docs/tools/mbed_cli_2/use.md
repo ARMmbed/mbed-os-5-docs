@@ -149,33 +149,6 @@ The Mbed OS configuration system parses the configuration files in your project 
     mbed_config.cmake has been generated and written to '/Users/UserName/Development/Blinky/cmake_build/K64F/develop/GCC_ARM/mbed_config.cmake'
     ```
 
-## Build the project
-
-Use CMake to build your application:
-
-1. Navigate to the project's root folder.
-1. Set the build parameters:
-
-    ```
-    cmake -S . -B cmake_build -GNinja -DCMAKE_BUILD_TYPE=<profile>
-    ```
-    - `-S <path-to-source>`: Path to the root directory of the CMake project. We use `.` to indicate we're building from the current directory.
-    - `-B <path-to-build>`: Path to the build output directory. If the directory doesn't already exist, CMake will create it. We use `cmake_build` as the output directory name; you can use a different name.
-    - `-GNinja`: To use the Ninja tool.
-    - `-DCMAKE_BUILD_TYPE`: Build type. The value (`profile`) can be `release`, `debug` or `develop`, as [explained in program setup](../program-setup/build-profiles-and-rules.html).
-
-1. Build:
-
-    ```
-    cmake --build cmake_build
-    ```
-
-    This generates two files in the build output directory (`cmake_build` in this example): HEX and BIN.
-
-    Which format you flash to your device depends on your requirements. For example, use the BIN file if you want to completely replace the contents of the flash device. If you want to retain some of the flash devices contents, you'll need to flash to an address other than the flash's starting address, so you'll need to use the HEX file (which contains the starting address). Note that we assume your board is running DAPLink for flash programming. If you are using another tool, please check your tool's documentation for file type support.
-
-1. Drag and drop the generated file to your board.
-
 ## Configure and build in a single step
 
 You can use a single command to configure (set up your target and toolchain) and build the project at once:
@@ -187,11 +160,80 @@ mbed-tools compile -m <target> -t <toolchain>
 - `-t`: The toolchain you are using to build your project.
 - `-m`: A build target for an Mbed-enabled device.
 
-Example for FRDM-K64F and GCC:
+Example for [DISCO-L475VG-IOT01A](https://os.mbed.com/platforms/ST-Discovery-L475E-IOT01A/) and GCC:
 
 ```
-mbed-tools compile -m K64F -t GCC_ARM
+mbed-tools compile -m DISCO_L475VG_IOT01A -t GCC_ARM
 ```
+
+
+## Build the project with CMake (advanced)
+
+We'll show how to build your project using CMake directly, which provides you
+with the full capabilities of CMake. You are no longer limited by what Mbed CLI
+2 has to offer.
+
+For this example, we'll use the `GCC_ARM` toolchain with the Mbed target
+`DISCO_L475VG_IOT01A`.
+
+To use CMake to build your application:
+
+1. Navigate to the project's root folder.
+1. Translate from the Mbed configuration system to a form CMake can understand:
+
+   ```
+   mbed-tools configure -m DISCO_L475VG_IOT01A -t GCC_ARM
+   ```
+
+   This will create a build folder at `cmake_build/DISCO_L475VG_IOT01A/develop/GCC_ARM`
+
+1. Set the build parameters:
+
+   ```
+   cmake -S . -B cmake_build/DISCO_L475VG_IOT01A/develop/GCC_ARM -GNinja
+   ```
+   - `-S <path-to-source>`: Path to the root directory of the CMake project.
+     We use `.` to indicate we're building from the current directory.
+   - `-B <path-to-build-directory>`: Path to the
+     build output directory. If the directory doesn't already exist, CMake
+     will create it. We use `cmake_build/DISCO_L475VG_IOT01A/develop/GCC_ARM`
+     as the output directory name. We match the path Mbed CLI 2 would use, so
+     we don't need to manually move around the `mbed-tool configure` output
+     `mbed_config.cmake`.
+   - `-GNinja`: To use the Ninja build tool. You can tell CMake to use another
+     build tool using any [CMake
+     Generator](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html)
+     your version of CMake supports. We like to use Ninja because it is fast.
+
+1. Build:
+
+   ```
+   cmake --build cmake_build/DISCO_L475VG_IOT01A/develop/GCC_ARM
+   ```
+
+   Alternatively, if you are using the Ninja build tool (`-GNinja in the
+   previous step`) and which to run it yourself, which you may want to do if
+   you'd like to limit the number of jobs ninja uses (`ninja -j 1`) or pass
+   other custom options (`ninja --help`)
+
+   ```
+   ninja -C cmake_build/DISCO_L475VG_IOT01A/develop/GCC_ARM
+   ```
+
+   The build generates two files in the build output directory
+   (`cmake_build/DISCO_L475VG_IOT01A/develop/GCC_ARM` in this example): HEX and
+   BIN.
+
+   Which format you flash to your device depends on your requirements. For
+   example, use the BIN file if you want to completely replace the contents of
+   the flash device. If you want to retain some of the flash devices contents,
+   you'll need to flash to an address other than the flash's starting address,
+   so you'll need to use the HEX file (which contains the starting address).
+   Note that we assume your board is running DAPLink for flash programming. If
+   you are using another tool, please check your tool's documentation for file
+   type support.
+
+1. Drag and drop the generated file to your board.
 
 ### Building for multiple targets
 
