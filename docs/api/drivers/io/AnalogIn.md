@@ -16,7 +16,7 @@ The resolution for an ADC is the smallest distinguishable change in analog input
 
 ## AnalogIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_3/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_3/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_3/tree/v6.10)](https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_3/blob/v6.10/main.cpp)
 
 ## AnalogIn examples
 
@@ -24,10 +24,10 @@ The resolution for an ADC is the smallest distinguishable change in analog input
 
 Control an R/C servo with analog input.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_1/tree/v6.10)](https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_1/blob/v6.10/main.cpp)
 
 ### Example two
 
 This example shows AnalogIn reading 16-bit normalized samples.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_2/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_2/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_2/tree/v6.10)](https://github.com/ARMmbed/mbed-os-snippet-AnalogIn_ex_2/blob/v6.10/main.cpp)

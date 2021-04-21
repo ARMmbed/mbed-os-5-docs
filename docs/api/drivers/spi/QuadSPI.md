@@ -22,7 +22,7 @@ For more information, please review the related content.
 
 ## QuadSPI example
 
- [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-QSPI/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-QSPI/blob/v6.7/main.cpp)
+ [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-QSPI/tree/v6.10)](https://github.com/ARMmbed/mbed-os-snippet-QSPI/blob/v6.10/main.cpp)
 
 ## Related content
 

@@ -73,4 +73,4 @@ The default value of data length supported by all controllers is 23 octets. If b
 
 Here is an example demonstrating how to use the GAP API to advertise, scan, connect and disconnect and how parameters influence efficiency of these actions.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GAP/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GAP/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GAP/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GAP/source/main.cpp)

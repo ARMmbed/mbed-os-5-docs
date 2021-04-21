@@ -113,7 +113,7 @@ This optional and has a small RAM and ROM increase, so applications are not requ
 
 Registering a status callback that connection state changes trigger depends on whether the network interface provides this functionality.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocket_ConnStateCb/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocket_ConnStateCb/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-TCPSocket_ConnStateCb/tree/v6.10)](https://github.com/ARMmbed/mbed-os-snippet-TCPSocket_ConnStateCb/blob/v6.10/main.cpp)
 
 ## Related content
 

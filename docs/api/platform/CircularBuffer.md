@@ -24,4 +24,4 @@ CircularBuffer<int, BUF_SIZE> buf;
 
 ## CircularBuffer example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CircularBuffer_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-CircularBuffer_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CircularBuffer_ex_1/tree/v6.10)](https://github.com/ARMmbed/mbed-os-snippet-CircularBuffer_ex_1/blob/v6.10/main.cpp)

@@ -43,12 +43,12 @@ The term characteristic value update represents Characteristic Value Notificatio
 
 ### Add Service
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_AddService/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_AddService/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GattServer_AddService/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GattServer_AddService/source/main.cpp)
 
 ### Characteristic Writes
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_CharacteristicWrite/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_CharacteristicWrite/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GattServer_CharacteristicWrite/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GattServer_CharacteristicWrite/source/main.cpp)
 
 ### Characteristic Updates
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_CharacteristicUpdates/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.7.0/BLE_GattServer_CharacteristicUpdates/source/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GattServer_CharacteristicUpdates/source/)](https://github.com/ARMmbed/mbed-os-example-ble/blob/mbed-os-6.10.0/BLE_GattServer_CharacteristicUpdates/source/main.cpp)
