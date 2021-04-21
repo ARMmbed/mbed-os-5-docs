@@ -1,12 +1,12 @@
 # USBMouse
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_mouse.png)<span>USBMouse class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/class_u_s_b_mouse.png)<span>USBMouse class hierarchy</span></span>
 
 You can use the USBMouse interface to emulate a mouse over the USB port. You can choose relative or absolute coordinates and send clicks, button state and scroll wheel movements. If you need keyboard or keyboard and mouse functionality, please see the [USBKeyboard](../apis/usbkeyboard.html) and [USBMouseKeyboard](../apis/usbmousekeyboard.html) classes.
 
 ## USBMouse class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_mouse.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/class_u_s_b_mouse.html)
 
 ## USBMouse example
 

@@ -23,7 +23,7 @@ QSPI peripheral
 
 You can implement your own QSPI by pulling in the following API header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
 
 The target needs to define the `qspi_s` structure - target specific QSPI object.
 

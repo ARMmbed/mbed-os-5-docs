@@ -1,6 +1,6 @@
 # Flash IAP
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.png)<span>FlashIAP class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.png)<span>FlashIAP class hierarchy</span></span>
 
 The flash in application programming provides an interface for access to MCU internal flash memory.
 
@@ -24,7 +24,7 @@ This class is thread-safe.
 
 View the full C++ API:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/classmbed_1_1_flash_i_a_p.html)
 
 ## Flash IAP example
 

@@ -4,7 +4,7 @@ Use the SocketAddress class to represent the IP address and port pair of a uniqu
 
 ## SocketAddress class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_socket_address.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/class_socket_address.html)
 
 ## SocketAddress example
 

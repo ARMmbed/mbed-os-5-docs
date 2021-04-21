@@ -1,6 +1,6 @@
 # BufferedBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_buffered_block_device.png)<span>BufferedBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.10/mbed-os-api-doxy/classmbed_1_1_buffered_block_device.png)<span>BufferedBlockDevice class hierarchy</span></span>
 
 The BufferedBlockDevice class is a block device adpator, whose purpose is to reduce the read and program sizes of the underlying block device to 1. Large read and/or program sizes may make life difficult for block device users, so BufferedBlockDevice reduces both sizes to the minimum, where reads and writes to the underlying BD use an internal buffer. Calling the `sync` API ensures writes are flushed to the underlying BD.
 
@@ -12,7 +12,7 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## BufferedBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_buffered_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.10/mbed-os-api-doxy/classmbed_1_1_buffered_block_device.html)
 
 ## BufferedBlockDevice example
 

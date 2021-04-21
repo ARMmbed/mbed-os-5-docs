@@ -4,7 +4,7 @@ Mbed OS provides this API to construct NDEF messages, the common data format exc
 
 ## MessageBuilder class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_builder.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.10/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_builder.html)
 
 ## MessageBuilder example
 
