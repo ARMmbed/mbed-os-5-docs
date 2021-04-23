@@ -266,7 +266,7 @@
                             ]
                         },
                         {
-                            "title": "Standard Pin Names Developer Guide",
+                            "title": "Standard Pin Names",
                             "sources": [{
                                     "path": "docs/porting/standard_pin_names/pin_names_dev_guide.md"
                                 },

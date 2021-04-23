@@ -1,6 +1,6 @@
-# Standard Pin Names Porting Guide
+# Standard Pin Names
 
-This guide aims to help vendors to comply with the new pin naming guidelines.
+This porting guide aims to help vendors to comply with the new pin naming guidelines.
 
 There is a set of generic guidelines that apply to all boards, and further sets of guidelines that additionally apply to boards that have certain compatible connectors.
 
