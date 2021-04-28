@@ -1,14 +1,10 @@
-## Introduction
+## Standard Pin Names
 
-### Overview and assumptions
-
-Platform code should be portable across different Mbed supported boards with the same hardware capabilities or interfaces.
+In general, platform code should be portable across different Mbed supported boards with the same hardware capabilities or interfaces.
 
 This document provides general developer guidelines on pin names that apply to all boards but it's not specific to any type of connector.
 
 **_NOTE:_** there might be separate documents for pin names that apply to specific connectors.
-
-## Standard Pin Names
 
 ### LEDs
 
