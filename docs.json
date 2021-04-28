@@ -269,9 +269,6 @@
                             "title": "Standard Pin Names",
                             "sources": [{
                                     "path": "docs/porting/standard_pin_names/pin_names_dev_guide.md"
-                                },
-                                {
-                                    "path": "docs/porting/standard_pin_names/pin_names_dev_guide_arduino.md"
                                 }
                             ]
                         },
