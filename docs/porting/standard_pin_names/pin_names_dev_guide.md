@@ -1,4 +1,4 @@
-## Standard Pin Names
+# Standard Pin Names
 
 In general, platform code should be portable across different Mbed supported boards with the same hardware capabilities or interfaces.
 
@@ -6,7 +6,7 @@ This document provides general developer guidelines on pin names that apply to a
 
 **_NOTE:_** there might be separate documents for pin names that apply to specific connectors.
 
-### LEDs
+## LEDs
 
 Available onboard LEDs are defined as `LEDx` e.g. `LED1`, `LED2`, ...
 
@@ -30,7 +30,7 @@ It's possible to define new names of LEDs related to its properties, like color 
 
 However, these names do not apply to all boards and hence should not be used in official example applications.
 
-### Buttons
+## Buttons
 
 Buttons that are available on a board will be defined as `BUTTONx` e.g. `BUTTON1`, `BUTTON2`, ...
 
@@ -53,7 +53,7 @@ It's possible to define new names of buttons related to its properties. It's rec
 
 However, these names do not apply to all boards and hence should not be used in official example applications.
 
-### UART
+## UART
 
 Every Mbed board includes a serial interface to the host PC, which allows the console to print useful information about the application.
 
