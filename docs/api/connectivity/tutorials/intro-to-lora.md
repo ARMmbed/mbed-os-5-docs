@@ -82,7 +82,7 @@ You now need to configure the gateway by installing software to scan the spectru
 
 #### Kerlink Wirnet stations
 
-Follow the instructions in [this document](https://www.thethingsnetwork.org/docs/gateways/kerlink/config.html).
+Follow the instructions in [this document](https://www.thethingsnetwork.org/docs/devices-and-gateways/).
 
 #### MultiTech Conduit
 
@@ -115,34 +115,20 @@ Follow the instructions in [this document](https://github.com/ttn-zh/ic880a-gate
 
 ### Registering the gateway
 
-1. [Sign up](https://console.thethingsnetwork.org) for an account at The Things Network.
-1. You're redirected to the dashboard page.
+1. [Sign up](https://account.thethingsnetwork.org/users/login) for an account at The Things Network.
+1. Visit the [Development Console](https://console.cloud.thethings.network/) and select the cluster closest to you.
 1. Click **Gateways**.
 
     <span class="images">![](../../../images/ttn1.png)</span>
 
-1. Click **Register gateway**.
-
-    <span class="images">![](../../../images/ttn2.png)</span>
-
+1. Click **Add Gateway**.
 1. Fill in the details of your gateway.
-
-    <span class="images">![](../../../images/ttn3.png)<span>Gateway details: The Things Network uses the gateway location to create coverage maps, so make sure the location is set correctly.</span></span>
-
-1. If you use the Kerlink Wirnet station:
-    - Tick **I'm using the legacy packet forwarder**.
-    - Under **Gateway EUI**, enter the EUI of the gateway (printed on the box).
-
-1. If you use the Raspberry Pi:
-    - Tick **I'm using the legacy packet forwarder**.
-    - Under **Gateway EUI**, enter the EUI that printed when you called `install.sh` in step 2.1.
-
-1. Click **Register gateway**.
+1. Click **Create gateway**.
 1. You have created the gateway.
 
-If you use the MultiTech conduit, you need the 'Gateway key' to authenticate the gateway to the network. Copy it.
+If you use the MultiTech conduit, you need the 'Gateway key' to authenticate the gateway to the network. Click on **API Keys** and **Add API Key**
 
-<span class="images">![](../../../images/ttn4.png)</span>
+<span class="images">![](../../../images/ttn2.png)</span>
 
 ### Installing the packet forwarder
 
@@ -208,32 +194,22 @@ The device EUI and application EUI are globally unique identifiers. You can buy 
 
 Register the device in The Things Network, and generate some keys:
 
-1. Go to [The Things Network console](https://console.thethingsnetwork.org).
+1. Go to [The Things Network console](https://console.cloud.thethings.network/).
 1. Click **Applications**.
 1. Click **Add application**.
-
-    <span class="images">![](../../../images/ttn8.png)</span>
-
 1. Fill in the details of your application, and click **Add application**.
 
     <span class="images">![](../../../images/ttn9.png)<span>Filling in the application details in The Things Network.</span></span>
 
-1. You're redirected to the application page. Under **Devices**, click **Register device**.
-
-    <span class="images">![](../../../images/ttn10.png)</span>
+1. You're redirected to the application page. Under **Devices**, click **Add end device**.
+1. Search for your device using the tab **From The LoRaWAN Device Repository**, if your device is not in the overview, select the option **Manually**
+    <span class="images">![](../../../images/ttn12.png)</span>
 
 1. If your device has an EUI printed on it, enter this in **Device EUI**.
 
     <span class="images">![](../../../images/ttn11.png)<span>The device EUI is often printed on the module or on the box.</span></span>
 
-1. If your device does not have an EUI printed on it, press the **generate** button to allocate an EUI from a block owned by The Things Network. Do **not** make an EUI up; it must be globally unique.
-
-    <span class="images">![](../../../images/ttn12.png)</span>
-
-1. Fill in the rest of the details, and click **Register**.
-
-    <span class="images">![](../../../images/ttn13.png)</span>
-
+1. Fill in the rest of the details, and click **Register end device**.
 1. The device page opens. It contains the keys that your device uses when authenticating with the network. Click the `<>` button to get the keys as a byte array. This makes it easy to copy the keys into code.
 
     <span class="images">![](../../../images/ttn14.png)</span>
@@ -305,7 +281,7 @@ Now you can verify whether the setup works by flashing this application to your 
 
 1. When compilation succeeds, the compiler sends a file to your computer.
 1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device.
-1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Data** tab:
+1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Live data** tab:
 
     <span class="images">![](../../../images/ttn19.png)<span>We've got data!</span></span>
 
@@ -356,7 +332,7 @@ You can toggle the LED on your development board over LoRa. In the Online Compil
     <span class="notes">**Note:** On some development boards, writing `0` to the LED turns them on. On others, writing `1` does this. It depends on the wiring of the board.</span>
 
 1. Compile, and flash the application.
-1. When the device is back online, use the The Things Network console to queue a message. Go to your device page, and under **Downlink**, select port **21** and data `01`. Then press **Send**.
+1. When the device is back online, use the The Things Network console to queue a message. Go to your device page, and under **Messaging**, select **Downlink** and add port **21** and data `01`. Then press **Schedule downlink**.
 
     <span class="images">![](../../../images/ttn16.png)<span>Queuing a downlink message over port 21</span></span>
 
@@ -377,7 +353,7 @@ To build this application, first grab an access key from The Things Network:
 
     <span class="images">![](../../../images/ttn17.png)</span>
 
-1. Locate your **Access Key**, click the **show** button and make note of it, as well.
+1. Create a new API key via **API Keys** and **Add API key**.
 
     <span class="images">![](../../../images/ttn18.png)</span>
 
