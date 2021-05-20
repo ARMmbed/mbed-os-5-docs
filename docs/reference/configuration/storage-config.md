@@ -27,28 +27,20 @@ kvstore
     ├───tdb_external
     │       mbed_lib.json
     │
-    ├───tdb_external_no_rbp
-    │       mbed_lib.json
-    │
     ├───filesystem
-    │       mbed_lib.json
-    │
-    ├───filesystem_no_rbp
     │       mbed_lib.json
     │
     └───tdb_internal
             mbed_lib.json
 ```
 
-The KVStore configuration file structure includes six configuration files. You can use the topmost configuration file to set up the full configuration of the storage by defining a single parameter (`storage_type`) to one of the predefined configurations. You can use the configuration files in the subfoldersto implement the above top level configurations.
+The KVStore configuration file structure includes four configuration files. You can use the topmost configuration file to set up the full configuration of the storage by defining a single parameter (`storage_type`) to one of the predefined configurations. You can use the configuration files in the subfoldersto implement the above top level configurations.
 
 You can find the configuration files under `conf/<configuration name>`:
 
 - `conf/tdb_internal` - The storage type `TDB_INTERNAL` configuration is intended to be used when all data will be stored in internal memory only. There is no need for additional security features. A single TDBStore object will be allocated in internal flash.
 - `conf/tdb_external` - The storage type `TDB_EXTERNAL` configuration provides full security and is intended to be used when data is stored in external flash. It allocates: SecureStore, TDBStore in external flash and TDBStore in internal flash for rollback protection (RBP).
-- `conf/tdb_external_no_rbp` - The storage type `TDB_EXTERNAL_NO_RBP` configuration allows security but without rollback protection. This is similar to `tdb_external` but without the TDBStore in internal memory.
 - `conf/filesystem` - This configuration allocates SecureStore, FileSystemStore, filesystem, TDBStore in internal memory and the required block devices. The allocated file system is selected according to the COMPONENT set in `targets.json` (FATFS for SD card and LITTLEFS for SPIF). However, you can set this differently by overriding the respective parameter. Use this configuration if you need the file system with the POSIX API in addition to the set/get API.
-- `conf/filesystem_no_rbp` - The storage type `FILESYSTEM_NO_RBP` configuration allows security like the FILESYSTEM configuration but without rollback protection.
 
 A standalone block device is allocated for each component in internal and external memory and SD cards as required for the configurations. The full size of the memory allocated for each block device will be used by the respective component.
 
@@ -59,9 +51,7 @@ The following is a list of all storage parameters available and their descriptio
 - `storage_type` - Used to select one of the predefined configurations.
    - `TDB_INTERNAL`.
    - `TDB_EXTERNAL`.
-   - `TDB_EXTERNAL_NO_RBP`.
    - `FILESYSTEM`.
-   - `FILESYSTEM_NO_RBP`.
 - `default_kv` - This string represents the path for the default KVStore instantiation. Applications can pass an empty path (only the key name) or pass the generated name for this parameter (`MBED_CONF_STORAGE_DEFAULT_KV`) as the path to use this configuration.
 - `internal_size` - The size in bytes for the internal FlashIAP block device. This, together with the `internal_base_address`, adjusts the size and location where the block device resides on memory. If not defined, the block device uses the maximum size available.
 - `internal_base_address` - The address where the internal FlashIAP blockDevice starts. This helps to prevent collisions with other needs, such as firmware updates. If this is not defined, the start address is set to the first sector after the application code ends in `TDB_internal`. In any external configurations with rollback protection support, it will be set to end of flash - `rbp_internal_size`.
@@ -83,7 +73,7 @@ Below is the main storage configuration in the `mbed_lib json` file:
 "name": "storage",
     "config": {
         "storage_type": {
-            "help": "Options are TDB_INTERNAL, TDB_EXTERNAL, TDB_EXTERNAL_NO_RBP, FILESYSTEM or FILESYSTEM_NO_RBP.",
+            "help": "Options are TDB_INTERNAL, TDB_EXTERNAL, or FILESYSTEM",
             "value": "NULL"
         },
         "default_kv": {
@@ -104,7 +94,7 @@ In this configuration, all KVStore C APIs will be mapped to the TDBStore in the 
 
 Below is the `TDB_INTERNAL` configuration in `mbed_lib.json`:
 
-```
+```json
 {
     "name": "storage_tdb_internal",
     "config": {
@@ -136,7 +126,7 @@ You can enable this configuration by setting `storage_type` to `TDB_EXTERNAL` in
 
 Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
 
-```
+```json
 {
     "name": "storage_tdb_external",
     "config": {
@@ -164,37 +154,6 @@ Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
 }
 ```
 
-### TDB_External_no_RBP
-
-<span class="images">![External](../../images/TDB_External_no_rbp.jpg)<span>`TDB_External_no_RBP`</span></span>
-
-The `TDB_EXTERNAL_NO_RBF` configuration has no support for rollback protection and is therefore less secure.
-
-The `TDB_EXTERNAL_NO_RBP` uses only one TDBStore on the external flash for all data. In this configuration, all KVStore C API calls are mapped to work with the SecureStore class. The external TDBStore will work on top of the default block device; however, you can set the external TDBStore block device to any of the following block devices: SPIF, QSPIF, DATAFASH and SD.
-
-You can enable this configuration by setting `storage_type` to `TDB_EXTERNAL_NO_RBP` in `storage mbed_lib.json`.
-
-Below is the `TDB_EXTERNAL_NO_RBP` configuration in `mbed_lib.json`:
-
-```
-{
-    "name": "storage_tdb_external_no_rbp",
-    "config": {
-        "external_size": {
-            "help": "Size in bytes of the external block device, if default the maximum size available is used.",
-            "value": "0"
-        },
-        "external_base_address": {
-            "help": "The default will set start address to address 0",
-            "value": "0"
-        },
-        "blockdevice": {
-            "help": "Options are default, SPIF, DATAFASH, QSPIF, SD or other. If default the block device will be chosen by the defined component. If other, override get_other_blockdevice() to support block device out of Mbed OS tree.",
-            "value": "default"
-        }
-    }
-}
-```
 
 ### FILESYSTEM
 
@@ -208,7 +167,7 @@ You can enable this configuration by setting `storage_type` to `FILESYSTEM` in `
 
 Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
-```
+```json
 {
     "name": "storage_filesystem",
     "config": {
@@ -250,66 +209,14 @@ Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
 If the file system is not set, the default file system and block device will be applied, and `blockdevice`, `external_size` and `external_base_address` will be ignored.
 
-### FILESYSTEM_NO_RBP
-
-<span class="images">![FILESYSTEM](../../images/FILESYSTEM_no_rbp.jpg)<span>`FILESYSTEM_NO_RBP`</span></span>
-
-The `FILESYSTEM_NO_RBP` configuration resembles the `EXTERNAL_NO_RBP` with the difference that it uses FileSystemStore on the external flash. By default, FileSystemStore uses the default file system and the default block device. This configuration has no support for rollback protection and is therefore less secure.
-
-In this configuration, all KVStore C API calls are mapped to the SecureStore class. This class handles the use of the external FileSystemStore.
-
-You can enable this configuration by setting `storage_type` to `FILESYSTEM_NO_RBF` in `storage mbed_lib.json`.
-
-Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
-
-```
-{
-    "name": "storage_filesystem_no_rbp",
-    "config": {
-        "filesystem": {
-            "help": "Options are default, FAT or LITTLE. If default value the filesystem is chosen by the blockdevice type",
-            "value": "default"
-        },
-        "blockdevice": {
-            "help": "Options are default, SPIF, DATAFLASH, QSPIF, SD or other. If default the block device will be chosen by the defined component. If other, override get_other_blockdevice() to support block device out of Mbed OS tree.",
-            "value": "default"
-        },
-        "external_size": {
-            "help": "Size in bytes of the external block device, if default the maximum size available is used.",
-            "value": "0"
-        },
-        "external_base_address": {
-            "help": "The default will set start address to address 0",
-            "value": "0"
-        },    
-        "mount_point": {
-            "help": "Where to mount the filesystem.",
-            "value": "kv"
-        },
-        "folder_path": {
-            "help": "Path for the working directory where the FileSystemStore stores the data",
-            "value": "kvstore"
-        }
-    }
-}
-```
-
-If the file system is not set, the default file system and block device will be applied, and `blockdevice`, `external_size` and `external_base_address` will be ignored.
 
 ### Configuration functions API
 
-Applications must call the function **storage_configuration()** to instantiate the required configuration. This function is defined as weak to allow the replacement of this function with a completely different implementation of the instantiation of components:
-
-```
-MBED_WEAK bool storage_configuration()
-{
-    return _STORAGE_CONFIG(MBED_CONF_STORAGE_STORAGE_TYPE);
-}
-```
+Applications must call the function **kv_init_storage_config()** to instantiate any of the required default configurations. This function is defined as weak to allow it to be overridden by a user implementation of the instantiation.
 
 ### Override user-defined setup
 
-To create a much more complex setup, including using other block devices, such as MBRBlockDevice or SlicingBlockDevice, you need to override the `storage_configuration` function and generate any storage configuration.
+To create a more complex setup, including using other block devices, such as MBRBlockDevice or SlicingBlockDevice, you need to override the `kv_init_storage_config` function and generate any storage configuration.
 
 ## LittleFS configuration
 
@@ -432,21 +339,20 @@ The list above is in the order of precedence shows which block device is the def
 
 For example, the following entry in `targets.json` enables the SD component:
 
-```
+```json
  "K64F": {
         "components": ["SD"],
         "core": "Cortex-M4F",
         "supported_toolchains": ["ARM", "GCC_ARM", "IAR"],
         "inherits": ["Target"],
         "features": ["STORAGE"],
-        "release_versions": ["2", "5"],
-        ...
-     },
+        "release_versions": ["2", "5"]
+     }
 ```
 
 The following `mbed_app.json` snippet enables the SPI flash component when compiling for the MTB_ADV_WISE_1570 target:
 
-```     
+```json
 "target_overrides": {
     "MTB_ADV_WISE_1570": {
          "target.components_add": ["SPIF"]
@@ -458,7 +364,7 @@ Please note that while a default block device exists, an application is not forc
 
 Enabling the storage feature, SD component, and overriding the default pins can be done within `mbed_app.json`. Using the NRF52_DK target as an example:
 
-```
+```json
 "target_overrides": {
     "NRF52_DK": {
          "target.features_add": ["STORAGE"],
@@ -475,7 +381,7 @@ These values override the default pins assigned to the parameters: `MBED_CONF_SD
 
 ### Overriding default block device implementation
 
-The get default instance is implemented as [MBED_WEAK](https://github.com/ARMmbed/mbed-os/blob/40058871de290edc758a21ae6d8f2ec1d1b3533d/platform/mbed_toolchain.h#L120) at `features/storage/system_storage/SystemStorage.cpp`. That means that can override it by implementing the function without `MBED_WEAK` and change the default block device for a given application.
+The get default instance is implemented as [MBED_WEAK](https://github.com/ARMmbed/mbed-os/blob/40058871de290edc758a21ae6d8f2ec1d1b3533d/platform/mbed_toolchain.h#L120) at `features/storage/system_storage/SystemStorage.cpp`. That means that a user can override it by implementing the function without `MBED_WEAK` and change the default block device for a given application.
 
 ```
 #include "HeapBlockDevice.h"
@@ -497,7 +403,7 @@ The default file system is created based on the default block device due to perf
 
 SPIF and DATAFLASH block devices support the Little file system, and the SD block device supports the FAT file system. However, the application can ovveride this behavior.
 
-### Overriding default block device implementation
+### Overriding the default FileSystem implementation
 
 The get default instance is implemented as `MBED_WEAK` at `features/storage/system_storage/SystemStorage.cpp`. That means you can overridde it by implementing the function without `MBED_WEAK` and change the default block device for a given application.
 
