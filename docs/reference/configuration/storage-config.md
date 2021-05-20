@@ -94,7 +94,7 @@ In this configuration, all KVStore C APIs will be mapped to the TDBStore in the 
 
 Below is the `TDB_INTERNAL` configuration in `mbed_lib.json`:
 
-```json
+```
 {
     "name": "storage_tdb_internal",
     "config": {
@@ -126,7 +126,7 @@ You can enable this configuration by setting `storage_type` to `TDB_EXTERNAL` in
 
 Below is the `TDB_EXTERNAL` configuration in `mbed_lib.json`:
 
-```json
+```
 {
     "name": "storage_tdb_external",
     "config": {
@@ -167,7 +167,7 @@ You can enable this configuration by setting `storage_type` to `FILESYSTEM` in `
 
 Below is the `FILESYSTEM` configuration in `mbed_lib.json`:
 
-```json
+```
 {
     "name": "storage_filesystem",
     "config": {
@@ -339,7 +339,7 @@ The list above is in the order of precedence shows which block device is the def
 
 For example, the following entry in `targets.json` enables the SD component:
 
-```json
+```
  "K64F": {
         "components": ["SD"],
         "core": "Cortex-M4F",
@@ -352,7 +352,7 @@ For example, the following entry in `targets.json` enables the SD component:
 
 The following `mbed_app.json` snippet enables the SPI flash component when compiling for the MTB_ADV_WISE_1570 target:
 
-```json
+```
 "target_overrides": {
     "MTB_ADV_WISE_1570": {
          "target.components_add": ["SPIF"]
@@ -364,7 +364,7 @@ Please note that while a default block device exists, an application is not forc
 
 Enabling the storage feature, SD component, and overriding the default pins can be done within `mbed_app.json`. Using the NRF52_DK target as an example:
 
-```json
+```
 "target_overrides": {
     "NRF52_DK": {
          "target.features_add": ["STORAGE"],
