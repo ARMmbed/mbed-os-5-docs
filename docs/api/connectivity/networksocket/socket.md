@@ -38,5 +38,5 @@ Here is a client example of HTTP transaction over TCPSocket or TLSSocket:
 
 - [TCPSocket](tcpsocket.html) API reference.
 - [UDPSocket](udpsocket.html) API reference.
-- [TLSSocket](../secure-socket/tlssocket.html) API reference.
+- [TLSSocket](tlssocket.html) API reference.
 - [Socket](../apis/connectivity-architecture.html#socket-api) architecture.
