@@ -29,7 +29,7 @@ This page covers:
 
 Click the button below to automatically import the example into the Online Compiler.
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky)](https://github.com/ARMmbed/mbed-os-example-blinky/blob/mbed-os-6.7.0/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky)](https://github.com/ARMmbed/mbed-os-example-blinky/blob/mbed-os-6.11.0/main.cpp)
 
 Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-example-blinky) into the prompt.
 
@@ -39,7 +39,7 @@ Alternatively, you may select the import button on the top left hand side of the
 
 Click the button below to automatically import the example into the Online Compiler.
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky-baremetal)](https://github.com/armmbed/mbed-os-example-blinky-baremetal/blob/mbed-os-6.7.0/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-blinky-baremetal)](https://github.com/armmbed/mbed-os-example-blinky-baremetal/blob/mbed-os-6.11.0/main.cpp)
 
 Alternatively, you may select the import button on the top left hand side of the Online Compiler screen and copy the [example link](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal) into the prompt.
 

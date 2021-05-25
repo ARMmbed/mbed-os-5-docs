@@ -14,4 +14,4 @@ Controller-Area Network (CAN) is a bus standard that allows microcontrollers and
 
 This example sends a counter from one CAN bus (can1) and listens for a packet on the other CAN bus (can2). Each bus controller should be connected to a CAN bus transceiver. These should be connected together at a CAN bus.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CAN_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-CAN_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CAN_ex_1/tree/v6.11)](https://github.com/ARMmbed/mbed-os-snippet-CAN_ex_1/blob/v6.11/main.cpp)

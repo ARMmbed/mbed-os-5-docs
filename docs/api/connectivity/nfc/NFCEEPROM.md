@@ -12,7 +12,7 @@ To use an NFC EEPROM, you must initiate the instance with a driver instance, an 
 
 ## NFCEEPROM example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-NFC_EEPROM/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-NFC_EEPROM/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-NFC_EEPROM/tree/v6.11)](https://github.com/ARMmbed/mbed-os-snippet-NFC_EEPROM/blob/v6.11/main.cpp)
 
 ## Related content
 

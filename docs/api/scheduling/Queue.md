@@ -29,7 +29,7 @@ if (evt.status == osEventMessage) {
 
 This example shows `Queue` and [MemoryPool](memorypool.html) managing measurements.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Queue/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Queue/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Queue/tree/v6.11)](https://github.com/ARMmbed/mbed-os-snippet-Queue/blob/v6.11/main.cpp)
 
 ## Related content
 

@@ -19,7 +19,7 @@ The Wait API creates delays by actively blocking the execution for a period of t
 
 Here is an example that uses the API's `wait_us()` function to wait a number of microseconds:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Busy-Wait/blob/v6.11/main.cpp)
 
 The processor is active for the entire duration, so the Wait API is suitable when you need short delays (nanoseconds to a few microseconds) without triggering [sleep modes](../apis/power-management-sleep.html), which have some wake-up latencies. It is also safe to use in interrupt contexts. However, we do not recommend busy waiting for longer delays: the system may not be able to switch to other tasks or save power by sleeping.
 
@@ -31,7 +31,7 @@ For longer delays - millisecond to seconds - use one of the other techniques.
 
 Here is an example that uses a ticker object:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Ticker)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Ticker/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Ticker)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Ticker/blob/v6.11/main.cpp)
 
 <span class="warnings"> **Warning:** A ticker/timeout's handlers are executed in interrupt contexts and thus, like any interrupt handlers, should return quickly and not use `printf` or APIs that are not intended for interrupts.</span>
 
@@ -41,7 +41,7 @@ If you don't need the precision of a high-frequency Ticker or Timeout, we recomm
 
 If your application is running in RTOS mode then [Threads](../apis/thread.html) are another efficient way to blink an LED. During the waiting period, Mbed OS automatically conserves power and deals with other tasks. This makes Threads the most efficient way to run tasks in Mbed OS.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Thread/blob/v6.11/main.cpp)
 
 
 ### EventQueue
@@ -60,7 +60,7 @@ Let’s use a DigitalIn pin from the button to control the application. There ar
 
 We can wait for digital input the same way we waited for time to pass - using a `while()` loop. In the example below the digital input is a button press, which causes the application to flash the LED and then wait for one second.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Active-Polling-Button)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Active-Polling-Button/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Active-Polling-Button)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Active-Polling-Button/blob/v6.11/main.cpp)
 
 We constantly poll the button to see whether it has a value that matches `BUTTON_PRESS`. If it matches, we toggle the LED and wait one second.
 
@@ -70,7 +70,7 @@ We constantly poll the button to see whether it has a value that matches `BUTTON
 
 An alternative way to poll the button is to use an interrupt. Interrupts let you say `when that pin changes value, call this function`. In other words, we can tell the MCU to call a function when the button is pressed. In our case, that function toggles the LED:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Interrupt-Button)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Interrupt-Button/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Interrupt-Button)](https://github.com/ARMmbed/mbed-os-snippet-Flow-Control-Interrupt-Button/blob/v6.11/main.cpp)
 
 In the code above a heartbeat function runs on LED2, which lets you see that your code is running. Then we connect an InterruptIn object to the button and set it so that when the button rises from 0 to 1, the toggle function is called; the function toggles LED1. This way the application can turn the LED on and off as needed, without needing to “waste” time waiting or actively polling an inactive button. The MCU is free to move on to other things .
 

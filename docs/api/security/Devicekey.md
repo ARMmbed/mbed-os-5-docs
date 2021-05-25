@@ -86,4 +86,4 @@ Run the DeviceKey functionality test with the `mbed`:
 
 ## DeviceKey example
 
-[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DeviceKey/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-DeviceKey/blob/v6.7/main.cpp)
+[![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DeviceKey/tree/v6.11)](https://github.com/ARMmbed/mbed-os-snippet-DeviceKey/blob/v6.11/main.cpp)

@@ -14,4 +14,4 @@ RTC can keep track of time even in a powered down state if the secondary source 
 
 ## RTC Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.11)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.11/main.cpp)
