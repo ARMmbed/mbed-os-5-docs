@@ -1,6 +1,6 @@
 # UDPSocket
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_d_p_socket.png)<span>UDPSocket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/class_u_d_p_socket.png)<span>UDPSocket class hierarchy</span></span>
 
 The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](../apis/tcpsocket.html) when you require guaranteed delivery.
 
@@ -12,7 +12,7 @@ If you prefer to use `send()` and `recv()` functions and work only with one peer
 
 ## UDPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_d_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/class_u_d_p_socket.html)
 
 ## UDPSocket example
 

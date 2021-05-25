@@ -26,7 +26,7 @@ The core system clock is disabled. You can only enable the low-frequency clocks 
 
 You can find the API and specification for the sleep API in the following header file:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__sleep.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/group__hal__sleep.html)
 
 To enable sleep support in Mbed OS, you need to add the `SLEEP` label in the `device_has` option of the target's section in the `targets.json` file.
 
@@ -44,4 +44,4 @@ mbed test -t <toolchain> -m <target> -n "tests-mbed_hal-sleep*"
 
 You can read more about the test cases:
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__hal__sleep__tests.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/group__hal__sleep__tests.html)

@@ -1,6 +1,6 @@
 # TLSSocket
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_t_l_s_socket.png)<span>TLSSocket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/class_t_l_s_socket.png)<span>TLSSocket class hierarchy</span></span>
 
 `TLSSocket` and `TLSSocketWrapper` implement TLS stream over the existing `Socket` transport. You can find design and implementation details in the [SecureSocket](../apis/secure-socket.html) page.
 
@@ -8,7 +8,7 @@ To use secure TLS connections, the application uses the `TLSSocketWrapper` throu
 
 ## TLSSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_t_l_s_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/class_t_l_s_socket.html)
 
 ## TLSSocket example
 

@@ -1,6 +1,6 @@
 # File
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/classmbed_1_1_file.png)<span>File class hierarchy</span></span>
 
 The File class provides access to the underlying storage of a file system in a generic manner. This acts as a buffer between the file system and any technical limitations of the physical storage medium. On the storage, each file is a blob of data referenced by a file name represented as a string. By providing a file name to the `open` function in the File class, you can access the blob of data stored on disk.
 
@@ -14,7 +14,7 @@ Combining `read`, `write`, and `seek` on a File allows both streaming and random
 
 ## File class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/classmbed_1_1_file.html)
 
 ## File system example
 

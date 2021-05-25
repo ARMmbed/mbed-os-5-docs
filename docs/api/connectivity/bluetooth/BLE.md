@@ -88,7 +88,7 @@ Any contributions to BLE should include appropriate tracing code.
 
 ## BLE class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classble_1_1_b_l_e.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/classble_1_1_b_l_e.html)
 
 ## Related content
 

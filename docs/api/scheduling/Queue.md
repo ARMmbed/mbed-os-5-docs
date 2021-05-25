@@ -1,6 +1,6 @@
 # Queue
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_queue.png)<span>Queue class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/classrtos_1_1_queue.png)<span>Queue class hierarchy</span></span>
 
 A Queue allows you to queue pointers to data from producer threads to consumer threads.
 
@@ -8,7 +8,7 @@ A Queue allows you to queue pointers to data from producer threads to consumer t
 
 ## Queue class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_queue.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.11/mbed-os-api-doxy/classrtos_1_1_queue.html)
 
 ## Queue example
 
