@@ -12,46 +12,46 @@ The background color indicates:
   in Mbed CLI 2 (mbed-tools)</span>
 
 ## Installers
-<span style="background-color:#ffe6cc;">Windows, macOS and Linux
-installers may be made available at later point of time.</span><br>
+<span style="display:block;background-color:#ffe6cc;">Windows, macOS and Linux
+installers may be made available at later point of time.</span>
 
 ## Commands
 
 ### Device management
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli
 device-management` (device management) is deprecated. Refer to your cloud
-provider's documentation on how to cloud-manage your devices.</span><br>
+provider's documentation on how to cloud-manage your devices.</span>
 
 ### Repository management
-<span style="background-color:#ffcccc;">Support for Mercurial and the
+<span style="display:block;background-color:#ffcccc;">Support for Mercurial and the
 subcommand `mbed-cli publish` (publish program or library) is deprecated.
 Hosted repositories on "mbed.org" are not supported from Mbed CLI 2. Version
 control with git can be used as an alternative. Hosting for git repositories is
-available on [GitHub](https://github.com/).</span><br>
+available on [GitHub](https://github.com/).</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli cache`
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli cache`
 (repository cache management) is deprecated. No replacement is
-supported.</span><br>
+supported.</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli releases`
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli releases`
 (show release tags) is deprecated. We recommend using standard `git` commands
-instead, for example `git tag -l` to list all tagged releases.</span><br>
+instead, for example `git tag -l` to list all tagged releases.</span>
 
-<span style="background-color:#ffe6cc;">The subcommand `mbed-cli
+<span style="display:block;background-color:#ffe6cc;">The subcommand `mbed-cli
 update` (update to branch, tag, revision or latest) is not implemented. Use
 standard `git` commands instead. From your application directory: to check out
 a branch of Mbed OS, `git -C mbed-os checkout branchname`; to checkout the Mbed
 OS 6.8.0 release, `git -C mbed-os checkout mbed-os-6.8.0`; to check out Mbed OS
 revision `3e24a7ea9602`, `git -C mbed-os checkout 3e24a7ea9602`; to checkout
 the latest released version of Mbed OS `git -C mbed-os checkout
-latest`.</span><br>
+latest`.</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli export`
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli export`
 (generate an IDE project) is deprecated. Use [CMake
 generators](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html)
 instead. While CMake supports many generators, including many not supported by
 Mbed CLI 1, not all of Mbed CLI 1's exporters have replacements available yet.
-The available project generators are listed below.</span><br>
+The available project generators are listed below.</span>
 
 - [CodeBlocks](https://cmake.org/cmake/help/latest/generator/CodeBlocks.html)
 - [Eclipse](https://cmake.org/cmake/help/latest/generator/Eclipse%20CDT4.html)
@@ -59,10 +59,10 @@ The available project generators are listed below.</span><br>
 - [Qt Creator](https://doc.qt.io/qtcreator/creator-project-cmake.html)
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
 
-<span style="background-color:#ffcccc;">If you'd like to help us prioritize
+If you'd like to help us prioritize
 which CMake project generators to work on first, please give your thumbs up to
 the following issues you care most about, or [raise a merge request to
-CMake](https://gitlab.kitware.com/cmake/cmake/-/merge_requests):</span><br>
+CMake](https://gitlab.kitware.com/cmake/cmake/-/merge_requests):
 
 - [CrossCore® Embedded Studio](https://github.com/ARMmbed/mbed-tools/issues/249)
 - [e<sup>2</sup> studio](https://github.com/ARMmbed/mbed-tools/issues/250)
@@ -75,45 +75,45 @@ CMake](https://gitlab.kitware.com/cmake/cmake/-/merge_requests):</span><br>
 
 ### Library management
 
-<span style="background-color:#ffcccc;">The subcommands `mbed-cli add` (add
+<span style="display:block;background-color:#ffcccc;">The subcommands `mbed-cli add` (add
 library from URL) and `mbed-cli remove` (remove library) are deprecated.
 Instead, use `git clone` or `mbed-tools import` to clone a library. Then,
 manually create a `reponame.lib` file that contains a single line in the form
 `https://github.com/ARMmbed/reponame#branch-or-tag` to fetch a specific branch
 or tag. If you want to fetch the default branch, you don't need to add
-`#branch-or-tag-name`.</span><br>
+`#branch-or-tag-name`.</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli new --library`
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli new --library`
 (force creation of an Mbed library) is deprecated. Create a new Mbed library by
 creating a new folder and adding it to git version control. Then, create a
 `reponame.lib` in the application you wish to use the new library from, as
-described above (in the `mbed-cli add` paragraph).</span><br>
+described above (in the `mbed-cli add` paragraph).</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli ls` (view
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli ls` (view
 dependency tree) is deprecated. The subcommand `mbed-tools deploy` will now
-display all dependencies.</span><br>
+display all dependencies.</span>
 
 ### Tool configuration
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli config` (tool
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli config` (tool
 configuration) is deprecated. There is no need to configure an Mbed-specific
 compiler path in Mbed CLI 2; the compiler path is determined in a standard way
 by CMake instead. Other configuration options, like `target`, `toolchain`,
-`protocol`, `depth` and `cache`, are not supported in Mbed CLI 2.</span><br>
+`protocol`, `depth` and `cache`, are not supported in Mbed CLI 2.</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli toolchain`
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli toolchain`
 (set or get default toolchain) is deprecated. Pass the desired toolchain on the
 command line when compiling with `mbed-tools compile --toolchain GCC_ARM`, to,
-for example, select `GCC_ARM` as the toolchain.</span><br>
+for example, select `GCC_ARM` as the toolchain.</span>
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-cli target` (set
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-cli target` (set
 or get default target) is deprecated. Pass the desired target on the command
 line when compiling with `mbed-tools compile --mbed-target
 DISCO_L475VG_IOT01A`, to, for example, select `DISCO_L475VG_IOT01A` as the
-Mbed target.</span><br>
+Mbed target.</span>
 
 
 ### Creating an Mbed program
-<span style="background-color:#ffe6cc;">The subcommand `mbed-tools new` creates
+<span style="display:block;background-color:#ffe6cc;">The subcommand `mbed-tools new` creates
 a new Mbed program by default and supports only one command-line-option
 `--create-only` (create a program without fetching mbed-os). The following
 command-line options, previously supported in Mbed CLI 1, are deprecated:
@@ -134,12 +134,13 @@ command-line options, previously supported in Mbed CLI 1, are deprecated:
 * `--offline`: This is not needed, as there is no longer any Mbed-specific git
   cache.
 * `--no-requirements`: Mbed CLI 2 never automatically installs requirements.
-</span><br>
+</span>
 
 ### Importing an Mbed program
-<span style="background-color:#ffe6cc;">The subcommand `mbed-tools
+<div>
+<span style="display:block;background-color:#ffe6cc;">The subcommand `mbed-tools
 import` clones an Mbed project and library dependencies. The following
-command-line-options supported in Mbed CLI 1 are deprecated:
+command-line-options supported in Mbed CLI 1 are deprecated:</span>
 
 * `--depth`: The new CLI opportunistically imports the most shallow repository
   possible. Running `git clone --depth <depth> <repo_url> | cd <repo_name> &&
@@ -163,50 +164,50 @@ command-line-options supported in Mbed CLI 1 are deprecated:
 * `--no-requirements`
 * `--insecure`
 
-</span><br>
+</div>
 
 ### Configuring an Mbed program
 
-<span style="background-color:#ccffcc;">The subcommand `mbed-tools configure`
+<span style="display:block;background-color:#ccffcc;">The subcommand `mbed-tools configure`
 generates an Mbed OS config CMake file named `mbed_config.cmake` in the path
-`cmake_build/<TARGET_NAME>/<PROFILE>/<TOOLCHAIN>/`.</span><br>
+`cmake_build/<TARGET_NAME>/<PROFILE>/<TOOLCHAIN>/`.</span>
 
 ### Compiling an Mbed program
 
-<span style="background-color:#ffcccc;">The subcommand `mbed-tools
+<span style="display:block;background-color:#ffcccc;">The subcommand `mbed-tools
 compile` can be used to compile the program. The command-line-option `mbed
 compile --source` is deprecated. To control which libraries and directories you
 want to build either modify your application's `CMakeLists.txt` to add/exclude
 or use `cmake --build cmake_build --target <library_name> --target
-<other_library_name>` to add any number of targets to your build.</span><br>
+<other_library_name>` to add any number of targets to your build.</span>
 
-<span style="background-color:#ffcccc;">The command-line-option `mbed
+<span style="display:block;background-color:#ffcccc;">The command-line-option `mbed
 compile --library` is deprecated. Use standard CMake `add_library()`
-instead.</span><br>
+instead.</span>
 
-<span style="background-color:#ffcccc;">The command-line-option `mbed compile
+<span style="display:block;background-color:#ffcccc;">The command-line-option `mbed compile
 -DMACRO_NAME` is deprecated. Use `mbed-tools configure -m <TARGET_NAME> -t
 <TOOLCHAIN>` followed by `cmake -S . -B
 cmake_build/<TARGET_NAME>/<PROFILE>/<TOOLCHAIN> -GNinja -DMACRO_NAME` and
 `cmake --build cmake_build` or use
 [`target_compile_definitions()`](https://cmake.org/cmake/help/latest/command/target_compile_definitions.html)
-in your application's `CMakeLists.txt` the add the define.</span><br>
+in your application's `CMakeLists.txt` the add the define.</span>
 
-<span style="background-color:#ffcccc;">The command-line-option `mbed compile
+<span style="display:block;background-color:#ffcccc;">The command-line-option `mbed compile
 -m detect` to automatically build for the single target connected to your
 computer is deprecated. Run `mbed-tools detect` to see which targets are
 connected to your computer and then run `mbed-tools compile -m <TARGET_NAME> -t
-<TOOLCHAIN>` to build for the target you which to build for.</span><br>
+<TOOLCHAIN>` to build for the target you which to build for.</span>
 
-<span style="background-color:#ffe6cc;">The command-line-option `mbed
+<span style="display:block;background-color:#ffe6cc;">The command-line-option `mbed
 compile --build` will be supported at later point of time. Although we don't
 currently have the option to explicitly state the application's build path, we
 have a ticket open to track the issue
-[#184](https://github.com/ARMmbed/mbed-tools/issues/184).</span><br>
+[#184](https://github.com/ARMmbed/mbed-tools/issues/184).</span>
 
 ### Testing an Mbed program
 
-<span style="background-color:#ffe6cc;">The subcommand `mbed test` will be
+<span style="display:block;background-color:#ffe6cc;">The subcommand `mbed test` will be
 supported at later point of time. Keep apprised of progress by following [the
 issue to support mbed test on
-GitHub](https://github.com/ARMmbed/mbed-tools/issues/151)</span><br>
+GitHub](https://github.com/ARMmbed/mbed-tools/issues/151)</span>
