@@ -66,6 +66,16 @@ Cordio or any other vendor supplier one. Each board will have a driver that impl
 between the Host and its implementation of the controller. To add support for a new board please refer to the
 [BLE porting guide](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/FEATURE_BLE/include/ble/driver/doc/PortingGuide.md).
 
+## Debugging
+
+To learn about debugging with mbed go to:
+
+[Debugging Mbed OS](../debug-test/index.html)
+
+However, keep in mind when trying to debug connectivity issues that if more than one device is involved it might
+not be possible to stop your target without the communication breaking down. A less invasive way to help you understand
+what is happening might be to use tracing.
+
 ## Tracing
 
 To debug issues (or to understand what the stack is doing) it may be helpful to enable tracing.
