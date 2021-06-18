@@ -1,6 +1,6 @@
 # BLE Services
 
-Mbed OS BLE implementation isn't bundled with any BLE services. Services are in an external repository. Please got to:
+Mbed OS BLE implementation isn't bundled with any BLE services. Services are in an external repository. Please go to:
 - [ble-services](https://github.com/ARMmbed/mbed-os-experimental-ble-services)
 
 This is a community led effort to provide implementations of services both from the official BLE spec and user defined
