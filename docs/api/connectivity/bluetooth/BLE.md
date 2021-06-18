@@ -31,19 +31,6 @@ BLE API is accessible through several header files:
 
 Specific documentation for each component is available inside each of these headers.
 
-### BLE stacks
-
-To build and application using BLE  you will be using the Mbed OS BLE API and an implementation of the BLE stack
-appropriate for your board. The implementation is split into Host and Controller part. They can both run on the same
-chip or two separate ones. They will be both communicating through HCI (Host Controller Interface, a well defined
-protocol that is part of the Bluetooth specification). Read more about the HCI interface in Mbed OS
-[here](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/FEATURE_BLE/include/ble/driver/doc/HCIAbstraction.md).
-
-Currently, all implementation use the Cordio stack for the Host part. The Controller implementation may be either also
-Cordio or any other vendor supplier one. Each board will have a driver that implements the communication channel
-between the Host and its implementation of the controller. To add support for a new board please refer to the
-[BLE porting guide](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/FEATURE_BLE/include/ble/driver/doc/PortingGuide.md).
-
 ### Thread safety
 
 BLE implementation does not provide thread safety and assumes single thread execution. Event processing and API calls
@@ -65,6 +52,19 @@ All BLE operations are executed on an instance of BLE accessible through a funct
 
 BLE& mydevicename = BLE::Instance();
 ```
+
+### BLE stacks
+
+To build and application using BLE  you will be using the Mbed OS BLE API and an implementation of the BLE stack
+appropriate for your board. The implementation is split into Host and Controller part. They can both run on the same
+chip or two separate ones. They will be both communicating through HCI (Host Controller Interface, a well defined
+protocol that is part of the Bluetooth specification). Read more about the HCI interface in Mbed OS
+[here](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/FEATURE_BLE/include/ble/driver/doc/HCIAbstraction.md).
+
+Currently, all implementation use the Cordio stack for the Host part. The Controller implementation may be either also
+Cordio or any other vendor supplier one. Each board will have a driver that implements the communication channel
+between the Host and its implementation of the controller. To add support for a new board please refer to the
+[BLE porting guide](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/FEATURE_BLE/include/ble/driver/doc/PortingGuide.md).
 
 ## Tracing
 
