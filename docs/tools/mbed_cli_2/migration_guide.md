@@ -1,6 +1,6 @@
 # Migration guide
 
-If you haven't already read the [introduction](./intro.md), then start from there.
+If you haven't already read the [Mbed CLI 2 introduction](intro.md), then start there.
 
 The background color indicates:
 
