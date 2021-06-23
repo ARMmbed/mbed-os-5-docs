@@ -24,6 +24,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
+- We've updated the [Unit testing](../debug-test/unit-testing.html) information to reflect changes to the version of CMake used. You will need to update to CMake version 3.19 or above and alter your test code structure.
 - A new [Mbed CLI1 to CLI2 migration guide](../build-tools/migration-guide.html).
 - A new [tutorial about link time optimization](../apis/link-time-optimization.html).
 - A new [PSA porting guide](../porting/porting-security.html).
