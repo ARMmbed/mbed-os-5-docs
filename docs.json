@@ -8,7 +8,7 @@
             "hidden": true,
             "type": "doxygen",
             "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "mbed-os-6.11.0-docs-utf-8-fix"
+            "branch": "master"
         },
         {
             "title": "Introduction to Mbed OS 6",
