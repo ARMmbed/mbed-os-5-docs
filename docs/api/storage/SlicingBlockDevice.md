@@ -1,6 +1,6 @@
 # SlicingBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.png)<span>SlicingBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.12/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.png)<span>SlicingBlockDevice class hierarchy</span></span>
 
 The SlicingBlockDevice class provides a way to break up a block device into subunits without the need to manually track offsets. The SlicingBlockDevice acts as an opposite of the [ChainingBlockDevice](chainingblockdevice.html) class.
 
@@ -14,13 +14,13 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## SlicingBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.12/mbed-os-api-doxy/classmbed_1_1_slicing_block_device.html)
 
 ## SlicingBlockDevice example
 
 This SlicingBlockDevice example partitions a [HeapBlockDevice](heapblockdevice.html) into three subunits and showcases programming and reading back data segments through both the underlying master block device and the sliced subunits.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SlicingBlockDevice/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-SlicingBlockDevice/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SlicingBlockDevice/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-SlicingBlockDevice/blob/v6.12/main.cpp)
 
 ## Related content
 

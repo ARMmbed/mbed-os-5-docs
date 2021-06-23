@@ -16,11 +16,11 @@ void main()
 
 ## Function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__rtos___idle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/group__rtos___idle.html)
 
 ## Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-SleepManager_Example_1/blob/v6.12/main.cpp)
 
 ## Related content
 

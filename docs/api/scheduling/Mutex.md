@@ -1,6 +1,6 @@
 # Mutex
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/classrtos_1_1_mutex.png)<span>Mutex class hierarchy</span></span>
 
 A Mutex is used to synchronize the execution of threads, for example to protect the access to a shared resource.
 
@@ -25,13 +25,13 @@ If synchronization is required in ISR, consider using semaphores.
 
 ## Mutex class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_mutex.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/classrtos_1_1_mutex.html)
 
 ## Mutex example
 
 Use Mutex to protect printf().
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Mutex/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Mutex/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Mutex/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-Mutex/blob/v6.12/main.cpp)
 
 <span class="notes">**Note:** C standard library Mutexes<br>The Arm C standard library already has Mutexes in place to protect the access to `stdio`, so on the LPC1768 the above example is not necessary. On the other hand, the LPC11U24 does not provide default `stdio` Mutexes, making the above example a necessity.</br></span>
 

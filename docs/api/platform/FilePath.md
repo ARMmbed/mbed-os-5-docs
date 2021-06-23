@@ -3,7 +3,7 @@
 [Add description here.]
 
 ## FilePath class reference
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_path.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/classmbed_1_1_file_path.html)
 
 ## FilePath example
 

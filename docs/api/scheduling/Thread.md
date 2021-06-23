@@ -1,6 +1,6 @@
 # Thread
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/classrtos_1_1_thread.png)<span>Thread class hierarchy</span></span>
 
 The Thread class allows defining, creating and controlling parallel tasks.
 
@@ -16,7 +16,7 @@ The default stack size is 4K. However, the application can override it by using 
 
 ## Thread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classrtos_1_1_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/classrtos_1_1_thread.html)
 
 ```C
 /// Priority values.
@@ -81,13 +81,13 @@ typedef enum {
 
 The code below uses two separate threads to blink two LEDs. The first thread is automatically created and executes the `main` function; the second thread is created explicitly inside `main`.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Basic/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Basic/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Basic/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-Basic/blob/v6.12/main.cpp)
 
 ## Thread example with callbacks
 
 The Callback API provides a convenient way to pass arguments to spawned threads.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/blob/v6.12/main.cpp)
 
 ## Debugging tips
 

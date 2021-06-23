@@ -6,14 +6,14 @@ Use the AnalogOut interface to set the output voltage of an analog output pin sp
 
 ## AnalogOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_analog_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/classmbed_1_1_analog_out.html)
 
 ## AnalogOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_2/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_2/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_2/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_2/blob/v6.12/main.cpp)
 
 ## AnalogOut example
 
 Create a sine wave.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_1/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-AnalogOut_ex_1/blob/v6.12/main.cpp)

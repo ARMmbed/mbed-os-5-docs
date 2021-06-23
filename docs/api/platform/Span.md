@@ -88,16 +88,16 @@ When you encode the size of the sequence viewed in the Span value, Span instance
 
 ## Span class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/structmbed_1_1_span.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.12/mbed-os-api-doxy/structmbed_1_1_span.html)
 
 
 ## Span example
 
 C++ code:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-Span_cpp/blob/v6.12/main.cpp)
 
 
 C code:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_c/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Span_c/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Span_c/tree/v6.12)](https://github.com/ARMmbed/mbed-os-snippet-Span_c/blob/v6.12/main.cpp)
