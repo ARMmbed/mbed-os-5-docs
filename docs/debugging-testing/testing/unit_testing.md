@@ -8,7 +8,7 @@ Unit tests exercise code in small functional "units", such as a single function 
 
 ## Prerequisites
 
-Please install the following dependencies to use Mbed OS unit testing.
+You will need to install the following dependencies to use Mbed OS unit testing:
 
 - GNU toolchains.
    - GCC 6 or later. We recommend you use MinGW-W64 on Windows, but any Windows port of the above GCC versions works.
@@ -72,19 +72,19 @@ In a terminal window:
 
 Unit tests are located in the `tests/UNITTESTS` subdirectory of each library. We recommend that unit test files use an identical directory path as the file under test. This makes it easier to find unit tests for a particular class or a module. For example, if the file you are testing is `some/example/path/ClassName.cpp`, then all the test files are in the `UNITTESTS/some/example/path/ClassName` directory. Each test suite needs to have its own `CMakeLists.txt` file for test CMake configuration.
 
-All the stub source files are built in a stub CMake library target (e.g `mbed-stubs-rtos`) and linked to the `mbed-stubs` CMake target. The CMake target of the library unit under test is expected to link with the required stub libraries or `mbed-stubs` if it requires multiple stub libraries.
+All the stub source files are built in a stub CMake library target (e.g., `mbed-stubs-rtos`) and linked to the `mbed-stubs` CMake target. The CMake target of the library unit under test is expected to link with the required stub libraries or `mbed-stubs` if it requires multiple stub libraries.
 
 
 The new stub file should follow the naming convention `<CLASS_NAME>_stub.cpp` for the source file and `<CLASS_NAME>_stub.h` for the header file. They should be built as part of their respective stub CMake library. Alternatively, create a stub library if `<CLASS_NAME>_stub` is an implementation of an external source, not part of Mbed OS.
 
 
-All the Mbed OS header files are built with CMake `INTERFACE` libraries (e.g `mbed-headers-platform`). Stubbed header files reside in the `UNITTESTS/target_h` directory and are built with the `mbed-headers-base` CMake library. All CMake libraries containing header files are linked with `mbed-headers`. The CMake target of the library unit under test is expected to link with the required header file libraries or `mbed-headers` in case of requiring multiple header libraries. 
+All the Mbed OS header files are built with CMake `INTERFACE` libraries (e.g., `mbed-headers-platform`). Stubbed header files reside in the `UNITTESTS/target_h` directory and are built with the `mbed-headers-base` CMake library. All CMake libraries containing header files are linked with `mbed-headers`. The CMake target of the library unit under test is expected to link with the required header file libraries or `mbed-headers` in case of requiring multiple header libraries.
 
 All the stub libraries and header libraries are defined under `UNITTESTS/stubs/` directory.
 
 Libraries for fakes are under the `UNITTESTS/fakes` directory. These provide mock implementations that are meant to replace the stub version that does nothing. Usually, these will replace the header files as well as the source files and cannot be used together with their stub equivalents.
 
-The upcoming [Example](#Example) section describes how to write a unit test for a dummy example class (Unit Under Test). The example walks you through creating a header library and a stub interface library using CMake. 
+The upcoming [Example](#Example) section describes how to write a unit test for a dummy example class (Unit Under Test). The example walks you through creating a header library and a stub interface library using CMake.
 
 ### Test discovery
 
@@ -131,13 +131,13 @@ With the following steps, you can write a unit test. This example creates dummy 
     #endif
     ```
 
-1. Add a new `mbed-headers-example` interface library: 
+1. Add a new `mbed-headers-example` interface library:
 
     **mbed-os/stubs/CMakeLists.txt**
- 
+
     ```
     add_library(mbed-headers-example INTERFACE)
- 
+
     target_include_directories(mbed-headers-example
      INTERFACE
          ${mbed-os_SOURCE_DIR}/example
@@ -179,35 +179,35 @@ With the following steps, you can write a unit test. This example creates dummy 
 
 
 1. Create an example stub directory in `mbed-os/UNITTESTS/stubs/example`.
-1. Create the following example interface api stub source in `mbed-os/UNITTESTS/stubs/example` 
+1. Create the following example interface api stub source in `mbed-os/UNITTESTS/stubs/example`
 
     **example_interface_api_stub.c**
 
     ```
     #include "example_interface/example_interface_api.h"
-    
+
     example_interface_status_t example_interface_api_init()
     {
         return STATUS_OK;
     }
-    
+
     void example_interface_api_start(void)
     {
-    
+
     }
-    
+
     ```
 
     **CMakeLists.txt**
 
     ```    
     add_library(mbed-stubs-example-interface)
-    
+
     target_sources(mbed-stubs-example-interface
         PRIVATE
             example_interface_api_stub.c
     )    
-  
+
     target_link_libraries(mbed-stubs-example-interface
         PRIVATE
             mbed-headers
@@ -273,22 +273,22 @@ With the following steps, you can write a unit test. This example creates dummy 
     set(TEST_NAME myclass-unittest)
 
     add_executable(${TEST_NAME})
-  
+
     target_sources(${TEST_NAME}
         PRIVATE
             ${mbed-os_SOURCE_DIR}/example/tests/unittests/MyClass/MyClass.cpp
             test_MyClass.cpp
     )
-    
+
     target_link_libraries(${TEST_NAME}
         PRIVATE
             mbed-headers
             mbed-stubs            
             gmock_main
     )
-    
+
     add_test(NAME "${TEST_NAME}" COMMAND ${TEST_NAME})
-    
+
     set_tests_properties(${TEST_NAME} PROPERTIES LABELS "example")
     ```
 
