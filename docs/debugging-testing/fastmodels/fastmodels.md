@@ -78,7 +78,7 @@ The FVPs start running, and the LEDs on the FVP blink, like:
 
 Fast Models ethernet is a special component not enabled by default.
 
-<span class="notes">**Note:** The current version of Fast Model ethernet implementations requires Fast Models 11.3 or later or DS-5 5.29.0 or later. Also, the simulated IP routing only works on TCP and IP protocols, but neither the ICMP nor the IGMP protocol. This means ping does not work. For more details about how the Fast Models ethernet MAC works, please reference the [Fast Models reference manual](https://developer.arm.com/products/system-design/fast-models/docs/100964/latest/introduction/network-set-up/user-mode-networking).</span>
+<span class="notes">**Note:** The current version of Fast Model ethernet implementations requires Fast Models 11.3 or later or DS-5 5.29.0 or later. Also, the simulated IP routing only works on TCP and IP protocols, but neither the ICMP nor the IGMP protocol. This means ping does not work. For more details about how the Fast Models ethernet MAC works, please reference the [Fast Models reference manual](https://developer.arm.com/documentation/100964/latest/Introduction/User-mode-networking).</span>
 
 Here, the `mbed-os-example-sockets` example demonstrates ethernet function. You can build the example as usual:
 
