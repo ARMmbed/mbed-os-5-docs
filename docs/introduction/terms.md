@@ -139,7 +139,7 @@
 
 **RTOS** - [Real-Time Operating System](../apis/scheduling-concepts.html).
 
-**RTX** - The [Keil RTX](https://www2.keil.com/mdk5/cmsis/rtx) is a royalty-free, deterministic Real-Time Operating System designed for Arm Cortex-M devices. 
+**RTX** - [Keil RTX](https://www2.keil.com/mdk5/cmsis/rtx) is a royalty-free, deterministic Real-Time Operating System designed for Arm Cortex-M devices.
 
 ## S
 
