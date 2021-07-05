@@ -14,32 +14,84 @@ data is being sent. It is important to understand when radio is active.
 
 ### Connections
 
-The most intuitive power consumption rate to understand is when using connections. Each device needs to send a packet at
-below supervision timeout frequency to maintain a connection regardless of data transfer. This is the absolute minimum
-power consumption. Additionally, normally power is consumed at every connection event (exchange of packets between
-central and peripheral).
+The most intuitive power consumption rate to understand is when using connections. Each take turns sending and receiving
+packets at set interval.
+
+
+    CENTRAL
+    ┌────┐ ┌────┐           ┌────┐ ┌────┐         ┌────┐ ┌────┐ ┌────┐ ┌────┐
+    │send│ │recv│           │send│ │recv│         │send│ │recv│ │send│ │recv│
+    └────┘ └────┘           └────┘ └────┘         └────┘ └────┘ └────┘ └────┘
+      connection interval
+     ◄─────────────────────►
+
+    PERIPHERAL
+    ┌────┐ ┌────┐                                 ┌────┐ ┌────┐ ┌────┐ ┌────┐
+    │recv│ │send│                                 │recv│ │send│ │recv│ │send│
+    └────┘ └────┘                                 └────┘ └────┘ └────┘ └────┘
+      slave latency
+     ◄───────────────────────────────────────────►
+
+    ▲                       ▲                     ▲
+    connection event        connection event      connection event
+
+
+To maintain a connection, regardless if there is data transfer to be transferred, the central needs to transmit and
+receive once very connection interval.
+
+The peripheral needs to receive and may transmit data if it has any. It may skip a number of these connection events
+set by `slaveLatency`. If it has no data to transmit empty packets are sent.
+
+More power is consumed if there is data to be exchanged. The exchange can continue until the next connection event would
+take place.
 
 It's worth considering if keeping the connection active is worth it. Connection in BLE is extremely fast and if you plan
 to only send a quick burst of data every minute it is better to connect and disconnect each time.
 
 The cost of the connection is proportionate to the negotiable connection interval. This can be set during `connect` or
-later through `updateConnectionParameters`. The higher the interval the more often radio is active. This is especially
+later through `updateConnectionParameters`. The lower the interval the more often radio is active. This is especially
 important for the peripheral which needs to enable the radio to receive packets.
 
 This can be further helped through setting a high `slaveLatency` parameter. This allows the peripheral to skip
 connection events and save power not just by not sending any packets but by not even listening. This is not free for
-central as it increases latency of data transmission. Central may have to attempt sending data multiple times before the
-peripheral accepts the transmission. 
+central as it increases latency of data transmission from central to peripheral. Central may have to attempt sending
+data multiple times before the peripheral accepts the transmission. The peripheral may send data at any connection event
+as the central must listen after every transmission.
 
 ### Advertising and scanning
 
-Power draw during advertising is proportional to the advertising interval. Additionally, if the advertising is
-connectable or scannable it means the advertiser needs to listen on the radio after each advertisement for potential
-connection of scan requests.
+Power draw during advertising affected by:
+- the advertising interval - lower interval uses more power,
+- amount of data sent,
+- number of channels used - each advertising event is sent by default to three channels which you can limit to 2 or 1,
+- whether extended advertising is used - this will send additional packets on regular channels,
+- whether the type is connectable or scannable - it means the advertiser needs to listen on the radio after each
+  advertisement for potential connection of scan requests.
 
-Scanning power draw is proportional to time spent scanning. The interaction between scanning an advertising means that
-the less power the advertiser spends advertising, the more power the scanner will have to spend to see the advertising
-packets. The decision on balance will be dictated by your design of your devices (which one is more constrained).
+
+               PERIPHERAL
+                ┌────┐           advertising interval              ┌────┐
+     channel 37 │adv │◄───────────────────────────────────────────►│adv │
+                └────┘                                             └────┘
+                      ┌────┐                                             ┌────┐
+     channel 38       │adv │                                             │adv │
+                      └────┘                                             └────┘
+                            ┌────┐                                             ┌────┐
+     channel 39             │adv │                                             │adv │
+                            └────┘                                             └────┘
+
+     non-advertising              ┌────────────────────┐
+     channel                      │extended advertising│
+     (indicated in regular        └────────────────────┘
+      advertising payload)
+
+
+Scanning power draw is proportional to time spent scanning. Additional power will be used if you run active scanning
+which will send a scan request and listen for the reply.
+
+The interaction between scanning an advertising means that the less power the advertiser spends advertising, the more
+power the scanner will have to spend to see the advertising packets. The decision on balance will be dictated by your
+design of your devices (which one is more constrained).
 
 ### Connection vs advertising
 
@@ -89,6 +141,11 @@ Larger data length greatly increases throughput (although diminishing returns qu
 potential drawback is in noisy environments where longer packets may cause slower effective transfer due to
 retransmissions (this is only related to data length, ATT_MTU does not affect this).
 
+### ATT protocol
+
+GATT client writes and GATT server updates come in two versions - with and without confirmation. Requiring confirmations
+limits the throughput severely so to maximise throughput you can move reliability up from the stack to your application. 
+
 ### Packet timings
 
 If you're not constrained by battery power it might be tempting to use maximum/minimum values where possible.
@@ -104,7 +161,13 @@ The connection interval shouldn't be shorter than what your data requires in ter
 # Test and measure
 
 Due to complexity of the stack the only reliable way to truly maximise performance is to test your application with
-representative data and measure the throughput and power usage. It's important to keep it mind that tweaking
-parameters by trial and error and fine tuning them will only be reliable as long as you control both devices (and even
-then the environment can change). If your device needs to communicate with an unknown device your fine-tuning should
-give way to sound principles since stack behaviour varies and you cannot test against all stacks.
+representative data and measure the throughput and power usage. It's important to keep in mind that tweaking
+parameters by trial and error and fine-tuning them will only be reliable for sequential operations on known stacks.
+
+Many behaviours are implementation dependant and many operations are best effort and not guaranteed to succeed. The
+stack has a lot of latitude to change its behaviour in accordance with resource constrains and other commitments. For
+example your advertising may be severely affected by other operations that take precedence like keeping up a connection.
+
+If your device needs to communicate with an unknown device or you run a non-trivial combination of concurrent
+operations your fine-tuning should give way to sound principles since stack behaviours vary and you cannot test against
+all stacks and sequences of operations.
