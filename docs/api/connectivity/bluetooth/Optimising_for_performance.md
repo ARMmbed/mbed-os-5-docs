@@ -1,21 +1,22 @@
 # Optimising application for throughput and power consumption
 
-BLE devices are usually battery powered so performance might mean different things in different applications. You have
-to decide what is more important in yours - minimising power consumption on one or both sides of the communication or
-maximising throughput and/or latency. Some optimisation steps can in fact achieve both.
+BLE (Bluetooth Low Energy) devices are usually battery powered so performance might mean different things in different
+applications. You will need to decide what is more important in your application - minimising power consumption on one
+or both sides of the communication or maximising throughput and/or latency. Some optimisation steps can in fact achieve
+both.
 
 This guide will discuss some trade-offs that should be considered and best practices that improve performance on all
 fronts.
 
-## Power consumtpion
+## Power consumption
 
 Any radio activity will consume power. Depending on what the stack is doing you have to power the radio even when no
 data is being sent. It is important to understand when radio is active.
 
 ### Connections
 
-The most intuitive power consumption rate to understand is when using connections. Each take turns sending and receiving
-packets at set interval.
+The most intuitive power consumption rate to understand is when using connections. Each device will take turns sending
+and receiving at set interval.
 
 
     CENTRAL
@@ -37,22 +38,25 @@ packets at set interval.
 
 
 To maintain a connection, regardless if there is data transfer to be transferred, the central needs to transmit and
-receive once very connection interval.
+receive once every connection interval.
 
-The peripheral needs to receive and may transmit data if it has any. It may skip a number of these connection events
-set by `slaveLatency`. If it has no data to transmit empty packets are sent.
+The peripheral needs to acknowledge connection events to the central. Data ready to be transmitted is sent in the
+acknowledgement. To save power, if the peripheral has no data to transmit it may skip up to `slaveLatency` connection
+events.
 
 More power is consumed if there is data to be exchanged. The exchange can continue until the next connection event would
 take place.
 
-It's worth considering if keeping the connection active is worth it. Connection in BLE is extremely fast and if you plan
-to only send a quick burst of data every minute it is better to connect and disconnect each time.
+It's worth considering if keeping the connection active is worth it. Connection in BLE has little overhead and there are
+some cases when it is better to connect and disconnect each time you want to send a burst of data if for example you
+want to conserve power on one of the devices. This way only one side will have to run advertising/scanning all the time
+while the power limited device can turn the transmitter on only when it needs to.
 
 The cost of the connection is proportionate to the negotiable connection interval. This can be set during `connect` or
 later through `updateConnectionParameters`. The lower the interval the more often radio is active. This is especially
 important for the peripheral which needs to enable the radio to receive packets.
 
-This can be further helped through setting a high `slaveLatency` parameter. This allows the peripheral to skip
+This can be further helped by setting a high `slaveLatency` parameter. This allows the peripheral to skip
 connection events and save power not just by not sending any packets but by not even listening. This is not free for
 central as it increases latency of data transmission from central to peripheral. Central may have to attempt sending
 data multiple times before the peripheral accepts the transmission. The peripheral may send data at any connection event
@@ -62,6 +66,7 @@ as the central must listen after every transmission.
 
 Power draw during advertising affected by:
 - the advertising interval - lower interval uses more power,
+- use of Coded PHY which uses more power for extended effective range,
 - amount of data sent,
 - number of channels used - each advertising event is sent by default to three channels which you can limit to 2 or 1,
 - whether extended advertising is used - this will send additional packets on regular channels,
@@ -116,9 +121,9 @@ will only have to turn on the radio when the expected packet is due.
 ### Modulation schemes
 
 Depending on controller support different modulation schemes are available in BLE through `setPreferredPhys()` and
-`setPhy()`. While the coded PHY will increase reliability in noisy environments and increase range 2M PHY will increase
-the throughput saving power ber bit. If both devices support it and the signal quality is good then this is recommended
-to be enabled. 
+`setPhy()`. While the coded PHY will increase reliability in noisy environments and increase range at the cost of
+power consumption, 2M PHY will increase the throughput saving power ber bit. If both devices support it and the signal
+quality is good then this is recommended to be enabled. 
 
 ### Data length and ATT_MTU
 
@@ -144,7 +149,10 @@ retransmissions (this is only related to data length, ATT_MTU does not affect th
 ### ATT protocol
 
 GATT client writes and GATT server updates come in two versions - with and without confirmation. Requiring confirmations
-limits the throughput severely so to maximise throughput you can move reliability up from the stack to your application. 
+limits the throughput severely so to maximise throughput you can move reliability up from the stack to your application.
+Without confirmations more than a single Peripheral <=> Central data exchange can be made per connection. With
+confirmations, the connection event ends when the peripheral replies as it needs to prepare the acknowledgement which
+will be sent possibly in the next event.
 
 ### Packet timings
 
@@ -153,8 +161,9 @@ Advertising at maximum frequency and scanning continuously will speed up connect
 will minimise latency and maximise number of connection events.
 
 One key thing to consider when setting the connection interval low is that you are creating a boundary between which a
-sequence of packets must fit. This means that the last transfer must end before the next connection event starts. This
-dead time may become significant if the connection interval is short and packet length is long.
+sequence of packets must fit. This means that the last transfer must end before the next connection event starts
+(plus 150us of inter packet space). This dead time may become significant if the connection interval is short and packet
+length is long. 
 
 The connection interval shouldn't be shorter than what your data requires in terms of latency.
 
