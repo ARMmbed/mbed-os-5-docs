@@ -18,7 +18,7 @@ data is being sent. It is important to understand when radio is active.
 The most intuitive power consumption rate to understand is when using connections. Each device will take turns sending
 and receiving at set interval.
 
-
+```
     CENTRAL
     ┌────┐ ┌────┐           ┌────┐ ┌────┐         ┌────┐ ┌────┐ ┌────┐ ┌────┐
     │send│ │recv│           │send│ │recv│         │send│ │recv│ │send│ │recv│
@@ -35,7 +35,7 @@ and receiving at set interval.
 
     ▲                       ▲                     ▲
     connection event        connection event      connection event
-
+```
 
 To maintain a connection, regardless if there is data transfer to be transferred, the central needs to transmit and
 receive once every connection interval.
@@ -73,7 +73,7 @@ Power draw during advertising affected by:
 - whether the type is connectable or scannable - it means the advertiser needs to listen on the radio after each
   advertisement for potential connection of scan requests.
 
-
+```
                PERIPHERAL
                 ┌────┐           advertising interval              ┌────┐
      channel 37 │adv │◄───────────────────────────────────────────►│adv │
@@ -89,7 +89,7 @@ Power draw during advertising affected by:
      channel                      │extended advertising│
      (indicated in regular        └────────────────────┘
       advertising payload)
-
+```
 
 Scanning power draw is proportional to time spent scanning. Additional power will be used if you run active scanning
 which will send a scan request and listen for the reply.
