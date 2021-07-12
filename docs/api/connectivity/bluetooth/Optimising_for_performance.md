@@ -150,7 +150,7 @@ retransmissions (this is only related to data length, ATT_MTU does not affect th
 
 GATT client writes and GATT server updates come in two versions - with and without confirmation. Requiring confirmations
 limits the throughput severely so to maximise throughput you can move reliability up from the stack to your application.
-Without confirmations more than a single Peripheral <=> Central data exchange can be made per connection. With
+Without confirmations more than a single Peripheral <=> Central data exchange can be made per connection event. With
 confirmations, the connection event ends when the peripheral replies as it needs to prepare the acknowledgement which
 will be sent possibly in the next event.
 
