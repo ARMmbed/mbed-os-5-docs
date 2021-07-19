@@ -832,6 +832,9 @@
                                 },
                                 {
                                     "path": "docs/api/connectivity/bluetooth/GattClient.md"
+                                },
+                                {
+                                    "path": "docs/api/connectivity/bluetooth/Optimising_for_performance.md"
                                 }
                             ]
                         },
