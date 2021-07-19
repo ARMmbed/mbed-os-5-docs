@@ -82,11 +82,11 @@ namespace mbed
 
 Then any program using `printf` on that target sends its output over the SWO, rather than serial.
 
-Because targets can redirect the console in this way, portable applications should not use constructs such as `Serial(USBTX, USBRX)`, assuming that this will access the console. Instead they should use `stdin`/`stdout`/`stderr` or `STDIN_FILENO`/`STDOUT_FILENO`/`STDERR_FILENO`.
+Because targets can redirect the console in this way, portable applications should not use constructs such as `Serial(CONSOLE_TX, CONSOLE_RX)`, assuming that this will access the console. Instead they should use `stdin`/`stdout`/`stderr` or `STDIN_FILENO`/`STDOUT_FILENO`/`STDERR_FILENO`.
 
 ```
     // Don't do:
-    Serial serial(USBTX, USBRX);
+    Serial serial(CONSOLE_TX, CONSOLE_RX);
     serial.printf("Hello!\r\n");
 
     // Do do:
