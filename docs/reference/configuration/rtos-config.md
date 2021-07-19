@@ -30,7 +30,7 @@ Name: rtos.idle-thread-stack-size
     Macro name: MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE
     Value: 512 (set by library:rtos)
 Name: rtos.idle-thread-stack-size-debug-extra
-    Description: Additional size to add to the idle thread when code compilation optimisation is disabled
+    Description: Additional size to add to the idle thread when code compilation optimization is disabled
     Defined by: library:rtos
     Macro name: MBED_CONF_RTOS_IDLE_THREAD_STACK_SIZE_DEBUG_EXTRA
     Value: 128 (set by library:rtos[STM])

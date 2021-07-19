@@ -42,7 +42,7 @@ To create the application using Mbed CLI:
 
     The `mbed_app.json` file specifies which **profile** to use (`"requires": ["bare-metal"]`) and which **C library** to use (`"target.c_lib": "small"`).
 
-    This example uses `"target.c_lib": "small"` (small C library). This means your application will use an optimised version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
+    This example uses `"target.c_lib": "small"` (small C library). This means your application will use an optimized version of the C library with lower memory footprint. For more details, see [Using small C libraries in Mbed OS bare metal](../bare-metal/using-small-c-libraries.html).
 
 ## 2. Adding APIs
 

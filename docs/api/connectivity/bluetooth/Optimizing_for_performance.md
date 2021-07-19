@@ -1,8 +1,8 @@
-# Optimising application for throughput and power consumption
+# Optimizing applications for throughput and power consumption
 
 BLE (Bluetooth Low Energy) devices are usually battery powered so performance might mean different things in different
-applications. You will need to decide what is more important in your application - minimising power consumption on one
-or both sides of the communication or maximising throughput and/or latency. Some optimisation steps can in fact achieve
+applications. You will need to decide what is more important in your application - minimizing power consumption on one
+or both sides of the communication or maximizing throughput and/or latency. Some optimization steps can in fact achieve
 both.
 
 This guide will discuss some trade-offs that should be considered and best practices that improve performance on all
@@ -118,16 +118,18 @@ will only have to turn on the radio when the expected packet is due.
 
 ## Increasing throughput
 
+The following approaches can help to increase throughput, but you might need to consider whether power consumption will be adversely affected in your application.
+
 ### Modulation schemes
 
 Depending on controller support different modulation schemes are available in BLE through `setPreferredPhys()` and
 `setPhy()`. While the coded PHY will increase reliability in noisy environments and increase range at the cost of
-power consumption, 2M PHY will increase the throughput saving power ber bit. If both devices support it and the signal
-quality is good then this is recommended to be enabled. 
+power consumption, 2M PHY will increase the throughput saving power per bit. If both devices support it and the signal
+quality is good then this is recommended to be enabled.
 
 ### Data length and ATT_MTU
 
-Packet overhead strongly affects throughput. Newer controllers allow you to negotiate bigger MTUs thus decreasing the 
+Packet overhead strongly affects throughput. Newer controllers allow you to negotiate bigger MTUs thus decreasing the
 fragmentation overhead.
 
 There are two separate MTUs to consider: the `ATT_MTU` (which affects ATT protocol operations) and data length extension
@@ -149,7 +151,7 @@ retransmissions (this is only related to data length, ATT_MTU does not affect th
 ### ATT protocol
 
 GATT client writes and GATT server updates come in two versions - with and without confirmation. Requiring confirmations
-limits the throughput severely so to maximise throughput you can move reliability up from the stack to your application.
+limits the throughput severely so to maximize throughput you can move reliability up from the stack to your application.
 Without confirmations more than a single Peripheral <=> Central data exchange can be made per connection event. With
 confirmations, the connection event ends when the peripheral replies as it needs to prepare the acknowledgement which
 will be sent possibly in the next event.
@@ -158,18 +160,18 @@ will be sent possibly in the next event.
 
 If you're not constrained by battery power it might be tempting to use maximum/minimum values where possible.
 Advertising at maximum frequency and scanning continuously will speed up connecting. Setting intervals on connections
-will minimise latency and maximise number of connection events.
+will minimize latency and maximize number of connection events.
 
 One key thing to consider when setting the connection interval low is that you are creating a boundary between which a
 sequence of packets must fit. This means that the last transfer must end before the next connection event starts
 (plus 150us of inter packet space). This dead time may become significant if the connection interval is short and packet
-length is long. 
+length is long.
 
 The connection interval shouldn't be shorter than what your data requires in terms of latency.
 
 # Test and measure
 
-Due to complexity of the stack the only reliable way to truly maximise performance is to test your application with
+Due to complexity of the stack the only reliable way to truly maximize performance is to test your application with
 representative data and measure the throughput and power usage. It's important to keep in mind that tweaking
 parameters by trial and error and fine-tuning them will only be reliable for sequential operations on known stacks.
 

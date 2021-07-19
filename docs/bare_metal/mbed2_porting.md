@@ -146,7 +146,7 @@ If you haven't used Greentea before, [you can learn more in our documentation](.
 
     Please ignore tests with similar errors.
 
-Further optimisations for targets with small flash memories:
+Further optimizations for targets with small flash memories:
 - Append `--profile release` to the command above. Use of the release profile helps keep some tests within the size limit.
 - Save additional memory by using a [minimal console](https://github.com/ARMmbed/mbed-os-example-blinky-baremetal#using-a-minimal-console) to remove file handling functionality from the system I/O retarget code.
 

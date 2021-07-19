@@ -19,7 +19,7 @@ You can request Control Plane optimization mode either with CellularDevice's [`c
     "name": "cellular",
     "config": {
         "control-plane-opt": {
-            "help": "Enables control plane CIoT EPS optimisation",
+            "help": "Enables control plane CIoT EPS optimization",
             "value": true
         }
     }
