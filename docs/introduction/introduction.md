@@ -8,7 +8,7 @@ The Mbed OS source code is available on [GitHub](https://github.com/ARMmbed/mbed
 
 The **full profile** of Mbed OS is an RTOS (it includes [Keil RTX](https://www2.keil.com/mdk5/cmsis/rtx) and all RTOS APIs), so it supports deterministic, multithreaded, real-time software execution. The RTOS primitives are always available, allowing drivers and applications to rely on threads, semaphores, mutexes and other RTOS features. It also includes all APIs by default, although you can remove unused ones at build time.
 
-The **bare metal profile** doesn't include Keil RTX and is therefore not an RTOS - it is designed for applications that do not require complex thread management. It is also designed for constrained devices, and therefore focuses on minimising the size of the final application: by default, it includes only the smallest possible set of APIs, to which you can manually add APIs that your application requires. The bare metal profile can use the small C libraries (which are not thread safe) to further minimise the size of the application. Mbed 2 users who want to move to Mbed OS 6 should use the bare metal profile.
+The **bare metal profile** doesn't include Keil RTX and is therefore not an RTOS - it is designed for applications that do not require complex thread management. It is also designed for constrained devices, and therefore focuses on minimizing the size of the final application: by default, it includes only the smallest possible set of APIs, to which you can manually add APIs that your application requires. The bare metal profile can use the small C libraries (which are not thread safe) to further minimize the size of the application. Mbed 2 users who want to move to Mbed OS 6 should use the bare metal profile.
 
 ## Licensing
 
@@ -24,6 +24,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
+- A new section about [optimizing for throughput and power consumption](../apis/optimizing-applications-for-throughput-and-power-consumption.html) with Bluetooth Low Energy (BLE). We've also removed old material relating to services which are no longer supported and instead provided links to the [Experimental services for Mbed OS BLE](../apis/ble-services.html) repository.
 - We've updated the [unit testing](../debug-test/unit-testing.html) information to reflect changes to the version of CMake used. You will need to update to CMake version 3.19 or above and alter your test code structure.
 - A new [Mbed CLI1 to CLI2 migration guide](../build-tools/migration-guide.html).
 - A new [tutorial about link time optimization](../apis/link-time-optimization.html).
