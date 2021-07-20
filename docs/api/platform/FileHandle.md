@@ -1,6 +1,6 @@
 # FileHandle
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1_file_handle.png)<span>FileHandle class hierarchy</span></span>
 
 For general information on [files](file.html) and [filing systems](filesystem.html) in persistent storage, see their documentation. This chapter covers the abstract API, with an emphasis on devices.
 
@@ -181,15 +181,15 @@ As such, you can only use `Stream`-based devices for blocking I/O, such as throu
 
 ## FileHandle class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.13/mbed-os-api-doxy/classmbed_1_1_file_handle.html)
 
 ## FileHandle using C library example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FileHandle/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-FileHandle/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FileHandle/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-FileHandle/blobl/v6/13/main.cpp)
 
 ## FileHandle sigio example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FileHandle_sigio/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-FileHandle_sigio/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-FileHandle_sigio/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-FileHandle_sigio/blobl/v6/13/main.cpp)
 
 ## Related content
 

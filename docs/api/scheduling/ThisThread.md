@@ -6,7 +6,7 @@ Unlike the [Thread](../apis/thread.html) API, which allows you to create, join a
 
 ## ThisThread class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/namespacertos_1_1_this_thread.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/namespacertos_1_1_this_thread.html)
 
 ## ThisThread example
 

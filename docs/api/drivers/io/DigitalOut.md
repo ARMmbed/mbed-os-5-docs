@@ -4,8 +4,8 @@ Use the DigitalOut interface to configure and control a digital output pin by se
 
 ## DigitalOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_digital_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1_digital_out.html)
 
 ## DigitalOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-DigitalOut_ex_1/blobl/v6/13/main.cpp)

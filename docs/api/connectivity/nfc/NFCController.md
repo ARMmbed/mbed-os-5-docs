@@ -1,6 +1,6 @@
 # NFCController
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.png)<span>NFCController class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.png)<span>NFCController class hierarchy</span></span>
 
 Using an NFC controller with Mbed OS allows you to emulate NFC tags that a smartphone can read, as well as generate NDEF messages on demand.
 
@@ -8,11 +8,11 @@ To use an NFC controller, you must initiate the instance with a driver instance,
 
 ## NFCController class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1nfc_1_1_n_f_c_controller.html)
 
 ## NFCController example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-NFCController/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-NFCController/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-NFCController/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-NFCController/blobl/v6/13/main.cpp)
 
 A delegate mechanism handles events throughout the API.
 

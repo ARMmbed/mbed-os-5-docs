@@ -1,6 +1,6 @@
 # Watchdog
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_watchdog.png)<span>Watchdog class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1_watchdog.png)<span>Watchdog class hierarchy</span></span>
 
 You can use the Watchdog interface to set up a hardware watchdog timer that resets the system in the case of system failures or malfunctions.
 
@@ -12,11 +12,11 @@ If you fail to refresh the watchdog periodically, it resets the system after a s
 
 ## Watchdog class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_watchdog.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1_watchdog.html)
 
 ## Watchdog example
 
 This example creates a watchdog timer that expires after five seconds and that you can refresh by pushing BUTTON1 on the target board:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-Watchdog_ex_1/blobl/v6/13/main.cpp)
 

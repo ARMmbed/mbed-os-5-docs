@@ -1,6 +1,6 @@
 # DataFlashBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.13/mbed-os-api-doxy/class_data_flash_block_device.png)<span>DataFlashBlockDevice class hierarchy</span></span>
 
 DataFlashBlockDevice is a block device driver for serial flash devices that support the Atmel DataFlash protocol, such as the Adesto AT45DB series of devices.
 
@@ -14,11 +14,11 @@ To configure this class, please see our [BlockDevice configuration documentation
 
 ## DataFlashBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_data_flash_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/class_data_flash_block_device.html)
 
 ## DataFlashBlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-DataFlashBlockDevice/blobl/v6/13/main.cpp)
 
 ## Related content
 

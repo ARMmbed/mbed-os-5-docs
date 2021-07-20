@@ -2,7 +2,7 @@
 
 <span class="tips">**Tip:** This API replaces the deprecated NVStore API.</span>
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_k_v_store.png)<span>KVStore class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.13/mbed-os-api-doxy/classmbed_1_1_k_v_store.png)<span>KVStore class hierarchy</span></span>
 
 The KVStore API is a common get/set API implemented by several classes. It allows flexibility in the configuration of a storage solution that you can build by allocating several combinations of objects. For example, SecureStore can hold a TDBStore or a FileSystemStore, both implementing the KVStore API, without any change in functionality.
 
@@ -26,11 +26,11 @@ Classes implementing KVStore API:
 
 ## KVStore class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_k_v_store.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1_k_v_store.html)
 
 ## KVStore example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/mbed-os-6.7.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-kvstore)](https://github.com/ARMmbed/mbed-os-example-kvstore/blob/mbed-os-6.13.0/main.cpp)
 
 ## Related content
 

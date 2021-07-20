@@ -10,11 +10,11 @@ The device-specific `PinNames.h` and the respective datasheet or reference manua
 
 ## PortIn class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_port_in.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.13/mbed-os-api-doxy/classmbed_1_1_port_in.html)
 
 ## PortIn hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PortIn_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-PortIn_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-PortIn_ex_1/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-PortIn_ex_1/blobl/v6/13/main.cpp)
 
 ## Related content
 
