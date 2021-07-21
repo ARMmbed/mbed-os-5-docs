@@ -240,12 +240,10 @@ Connectivity APIs include:
 
 | API | Full profile | Bare metal profile |
 | - | - | - |
-| [BatteryService](../apis/bluetooth-apis.html) | &#10004; | &#10004; (can be manually enabled) |
-| [BLE](../apis/ble.html) | &#10004; | &#10004; (can be manually enabled) |
+| [BLE](../apis/bluetooth-apis.html) | &#10004; | &#10004; (can be manually enabled) |
 | [GAP](../apis/gap.html) | &#10004; | &#10004; (can be manually enabled) |
 | [GattClient](../apis/gattclient.html) | &#10004; | &#10004; (can be manually enabled) |
 | [GattServer](../apis/gattserver.html) | &#10004; | &#10004; (can be manually enabled) |
-| [HeartRateService](../apis/heartrateservice.html) | &#10004; | &#10004; (can be manually enabled) |
 | [SecurityManager](../apis/securitymanager.html) | &#10004; | &#10004; (can be manually enabled) |
 
 ### NFC

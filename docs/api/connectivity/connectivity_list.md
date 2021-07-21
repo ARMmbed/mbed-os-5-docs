@@ -29,11 +29,10 @@
 ## Bluetooth (BLE)
 
 - [BatteryService](../apis/bluetooth-apis.html): Report battery charge levels to the user.
-- [BLE](../apis/ble.html): Interface with the BLE controller on the board.
+- [BLE](../apis/bluetooth-apis.html): Interface with the BLE controller on the board.
 - [GAP](../apis/gap.html): Handle connectivity tasks.
 - [GattClient](../apis/gattclient.html): Initiate interactions with a GattServer to discover services, characteristics and descriptors and perform operations on them.
 - [GattServer](../apis/gattserver.html): Respond to a GattClient.
-- [HeartRateService](../apis/heartrateservice.html): Expose heart rate sensor data in a Bluetooth standard compliant way.
 - [SecurityManager](../apis/securitymanager.html): Use pairing and optional bonding processes to authenticate and encrypt BLE links.
 
 ## NFC
