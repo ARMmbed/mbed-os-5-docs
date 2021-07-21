@@ -57,7 +57,7 @@ BLE is optimized for cheap, battery-based devices and has a low memory footprint
 
 Typical applications of BLE are health care, fitness trackers, beacons, smart homes, security, entertainment, proximity sensors, industrial applications and automotives.
 
-To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/ble.html).
+To learn how to use BLE on Mbed OS, please refer to the [Bluetooth overview](../apis/bluetooth-apis.html).
 
 ### 6LoWPAN Mesh
 
