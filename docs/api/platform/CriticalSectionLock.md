@@ -16,4 +16,4 @@ Mbed OS supports nesting of critical section, and the destructor enables interru
 
 Here is an example that demonstrates a race condition issue and how CriticalSectionLock helps resolves it.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/blobl/v6.13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/blob/v6.13/main.cpp)

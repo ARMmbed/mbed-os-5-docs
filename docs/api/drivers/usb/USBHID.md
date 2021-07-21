@@ -12,7 +12,7 @@ You can use the USBHID class to turn an Mbed board into an HID (Human Interface 
 
 ### main.cpp   
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBHID/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-USBHID/blobl/v6.13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBHID/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-USBHID/blob/v6.13/main.cpp)
 
 ### USBHID.py   
 
