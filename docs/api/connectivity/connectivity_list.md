@@ -28,7 +28,6 @@
 
 ## Bluetooth (BLE)
 
-- [BatteryService](../apis/bluetooth-apis.html): Report battery charge levels to the user.
 - [BLE](../apis/bluetooth-apis.html): Interface with the BLE controller on the board.
 - [GAP](../apis/gap.html): Handle connectivity tasks.
 - [GattClient](../apis/gattclient.html): Initiate interactions with a GattServer to discover services, characteristics and descriptors and perform operations on them.
