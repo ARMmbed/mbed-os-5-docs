@@ -17,4 +17,4 @@ You can independently create, start and stop any number of Timer objects.
 
 ## Timer hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-Timer_HelloWorld/blobl/v6.13/main.cpp)

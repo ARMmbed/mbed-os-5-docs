@@ -17,7 +17,7 @@ for more details about that function.</span>
 
 ## Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blobl/v6.13/main.cpp)
 
 ## 2038
 

@@ -42,7 +42,7 @@ For details regarding how to configure the default block device please refer to 
 
 ## BlockDevice example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BlockDevice/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-BlockDevice/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BlockDevice/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-BlockDevice/blobl/v6.13/main.cpp)
 
 ## Related content
 

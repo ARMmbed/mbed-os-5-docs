@@ -34,4 +34,4 @@ You can request Control Plane optimization mode either with CellularDevice's [`c
 
 The following code demonstrates how to create and use a cellular non-IP socket:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CellularNonIPSocket/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-CellularNonIPSocket/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CellularNonIPSocket/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-CellularNonIPSocket/blobl/v6.13/main.cpp)

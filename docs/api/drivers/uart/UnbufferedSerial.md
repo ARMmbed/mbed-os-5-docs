@@ -16,7 +16,7 @@ You can view more information about the configurable settings and functions in t
 
 ## UnbufferedSerial Example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-UnbufferedSerial/blobl/v6.13/main.cpp)
 
 ## Mbed OS use
 

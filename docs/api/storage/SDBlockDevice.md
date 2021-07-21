@@ -102,7 +102,7 @@ There is a difference between `erase` as usually defined for SD cards and the de
 
 ## SDBlockDevice example application
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SDBlockDevice/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-SDBlockDevice/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-SDBlockDevice/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-SDBlockDevice/blobl/v6.13/main.cpp)
 
 ## Related content
 

@@ -12,4 +12,4 @@ Synchronization level: not protected.
 
 Try this example to see how an I2C responder works.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-I2CSlave/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-I2CSlave/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-I2CSlave/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-I2CSlave/blobl/v6.13/main.cpp)

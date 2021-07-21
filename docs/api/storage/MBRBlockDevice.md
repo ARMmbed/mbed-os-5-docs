@@ -19,11 +19,11 @@ You can view more information about the configurable settings and functions in t
 
 Partition a heap backed block device into two partitions. This example also uses the [HeapBlockDevice](heapblockdevice.html).
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/blobl/v6.13/main.cpp)
 
 Partition an SD card, and format the new partition with a FAT filesystem. A PC will now be able to recognize the SD card.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_2/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_2/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_2/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_2/blobl/v6.13/main.cpp)
 
 ## Related content
 

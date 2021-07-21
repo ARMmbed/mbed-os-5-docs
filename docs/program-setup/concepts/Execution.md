@@ -39,4 +39,4 @@ All the ISR handlers execute in this mode. You can use the same RTOS API in ISR 
 
 This example uses a message from the queue to trigger an interrupt.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Isr/tree/v6/13)](https://github.com/ARMmbed/mbed-os-snippet-Isr/blobl/v6/13/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Isr/tree/v6.13)](https://github.com/ARMmbed/mbed-os-snippet-Isr/blobl/v6.13/main.cpp)
