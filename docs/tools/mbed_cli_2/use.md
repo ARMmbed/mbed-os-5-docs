@@ -1,7 +1,5 @@
 # Use
 
-Currently, Mbed CLI 2 supports three boards: `K64F`, `DISCO_L475VG_IOT01A` and `NRF52840_DK`.
-
 For help:
 
 - To get help for all commands, use:
