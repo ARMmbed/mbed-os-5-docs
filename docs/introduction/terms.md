@@ -170,3 +170,10 @@
 ## U
 
 **utest** - A [test harness](../debug-test/utest-asynchronous-c-test-harness.html) you can use to execute a specified series of (asynchronous) C++ test cases.
+
+
+## Inclusive terminology commitment
+
+Arm values inclusive communities. Arm recognizes that we and our industry have used terms that can be offensive. Arm strives to lead the industry and create change.
+
+This document includes terms that can be offensive. We will replace these terms in a future issue of this document. If you find offensive terms in this document, please contact [terms@arm.com](mailto:terms@arm.com).
