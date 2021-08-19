@@ -18,19 +18,19 @@ In Mbed OS, the standard API for asynchronous events is the attach function. You
 
 One important thing to note is that when you attach callbacks with this function, the driver calls them in interrupt context. Interrupt context runs at a higher priority than any thread, which means that any code called from the attach callback must be interrupt safe. This excludes any blocking APIs such as blocking drivers, malloc, and mutexes. Or you risk preventing other high-priority interrupts from running, which may break other parts of the OS.
 
-When you need to call code that’s not interrupt safe from interrupt context, you must first defer from the interrupt context to a thread. The easiest way to defer to a thread is to signal a waiting thread through a [Semaphore](semaphore.html). In more complex use cases, you can use an [EventQueue](eventqueue.html) to manage multiple events at once.
+When you need to call code that's not interrupt safe from interrupt context, you must first defer from the interrupt context to a thread. The easiest way to defer to a thread is to signal a waiting thread through a [Semaphore](semaphore.html). In more complex use cases, you can use an [EventQueue](eventqueue.html) to manage multiple events at once.
 
 ## Experimental: Driver Interfaces and Polymorphism
 
-**Please note: Polymorphic driver interfaces are still experimental and must be manually enabled by adding the `EXPERIMENTAL_API` feature to your project in your application configuration.**
+**Note: Polymorphic driver interfaces are still experimental and must be manually enabled by adding the `EXPERIMENTAL_API` feature to your project in your application configuration.**
 
 ### Motivation and Overview
 
-Mbed driver APIs are intended to provide a solid foundation upon which to build cross-platform third-party libraries and higher level device drivers. With this goal in mind, an experimental feature has been introduced into Mbed's driver API hierarchy: **interfaces and polymorphism**
+Mbed driver APIs are intended to provide a solid foundation upon which to build cross-platform third-party libraries and higher level device drivers. With this goal in mind, an experimental feature has been introduced into Mbed's driver API hierarchy: **interfaces and polymorphism**.
 
 Previously, polymorphism and virtual inheritance have been avoided in Mbed's core hardware driver APIs due to the potential memory and speed implications. Virtual inheritance adds virtual tables (vtables) to each inheriting class; this results in a slightly larger memory footprint for each instance of a virtual class. Not only this, but when a method is being called on a pointer to a virtual class (and therefore the concrete type of the underlying object is not known at compile time), there is an additional runtime step involved where the correct virtual method must be looked up in the class's vtable. In some high speed use cases, this added latency can be unacceptable.
 
-With the introduction of C++11, the language now has features to help optimize the above situtation. Namely, the `final` keyword. 
+With the introduction of C++11, the language now has features to help optimize the above situation. Namely, the `final` keyword.
 
 Subclasses inheriting from virtual base classes may now be marked `final`, which seals them from further inheritance. This allows the compiler to optimize calls to virtual methods in some cases, including inlining and removing the vtable lookup entirely. It must be stressed that this _can_ eliminate the vtable lookup and associated latency, but ultimately it is up to the compiler to do so.
 
@@ -40,13 +40,13 @@ Unfortunately, at time of writing, toolchain support for pruning unused vtables 
 
 Even though this feature is still experimental, you can start writing code that takes advantage of driver polymorphism now.
 
-As an example use case, consider the scenario where your target has a limited number of internal GPIO available. You have run out of GPIO but need to control an RGB LED for user feedback. Now, your hardware team is very smart, and they've solved the problem for you: they've added an external GPIO expander IC that's accesible over I2C! You've already developed a very well tested and complex LED animation library but it has a structure like so:
+As an example use case, consider the scenario where your target has a limited number of internal GPIO available. You have run out of GPIO but need to control an RGB LED for user feedback. Now, your hardware team is very smart, and they've solved the problem for you: they've added an external GPIO expander IC that's accessible over I2C! You've already developed a very well tested and complex LED animation library but it has a structure like so:
 
 ```
 class LEDAnimator {
 
     LEDAnimator(PinName red, PinName green, PinName blue) :_red(red), _green(green), _blue(blue) { ... }
-    
+
 private:
     mbed::DigitalOut _red;
     mbed::DigitalOut _green;
@@ -68,7 +68,7 @@ When enabled, supported drivers will inherit from a driver **interface**:
 
 <span class="images">![](../../images/driver_interface_diagram.png)
 
-Note that some behavior _is_ defined in the interface itself, namely, some operators. These operators are defined here to make it intuitive to use _all_ implementations of a given driver interface, even when mixing them together. 
+Note that some behavior _is_ defined in the interface itself, namely, some operators. These operators are defined here to make it intuitive to use _all_ implementations of a given driver interface, even when mixing them together.
 
 You can always evaluate a `mbed::interface::DigtialOut` as an `int` (which returns the state of the output), and you can always assign the value of one `mbed::interface::DigitalOut` to another `mbed::interface::DigitalOut` in an intuitive manner using the assignment "=" operator.
 
@@ -78,7 +78,7 @@ Let's get back to the above example. What you can do now, with driver polymorphi
 
 This hierarchy minimizes the changes you need to make to your existing library.
 
-The recommended pattern for designing 3rd-party libraries that take advantage of driver polymorphism is to use _pointers_ to the _interface_ of the driver you're using. For example, we can refactor the `LEDAnimator` class to the following:
+The recommended pattern for designing third party libraries that take advantage of driver polymorphism is to use _pointers_ to the _interface_ of the driver you're using. For example, we can refactor the `LEDAnimator` class to the following:
 
 ```c++
 class LEDAnimator {
@@ -96,7 +96,7 @@ class LEDAnimator {
     LEDAnimator(mbed::interface::DigitalOut *red, mbed::interface::DigitalOut *green, mbed::interface::DigitalOut *blue) : _red(red), _green(green), _blue(blue), _internally_created(false) {
     ...
     }
-    
+
     ~LEDAnimator() {
         // Make sure to delete the instances if they were dynamically allocated!
         if(_internally_created) {
@@ -105,7 +105,7 @@ class LEDAnimator {
             delete _blue;
         }
     }
-    
+
 private:
     mbed::interface::DigitalOut *_red;
     mbed::interface::DigitalOut *_green;
@@ -129,7 +129,7 @@ When `FEATURE_EXPERIMENTAL_API` is disabled, the following type alias is made in
 using mbed::interface::DigitalOut = mbed::DigitalOut;
 ```
 
-This allows your new code library to be compiled with or without driver polymorphism enabled, since `mbed::interface::DigitalOut` will just fall back to the familiar, unpolymorphic `mbed::DigitalOut`.
+This allows your new code library to be compiled with or without driver polymorphism enabled, since `mbed::interface::DigitalOut` will just fall back to the familiar, non-polymorphic `mbed::DigitalOut`.
 
 ### Design Considerations and Caveats
 
@@ -139,15 +139,15 @@ In some cases, such as a software ("bit-banged") UART implementation or similar,
 
 Fortunately, you can still take advantage of driver polymorphism _and_ maintain high speed operation when you need it.
 
-When driver polymorphism is enabled, Mbed's driver implementations are marked `final`. This accomplishes two things: 
+When driver polymorphism is enabled, Mbed's driver implementations are marked `final`. This accomplishes two things:
 
-1. It prevents any further inheritance from the `final` class. 
+1. It prevents any further inheritance from the `final` class.
 2. It hints to the compiler that a pointer or reference to this class will never point to anything but an instance of this class.
 
 The latter effect allows us to minimize the impact of virtual inheritance on execution speed in some cases. If the compiler knows the concrete type of the driver object at runtime, it _may_ eliminate or inline the vtable redirection. In our testing, we have seen this optimization result in _no speed hit_ when toggling a pin on and off in a while loop. Your results may vary depending on your target's HAL implementation, however.
 
-To improve the compiler's ability to optimize calls to a polymorphic driver in this way, you should use the following guidelines when designing your 3rd-party libraries:
+To improve the compiler's ability to optimize calls to a polymorphic driver in this way, you should use the following guidelines when designing your third party libraries:
 
-When your library **does not** have any high speed requirements, you should use a pointer/reference to the _driver interface_ (eg: `mbed::interface::DigitalOut*`). This gives your library maximum flexibility by allowing it to use polymorphic subtypes of the given interface.
+When your library **does not** have any high speed requirements, you should use a pointer/reference to the _driver interface_ (for example: `mbed::interface::DigitalOut*`). This gives your library maximum flexibility by allowing it to use polymorphic subtypes of the given interface.
 
-When your library **does** have high speed requirements (such as the "bit-banged" example mentioned previously), you should use a pointer/reference to Mbed's driver implementation type _directly_ (eg: `mbed::DigitalOut*`). Since the compiler knows the concrete type is Mbed's implementation (which is `final`), it _may_ inline calls to that type, maintaining the execution speed possible with polymorphism disabled.
+When your library **does** have high speed requirements (such as the "bit-banged" example mentioned previously), you should use a pointer/reference to Mbed's driver implementation type _directly_ (for example: `mbed::DigitalOut*`). Since the compiler knows the concrete type is Mbed's implementation (which is `final`), it _may_ inline calls to that type, maintaining the execution speed possible with polymorphism disabled.
