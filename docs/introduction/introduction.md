@@ -24,7 +24,7 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
-- We've added a section describing driver interfaces and polymorphism to the [Drivers overview](../apis/drivers-concepts.html) page. Polymorphic driver interfaces in MbedOS are still experimental, and not enabled by default. You can start writing code that takes advantage of driver polymorphism now, but be sure to read the notes on backwards compatibility and caveats.
+- We've added a section describing [driver interfaces and polymorphism](../apis/driver-interfaces-experimental.html). Polymorphic driver interfaces in MbedOS are still experimental, and not enabled by default. You can start writing code that takes advantage of driver polymorphism now, but be sure to read the notes on backwards compatibility and caveats.
 - A new section about [optimizing for throughput and power consumption](../apis/optimizing-applications-for-throughput-and-power-consumption.html) with Bluetooth Low Energy (BLE). We've also removed old material relating to services which are no longer supported and instead provided links to the [Experimental services for Mbed OS BLE](../apis/ble-services.html) repository.
 - We've updated the [unit testing](../debug-test/unit-testing.html) information to reflect changes to the version of CMake used. You will need to update to CMake version 3.19 or above and alter your test code structure.
 - A new [Mbed CLI1 to CLI2 migration guide](../build-tools/migration-guide.html).
