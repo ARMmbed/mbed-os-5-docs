@@ -16,7 +16,7 @@ You may want to add hardware acceleration in the following cases:
 
 - Your platform has a dedicated crypto-module capable of executing cryptographic primitives, and possibly storing keys securely.
 
-The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/bn_mul.h).
+The Mbed TLS library was written in C and it has a small amount of hand-optimized assembly code, limited to arbitrary precision multiplication on some processors. You can find the list of supported platforms in the top comment in [bn_mul.h](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/mbedtls/include/mbedtls/bn_mul.h).
 
 ### What parts can I accelerate?
 
