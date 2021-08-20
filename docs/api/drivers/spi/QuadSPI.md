@@ -2,7 +2,7 @@
 
 ## QSPI class hierarchy
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)<span>QSPI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.14/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.png)<span>QSPI class hierarchy</span></span>
 
 The QSPI driver in Mbed OS provides functionality to configure and access QSPI devices connected over a QuadSPI interface.
 
@@ -18,11 +18,11 @@ For more information, please review the related content.
 
 ## QuadSPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.14/mbed-os-api-doxy/classmbed_1_1_q_s_p_i.html)
 
 ## QuadSPI example
 
- [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-QSPI/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-QSPI/blob/v6.7/main.cpp)
+ [![View Example](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-QSPI/tree/v6.14)](https://github.com/ARMmbed/mbed-os-snippet-QSPI/blob/v6.14/main.cpp)
 
 ## Related content
 

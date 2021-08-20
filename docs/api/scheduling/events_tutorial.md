@@ -34,7 +34,7 @@ Note that though this document assumes the presence of a single event loop in th
 
 Once you start the event loop, it can post events. Let's consider an example of a program that attaches two interrupt handlers for an InterruptIn object, using the InterruptIn `rise` and `fall` functions. The `rise` handler will run in interrupt context, and the `fall` handler will run in user context (more specifically, in the context of the event loop's thread). The full code for the example can be found below:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_1/tree/v6.14)](https://github.com/ARMmbed/mbed-os-snippet-EventQueue_ex_1/blob/v6.14/main.cpp)
 
 The above code executes two handler functions (`rise_handler` and `fall_handler`) in two different contexts:
 
@@ -166,4 +166,4 @@ This is only a small part of how event queues work in Mbed OS. The `EventQueue`,
 
 The EventQueue API provides a mechanism for creating a static queue, a queue that doesn't use any dynamic memory allocation and accepts only user-allocated events. After you create a static queue (by passing zero as `size` to its constructor), you can post `UserAllocatedEvent` to it. Using static EventQueue combined with UserAllocatedEvent ensures no dynamic memory allocation will take place during queue creation and events posting and dispatching. You can also declare queues and events as static objects (static in the C++ sense), and then memory for them will be reserved at compile time:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/tree/v6.14)](https://github.com/ARMmbed/mbed-os-snippet-UserAllocatedEvent_ex_1/blob/v6.14/main.cpp)

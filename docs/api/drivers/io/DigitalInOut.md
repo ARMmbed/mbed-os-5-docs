@@ -11,8 +11,8 @@ You can use any of the numbered Arm Mbed pins as a DigitalInOut.
 
 ## DigitalInOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_digital_in_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.14/mbed-os-api-doxy/classmbed_1_1_digital_in_out.html)
 
 ## DigitalInOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalInOut_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-DigitalInOut_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-DigitalInOut_ex_1/tree/v6.14)](https://github.com/ARMmbed/mbed-os-snippet-DigitalInOut_ex_1/blob/v6.14/main.cpp)
