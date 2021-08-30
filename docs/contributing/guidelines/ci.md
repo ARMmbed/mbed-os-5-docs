@@ -34,18 +34,24 @@ How it works:
 ### Tests
 
 - **continuous-integration/jenkins/pr-head** - Jenkins main pipeline script execution status.
-- **jenkins-ci/build-ARM** - Builds Mbed OS and examples with the [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
+- **jenkins-ci/build-greentea-ARM** - Builds Mbed OS tests with the [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
    - `mbed test --compile -t <toolchain> -m <target> `.
    - `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`.
-- **jenkins-ci/build-GCC_ARM** - Builds Mbed OS and examples with GCC_ARM.
-- **jenkins-ci/build-IAR** - Builds Mbed OS and examples with IAR.
+- **jenkins-ci/build-greentea-GCC_ARM** - Builds Mbed OS tests with GCC_ARM.
+- **jenkins-ci/build-cloud-example-ARM** - Builds the cloud example with ARM.
+- **jenkins-ci/build-cloud-example-GCC_ARM** - Builds the cloud example with GCC ARM.
+- **jenkins-ci/build-example-ARM** - Builds supported examples with ARM.
+- **jenkins-ci/build-example-GCC_ARM** - Builds supported examples with GCC ARM.
+- **jenkins-ci/cmake-cloud-example-ARM** - CMake build for the cloud example with GCC ARM.
+- **jenkins-ci/cmake-cloud-example-GCC_ARM** - CMake build for the cloud example with GCC ARM.
+- **jenkins-ci/cmake-example-ARM** - Builds supported examples with CMake and ARM.
+- **jenkins-ci/cmake-example-GCC_ARM** - Builds supported examples with CMake and GCC ARM.
 - **jenkins-ci/cloud-client-test** - Tests the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using the [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example).
-- **jenkins-ci/dynamic-memory-usage** - Reports dynamic memory use compared to the master branch.
-- **jenkins-ci/exporter** - Exports and builds exported code. Related commands:
-   - `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`.
 - **jenkins-ci/greentea-test** - Runs [greentea tests](../debug-test/greentea-for-testing-applications.html).
    - `python tools/build_release.py -p <target> -t <toolchain>`.
 - **jenkins-ci/unittests** - Runs [unit tests](../debug-test/unit-testing.html).
-- **tools-test-linux** - Tests tools work on Linux.
-- **tools-test-mac** - Tests tools work on macOS.
-- **tools-test-windows** - Tests tools work on Windows.
+
+
+
+
+
