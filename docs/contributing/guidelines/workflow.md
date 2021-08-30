@@ -96,7 +96,6 @@ The following template is automatically provided when you raise a pull request a
     ## Reviewers (*optional*)
 
     ----------------------------------------------------------------------------------------------------------------
-    ## Release Notes (*required for feature/major PRs*)
 
 ### Description field
 
