@@ -2,34 +2,23 @@
 
 Continuous integration (CI) testing is an integral part of the Mbed OS contribution workflow. CI testing refers mainly to automatic testing for pull requests.
 
-## Travis CI
+## Github Actions
 
-Mbed OS uses [Travis CI](https://travis-ci.org/ARMmbed/mbed-os) as the primary automatic testing and checking run environment.
+Mbed OS uses Github actions as the primary automatic testing and checking run environment.
 
-Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/mbed-os/blob/master/.travis.yml) file in the Mbed OS root directory. Mbed OS uses public Travis, so [test results and documentation](https://docs.travis-ci.com/) are publicly available.
+Its configuration is located in the [github/workflows/basic_checks.yml](https://github.com/ARMmbed/mbed-os/blob/master/.github/workflows/basic_checks.yml) file in the Mbed OS root directory.
 
 ### Tests
 
-- **continuous-integration/travis-ci/pr** - Travis runs main.
-- **travis-ci/astyle** - Checks code style using [astyle](http://astyle.sourceforge.net/).
-- **travis-ci/docs** - [Doxygen](http://www.doxygen.org/) and naming checks:
+- **coding-style** - Checks code style using [astyle](http://astyle.sourceforge.net/).
+- **docs_check** - [Doxygen](http://www.doxygen.org/), naming and spelling checks:
    - Asserts the Doxygen build produces no warnings.
    - Asserts all binary libraries are named correctly.
    - Asserts all assembler files are named correctly.
-- **travis-ci/doxy-spellcheck** - Checks Doxygen comments for spelling errors. Runs on header files in:
-   - Drivers.
-   - Platform.
-   - RTOS.
-   - Events.
-   - Features/netsocket.
-- **travis-ci/events** - Checks that Mbed OS compiles and run events tests.
-- **travis-ci/gitattributestest** - Checks there are no changes after clone. This checks that `.gitattributes` is used correctly.
-- **travis-ci/licence_check** - Checks that there is only a permissive license in the files, including SPDX identifier.
-- **travis-ci/littlefs** - Tests littlefs without embedded hardware.
-- **travis-ci/tools-py2.7** - Runs Python tools tests with Python 2.7.
-- **travis-ci/psa-autogen** - Runs PSA SPM code generator.
-   - Asserts that all PSA manifests in the tree are in correct form.
-   - Asserts that no changes need to be made.
+- **licence-check** - Checks that there is only a permissive license in the files, including SPDX identifier.
+- **include-check** - Including mbed.h within Mbed OS is not allowed.
+- **cmake-checks** - Build unittests with mbed tools.
+- **frozen-tools-check** - Old build tools were frozen and we verify they keep unchanged.
 
 ## Jenkins
 
