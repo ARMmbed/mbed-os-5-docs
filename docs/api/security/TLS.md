@@ -22,7 +22,7 @@ Each of them comes with complete usage instructions as a readme file in the repo
 
 ## Configuring Mbed TLS features
 
-Mbed TLS simplifies enabling and disabling features to meet the needs of a particular project, through compilation options. The list of compilation flags is available in the fully documented configuration file, [config.h](https://github.com/ARMmbed/mbedtls/blob/development/include/mbedtls/config.h).
+Mbed TLS simplifies enabling and disabling features to meet the needs of a particular project, through compilation options. The list of compilation flags is available in the fully documented configuration file, [config.h](https://github.com/ARMmbed/mbed-os/blob/master/connectivity/mbedtls/include/mbedtls/config.h).
 
 For example, in an application called `myapp`, if you want to enable the EC J-PAKE key exchange and disable the CBC cipher mode, you can create a file named  `mbedtls-config-changes.h` in the `myapp` directory containing the following lines:
 
