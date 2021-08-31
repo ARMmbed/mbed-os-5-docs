@@ -2,7 +2,7 @@
 
 **Note: Polymorphic driver interfaces are still experimental and must be manually enabled by adding the `EXPERIMENTAL_API` feature to your project in your application configuration.**
 
-## Motivation and Overview
+## Motivation and overview
 
 Mbed driver APIs are intended to provide a solid foundation upon which to build cross-platform third-party libraries and higher level device drivers. With this goal in mind, an experimental feature has been introduced into Mbed's driver API hierarchy: **interfaces and polymorphism**.
 
@@ -14,7 +14,7 @@ Subclasses inheriting from virtual base classes may now be marked `final`, which
 
 Unfortunately, at time of writing, toolchain support for pruning unused vtables is not widely supported and so the memory usage increase associated with virtual inheritance is unavoidable. This is the primary reason Mbed's developers have decided to make this feature experimental and disabled by default. For some very memory-constrained targets this memory usage increase would be unacceptable.
 
-## Using Driver Polymorphism in Your Code
+## Using driver polymorphism in your code
 
 Even though this feature is still experimental, you can start writing code that takes advantage of driver polymorphism now.
 
@@ -95,7 +95,7 @@ private:
 
 Now it is possible for your existing library to use the external GPIO expander without any knowledge that it is external. As long as your `my_company::I2CExpander::DigitalOut` class implements the `mbed::interface::DigitalOut` interface properly, your code will work as it did before. You can even have some of the GPIO be internal or external if your design calls for it!
 
-## Backwards Compatibility
+## Backwards compatibility
 
 Since driver polymorphism is still experimental, it is disabled by default. Therefore, Mbed's developers have been careful to make sure any code using the existing, non-polymorphic driver classes is not affected by the introduction of this new class hierarchy.
 
@@ -109,7 +109,7 @@ using mbed::interface::DigitalOut = mbed::DigitalOut;
 
 This allows your new code library to be compiled with or without driver polymorphism enabled, since `mbed::interface::DigitalOut` will just fall back to the familiar, non-polymorphic `mbed::DigitalOut`.
 
-## Design Considerations and Caveats
+## Design considerations and caveats
 
 As mentioned before, virtual inheritance and polymorphism _do_ have an impact on the resulting binary. For extremely constrained targets, you can optimize away a bit of memory consumption by disabling driver polymorphism (which is currently the default). Then there is the impact on execution speed that can result from virtual inheritance.
 
