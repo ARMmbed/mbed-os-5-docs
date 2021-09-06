@@ -49,7 +49,7 @@ You can build Mbed OS with the Arm Compiler and GNU Arm Embedded toolchains. The
 | Compiler| Download location | Name in Mbed CLI |
 | --- | --- | --- |
 | Arm Compiler 6.16 (default ARM toolchain) | - A paid version is available as [Arm Compiler 6.16 Professional](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler/downloads/version-6). </br> - A paid version is also included in [Keil MDK 5.34](https://www.keil.com/update/relnotes/MDK534.htm) | `ARM` |
-| GNU Arm Embedded version 9 (9-2019-q4-major) | [GNU Arm Embedded version 9 (9-2019-q4-major)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads) | `GCC_ARM` |
+| GNU Arm Embedded version 10 (9-2019-q4-major) | [GNU Arm Embedded version 10 (10.3-2021.07)](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm/downloads) | `GCC_ARM` |
 
 <span class="notes">**Note**: Mbed OS 6 does not support Arm Compiler 5, IAR or uARM.</span>
 
