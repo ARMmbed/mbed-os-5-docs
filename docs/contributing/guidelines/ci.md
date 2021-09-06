@@ -50,8 +50,3 @@ How it works:
 - **jenkins-ci/greentea-test** - Runs [greentea tests](../debug-test/greentea-for-testing-applications.html).
    - `python tools/build_release.py -p <target> -t <toolchain>`.
 - **jenkins-ci/unittests** - Runs [unit tests](../debug-test/unit-testing.html).
-
-
-
-
-
