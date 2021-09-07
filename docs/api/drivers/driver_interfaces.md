@@ -72,7 +72,7 @@ class LEDAnimator {
     }
 
     LEDAnimator(mbed::interface::DigitalOut *red, mbed::interface::DigitalOut *green, mbed::interface::DigitalOut *blue) : _red(red), _green(green), _blue(blue), _internally_created(false) {
-    ...
+    
     }
 
     ~LEDAnimator() {
@@ -90,7 +90,7 @@ private:
     mbed::interface::DigitalOut *_blue;
 
     bool _internally_created;
-}
+};
 ```
 
 Now it is possible for your existing library to use the external GPIO expander without any knowledge that it is external. As long as your `my_company::I2CExpander::DigitalOut` class implements the `mbed::interface::DigitalOut` interface properly, your code will work as it did before. You can even have some of the GPIO be internal or external if your design calls for it!
@@ -103,7 +103,7 @@ The inheritance of a driver from the new driver interface is conditional upon `F
 
 When `FEATURE_EXPERIMENTAL_API` is disabled, the following type alias is made instead:
 
-```c++
+```
 using mbed::interface::DigitalOut = mbed::DigitalOut;
 ```
 
