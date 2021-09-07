@@ -16,6 +16,8 @@ The Socket class defines the Mbed OS Socket API and loosely follows the POSIX st
 | `Socket::recv()`     | Receive data from a socket | [recv](http://pubs.opengroup.org/onlinepubs/9699919799/functions/recv.html) |
 | `Socket::sendto()`   | Sends data to the specified address. | [sendto](http://pubs.opengroup.org/onlinepubs/9699919799/functions/sendto.html) |
 | `Socket::recvfrom()` | Receives data and stores the source address | [recvfrom](http://pubs.opengroup.org/onlinepubs/9699919799/functions/recvfrom.html) |
+| `Socket::sendto_control()`   | Similar to `sendto` but support message control through ancilary data. | [sendto](http://pubs.opengroup.org/onlinepubs/9699919799/functions/sendto.html), [sendmsg](https://pubs.opengroup.org/onlinepubs/9699919799/functions/sendmsg.html) |
+| `Socket::recvfrom_control()` | Similar to `recvfrom` but support message control through ancilary data. | [recvfrom](http://pubs.opengroup.org/onlinepubs/9699919799/functions/recvfrom.html), [sendmsg](https://pubs.opengroup.org/onlinepubs/9699919799/functions/recvmsg.html) |
 | `Socket::bind()`     | Bind a specific address to a socket | [bind](http://pubs.opengroup.org/onlinepubs/9699919799/functions/bind.html) |
 | `Socket::listen()`   | Listen for incoming connections | [listen](http://pubs.opengroup.org/onlinepubs/9699919799/functions/listen.html) |
 | `Socket::accept()`   | Accept incoming connection | [accept](http://pubs.opengroup.org/onlinepubs/9699919799/functions/accept.html) |

@@ -66,7 +66,9 @@ nsapi_error_t socket_accept(nsapi_socket_t server, nsapi_socket_t *handle, Socke
 nsapi_size_or_error_t socket_send(nsapi_socket_t handle, const void *data, nsapi_size_t size);
 nsapi_size_or_error_t socket_recv(nsapi_socket_t handle, void *data, nsapi_size_t size);
 nsapi_size_or_error_t socket_sendto(nsapi_socket_t handle, const SocketAddress &address, const void *data, nsapi_size_t size);
+nsapi_size_or_error_t socket_sendto_control(nsapi_socket_t handle, const SocketAddress &address, const void *data, nsapi_size_t size, nsapi_msghdr_t *control, nsapi_size_t control_size);
 nsapi_size_or_error_t socket_recvfrom(nsapi_socket_t handle, SocketAddress *address, void *buffer, nsapi_size_t size);
+nsapi_size_or_error_t socket_recvfrom_control(nsapi_socket_t handle, SocketAddress *address, void *data, nsapi_size_t size, nsapi_msghdr_t *control, nsapi_size_t control_size);
 nsapi_error_t setsockopt(nsapi_socket_t handle, int level, int optname, const void *optval, unsigned optlen);
 nsapi_error_t getsockopt(nsapi_socket_t handle, int level, int optname, void *optval, unsigned *optlen);
 ```
