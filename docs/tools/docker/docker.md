@@ -34,11 +34,13 @@ Run interactively in current directory and compile the current application:
 ```
 git clone https://github.com/ARMmbed/mbed-os-example-blinky.git && cd mbed-os-example-blinky
 
-docker run -i -t --mount=type=bind,source="$(pwd)",destination=/var/mbed,consistency=delegated -w /var/mbed ghcr.io/armmbed/mbed-os-env
+docker run -i -t --mount=type=bind,source="$(pwd)",destination=/var/mbed -w /var/mbed ghcr.io/armmbed/mbed-os-env
 
 mbed-tools deploy
 mbed-tools compile -t GCC_ARM -m DISCO_L475VG_IOT01A
 ```
+
+💡 When building the Mbed OS project inside Docker container with shared workspace from Docker host, there could be  performance issues as filesystem needs to be synced between Docker host and container. For better performance make sure, `gRPC FUSE for file sharing` [is enabled in Docker settings](https://www.docker.com/blog/deep-dive-into-new-docker-desktop-filesharing-implementation/).
 
 ### Continuous integration
 
