@@ -72,7 +72,7 @@ class LEDAnimator {
     }
 
     LEDAnimator(mbed::interface::DigitalOut *red, mbed::interface::DigitalOut *green, mbed::interface::DigitalOut *blue) : _red(red), _green(green), _blue(blue), _internally_created(false) {
-    
+    // do something
     }
 
     ~LEDAnimator() {
