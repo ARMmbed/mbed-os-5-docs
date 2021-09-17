@@ -1,0 +1,43 @@
+# This workflow performs the checks like license check,
+# doxygen, unit tests etc.
+name: Snippets Checks
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - development
+
+jobs:
+  Snippets-check:
+    runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/armmbed/mbed-os-env:master-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: clone mbed-os
+        run: git clone https://github.com/armmbed/mbed-os.git
+
+      - name: add mbed_app.json
+        run: |
+          echo  '{ "target_overrides": { "K64F": { "target.features_add": ["BLE"] } } }' > mbed_app.json
+
+      - name: validate code snippets
+        run: ./check_tools/find_bad_code_snippets.sh
+
+      - name: find remaining TODOs
+        run: |
+          TODO_COUNT=0
+          for f in $(find -name mbed-os -prune -o -name '*.md' -print)
+          do
+              for l in $(sed -n '/```.*TODO/I=' $f)
+              do
+                  echo "TODO in $f line $l"
+                  TODO_COUNT=$(expr $TODO_COUNT + 1)
+              done
+          done
+          echo "Total number of TODOs: $TODO_COUNT"

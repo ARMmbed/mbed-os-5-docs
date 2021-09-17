@@ -47,7 +47,7 @@ the events (methods) you are interested in, the others will inherit the do-nothi
 
 All BLE operations are executed on an instance of BLE accessible through a function in the header `ble/BLE.h`.
 
-```c
+```cpp
 #include "ble/BLE.h"
 
 BLE& mydevicename = BLE::Instance();
