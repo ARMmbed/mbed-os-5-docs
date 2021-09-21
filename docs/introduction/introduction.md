@@ -24,6 +24,8 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
+- We're moving to GitHub Actions instead of Travis CI. We've updated the contribution guidelines on [Continuous integration testing](../contributing/ci.html) accordingly.
+- A new section on [Docker use in Mbed OS](../build-tools/docker.html) describes how you can set up a build environment for Mbed OS projects using Docker. This is the easiest and quickest way to get a build environment set up.
 - We've added a section describing [driver interfaces and polymorphism](../apis/driver-interfaces-experimental.html). Polymorphic driver interfaces in MbedOS are still experimental, and not enabled by default. You can start writing code that takes advantage of driver polymorphism now, but be sure to read the notes on backwards compatibility and caveats.
 - A new section about [optimizing for throughput and power consumption](../apis/optimizing-applications-for-throughput-and-power-consumption.html) with Bluetooth Low Energy (BLE). We've also removed old material relating to services which are no longer supported and instead provided links to the [Experimental services for Mbed OS BLE](../apis/ble-services.html) repository.
 - We've updated the [unit testing](../debug-test/unit-testing.html) information to reflect changes to the version of CMake used. You will need to update to CMake version 3.19 or above and alter your test code structure.
