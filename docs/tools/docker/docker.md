@@ -9,7 +9,7 @@ We maintain Mbed OS Docker images which includes the following tooling:
 * Greentea
 
 
-The Docker images are stored in [GitHub Packages](https://github.com/ARMmbed/mbed-os/pkgs/container/mbed-os-env). Corresponding Dockerfiles are maintained [on GitHub](https://github.com/ARMmbed/mbed-os/tree/master/docker_images/mbed-os-env) and [is open for contributions](https://github.com/ARMmbed/mbed-os/pulls). 
+The Docker images are stored in [GitHub Packages](https://github.com/ARMmbed/mbed-os/pkgs/container/mbed-os-env). Corresponding Dockerfiles are maintained [on GitHub](https://github.com/ARMmbed/mbed-os/tree/master/docker_images/mbed-os-env) and [is open for contributions](https://github.com/ARMmbed/mbed-os/pulls).
 
 The image is built and tested for the following architectures:
 * 64-bit ARM / aarch64
@@ -19,7 +19,7 @@ The image is built and tested for the following architectures:
 
 ### Selecting the appropriate Docker tag
 
-The Docker images are built, tested and published by GitHub Actions. When using the Docker image, make sure you are using the appropriate Docker tag that is compatible with Mbed OS version of your project. [Design document](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/docker_management) contains the detailed explanation of Docker image versioning strategy. 
+The Docker images are built, tested and published by GitHub Actions. When using the Docker image, make sure you are using the appropriate Docker tag that is compatible with Mbed OS version of your project. [Design document](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/docker_management) contains the detailed explanation of Docker image versioning strategy.
 
 As a quick overview, use `ghcr.io/armmbed/mbed-os-env:mbed-os-6-latest` for Docker image compatible with released version of Mbed OS, or `ghcr.io/armmbed/mbed-os-env:latest` for Docker image compatible with `HEAD` of Mbed OS `master branch`.
 
@@ -40,7 +40,7 @@ mbed-tools deploy
 mbed-tools compile -t GCC_ARM -m DISCO_L475VG_IOT01A
 ```
 
-💡 When building the Mbed OS project inside Docker container with shared workspace from Docker host, there could be  performance issues as filesystem needs to be synced between Docker host and container. For better performance make sure, `gRPC FUSE for file sharing` [is enabled in Docker settings](https://www.docker.com/blog/deep-dive-into-new-docker-desktop-filesharing-implementation/).
+<span class="tips">**Tip:** When building the Mbed OS project inside Docker container with shared workspace from Docker host, there could be  performance issues as the filesystem needs to be synced between Docker host and container. For better performance ensure `gRPC FUSE for file sharing` [is enabled in Docker settings](https://www.docker.com/blog/deep-dive-into-new-docker-desktop-filesharing-implementation/).</span>
 
 ### Continuous integration
 
@@ -75,5 +75,5 @@ mbedls
 ```
 If `mbedls` detected  your connected target, then you should be able to run Mbed tests/examples as recommended in the Mbed documentation.
 ``` bash
-mbed test -t GCC_ARM -m <target> 
+mbed test -t GCC_ARM -m <target>
 ```
