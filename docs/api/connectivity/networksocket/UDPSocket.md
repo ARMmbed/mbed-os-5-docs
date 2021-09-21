@@ -2,7 +2,7 @@
 
 <span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_d_p_socket.png)<span>UDPSocket class hierarchy</span></span>
 
-The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto` and `recvfrom` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](../apis/tcpsocket.html) when you require guaranteed delivery.
+The UDPSocket class provides the ability to send packets of data over UDP, using the `sendto`/`sendto_control` and `recvfrom`/`recvfrom_control` member functions. Packets can be lost or arrive out of order, so we suggest using a [TCPSocket](../apis/tcpsocket.html) when you require guaranteed delivery.
 
 The constructor takes no parameters. To initialize the socket on a specified NetworkInterface, you must call `open` method, which takes a NetworkStack pointer.
 

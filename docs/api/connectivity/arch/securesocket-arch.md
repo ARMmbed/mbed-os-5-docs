@@ -109,9 +109,11 @@ virtual nsapi_size_or_error_t send(const void *data, nsapi_size_t size);
 virtual nsapi_size_or_error_t recv(void *data, nsapi_size_t size);
 virtual nsapi_size_or_error_t sendto(const SocketAddress &address, const void *data, nsapi_size_t size);
 virtual nsapi_size_or_error_t recvfrom(SocketAddress *address, void *data, nsapi_size_t size);
+virtual nsapi_size_or_error_t sendto_control(nsapi_socket_t handle, const SocketAddress &address, const void *data, nsapi_size_t size, nsapi_msghdr_t *control, nsapi_size_t control_size);
+virtual nsapi_size_or_error_t recvfrom_control(nsapi_socket_t handle, SocketAddress *address, void *data, nsapi_size_t size, nsapi_msghdr_t *control, nsapi_size_t control_size);
 ```
 
-These work as expected, but `SocketAddress` parameters are ignored. The TLS connection cannot change the peer. Also, `recvfrom()` call does not set the peer address.
+These work as expected, but `SocketAddress` parameters are ignored. The TLS connection cannot change the peer. Also, `recvfrom()` and `recvfrom_control()` call does not set the peer address.
 
 Mbed TLS error codes `MBEDTLS_ERR_SSL_WANT_READ` and `MBEDTLS_ERR_SSL_WANT_WRITE` are translated to `NSAPI_ERROR_WOULD_BLOCK` before passing to user.
 
