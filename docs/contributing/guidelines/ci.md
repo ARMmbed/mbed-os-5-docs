@@ -2,34 +2,23 @@
 
 Continuous integration (CI) testing is an integral part of the Mbed OS contribution workflow. CI testing refers mainly to automatic testing for pull requests.
 
-## Travis CI
+## Github Actions
 
-Mbed OS uses [Travis CI](https://travis-ci.org/ARMmbed/mbed-os) as the primary automatic testing and checking run environment.
+Mbed OS uses Github actions as the primary automatic testing and checking run environment.
 
-Travis configuration is located in the [.travis.yml](https://github.com/ARMmbed/mbed-os/blob/master/.travis.yml) file in the Mbed OS root directory. Mbed OS uses public Travis, so [test results and documentation](https://docs.travis-ci.com/) are publicly available.
+Its configuration is located in the [github/workflows/basic_checks.yml](https://github.com/ARMmbed/mbed-os/blob/master/.github/workflows/basic_checks.yml) file in the Mbed OS root directory.
 
 ### Tests
 
-- **continuous-integration/travis-ci/pr** - Travis runs main.
-- **travis-ci/astyle** - Checks code style using [astyle](http://astyle.sourceforge.net/).
-- **travis-ci/docs** - [Doxygen](http://www.doxygen.org/) and naming checks:
+- **coding-style** - Checks code style using [astyle](http://astyle.sourceforge.net/).
+- **docs_check** - [Doxygen](http://www.doxygen.org/), naming and spelling checks:
    - Asserts the Doxygen build produces no warnings.
    - Asserts all binary libraries are named correctly.
    - Asserts all assembler files are named correctly.
-- **travis-ci/doxy-spellcheck** - Checks Doxygen comments for spelling errors. Runs on header files in:
-   - Drivers.
-   - Platform.
-   - RTOS.
-   - Events.
-   - Features/netsocket.
-- **travis-ci/events** - Checks that Mbed OS compiles and run events tests.
-- **travis-ci/gitattributestest** - Checks there are no changes after clone. This checks that `.gitattributes` is used correctly.
-- **travis-ci/licence_check** - Checks that there is only a permissive license in the files, including SPDX identifier.
-- **travis-ci/littlefs** - Tests littlefs without embedded hardware.
-- **travis-ci/tools-py2.7** - Runs Python tools tests with Python 2.7.
-- **travis-ci/psa-autogen** - Runs PSA SPM code generator.
-   - Asserts that all PSA manifests in the tree are in correct form.
-   - Asserts that no changes need to be made.
+- **licence-check** - Checks that there is only a permissive license in the files, including SPDX identifier.
+- **include-check** - Including mbed.h within Mbed OS is not allowed.
+- **cmake-checks** - Build unittests with mbed tools.
+- **frozen-tools-check** - Old build tools were frozen and we verify they keep unchanged.
 
 ## Jenkins
 
@@ -45,21 +34,19 @@ How it works:
 ### Tests
 
 - **continuous-integration/jenkins/pr-head** - Jenkins main pipeline script execution status.
-- **jenkins-ci/build-ARM** - Builds Mbed OS and examples with the [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
+- **jenkins-ci/build-greentea-ARM** - Builds Mbed OS tests with the [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
    - `mbed test --compile -t <toolchain> -m <target> `.
    - `python -u mbed-os/tools/test/examples/examples.py compile <toolchain> --mcu <target>`.
-- **jenkins-ci/build-GCC_ARM** - Builds Mbed OS and examples with GCC_ARM.
-- **jenkins-ci/build-IAR** - Builds Mbed OS and examples with IAR.
+- **jenkins-ci/build-greentea-GCC_ARM** - Builds Mbed OS tests with GCC_ARM.
+- **jenkins-ci/build-cloud-example-ARM** - Builds the cloud example with ARM.
+- **jenkins-ci/build-cloud-example-GCC_ARM** - Builds the cloud example with GCC ARM.
+- **jenkins-ci/build-example-ARM** - Builds supported examples with ARM.
+- **jenkins-ci/build-example-GCC_ARM** - Builds supported examples with GCC ARM.
+- **jenkins-ci/cmake-cloud-example-ARM** - CMake build for the cloud example with GCC ARM.
+- **jenkins-ci/cmake-cloud-example-GCC_ARM** - CMake build for the cloud example with GCC ARM.
+- **jenkins-ci/cmake-example-ARM** - Builds supported examples with CMake and ARM.
+- **jenkins-ci/cmake-example-GCC_ARM** - Builds supported examples with CMake and GCC ARM.
 - **jenkins-ci/cloud-client-test** - Tests the change with [mbed-cloud-client](https://github.com/ARMmbed/mbed-cloud-client) using the [mbed-cloud-client-example](https://github.com/ARMmbed/mbed-cloud-client-example).
-- **jenkins-ci/dynamic-memory-usage** - Reports dynamic memory use compared to the master branch.
-- **jenkins-ci/exporter** - Exports and builds exported code. Related commands:
-   - `python -u mbed-os/tools/test/examples/examples.py export <exporter> --mcu <target>`.
 - **jenkins-ci/greentea-test** - Runs [greentea tests](../debug-test/greentea-for-testing-applications.html).
-- **jenkins-ci/mbed2-build-ARM** - Builds Mbed OS 2 with the [ARM compiler](https://developer.arm.com/products/software-development-tools/compilers/arm-compiler). Related commands:
    - `python tools/build_release.py -p <target> -t <toolchain>`.
-- **jenkins-ci/mbed2-build-GCC_ARM** - Builds Mbed OS 2 with GCC_ARM.
-- **jenkins-ci/mbed2-build-IAR** - Builds Mbed OS 2 with IAR.
 - **jenkins-ci/unittests** - Runs [unit tests](../debug-test/unit-testing.html).
-- **tools-test-linux** - Tests tools work on Linux.
-- **tools-test-mac** - Tests tools work on macOS.
-- **tools-test-windows** - Tests tools work on Windows.
