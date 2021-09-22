@@ -19,17 +19,17 @@ The image is built and tested for the following architectures:
 
 ### Selecting the appropriate Docker tag
 
-The Docker images are built, tested and published by GitHub Actions. When using the Docker image, make sure you are using the appropriate Docker tag that is compatible with Mbed OS version of your project. [Design document](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/docker_management) contains the detailed explanation of Docker image versioning strategy.
+The Docker images are built, tested and published by GitHub Actions. When using the Docker image, make sure you are using the appropriate Docker tag that is compatible with the Mbed OS version of your project. [Design document](https://github.com/ARMmbed/mbed-os/tree/master/docs/design-documents/docker_management) contains a detailed explanation of Docker image versioning strategy.
 
-As a quick overview, use `ghcr.io/armmbed/mbed-os-env:mbed-os-6-latest` for Docker image compatible with released version of Mbed OS, or `ghcr.io/armmbed/mbed-os-env:latest` for Docker image compatible with `HEAD` of Mbed OS `master branch`.
+As a quick overview, use `ghcr.io/armmbed/mbed-os-env:mbed-os-6-latest` for a Docker image compatible with the released version of Mbed OS, or `ghcr.io/armmbed/mbed-os-env:latest` for a Docker image compatible with `HEAD` of Mbed OS `master branch`.
 
 ### Command line
 
-The Mbed OS Docker container can be used using Docker Desktop on any supported platform (Windows, Linux & Mac).
+The Mbed OS Docker container can be used via Docker Desktop on any supported platform (Windows, Linux, and Mac).
 
 #### Examples
 
-Run interactively in current directory and compile the current application:
+Run interactively in the current directory and compile the current application:
 
 ```
 git clone https://github.com/ARMmbed/mbed-os-example-blinky.git && cd mbed-os-example-blinky
@@ -40,11 +40,11 @@ mbed-tools deploy
 mbed-tools compile -t GCC_ARM -m DISCO_L475VG_IOT01A
 ```
 
-<span class="tips">**Tip:** When building the Mbed OS project inside Docker container with shared workspace from Docker host, there could be  performance issues as the filesystem needs to be synced between Docker host and container. For better performance ensure `gRPC FUSE for file sharing` [is enabled in Docker settings](https://www.docker.com/blog/deep-dive-into-new-docker-desktop-filesharing-implementation/).</span>
+<span class="tips">**Tip:** When building the Mbed OS project inside a Docker container with a shared workspace from Docker host, there could be  performance issues as the filesystem needs to be synced between the Docker host and container. For better performance ensure `gRPC FUSE for file sharing` [is enabled in Docker settings](https://www.docker.com/blog/deep-dive-into-new-docker-desktop-filesharing-implementation/).</span>
 
 ### Continuous integration
 
-We are in the process of moving our CI to use the GitHub Actions, and this can provide a great basis for your own CI for your Mbed-based projects.
+We are in the process of moving our CI to use GitHub Actions, and this can provide a great basis for your own CI for your Mbed-based projects.
 
 #### Examples
 
@@ -55,19 +55,19 @@ For a real-life example you can check out the [GitHub Actions workflow](https://
 
 ### Running GreenTea against USB devices in Docker Container
 
-There are various limitations with connecting USB devices to a Docker container. Depending on the host machines, complexity to setup such environment will vary. On Mac, you will need to capture the device first in the underlying VM.
+There are various limitations with connecting USB devices to a Docker container. Depending on the host machines, the complexity to setup such environment will vary. On Mac, you will need to capture the device first in the underlying VM.
 
 For this reason, running GreenTea from the Docker container is not trivial at the moment! We will be looking at future-proof solutions.
 
-Having said that, if you are running Docker container in Linux host machine, you will be able to connect and run GreenTea tests by following these steps:
+Having said that, if you are running a Docker container on a Linux host machine, you will be able to connect and run GreenTea tests by following these steps:
 
 ```bash
 git clone https://github.com/ARMmbed/mbed-os && cd mbed-os
 sudo docker run -it --privileged -v "$(pwd)":/var/mbed -v /dev/disk/by-id:/dev/disk/by-id -v /dev/serial/by-id:/dev/serial/by-id -v /run/udev:/run/udev:ro -w /var/mbed ghcr.io/armmbed/mbed-os-env
 ```
 
-Then you will have a container with an Mbed OS development environment.
-To make sure your Mbed targets have been detected, you might want to manually run the mount command and `mbedls` to check
+You will then have a container with an Mbed OS development environment.
+To make sure your Mbed targets have been detected, you might want to manually run the mount command and `mbedls` to check:
 
 ```bash
 mount /dev/sdb /mnt
