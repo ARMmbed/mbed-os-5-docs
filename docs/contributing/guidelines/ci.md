@@ -4,9 +4,9 @@ Continuous integration (CI) testing is an integral part of the Mbed OS contribut
 
 ## Github Actions
 
-Mbed OS uses Github actions as the primary automatic testing and checking run environment.
+Mbed OS uses Github Actions as the primary automatic testing and checking run environment.
 
-Its configuration is located in the [github/workflows/basic_checks.yml](https://github.com/ARMmbed/mbed-os/blob/master/.github/workflows/basic_checks.yml) file in the Mbed OS root directory.
+The configuration is located in the [github/workflows/basic_checks.yml](https://github.com/ARMmbed/mbed-os/blob/master/.github/workflows/basic_checks.yml) file in the Mbed OS root directory.
 
 ### Tests
 
@@ -22,7 +22,7 @@ Its configuration is located in the [github/workflows/basic_checks.yml](https://
 
 ## Jenkins
 
-We use [Jenkins](https://jenkins.io/) as an internal testing and checking environment. We execute tests that have special requirements for the execution enviroment in our internal Jenkins. In most cases, we publish test logs.
+We use [Jenkins](https://jenkins.io/) as an internal testing and checking environment. We execute tests that have special requirements for the execution environment in our internal Jenkins. In most cases, we publish test logs.
 
 How it works:
 
