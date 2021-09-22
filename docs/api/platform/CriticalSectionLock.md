@@ -10,10 +10,10 @@ Mbed OS supports nesting of critical section, and the destructor enables interru
 
 ## CriticalSectionLock class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/classmbed_1_1_critical_section_lock.html)
 
 ## CriticalSectionLock example
 
 Here is an example that demonstrates a race condition issue and how CriticalSectionLock helps resolves it.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-CriticalSectionLock_ex_1/blob/v6.15/main.cpp)

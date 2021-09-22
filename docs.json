@@ -8,7 +8,7 @@
             "hidden": true,
             "type": "doxygen",
             "source": "https://github.com/ARMmbed/mbed-os",
-            "branch": "master"
+            "branch": "mbed-os-6.15.0"
         },
         {
             "title": "Introduction to Mbed OS 6",

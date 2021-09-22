@@ -8,16 +8,16 @@ You cannot use `time`, `mktime` and `localtime` C standard library functions in 
 
 <span class="notes">**Note:** If your MCU does not have an RTC nor an LPTICKER, you need to provide
 hooks to the external RTC you are using to the `attach_rtc` API. See the [platform RTC
-API](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/group__platform__rtc__time.html)
+API](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/group__platform__rtc__time.html)
 for more details about that function.</span>
 
 ## Time function reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__mktime_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/mbed__mktime_8h_source.html)
 
 ## Time example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-time_HelloWorld/blob/v6.15/main.cpp)
 
 ## 2038
 

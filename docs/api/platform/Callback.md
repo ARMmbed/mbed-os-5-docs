@@ -40,19 +40,19 @@ Two system configuration options permit trade-offs between image size and flexib
 
 ## Callback class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_callback.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/classmbed_1_1_callback.html)
 
 ## Serial passthrough example with callbacks
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Callback_SerialPassthrough/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Callback_SerialPassthrough/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Callback_SerialPassthrough/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-Callback_SerialPassthrough/blob/v6.15/main.cpp)
 
 ## Thread example with callbacks
 
 The Callback API provides a convenient way to pass arguments to spawned threads. This example uses a C function pointer in the Callback.
 
- [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/blob/v6.7/main.cpp)
+ [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-Threading_with_callback/blob/v6.15/main.cpp)
 
 ## Sonar example
 
 Here is an example that uses everything discussed in the [introduction to callbacks](../apis/platform-concepts.html#callbacks) document in the form of a minimal Sonar class. This example uses a C++ class and method in the Callback.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Sonar/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Sonar/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Sonar/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-Sonar/blob/v6.15/main.cpp)

@@ -1,6 +1,6 @@
 # LittleFileSystem
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.15/mbed-os-api-doxy/classmbed_1_1_little_file_system.png)<span>LittleFileSystem class hierarchy</span></span>
 
 The little file system (LittleFS) is a fail-safe file system designed for embedded systems, specifically for microcontrollers that use external flash storage.
 
@@ -41,11 +41,11 @@ To configure this class, please see the [FileSystem configuration documentation]
 
 ## LittleFileSystem class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_little_file_system.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/classmbed_1_1_little_file_system.html)
 
 ## LittleFileSystem example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-6.7.0/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/armmbed/mbed-os-example-filesystem/)](https://github.com/ARMmbed/mbed-os-example-filesystem/blob/mbed-os-6.15.0/main.cpp)
 
 ## Related content
 

@@ -1,6 +1,6 @@
 # USBCDC_ECM
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.png)<span>USBCDC_ECM class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.png)<span>USBCDC_ECM class hierarchy</span></span>
 
 The USBCDC_ECM class emulates an Ethernet interface over USB. You can use the interface to send and receive Ethernet frames over USB.
 
@@ -8,7 +8,7 @@ One application in which you can use this class is a USB to Ethernet adapter. If
 
 ## USBCDC_ECM class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.7/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/class_u_s_b_c_d_c___e_c_m.html)
 
 <span class="notes">**Note:** Because Windows does not provide native support for the USB CDC-ECM model, you must use third party drivers to use this class on Windows.</span>
 
@@ -23,4 +23,4 @@ The example below sends an Ethernet frame that carries "Hello world" payload wit
 5. Click captured packet from source address 12:34:56:78:9a:bc to see the "Hello world" payload.
 
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBCDC_ECM/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-USBCDC_ECM/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-USBCDC_ECM/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-USBCDC_ECM/blob/v6.15/main.cpp)

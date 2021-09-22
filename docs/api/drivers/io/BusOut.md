@@ -1,6 +1,6 @@
 # BusOut
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_bus_out.png)<span>BusOut class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/classmbed_1_1_bus_out.png)<span>BusOut class hierarchy</span></span>
 
 Use the BusOut interface to combine a number of [DigitalOut](digitalout.html) pins to write them at once. This API is useful for writing to multiple pins together as single interface instead of individual pins.
 
@@ -13,11 +13,11 @@ You can use any of the numbered Arm Mbed pins as a DigitalOut in the BusOut.
 
 ## BusOut class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_bus_out.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/classmbed_1_1_bus_out.html)
 
 ## BusOut hello, world
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BusOut_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-BusOut_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-BusOut_ex_1/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-BusOut_ex_1/blob/v6.15/main.cpp)
 
 ## Related content
 

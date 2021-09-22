@@ -1,6 +1,6 @@
 # HeapBlockDevice
 
-<span class="images">![](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
+<span class="images">![](http://os.mbed.com/docs/v6.15/mbed-os-api-doxy/classmbed_1_1_heap_block_device.png)<span>BlockDevice class hierarchy</span></span>
 
 The HeapBlockDevice class provides a way to simulate block devices for software development or testing. The created blocks are volatile; they do not persist across power cycles.
 
@@ -24,17 +24,17 @@ You can view more information about the configurable settings and functions in t
 
 ## HeapBlockDevice class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/development/mbed-os-api-doxy/classmbed_1_1_heap_block_device.html)
+[![View code](https://www.mbed.com/embed/?type=library)](http://os.mbed.com/docs/v6.15/mbed-os-api-doxy/classmbed_1_1_heap_block_device.html)
 
 ## HeapBlockDevice example
 
 Create a HeapBlockDevice, program it, read the block back and clean up.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-HeapBlockDevice_ex_1/blob/v6.15/main.cpp)
 
 The HeapBlockDevice used with MBRBlockDevice showcases partitioning.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-MBRBlockDevice_ex_1/blob/v6.15/main.cpp)
 
 ## Related content
 

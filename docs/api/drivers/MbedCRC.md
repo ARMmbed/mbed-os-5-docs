@@ -10,7 +10,7 @@ For boards that support hardware CRC, the MbedCRC API replaces the software impl
 
 ## MbedCRC class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/structcrc__mbed__config.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/structcrc__mbed__config.html)
 
 ## MbedCRC examples
 
@@ -18,19 +18,19 @@ For boards that support hardware CRC, the MbedCRC API replaces the software impl
 
 Below is a CRC example to compute 32-bit CRC.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_1/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_1/blob/v6.15/main.cpp)
 
 ### Example 2
 
 Below is a 32-bit CRC example using `compute_partial` APIs.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_2/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_2/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_2/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_2/blob/v6.15/main.cpp)
 
 ### Example 3
 
 Below is a CRC example for the SD driver.
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_3/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_3/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_3/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-CRC_ex_3/blob/v6.15/main.cpp)
 
 ## Related content
 

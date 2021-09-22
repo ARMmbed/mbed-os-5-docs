@@ -26,7 +26,7 @@ cd mbed-os-example-mesh-minimal
 
 If using the Mbed Online Compiler, click **Import into Mbed IDE** below:
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-6.7.0/mesh_led_control_example.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-6.15.0/mesh_led_control_example.cpp)
 
 ## Change the channel settings (optional)
 

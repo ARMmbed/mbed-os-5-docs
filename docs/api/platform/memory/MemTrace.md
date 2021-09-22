@@ -20,11 +20,11 @@ For a step-by-step guide about how to use optimize memory using runtime memory t
 
 ## Memory tracing functions reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.15/mbed-os-api-doxy/mbed__mem__trace_8h_source.html)
 
 ## Memory tracing example
 
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/blob/v6.7/main.cpp)
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/tree/v6.15)](https://github.com/ARMmbed/mbed-os-snippet-Memory_tracing_ex_1/blob/v6.15/main.cpp)
 
 ## Related content
 
