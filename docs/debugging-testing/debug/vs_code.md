@@ -105,7 +105,7 @@ A complete `launch.json` to use with OpenOCD might look like something like this
             },
             "MIMode": "gdb",
             "miDebuggerPath": "arm-none-eabi-gdb.exe",
-            "debugServerPath": "openocd.exe",
+            "debugServerPath": "openocd.exe"
         }
     ]
 }
