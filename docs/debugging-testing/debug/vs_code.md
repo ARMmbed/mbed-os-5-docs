@@ -117,8 +117,6 @@ Visual Studio Code uses `make` to build your application by default. You can als
 
 ```json
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "name": "mbed",
     "tasks": [
@@ -172,6 +170,9 @@ Visual Studio Code uses `make` to build your application by default. You can als
     ]
 }
 ```
+
+See the [Microsoft documentation](https://go.microsoft.com/fwlink/?LinkId=733558) for further  information about the ``tasks.json`` format.
+
 
 ## Debugging your project
 
