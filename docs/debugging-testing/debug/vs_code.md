@@ -2,7 +2,7 @@
 
 This document explains how to build and debug Arm Mbed OS applications using Visual Studio Code. Before starting, first [configure your local debug toolchain](../debug-test/setting-up-a-local-debug-toolchain.html).
 
-Also install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](../build-tools/mbed-cli-1.html) to build the project.
+You also need to install [GNU Make](https://www.gnu.org/software/make/) or [Mbed CLI](../build-tools/mbed-cli-1.html) to build the project.
 
 ## Installing Visual Studio Code
 
@@ -49,7 +49,7 @@ To configure the debugger for your project:
 
 1. Open the folder in Visual Studio Code.
 1. Open the `.vscode/launch.json` file.
-1. Remove entire `linux`, `osx` and `windows` blocks from the file as is not supported in the latest vscode configuration.
+1. Remove the entire `linux`, `osx` and `windows` blocks from the file as these are not supported in the latest VSCode configuration.
 1. Add the `MIMode`, `miDebuggerPath`, and `debugServerPath` at the end of `configurations` block.
 1. Set the `MIMode` to `gdb`.
 1. If you're using pyOCD as your debug server, verify that `debugServerPath` is set to the location of `pyocd-gdbserver`.
@@ -58,14 +58,14 @@ To configure the debugger for your project:
      1. Change `debugServerArgs` to include your OpenOCD arguments. For more info, read our [toolchain document](../build-tools/third-party-build-tools.html).
      1. Set `serverStarted` to `target halted due to debug-request, current mode: Thread`.
 
-1. Set `preLaunchTask` to the task name that needs to run before starting the debug session. Set it something like `build_debug`. 
+1. Set `preLaunchTask` to the task name that needs to run before starting the debug session. Set it to something like `build_debug`.
 1. Change `${workspaceRoot}/BUILD/` (twice) to `${workspaceRoot}/BUILD/YOUR_TARGET/GCC_ARM/`. Remember to set `YOUR_TARGET` to a valid target name like `K64F`.
 
     <span class="images">![](../../images/vscode6.png)<span>Configuring the debugger</span></span>
 
 <span class="notes">**Note:** If you installed the GNU Arm Embedded Toolchain in a nondefault location (for example, through the Arm Mbed CLI installer), you need to update the `MIDebuggerPath` to the full path of your copy of `arm-none-eabi-gdb`. To find the new path, open a terminal, and run `where arm-none-eabi-gdb` (Windows) or `which arm-none-eabi-gdb` (macOS and Linux).</span>
 
-A complete `launch.json` to use with OpenOCD may look like this:
+A complete `launch.json` to use with OpenOCD might look like something like this:
 
 ```json
 {
@@ -105,7 +105,7 @@ A complete `launch.json` to use with OpenOCD may look like this:
             },
             "MIMode": "gdb",
             "miDebuggerPath": "arm-none-eabi-gdb.exe",
-            "debugServerPath": "openocd.exe",
+            "debugServerPath": "openocd.exe"
         }
     ]
 }
@@ -117,8 +117,6 @@ Visual Studio Code uses `make` to build your application by default. You can als
 
 ```json
 {
-    // See https://go.microsoft.com/fwlink/?LinkId=733558
-    // for the documentation about the tasks.json format
     "version": "2.0.0",
     "name": "mbed",
     "tasks": [
@@ -172,6 +170,9 @@ Visual Studio Code uses `make` to build your application by default. You can als
     ]
 }
 ```
+
+See the [Microsoft documentation](https://go.microsoft.com/fwlink/?LinkId=733558) for further  information about the ``tasks.json`` format.
+
 
 ## Debugging your project
 

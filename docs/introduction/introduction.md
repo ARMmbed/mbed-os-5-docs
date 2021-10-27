@@ -24,6 +24,8 @@ Our [quick start](../quick-start/index.html) guides show how to build an example
 
 ## Recently updated documentation
 
+- GNU Arm Embedded version 10 [is now supported](../build-tools/index.html).
+- We've updated the section on building and debugging with [Visual Studio Code](../debug-test/visual-studio-code.html) to reflect the latest VSCode configuration, and updated the contributions [workflow](../contributing/workflow.html) section to reflect recent changes to the pull request template.
 - We're moving to GitHub Actions instead of Travis CI. We've updated the contribution guidelines on [Continuous integration testing](../contributing/ci.html) accordingly.
 - A new section on [Docker use in Mbed OS](../build-tools/docker.html) describes how you can set up a build environment for Mbed OS projects using Docker. This is the easiest and quickest way to get a build environment set up.
 - We've added a section describing [driver interfaces and polymorphism](../apis/driver-interfaces-experimental.html). Polymorphic driver interfaces in MbedOS are still experimental, and not enabled by default. You can start writing code that takes advantage of driver polymorphism now, but be sure to read the notes on backwards compatibility and caveats.
