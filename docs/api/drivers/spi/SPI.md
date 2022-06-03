@@ -23,6 +23,8 @@ Mode |  Polarity |  Phase
 
 The SPI master generates a clock to synchronously drive a serial bit stream slave. The slave returns a bit stream, also synchronous to the clock. To communicate with multiple slave devices connected over the same SPI peripheral, you must use multiple SPI objects, one for each slave, but instantiate them with a different Slave select (SSEL) and configuration corresponding to each slave. Note that the SPI object automatically configures the SPI peripheral with the current object's configuration when the application code invokes the interfaces on the SPI object.
 
+Defining multiple SPI objects connected to different buses might require the use of alternative pin names `PIN_ALTx` defined in PinNames.h for the board in use. The PinMap source which shows the accociated hardware SPI bus can be found in PeripheralPins.c 
+
 ## SPI class reference
 
 [![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
