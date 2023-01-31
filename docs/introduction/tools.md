@@ -2,9 +2,9 @@
 
 The Mbed product suite includes the tools you need to work with Mbed OS, whatever your skill level.
 
-For most users on Windows, macOS and Linux, we recommend **Mbed Studio**, which is our desktop IDE. Mbed Studio includes the dependencies and tools you need to work with Mbed OS, including access to Arm Compiler 6 to build your code and pyOCD to debug it. For experienced developers, we also include the Mbed command line tools (such as Mbed CLI) with the Mbed Studio installation.
+For most users we recommend **Keil Studio**, which is our web IDE. Keil Studio lets you write and build applications using a web browser with no additional setup.
 
-If you prefer to work online, use the **Mbed Online Compiler**, which lets you write and build applications using a web browser with no additional setup.
+If you prefer to work in a desktop environment, use our desktop IDE **Mbed Studio**. Mbed Studio includes the dependencies and tools you need to work with Mbed OS, including access to Arm Compiler 6 to build your code and pyOCD to debug it. For experienced developers, we also include the Mbed command line tools (such as Mbed CLI) with the Mbed Studio installation.
 
 If you are an experienced developer, you can also set up the command line tools manually by installing **Mbed CLI 1** or **Mbed CLI 2**, a compiler toolchain, a debugger and source control management.
 
