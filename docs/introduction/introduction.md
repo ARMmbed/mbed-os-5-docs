@@ -16,11 +16,11 @@ We release Mbed OS under an Apache 2.0 license, so you can confidently use it in
 
 ## Getting started
 
-Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, with Mbed Studio, Keil Studio and Mbed CLI.
+Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, with Keil Studio, Mbed Studio and Mbed CLI.
 
-| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Keil Studio](https://developer.arm.com/documentation/102497/1-5/Tutorials/Get-started-with-an-Mbed-OS-Blinky-example) | [Build with Mbed CLI 1](../quick-start/build-with-mbed-cli.html) |
+| [Build with Keil Studio](https://developer.arm.com/documentation/102497/1-5/Tutorials/Get-started-with-an-Mbed-OS-Blinky-example) | [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed CLI 1](../quick-start/build-with-mbed-cli.html) |
 | --- | --- | --- |
-| Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Replaces the Mbed Online Compiler. Our zero-installation web IDE to explore Mbed OS and CMSIS; great for rapid prototyping and education. <br>This link will take you to Arm Developer | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
+| Replaces the Mbed Online Compiler. Our zero-installation web IDE to explore Mbed OS and CMSIS; great for rapid prototyping and education. <br>This link will take you to Arm Developer | Our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 
 ## Recently updated documentation
 
