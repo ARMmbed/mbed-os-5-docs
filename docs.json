@@ -94,9 +94,16 @@
                     "sources": []
                 },
                 {
+                  "title": "Build with Keil Studio",
+                  "intro": {
+                    "path": "docs/quick-start/keil-studio.md"
+                  },
+                  "sources": []
+                },
+                {
                   "title": "Build with Mbed Studio",
                   "intro": {
-                    "path": "docs/quick-start/studio.md"
+                    "path": "docs/quick-start/mbed-studio.md"
                   },
                   "sources": []
                 },
@@ -117,16 +124,6 @@
                             "sources": []
                         }
                     ]
-                },
-                {
-                    "title": "Build with the Online Compiler",
-                    "sub_chapters": [{
-                        "title": "Importing and compiling the code",
-                        "intro": {
-                            "path": "docs/quick-start/quick-start-compiler.md"
-                        },
-                        "sources": []
-                    }]
                 },
                 {
                     "title": "Further reading",
