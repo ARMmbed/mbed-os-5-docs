@@ -17,16 +17,16 @@ This tutorial requires:
 
 ## Import the application
 
-If using Mbed CLI:
+With Keil Studio, click the **Import into Keil Studio Cloud** button below:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-6.7.0/mesh_led_control_example.cpp)
+
+With Mbed CLI:
 
 ```
 mbed import mbed-os-example-mesh-minimal
 cd mbed-os-example-mesh-minimal
 ```
-
-If using the Mbed Online Compiler, click **Import into Mbed IDE** below:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-6.7.0/mesh_led_control_example.cpp)
 
 ## Change the channel settings (optional)
 
@@ -101,17 +101,31 @@ To change the RF driver, set the preferred RF driver `provide_default` value to 
 "mcr20a.provide-default": true
 ```
 
-## Compiling and flashing the application
+## Compile and flash the application
 
-1. To compile the application:
+1. Compile the application:
 
-    ```
-    mbed compile -m K64F -t GCC_ARM
-    ```
+   - With Keil Studio, click the **Build project** button.
 
-1. A binary is generated at the end of the build process.
-1. Connect the board to your computer, and power on the board.
-1. To program the application, drag and drop the binary to the board (shown as storage device on the computer).
+   - With Mbed CLI, invoke `mbed compile`, and specify the name of your target and toolchain:
+
+   ```
+   mbed compile -m K64F -t GCC_ARM
+   ```
+
+   Your PC may take a few minutes to compile your code.
+   With Keil Studio, the compiled binary is automatically downloaded after a successful build. Check your **Downloads** folder.
+   With Mbed CLI, the compiled binary is next to the source code, in your local copy of the example.
+
+1. Connect your Mbed device to the computer over USB.
+
+1. Flash the code:
+
+  - With Keil Studio, click the **Run project** button to flash the code to your device and start the program.
+
+  - With Mbed CLI:
+      1. Copy the binary file to the Mbed device.
+      1. Press the reset button to start the program.
 
 ## Update the firmware of the border router
 <!--do I have to do this? do I have to do this at this point in the process, or can I put it as one of the requirements that should have been listed earlier in the doc?-->
@@ -155,7 +169,7 @@ This saves you about 2.5 kB of flash.
 
 ### Change the network stack's event loop stack size
 
-Nanostack's internal event loop is shared with Device Managmenet Client, and therefore requires lots of stack to complete the security handshakes using TLS protocols. If you're not using client functionality, you can define the following to use 2 kB of stack:
+Nanostack's internal event loop is shared with Device Management Client, and therefore requires lots of stack to complete the security handshakes using TLS protocols. If you're not using client functionality, you can define the following to use 2 kB of stack:
 
 `"nanostack-hal.event_loop_thread_stack_size": 2048`
 
