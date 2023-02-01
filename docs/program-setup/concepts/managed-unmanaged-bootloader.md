@@ -24,7 +24,7 @@ The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it
 
 ### Managed and unmanaged bootloader tool integration
 
-Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
+Mbed tools (Keil Studio, Mbed Studio or Mbed CLI) can manage bootloaders where:
 
 - The bootloader comes before the application in ROM.
 - The application starts immediately after the bootloader.
