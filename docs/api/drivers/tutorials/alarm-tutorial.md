@@ -21,7 +21,7 @@ cd mbed-os-example-alarm
 
 ## Compile and flash to your board
 
-1. To compile the application:
+1. Compile the application:
 
    - With Keil Studio, click the **Build project** button.
 
@@ -32,13 +32,15 @@ cd mbed-os-example-alarm
    ```
 
    Your PC may take a few minutes to compile your code.
-   If you are using Keil Studio, the compiled binary is automatically downloaded after a successful build. Check your **Downloads** folder. If you are using Mbed CLI, the compiled binary is next to the source code, in your local copy of the example.
+   With Keil Studio, the compiled binary is automatically downloaded after a successful build. Check your **Downloads** folder.
+   With Mbed CLI, the compiled binary is next to the source code, in your local copy of the example.
 
 1. Connect your Mbed device to the computer over USB.
 
 1. Flash the code:
 
-  - With Keil Studio: Click the **Run project** button to flash the code to your device and start the program.
+  - With Keil Studio, click the **Run project** button to flash the code to your device and start the program.
+
   - With Mbed CLI:
       1. Copy the binary file to the Mbed device.
       1. Press the reset button to start the program.
