@@ -96,7 +96,7 @@ For the build system to build a unit test, pass the `ON` value to `BUILD_TESTING
 
 A unit test suite consists of one or more test cases, which should cover all the functions in a class under test. Any external dependencies should be stubbed, including the other classes in the same module. Avoid stubbing header files. Finally, analyze code coverage to ensure all code is tested, and no dead code is found.
 
-Please see the [documentation for Google Test](https://github.com/google/googletest/blob/main/docs/primer.md) to learn how to write unit tests using its framework. See the [documentation for Google Mock](https://github.com/google/googletest/tree/master/googlemock) if you want to write and use C++ mock classes instead of stubs.
+Please see the [documentation for Google Test](https://github.com/google/googletest/blob/main/docs/primer.md) to learn how to write unit tests using its framework. See the [documentation for Google Mock](https://github.com/google/googletest/tree/main/googlemock) if you want to write and use C++ mock classes instead of stubs.
 
 #### Test suite configuration
 
