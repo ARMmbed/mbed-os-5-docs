@@ -16,23 +16,9 @@ You need to install Visual Studio Code with the C/C++ extensions to begin.
 
 1. When prompted, restart the IDE.
 
-## Exporting a project
+## Exporting a project with Mbed CLI
 
-To export your project to Visual Studio Code, you can use either the Online Compiler or Arm Mbed CLI.
-
-### Online Compiler
-
-1. Right click on your project.
-1. Select **Export Program...**.
-1. Under **Export toolchain**, select **Visual Studio Code (GCC ARM)**.
-
-    <span class="tips">**Tip:** For most targets, you can also export to ARMCC.</span>
-
-1. Click **Export**, and unpack at a convenient location.
-
-    <span class="images">![](../../images/vscode1.png)<span>Exporting to Visual Studio Code</span></span>
-
-### Arm Mbed CLI
+To export your project to Visual Studio Code, you can use Mbed CLI.
 
 In your project folder, run:
 
