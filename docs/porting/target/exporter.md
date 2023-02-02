@@ -1,6 +1,6 @@
 # Porting a new target for exporters
 
-Exporting allows users to transition from Mbed CLI or the Online Compiler to the development environment of their choice. When you add a new target, you must add support for exporters. The following sections explain how you add support for a new target to each exporter.
+Exporting allows users to transition from Mbed CLI to the development environment of their choice. When you add a new target, you must add support for exporters. The following sections explain how you add support for a new target to each exporter.
 
 ## Eclipse and Make
 
