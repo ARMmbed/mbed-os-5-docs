@@ -15,10 +15,9 @@ Responsibilities:
 - Merge pull requests into the requested branches.
 - Make periodic patch and feature releases.
 
-The current maintainers are:
+The current maintainer is:
 
-- [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
-- [Martin Kojtal](https://os.mbed.com/users/Kojto).
+- [Saheer Babu](https://os.mbed.com/users/saheerb).
 
 ## Contributions
 
