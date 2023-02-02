@@ -4,9 +4,9 @@ When you start using Mbed OS, you may find small challenges in a few cases. This
 
 ## Use the latest tools
 
-### Keil Studio and Mbed Studio
+### Keil Studio Cloud and Mbed Studio
 
-Keil Studio and Mbed Studio come with a built-in debugger. For instructions on using the debugger mode and debugger tools, please see the [Keil Studio](https://developer.arm.com/documentation/102497/1-5/Monitor-and-debug/Debug-a-project-with-Keil-Studio/Introduction) or [Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/monitor-debug/debugging-with-mbed-studio.html) documentation.
+Keil Studio Cloud and Mbed Studio come with a built-in debugger. For instructions on using the debugger mode and debugger tools, please see the [Keil Studio Cloud](https://developer.arm.com/documentation/102497/1-5/Monitor-and-debug/Debug-a-project-with-Keil-Studio/Introduction) or [Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/monitor-debug/debugging-with-mbed-studio.html) documentation.
 
 ### Mbed CLI
 

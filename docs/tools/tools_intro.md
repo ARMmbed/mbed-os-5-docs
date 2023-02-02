@@ -1,21 +1,21 @@
 # Arm Mbed tools
 
-The Arm Mbed OS ecosystem includes many tools designed to work with Mbed OS and projects that use Mbed OS throughout the development process. With our development tools, Keil Studio, Mbed Studio and Mbed CLI, you can create, import and build projects. You can compile with any of our supported toolchains and debug with the many IDEs we support. DAPLink and pyOCD let you program and debug your many devices. For validation of your project, you can test your code with Greentea, `htrun` and utest. This section covers all of these tools related to Mbed OS.
+The Arm Mbed OS ecosystem includes many tools designed to work with Mbed OS and projects that use Mbed OS throughout the development process. With our development tools, Keil Studio Cloud, Mbed Studio and Mbed CLI, you can create, import and build projects. You can compile with any of our supported toolchains and debug with the many IDEs we support. DAPLink and pyOCD let you program and debug your many devices. For validation of your project, you can test your code with Greentea, `htrun` and utest. This section covers all of these tools related to Mbed OS.
 
 ## Development tool options
 
-The three Mbed OS development tools are Keil Studio, Mbed Studio and Mbed CLI. All of the development tools perform the same process:
+The three Mbed OS development tools are Keil Studio Cloud, Mbed Studio and Mbed CLI. All of the development tools perform the same process:
 
 - Bring the Mbed OS source code from GitHub or `mbed.com`, along with all dependencies.
 - Compile your code with Mbed OS for a target, so you have a single file to flash to your board.
 
 We developed Mbed OS using the Mbed CLI tool, which is a Python program that coordinates builds and fetches all the dependencies of an Mbed OS application. As this runs on your local development machine, you also need compilers and other build tools installed.
 
-`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS, so you can also use Keil Studio or Mbed Studio for building Mbed OS examples and programs. Beginner developers or those who are not comfortable with the command-line may prefer Keil Studio or Mbed Studio.
+`os.mbed.com` provides the tools, libraries and programs that work with Mbed OS, so you can also use Keil Studio Cloud or Mbed Studio for building Mbed OS examples and programs. Beginner developers or those who are not comfortable with the command-line may prefer Keil Studio Cloud or Mbed Studio.
 
-## Keil Studio
+## Keil Studio Cloud
 
-Keil Studio is our zero-installation web IDE. It is the successor to the Mbed Online Compiler and allows you to develop Mbed and CMSIS projects. For more information, please see the [Keil Studio documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio).
+Keil Studio Cloud is our zero-installation web IDE. It is the successor to the Mbed Online Compiler and allows you to develop Mbed and CMSIS projects. For more information, please see the [Keil Studio Cloud documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio).
 
 ## Mbed Studio
 

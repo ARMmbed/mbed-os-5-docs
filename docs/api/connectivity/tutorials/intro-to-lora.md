@@ -208,19 +208,19 @@ Now that the device is registered in The Things Network, you can start writing c
 
 ### Importing the demo application
 
-Mbed comes with [tools](../build-tools/index.html) which you can use to build applications. In this tutorial, we are going to use Keil Studio, Arm's zero-installation web IDE.
+Mbed comes with [tools](../build-tools/index.html) which you can use to build applications. In this tutorial, we are going to use , Arm's zero-installation web IDE.
 
-1. Go to [studio.keil.arm.com](https://studio.keil.arm.com/auth/login/) and log into Keil Studio using your Arm or Mbed account. If you do not have an Arm or Mbed account, sign up from the login page.
+1. Go to [studio.keil.arm.com](https://studio.keil.arm.com/auth/login/) and log into Keil Studio Cloud using your Arm or Mbed account. If you do not have an Arm or Mbed account, sign up from the login page.
 1. Open a new browser window and go to [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
 1. Copy the URL of the example project.
-1. In Keil Studio, select **File** > **Clone**.
+1. In Keil Studio Cloud, select **File** > **Clone**.
     The **Clone** dialog box displays.
 1. Paste the URL and click **Add project**.
-    Keil Studio clones the project with the version of Mbed OS it was originally created with. The project is set as the active project by default.
+    Keil Studio Cloud clones the project with the version of Mbed OS it was originally created with. The project is set as the active project by default.
 
 ### Setting keys
 
-In Keil Studio:
+In Keil Studio Cloud:
 
 1. Open the `mbed_app.json` file. This file contains the configuration for the application and holds the authentication keys.
 1. If you have a SX1272 or SX1276 **shield** (not if you have a module), set your radio type under `lora-radio`.
@@ -231,7 +231,7 @@ In Keil Studio:
 
 #### Sending the value of the PIR sensor
 
-To send the current value of the PIR sensor (whether it sees movement), in Keil Studio:
+To send the current value of the PIR sensor (whether it sees movement), in Keil Studio Cloud:
 
 1. Open `main.cpp`.
 1. Replace the function `send_message()` with:
@@ -257,7 +257,7 @@ To send the current value of the PIR sensor (whether it sees movement), in Keil 
 
 Now you can verify if the setup works by flashing this application to your board.
 
-1. In Keil Studio, connect your board to your computer. The first time you connect your board, you have to click the **Connect to target hardware** button to the right of the **Target hardware** drop-down list. After the first successful connection, Keil Studio detects the board and suggests a matching target hardware.
+1. In Keil Studio Cloud, connect your board to your computer. The first time you connect your board, you have to click the **Connect to target hardware** button to the right of the **Target hardware** drop-down list. After the first successful connection, Keil Studio Cloud detects the board and suggests a matching target hardware.
 1. Click the **Run project** button to build the project and flash it to the board.
     You can see the device joining and then sending messages in the The Things Network console, under the **Live data** tab:
 
@@ -281,7 +281,7 @@ Call `send_message` whenever you want (for example after the state of the sensor
 
 You can also send data back to the device. Because LoRaWAN (in Class-A mode, which you're using here) is not continuously connected to the network, you need to wait for a receive (RX) window to occur to receive data. An RX window opens after a transmission. So you need to *send* to the network before you can receive a message. If you send a message from The Things Network to your device, the network automatically queues the message and delivers it in the next RX window.
 
-You can toggle the LED on your development board over LoRa. In Keil Studio:
+You can toggle the LED on your development board over LoRa. In Keil Studio Cloud:
 
 1. Open `main.cpp`.
 1. Replace the `receive_message` function with:

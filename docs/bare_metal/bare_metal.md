@@ -4,7 +4,7 @@ Bare metal is a profile of Mbed OS for ultraconstrained hardware: compact and wi
 
 The bare metal profile implements a subset of Mbed OS's RTOS APIs that are useful in non-threaded applications, such as semaphores (calling the release API from interrupts) and tickers (to set up a recurring interrupt). It does not include [Keil RTX](https://www2.keil.com/mdk5/cmsis/rtx), and is therefore suitable for applications that do not require complex thread management. Instead of the RTOS's scheduler, all activities are polled or interrupt-driven. This simplifies application code and allows using APIs that are not thread safe. Just as important, you can use the code-optimized versions of the C standard libraries, `microlib` and `newlib-nano`, which are much smaller than the thread safe equivalents the full profile requires.
 
-The Mbed OS build tools - Keil Studio, Mbed Studio and Mbed CLI - all support working with the bare metal profile.
+The Mbed OS build tools - Keil Studio Cloud, Mbed Studio and Mbed CLI - all support working with the bare metal profile.
 
 ## Features
 

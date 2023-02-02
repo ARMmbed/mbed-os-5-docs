@@ -17,7 +17,7 @@ This tutorial requires:
 
 ## Import the application
 
-With Keil Studio, click the **Import into Keil Studio Cloud** button below:
+With Keil Studio Cloud, click the **Import into Keil Studio Cloud** button below:
 
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-example-mesh-minimal)](https://github.com/ARMmbed/mbed-os-example-mesh-minimal/blob/mbed-os-6.7.0/mesh_led_control_example.cpp)
 
@@ -105,7 +105,7 @@ To change the RF driver, set the preferred RF driver `provide_default` value to 
 
 1. Compile the application:
 
-   - With Keil Studio, click the **Build project** button.
+   - With Keil Studio Cloud, click the **Build project** button.
 
    - With Mbed CLI, invoke `mbed compile`, and specify the name of your target and toolchain:
 
@@ -114,14 +114,14 @@ To change the RF driver, set the preferred RF driver `provide_default` value to 
    ```
 
    Your PC may take a few minutes to compile your code.
-   With Keil Studio, the compiled binary is automatically downloaded after a successful build. Check your **Downloads** folder.
+   With Keil Studio Cloud, the compiled binary is automatically downloaded after a successful build. Check your **Downloads** folder.
    With Mbed CLI, the compiled binary is next to the source code, in your local copy of the example.
 
 1. Connect your Mbed device to the computer over USB.
 
 1. Flash the code:
 
-  - With Keil Studio, click the **Run project** button to flash the code to your device and start the program.
+  - With Keil Studio Cloud, click the **Run project** button to flash the code to your device and start the program.
 
   - With Mbed CLI:
       1. Copy the binary file to the Mbed device.

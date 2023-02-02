@@ -41,7 +41,7 @@ To close the serial terminal, enter <kbd>Ctrl + C</kbd>.
 
 ### Manually opening a serial terminal
 
-You can open a serial terminal manually, which is useful when the board is already flashed with the desired application (for example, one built with [Keil Studio](https://developer.arm.com/documentation/102497/1-5/Tutorials/Get-started-with-an-Mbed-OS-Blinky-example)).
+You can open a serial terminal manually, which is useful when the board is already flashed with the desired application (for example, one built with [Keil Studio Cloud](https://developer.arm.com/documentation/102497/1-5/Tutorials/Get-started-with-an-Mbed-OS-Blinky-example)).
 
 When a single board is connected, run:
 

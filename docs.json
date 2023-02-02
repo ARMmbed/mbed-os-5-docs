@@ -94,7 +94,7 @@
                     "sources": []
                 },
                 {
-                  "title": "Build with Keil Studio",
+                  "title": "Build with Keil Studio Cloud",
                   "intro": {
                     "path": "docs/quick-start/keil-studio.md"
                   },
@@ -987,7 +987,7 @@
                     "sources": []
                 },
                 {
-                    "title": "Keil Studio",
+                    "title": "Keil Studio Cloud",
                     "sources": [{
                         "path": "docs/tools/Studio/keil-studio.md"
                     }]
