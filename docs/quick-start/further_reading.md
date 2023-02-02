@@ -19,4 +19,4 @@
 
 - Other resources:
    - [Components database](https://os.mbed.com/components/): libraries and example code for various hardware and software components.
-   - [Mbed OS support forum](https://forums.mbed.com/): a resource of questions and answers and an active user community. Ask your questions here first.
+   - [Arm Mbed OS support forum](https://forums.mbed.com/): a resource of questions and answers and an active user community. Ask your questions here first.
