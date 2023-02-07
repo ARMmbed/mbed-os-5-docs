@@ -1414,9 +1414,6 @@
                             "path": "docs/porting/tools/mbedls.md"
                         },
                         {
-                            "path": "docs/porting/tools/exporter.md"
-                        },
-                        {
                             "path": "docs/porting/tools/hdk.md"
                         }
                     ]
