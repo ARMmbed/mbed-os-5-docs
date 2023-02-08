@@ -75,7 +75,7 @@
 
 ## E
 
-**Exporter** - Use the Arm Mbed [exporters](../build-tools/third-party-build-tools.html#about-the-exporters) to export your code to various third party tools and IDEs.
+**Exporter** - Exporters are deprecated. Exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.
 
 ## G
 
