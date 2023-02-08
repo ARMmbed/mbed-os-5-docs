@@ -57,4 +57,6 @@ You can build Mbed OS with the Arm Compiler and GNU Arm Embedded toolchains. The
 
 ## Exporting to third party development tools
 
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
+
 You can export your project from Mbed Studio or Mbed CLI to third party tools. For instructions, as well as tool-specific information, see the [Exporting to third party toolchains page](../build-tools/third-party-build-tools.html).

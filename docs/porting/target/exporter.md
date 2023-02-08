@@ -1,5 +1,7 @@
 # Porting a new target for exporters
 
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
+
 Exporting allows users to transition from Mbed CLI to the development environment of their choice. When you add a new target, you must add support for exporters. The following sections explain how you add support for a new target to each exporter.
 
 ## Eclipse and Make

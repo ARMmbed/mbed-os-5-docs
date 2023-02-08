@@ -37,6 +37,8 @@ You can create new applications as Mbed OS or non-versioned (blank) projects.
 
 When you create a new program, Mbed CLI automatically imports the latest [Mbed OS release](https://github.com/ARMmbed/mbed-os/). Each release includes all the components: code, build tools and IDE exporters.
 
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
+
 With this in mind, let's create a new program (we'll call it `mbed-os-program`):
 
 ```

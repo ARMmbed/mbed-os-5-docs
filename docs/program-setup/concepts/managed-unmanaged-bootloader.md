@@ -229,6 +229,8 @@ An unmanaged bootloader build is a method of controlling the link location of a 
 
 ## Exporter limitations
 
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
+
 Although the exporters can export bootloader projects using the bootloader parameters, there are some limitations.
 
 The exporters do not interpret Mbed OS configuration, and any changes to configuration parameters, especially bootloader parameters, require you to rerun the `mbed export` command.

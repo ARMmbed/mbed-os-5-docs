@@ -1,5 +1,7 @@
 # Exporting
 
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
+
 If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
 - Keil µVision 5.0.
