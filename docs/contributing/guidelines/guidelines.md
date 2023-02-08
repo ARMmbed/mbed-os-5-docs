@@ -14,7 +14,7 @@ We accept contributions in the form of pull requests. Each pull request must be 
 
 ## Types of contributions 
 
-There are a few [types of contributions](../contributing/workflow.html#pull-request-types). Each type has different priorities and requirements. When contributing, it's important not to mix types and instead, create multiple contributions if needed. The type of contribution affects how and when it is incorporated into Mbed OS.
+There are a few [types of contributions](../contributing/workflow.html#contributions). Each type has different priorities and requirements. When contributing, it's important not to mix types and instead, create multiple contributions if needed. The type of contribution affects how and when it is incorporated into Mbed OS.
 
 ## Licensing 
 

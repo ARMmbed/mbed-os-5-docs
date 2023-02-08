@@ -6,11 +6,13 @@
 
 **Application** - An executable software module built out of libraries that acts as a final product.
 
+**Arm Keil Studio Cloud** - A web development environment for Mbed OS and CMSIS programs. Keil Studio Cloud [has its own documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio).
+
 **Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](../build-tools/mbed-cli-1.html), packaged as `mbed-cli`.
 
 **Arm Mbed interface** - The extra chip that sits on all [Mbed Enabled development boards](index.html). It's what makes the target chip (for example, K64F) look like a USB drive. It usually runs a separate piece of software that generally doesn't change. That software is usually `DAPLink`, `CMSIS-DAP` or `STLink`.
 
-**Arm Mbed Online Compiler** - [Arm’s online tool](../build-tools/mbed-online-compiler.html), which you can use to create and compile your code.
+**Arm Mbed Online Compiler** - This tool is deprecated. Please use [Keil Studio Cloud](https://studio.keil.arm.com/) or [Mbed Studio](https://os.mbed.com/studio/).
 
 **Arm Mbed OS** - Arm's [operating system](https://os.mbed.com/docs) for the Internet of Things.
 
@@ -40,7 +42,7 @@
 
 **Build Script** - A build automation and generation utility.
 
-**Build target** or **target** - A destination for a software build, for example an MCU, development board or custom board. Build targets are defined in either `targets.json` or `custom_targets.json`. A build (with Mbed CLI, the Online Compiler and Mbed Studio) is always done for a specific target.
+**Build target** or **target** - A destination for a software build, for example an MCU, development board or custom board. Build targets are defined in either `targets.json` or `custom_targets.json`. A build (with Keil Studio Cloud, Mbed Studio and Mbed CLI) is always done for a specific target.
 
 **Byte** - A unit of digital information that consists of 8 bits (see `Bit`).
 
@@ -73,7 +75,7 @@
 
 ## E
 
-**Exporter** - Use the Arm Mbed [exporters](../build-tools/third-party-build-tools.html#about-the-exporters) to export your code to various third party tools and IDEs.
+**Exporter** - Exporters are deprecated. Exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.
 
 ## G
 

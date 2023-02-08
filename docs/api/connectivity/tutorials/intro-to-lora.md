@@ -115,20 +115,15 @@ Follow the instructions in [this document](https://github.com/ttn-zh/ic880a-gate
 
 ### Registering the gateway
 
-1. [Sign up](https://account.thethingsnetwork.org/users/login) for an account at The Things Network.
+1. [Sign up](https://id.thethingsnetwork.org/oidc/interaction/NTZ3ayAL37-y2sd_psK5K) for an account at The Things Network.
 1. Visit the [Development Console](https://console.cloud.thethings.network/) and select the cluster closest to you.
 1. Click **Gateways**.
-
-    <span class="images">![](../../../images/ttn1.png)</span>
-
-1. Click **Add Gateway**.
+1. Click **Register gateway**.
 1. Fill in the details of your gateway.
-1. Click **Create gateway**.
+1. Click **Register gateway**.
 1. You have created the gateway.
 
 If you use the MultiTech conduit, you need the 'Gateway key' to authenticate the gateway to the network. Click on **API Keys** and **Add API Key**
-
-<span class="images">![](../../../images/ttn2.png)</span>
 
 ### Installing the packet forwarder
 
@@ -196,15 +191,10 @@ Register the device in The Things Network, and generate some keys:
 
 1. Go to [The Things Network console](https://console.cloud.thethings.network/).
 1. Click **Applications**.
-1. Click **Add application**.
-1. Fill in the details of your application, and click **Add application**.
-
-    <span class="images">![](../../../images/ttn9.png)<span>Filling in the application details in The Things Network.</span></span>
-
+1. Click **Create application**.
+1. Fill in the details of your application, and click **Create application**.
 1. You're redirected to the application page. Under **Devices**, click **Add end device**.
 1. Search for your device using the tab **From The LoRaWAN Device Repository**, if your device is not in the overview, select the option **Manually**
-    <span class="images">![](../../../images/ttn12.png)</span>
-
 1. If your device has an EUI printed on it, enter this in **Device EUI**.
 
     <span class="images">![](../../../images/ttn11.png)<span>The device EUI is often printed on the module or on the box.</span></span>
@@ -218,38 +208,30 @@ Now that the device is registered in The Things Network, you can start writing c
 
 ### Importing the demo application
 
-Mbed comes with the Arm Mbed Online Compiler, which you can use to build applications without needing to install anything on your computer. (Mbed also has [offline tools](../build-tools/index.html)).
+Mbed comes with [tools](../build-tools/index.html) which you can use to build applications. In this tutorial, we are going to use , Arm's zero-installation web IDE.
 
-1. [Sign up](https://os.mbed.com/account/signup/?next=%2F) for an account on Arm Mbed, which hosts the Online Compiler.
-1. Find your development board on [the boards page](https://os.mbed.com/platforms/).
-1. Click **Add to your Mbed Compiler**.
-1. Go to [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
-1. Click **Import this program**.
-1. You're redirected to the Online Compiler, where you can give the program a name.
-
-    <span class="images">![](../../../images/lora7_2.png)<span>Importing a program to get started</span></span>
-
-<span class="notes">**Note:** Make sure you select the correct board in the top right corner of the compiler.</span>
-
-<span class="images">![](../../../images/lora8_2.png)<span>Selecting the correct board</span></span>
+1. Go to [studio.keil.arm.com](https://studio.keil.arm.com/auth/login/) and log into Keil Studio Cloud using your Arm or Mbed account. If you do not have an Arm or Mbed account, sign up from the login page.
+1. Open a new browser window and go to [mbed-os-example-lorawan](https://github.com/ARMmbed/mbed-os-example-lorawan).
+1. Copy the URL of the example project.
+1. In Keil Studio Cloud, select **File** > **Clone**.
+    The **Clone** dialog box displays.
+1. Paste the URL and click **Add project**.
+    Keil Studio Cloud clones the project with the version of Mbed OS it was originally created with. The project is set as the active project by default.
 
 ### Setting keys
 
-In the Online Compiler:
+In Keil Studio Cloud:
 
-1. Open `mbed_app.json`. This file contains the configuration for the application and holds the authentication keys.
+1. Open the `mbed_app.json` file. This file contains the configuration for the application and holds the authentication keys.
 1. If you have a SX1272 or SX1276 **shield** (not if you have a module), set your radio type under `lora-radio`.
 1. Under `lora.device-eui`, enter the device EUI from the TTN console.
 1. Under `lora.application-eui`, enter the application EUI from the TTN console.
 1. Under `lora.application-key`, enter the application key from the TTN console.
-
-    <span class="images">![](../../../images/ttn15.png)<span>Correct keys set in `mbed_app.json`</span></span>
-
 1. Under `lora.phy` specify the channel plan for your region. A list of possible values is listed under '[Selecting a PHY'](https://github.com/ARMmbed/mbed-os-example-lorawan#selecting-a-phy) in the readme.
 
 #### Sending the value of the PIR sensor
 
-To send the current value of the PIR sensor (whether it sees movement), in the Online Compiler:
+To send the current value of the PIR sensor (whether it sees movement), in Keil Studio Cloud:
 
 1. Open `main.cpp`.
 1. Replace the function `send_message()` with:
@@ -273,15 +255,11 @@ To send the current value of the PIR sensor (whether it sees movement), in the O
 
 ### Verifying the setup
 
-Now you can verify whether the setup works by flashing this application to your board.
+Now you can verify if the setup works by flashing this application to your board.
 
-1. In the Online Compiler, click the **Compile** button.
-
-    <span class="images">![](../../../images/lora10.png)<span>Compile button</span></span>
-
-1. When compilation succeeds, the compiler sends a file to your computer.
-1. Plug your development board into the computer (over micro-USB) to mount it as a USB mass storage device.
-1. Once the device mounts, drag the compiled file onto the board. This causes the device to boot. You can then see the device joining and then sending messages in the The Things Network console, under the **Live data** tab:
+1. In Keil Studio Cloud, connect your board to your computer. The first time you connect your board, you have to click the **Connect to target hardware** button to the right of the **Target hardware** drop-down list. After the first successful connection, Keil Studio Cloud detects the board and suggests a matching target hardware.
+1. Click the **Run project** button to build the project and flash it to the board.
+    You can see the device joining and then sending messages in the The Things Network console, under the **Live data** tab:
 
     <span class="images">![](../../../images/ttn19.png)<span>We've got data!</span></span>
 
@@ -303,7 +281,7 @@ Call `send_message` whenever you want (for example after the state of the sensor
 
 You can also send data back to the device. Because LoRaWAN (in Class-A mode, which you're using here) is not continuously connected to the network, you need to wait for a receive (RX) window to occur to receive data. An RX window opens after a transmission. So you need to *send* to the network before you can receive a message. If you send a message from The Things Network to your device, the network automatically queues the message and delivers it in the next RX window.
 
-You can toggle the LED on your development board over LoRa. In the Online Compiler:
+You can toggle the LED on your development board over LoRa. In Keil Studio Cloud:
 
 1. Open `main.cpp`.
 1. Replace the `receive_message` function with:
@@ -331,7 +309,7 @@ You can toggle the LED on your development board over LoRa. In the Online Compil
 
     <span class="notes">**Note:** On some development boards, writing `0` to the LED turns them on. On others, writing `1` does this. It depends on the wiring of the board.</span>
 
-1. Compile, and flash the application.
+1. Click the **Run project** button to build and flash the application.
 1. When the device is back online, use the The Things Network console to queue a message. Go to your device page, and under **Messaging**, select **Downlink** and add port **21** and data `01`. Then press **Schedule downlink**.
 
     <span class="images">![](../../../images/ttn16.png)<span>Queuing a downlink message over port 21</span></span>
@@ -388,7 +366,6 @@ LoRa/LoRaWAN is a technology with which anyone can set up a network and start bu
 
 ## More material
 
-- [Webinar: getting started with LoRa using Arm Mbed and The Things Network](https://pages.arm.com/2017-10-29-webinar-registration.html).
 - [Mbed OS LoRaWAN stack documentation](../apis/lorawan-apis.html).
 - [Firmware updates over LoRaWAN](https://os.mbed.com/blog/entry/firmware-updates-over-lpwan-lora/).
 - [Presentations from The Things Conference](https://www.youtube.com/playlist?list=PLM8eOeiKY7JUhIyxWWU2-qziejDbBg-pf).

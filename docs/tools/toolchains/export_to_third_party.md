@@ -1,8 +1,10 @@
 # Exporting
 
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
+
 If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to one, you can choose to export an Mbed project to the following development environments:
 
-- Keil uVision5.
+- Keil µVision 5.0.
 - Eclipse CDT ([C/C++ Development Tooling](https://www.eclipse.org/cdt/)) make (unmanaged) projects using GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
 - GNU Arm Eclipse (managed [CDT](https://www.eclipse.org/cdt/) projects), using GNU Arm Embedded Toolchain 6.
 - Make using GNU Arm Embedded Toolchain 6 (6-2017-q1-update).
@@ -16,28 +18,26 @@ If you'd like to develop on Arm Mbed OS with a third party tool, or migrate to o
 - Qt Creator.
 - SW4STM32 System Workbench for STM32.
 
-This may be useful to [launch a debug session](../debug-test/index.html) with your favorite tool while using Arm Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
+This may be useful to [launch a debug session](../debug-test/index.html) with your favorite tool while using Mbed CLI for development, or creating examples or projects you work on within your tool of choice.
 
-## Exporting from the Arm Mbed Online Compiler
+## Exporting from Mbed Studio
 
-The Arm Mbed Online Compiler has a built-in export mechanism that supports the same development environments as Mbed CLI. When you right click on a project you want to export and click **Export Program...**, the **Export Program** window opens. You can select your board and development environment.
+You can export your programs for use with the Keil µVision IDE or export them as .tgz files. See the [Mbed Studio documentation](https://os.mbed.com/docs/mbed-studio/current/exporting/index.html) for more information.
 
-<span class="images">![](../../images/export_menu.png)<span>Triggering an export</span></span>
+## Exporting from Mbed CLI
 
-The export process generates a ZIP archive with a project file matching your selected development environment. Follow your toolchain's import or project creation process to begin working there.
+Mbed CLI currently supports exporting to all of the development environments mentioned above by using the `export` command.
 
-## Exporting from Arm Mbed CLI
-
-[Mbed CLI](../build-tools/mbed-cli-1.html) currently supports [exporting](../build-tools/third-party-build-tools.html#exporting-from-arm-mbed-cli) to all of the development environments mentioned above by using the `export` command.
-
-For example, to export to uVision5 with the K64F target, run:
+For example, to export to Keil µVision 5.0 with the K64F target, run:
 
 	$ mbed export -i uvision5 -m K64F
 
 A `*.uvproj` file is created in the root folder of the project.
 You can open this project file with uVision5.
 
-When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile in the [build profiles documentation](build-profiles.html). For example, this means that compiling within UVision 5 after this export:
+When you export from Mbed CLI, you create a project that compiles with the debug profile. You can find more information on the debug profile on the [build profiles](../program-setup/build-profiles-and-rules.html) page. For example, this means that compiling within Keil µVision 5.0 after this export:
+
+docs/program-setup/build-profiles-rules/build_profiles.md
 
     $ mbed export -i uvision5 -m K64F
 
@@ -53,7 +53,7 @@ For a complete list of supported export toolchains, you can run:
 
 Changing the compiler toolchain introduces many degrees of freedom in the system. The differences include how the compiler translates C/C++ code to assembly code, the link time optimizations, changing implementations of the C standard libraries and differences caused by changing compile and link options.
 
-Although we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as using the Mbed Online Compiler.
+Although we support exporting your project and libraries to an alternate toolchain, we cannot guarantee the same consistency as with the Mbed tools.
 
 We will do our best to maintain the exported libraries and project files, but please understand we cannot cover all cases and combinations, or provide support for use of these alternative tools themselves.
 
@@ -66,6 +66,7 @@ We will do our best to maintain the exported libraries and project files, but pl
 Make itself does not compile source code. It relies on a compiler such as:
 
 - [GNU Arm Embedded Toolchain](https://developer.arm.com/open-source/gnu-toolchain/gnu-rm), which you can install for free using the [instructions](https://gnu-mcu-eclipse.github.io/toolchain/arm/install/). Please note that the current Makefile requires that you add your compiler to your PATH variable. This contradicts the instruction given on the installation website, because those instructions are intended for Eclipse, not Make.
+
 - Arm Compiler 6.
 
 <span class="notes">**Note:** Ensure that the compiler you are exporting to is accessible using your `PATH` environment variable because Makefile requires this. For example, when using an exported Makefile from `make_armc6`, the command `armclang` prints a help message about how to use Arm Compiler 6.</span>

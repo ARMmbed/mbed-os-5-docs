@@ -1,23 +1,10 @@
 <h1 id="debugging">Debugging with third party tools</h1>
 
-There are extensive instructions on debugging Arm Mbed OS applications with [uVision 5](../debug-test/keil-uvision.html), [Eclipse](../debug-test/third-party-tools.html) and [Visual Studio Code](../debug-test/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](setting-up-a-local-debug-toolchain.html).
+There are extensive instructions on debugging Arm Mbed OS applications with [Keil uVision 5](../debug-test/keil-uvision.html), [Eclipse](../debug-test/eclipse.html) and [Visual Studio Code](../debug-test/visual-studio-code.html), but you can use any IDE that supports GDB to debug Mbed OS applications. This document gives advice on how to configure these IDEs. Before starting, first [configure your local debug toolchain](setting-up-a-local-debug-toolchain.html).
 
-## Exporting your project
+## Exporting your project with Mbed CLI
 
-Although you can use our tools to generate project files specific to many IDEs, you can also use our tools to generate Makefiles. Almost any C/C++ IDE can use Makefiles to build your project. To generate a Makefile, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
-
-### Online Compiler
-
-1. Right click on your project.
-1. Select *Export Program...*.
-1. Under 'Export toolchain', select *Make (GCC ARM)*.
-
-    For most targets you can also export to ARMCC.
-1. Click *Export*, and unpack at a convenient location.
-
-![Exporting to Make](../../images/other_ides1.png)
-
-### Mbed CLI
+You can use Mbed CLI to generate Makefiles. Almost any C/C++ IDE can use Makefiles to build a project.
 
 In your project folder, run:
 

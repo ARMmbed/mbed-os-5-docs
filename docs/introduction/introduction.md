@@ -16,27 +16,12 @@ We release Mbed OS under an Apache 2.0 license, so you can confidently use it in
 
 ## Getting started
 
-Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, on Mbed CLI, Mbed Studio and the Mbed Online Compiler.
+Our [quick start](../quick-start/index.html) guides show how to build an example application for both the full profile and bare metal profile, with Keil Studio Cloud, Mbed Studio and Mbed CLI.
 
-| [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed Online Compiler](../quick-start/build-with-the-online-compiler.html) |  [Build with Mbed CLI 1](../quick-start/build-with-mbed-cli.html) |
+| [Build with Keil Studio Cloud](https://developer.arm.com/documentation/102497/1-5/Tutorials/Get-started-with-an-Mbed-OS-Blinky-example) | [Build with Mbed Studio](https://os.mbed.com/docs/mbed-studio/current/getting-started/index.html) | [Build with Mbed CLI 1](../quick-start/build-with-mbed-cli.html) |
 | --- | --- | --- |
-| Download our dedicated desktop IDE, including all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Zero-installation web IDE to explore Mbed OS; great for rapid prototyping and education. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
+| Replaces the Mbed Online Compiler. Our zero-installation web IDE to explore Mbed OS and CMSIS; great for rapid prototyping and education. <br>This link will take you to Arm Developer | Our dedicated desktop IDE. Includes all the necessary tools to work with Mbed OS. <br>This link will take you to the Mbed Studio documentation site. | Command-line tool requiring manual setup of tools, but providing the greatest degree of flexibility. |
 
 ## Recently updated documentation
 
-- GNU Arm Embedded version 10 [is now supported](../build-tools/index.html).
-- We've updated the section on building and debugging with [Visual Studio Code](../debug-test/visual-studio-code.html) to reflect the latest VSCode configuration, and updated the contributions [workflow](../contributing/workflow.html) section to reflect recent changes to the pull request template.
-- We're moving to GitHub Actions instead of Travis CI. We've updated the contribution guidelines on [Continuous integration testing](../contributing/ci.html) accordingly.
-- A new section on [Docker use in Mbed OS](../build-tools/docker.html) describes how you can set up a build environment for Mbed OS projects using Docker. This is the easiest and quickest way to get a build environment set up.
-- We've added a section describing [driver interfaces and polymorphism](../apis/driver-interfaces-experimental.html). Polymorphic driver interfaces in MbedOS are still experimental, and not enabled by default. You can start writing code that takes advantage of driver polymorphism now, but be sure to read the notes on backwards compatibility and caveats.
-- A new section about [optimizing for throughput and power consumption](../apis/optimizing-applications-for-throughput-and-power-consumption.html) with Bluetooth Low Energy (BLE). We've also removed old material relating to services which are no longer supported and instead provided links to the [Experimental services for Mbed OS BLE](../apis/ble-services.html) repository.
-- We've updated the [unit testing](../debug-test/unit-testing.html) information to reflect changes to the version of CMake used. You will need to update to CMake version 3.19 or above and alter your test code structure.
-- A new [Mbed CLI1 to CLI2 migration guide](../build-tools/migration-guide.html).
-- A new [tutorial about link time optimization](../apis/link-time-optimization.html).
-- A new [PSA porting guide](../porting/porting-security.html).
-- New information about [API life cycle ](../introduction/versions-and-releases.html#the-api-life-cycle) and how to [contribute experimental APIs](../contributing/software-design.html#experimental-apis) and [use them in an application](../program-setup/build-rules.html#label-directories).
-- [Tickless mode porting updates](../porting/tickless-mode.html).
-- A new section [for the bare metal profile](../bare-metal/index.html), including [moving Mbed 2 applications to bare metal](../bare-metal/using-the-bare-metal-profile.html) and [porting targets from Mbed 2](../bare-metal/porting-a-target-from-mbed-os-2-to-mbed-os-6-bare-metal.html).
-- We've grouped [our API references with the relevant tutorials and configuration information](../apis/index.html) so you can work on a feature from start to finish in a single area of the docs.
-- Updated [information about serial communication with your development board](../program-setup/serial-communication.html) and [using printf() to debug](../debug-test/debugging-using-printf-statements.html).
-- A list of [deprecated APIs and their replacements](../apis/index.html#deprecated-apis).
+- Mbed Online Compiler replaced by Keil Studio Cloud.

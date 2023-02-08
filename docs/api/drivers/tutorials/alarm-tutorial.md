@@ -1,46 +1,49 @@
 # Alarm tutorial
 
-This tutorial is for an alarm application that uses a simple countdown mechanism. It relies on two input buttons to set, activate and silence the alarm. During the countdown, the device is in sleep mode. When the countdown ends and the alarm triggers, an LED and a digital out pin go high. They go back to low when the alarm is reset.
+This tutorial is for an alarm application that uses a simple countdown mechanism. It relies on two input buttons to set, activate and silence the alarm. During the countdown, the device is in sleep mode. When the countdown ends and the alarm triggers, a LED and a digital out pin go high. They go back to low when the alarm is reset.
 
-The LEDs provides some feedback to the user: when setting the alarm, the LEDs blink to show the input was recognised. When the alarm is fully set, the LEDs blink the configured delay once, before letting the device go into sleep mode.
+The LEDs provide some feedback to the user: when setting the alarm, the LEDs blink to show the input was recognised. When the alarm is fully set, the LEDs blink the configured delay once, before letting the device go into sleep mode.
 
-<span class="tips">**Tip:** You can complete this tutorial with the Mbed Online Compiler or [Mbed CLI](../tools/installation-and-setup.html).</span>
+<span class="tips">**Tip:** You can complete this tutorial with Keil Studio Cloud or [Mbed CLI](../tools/installation-and-setup.html).</span>
 
 ## Import the example application
 
-If using Mbed CLI, use the `import` command:
+With Keil Studio Cloud, click the **Import into Keil Studio Cloud** button below:
+
+[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Alarm/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Alarm/blob/v6.7/main.cpp)
+
+With Mbed CLI, use the `import` command:
 
 ```
 mbed import mbed-os-example-alarm
 cd mbed-os-example-alarm
 ```
 
-If using the Online Compiler, click the **Import into Mbed IDE** button below:
-
-[![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Alarm/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Alarm/blob/v6.7/main.cpp)
-
 ## Compile and flash to your board
 
-1. To compile the application:
+1. Compile the application:
 
-   - If using Mbed CLI, invoke `mbed compile`, and specify the name of your target and toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5 and FRDM-K64F:
+   - With Keil Studio Cloud, click the **Build project** button.
+
+   - With Mbed CLI, invoke `mbed compile`, and specify the name of your target and toolchain (`GCC_ARM`, `ARM`, `IAR`). For example, for the ARM Compiler 5 and FRDM-K64F:
 
    ```
    mbed compile -m K64F -t ARM
    ```
 
-   - If using the Online Compiler, click the **Compile** button.
-
    Your PC may take a few minutes to compile your code.
-
-1. Find the compiled binary:
-
-   - If using the Online Compiler, the compiled binary will be downloaded to your default location.
-   - If using Mbed CLI, the compiled binary will be next to the source code, in your local copy of the example.
+   With Keil Studio Cloud, the compiled binary is automatically downloaded after a successful build. Check your **Downloads** folder.
+   With Mbed CLI, the compiled binary is next to the source code, in your local copy of the example.
 
 1. Connect your Mbed device to the computer over USB.
-1. Copy the binary file to the Mbed device.
-1. Press the reset button to start the program.
+
+1. Flash the code:
+
+  - With Keil Studio Cloud, click the **Run project** button to flash the code to your device and start the program.
+
+  - With Mbed CLI:
+      1. Copy the binary file to the Mbed device.
+      1. Press the reset button to start the program.
 
 ## Use the alarm
 

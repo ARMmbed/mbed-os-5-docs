@@ -94,9 +94,16 @@
                     "sources": []
                 },
                 {
+                  "title": "Build with Keil Studio Cloud",
+                  "intro": {
+                    "path": "docs/quick-start/keil-studio.md"
+                  },
+                  "sources": []
+                },
+                {
                   "title": "Build with Mbed Studio",
                   "intro": {
-                    "path": "docs/quick-start/studio.md"
+                    "path": "docs/quick-start/mbed-studio.md"
                   },
                   "sources": []
                 },
@@ -117,16 +124,6 @@
                             "sources": []
                         }
                     ]
-                },
-                {
-                    "title": "Build with the Online Compiler",
-                    "sub_chapters": [{
-                        "title": "Importing and compiling the code",
-                        "intro": {
-                            "path": "docs/quick-start/quick-start-compiler.md"
-                        },
-                        "sources": []
-                    }]
                 },
                 {
                     "title": "Further reading",
@@ -990,58 +987,10 @@
                     "sources": []
                 },
                 {
-                    "title": "Mbed Online Compiler",
-                    "sub_chapters": [{
-                            "title": "Getting started",
-                            "intro": {
-                                "path": "docs/tools/IDE/online_comp.md"
-                            },
-                            "sources": [{
-                                    "path": "docs/tools/IDE/oc_tut.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/compiler_publishing_code.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/updating_firmware.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Source control",
-                            "sources": [{
-                                    "path": "docs/tools/IDE/compiler_version_control.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/compiler_pull_requests.md"
-                                },
-                                {
-                                    "path": "docs/tools/IDE/oc_pr_tut.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "Collaborative work",
-                            "sources": [
-
-                                {
-                                    "path": "docs/tools/IDE/compiler_multiple_authors.md"
-                                },
-
-
-                                {
-                                    "path": "docs/tools/IDE/compiler_collab.md"
-                                }
-                            ]
-                        },
-                        {
-                            "title": "The Online Compiler reference",
-                            "intro": {
-                                "path": "docs/tools/IDE/ide_ref.md"
-                            },
-                            "sources": []
-                        }
-                    ]
+                    "title": "Keil Studio Cloud",
+                    "sources": [{
+                        "path": "docs/tools/Studio/keil-studio.md"
+                    }]
                 },
                 {
                     "title": "Mbed Studio",

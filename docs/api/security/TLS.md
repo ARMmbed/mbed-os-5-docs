@@ -63,4 +63,4 @@ As the [examples](#mbed-tls-examples) show, you *must* call the `mbedtls_platfor
 
 ## Other resources
 
-The [Mbed TLS website](https://tls.mbed.org) contains many other useful resources for developers, such as [developer documentation](https://tls.mbed.org/dev-corner), [knowledge base articles](https://tls.mbed.org/kb) and a [support forum](https://forums.mbed.com/c/mbed-tls).
+The [Mbed TLS website](https://www.trustedfirmware.org/projects/mbed-tls/) contains many other useful resources for developers, such as [developer documentation](https://mbed-tls.readthedocs.io/en/latest/), [knowledge base articles](https://mbed-tls.readthedocs.io/en/latest/kb/) and a [support forum](https://forums.mbed.com/c/mbed-tls).

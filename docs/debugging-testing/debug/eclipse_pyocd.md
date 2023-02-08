@@ -20,23 +20,9 @@ You need to install Eclipse CDT with the GNU Arm Eclipse plugins to begin:
     1. Click **Next** repeatedly, and accept the license agreements.
     1. Click **Finish**. If prompted to restart Eclipse, click **Yes**.
 
-## Exporting a project
+## Exporting a project with Mbed CLI
 
-To export your project to Eclipse, you can use either the Arm Mbed Online Compiler or Arm Mbed CLI.
-
-### Online compiler
-
-1. Right click on your project.
-1. Select *Export Program...*.
-1. Under *Export toolchain*, select *Eclipse (GCC ARM)*.
-
-    For most targets you can also export to ARMCC.
-1. Click *Export*.
-1. Unpack to a convenient location. Make a note of this location for the import step.
-
-    <span class="images">![](../../images/eclipse1.png)<span>Exporting to Eclipse</span></span>
-
-### Arm Mbed CLI
+To export your project to Eclipse, you can use Mbed CLI.
 
 In your project folder, run:
 

@@ -4,7 +4,7 @@ This is a guide for adding exporters to the Arm Mbed OS tools. First, this docum
 
 <span class="notes">**Note:** All paths are relative to [https://github.com/ARMmbed/mbed-os/](https://github.com/ARMmbed/mbed-os/).</span>
 
-## What an exporter is
+## What is an exporter
 
 An exporter is a Python plugin to the Mbed OS tools that converts a project using Arm Mbed CLI into one specialized for a particular IDE. For the best user experience, an exporter:
 
@@ -20,7 +20,7 @@ The export subsystem is organized as a group of common code and a group of IDE o
 The **common code** is contained in three files:
 
  * `tools/project.py` contains the entry point of the script to export projects from the Mbed tools to any of the supported IDEs or project structures.
- * `tools/export/__init__.py` contains an API used by the Arm Mbed Online Compiler and `project.py`. This file is responsible for boilerplate actions that every exporter must do, such as scanning for resources or collecting toolchain flags.
+ * `tools/export/__init__.py` contains an API used by `project.py`. This file is responsible for boilerplate actions that every exporter must do, such as scanning for resources or collecting toolchain flags.
  * `tools/export/exporters.py` contains the base class for all plugins. It offers useful exporter-specific actions.
 
 An **IDE or toolchain specific plugin** is a Python class that inherits from the `Exporter` class and is listed in the `tools/export/__init__.py` exporter map.

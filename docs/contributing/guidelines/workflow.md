@@ -15,14 +15,13 @@ Responsibilities:
 - Merge pull requests into the requested branches.
 - Make periodic patch and feature releases.
 
-The current maintainers are:
+The current maintainer is:
 
-- [Anna Bridge](https://os.mbed.com/users/AnnaBridge).
-- [Martin Kojtal](https://os.mbed.com/users/Kojto).
+- [Saheer Babu](https://os.mbed.com/users/saheerb).
 
 ## Contributions
 
-Before contributing an enhancement (for example, a new feature or new port), please [discuss it on the forums](https://os.mbed.com/forum/bugs-suggestions/) to avoid duplication of work, as we or others might be working on a related feature.
+Before contributing an enhancement (for example, a new feature or new port), please [discuss it on the forums](https://forums.mbed.com/) to avoid duplication of work, as we or others might be working on a related feature.
 
 We can only accept contributions through GitHub if you create a pull request from forked versions of our repositories. This allows us to review the contributions in an easy-to-use and reliable way, under public scrutiny.
 
@@ -148,7 +147,7 @@ Each feature has a Mbed OS technical lead. This person is responsible for:
 - Reviewing any addition to the feature branch.
 - Approving all feature change pull requests.
 
-Feature branches do not need to comply with our workflow. They are an exception, along with the following: 
+Feature branches do not need to comply with our workflow. They are an exception, along with the following:
 - Merging pull requests to feature branches by a tech lead.
 - Cases where breaking CI is possible (it is recommended to fix errors but not always feasible).
 
@@ -195,7 +194,7 @@ Each pull request goes through the following workflow:
 
 Mergify bot drives our workflow. Its settings are defined in the file [`mergify.yml`](https://github.com/ARMmbed/mbed-os/blob/master/.mergify.yml). The Mbed OS maintainers are responsible for moving pull requests through the workflow states with help from the mergify bot.
 
-Each state is time-boxed. In most cases, sufficient time is provided to move to another state. The ciarmcom bot periodically checks that pending activities on pull requests are completed in a timely manner. 
+Each state is time-boxed. In most cases, sufficient time is provided to move to another state. The ciarmcom bot periodically checks that pending activities on pull requests are completed in a timely manner.
 <center>
 
 | State           | Limit (days)  |
@@ -208,7 +207,7 @@ Each state is time-boxed. In most cases, sufficient time is provided to move to 
 </center>
 
 
-If the pull request is idle in a state for longer than the allowed time, our bot will add the 'stale' label alongside a comment nudging the user or reviewer to carry out any necessary work. This label will only be removed when the action required to move the pull request forward is completed. 
+If the pull request is idle in a state for longer than the allowed time, our bot will add the 'stale' label alongside a comment nudging the user or reviewer to carry out any necessary work. This label will only be removed when the action required to move the pull request forward is completed.
 
 Pull requests are closed if they are idle for more than two weeks. The author or the maintainer can reopen it at any time.
 
@@ -289,10 +288,10 @@ The following labels summarize the scope of the pull request:
 
 ### Documentation contribution labels
 
-The [documentation repository](https://github.com/ARMmbed/mbed-os-5-docs) uses some of the same labels that the `mbed-os` repository does. In addition, it includes: 
+The [documentation repository](https://github.com/ARMmbed/mbed-os-5-docs) uses some of the same labels that the `mbed-os` repository does. In addition, it includes:
 
 - *code dependency* - The feature or change this pull request describes has not yet merged into `master` in `mbed-os`. Even if all the required reviewers have reviewed and approved this pull request, it must wait to merge until its code does.
-- *wait to merge* - This pull request is a work in progress and is not yet ready for full review. 
+- *wait to merge* - This pull request is a work in progress and is not yet ready for full review.
 - *Scripting work - not for writers* - This issue requires a change too large or frequent for us to do manually. Instead, a script needs to be created to fix this issue.
 - *help wanted* - The documentation team does not know how to answer this question and welcomes help in answering it.
 
@@ -308,8 +307,7 @@ If repository contains the following note in Readme.md, it was archived (read-on
 
 To deprecate a repository, please do:
 
-1. Add deprecation note to Readme.md in the repository. 
+1. Add deprecation note to Readme.md in the repository.
 1. Add "DEPRECATED:" to "About" section (it is useful in Github search).
 1. Set repository to read only (Github archive option).
 1. Update references in our CI or documentation (deprecation notice or updated references to available replacement).
-

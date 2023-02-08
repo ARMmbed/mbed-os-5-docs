@@ -9,4 +9,4 @@ Current working groups include:
 * [Tools and Build System](https://github.com/ARMmbed/mbed-tools/discussions)
 * [Nordic Platforms](https://github.com/ARMmbed/mbed-os-wg-nordic-platforms/discussions)
 
-If you would like to join a working group, we welcome your contributions via the groups linked above. If you have a suggestion for a new working group, [please add them to our Forum here](https://forums.mbed.com/t/mbed-os-working-groups/11730).
+If you would like to join a working group, we welcome your contributions via the groups linked above. If you have a suggestion for a new working group, [please add them to our forum here](https://forums.mbed.com/t/mbed-os-working-groups/11730).

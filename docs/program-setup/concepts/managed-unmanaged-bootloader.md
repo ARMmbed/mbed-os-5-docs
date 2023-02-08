@@ -24,7 +24,7 @@ The Mbed OS bootloader is a hybrid of the boot selector and a bootloader, but it
 
 ### Managed and unmanaged bootloader tool integration
 
-Mbed tools (Mbed CLI, Online Compiler) can manage bootloaders where:
+Mbed tools (Keil Studio Cloud, Mbed Studio or Mbed CLI) can manage bootloaders where:
 
 - The bootloader comes before the application in ROM.
 - The application starts immediately after the bootloader.
@@ -228,6 +228,8 @@ You want to have an unmanaged bootloader when your bootloader's requirements con
 An unmanaged bootloader build is a method of controlling the link location of a program within Mbed OS. There are two configuration options available for changing the link location: `target.mbed_app_start` and `target.mbed_app_size`. Please see [bootloader configuration](../program-setup/bootloader-configuration.html) for complete descriptions of these options.
 
 ## Exporter limitations
+
+<span class="notes">**Note:** Note that exporters to export your code to various third party tools and IDEs are no longer supported. See this [blog post](https://os.mbed.com/blog/entry/Introducing-the-new-Mbed-Tools/) for more details.</span>
 
 Although the exporters can export bootloader projects using the bootloader parameters, there are some limitations.
 
