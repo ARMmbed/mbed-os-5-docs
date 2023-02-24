@@ -3,5 +3,5 @@
     "replace": "https://github.com/ARMmbed/mbed-os-snippet-",
     "insert_start_tag": "https:\/\/github.com\/ARMmbed\/mbed-os-snippet-.*\/",
     "insert_end_tag": "\\)",
-    "insert_string": "tree/v6.7"
+    "insert_string": "tree/v6.16"
 }
