@@ -1,6 +1,6 @@
 # SPI
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_s_p_i.png)<span>SPI class hierarchy</span></span>
 
 The SPI Interface provides a Serial Peripheral Interface Master.
 
@@ -27,7 +27,7 @@ Defining multiple SPI objects connected to different buses might require the use
 
 ## SPI class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_s_p_i.html)
 
 ## SPI hello, world
 

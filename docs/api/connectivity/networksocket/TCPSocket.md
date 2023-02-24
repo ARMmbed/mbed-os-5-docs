@@ -1,6 +1,6 @@
 # TCPSocket
 
-<span class="images">![](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_t_c_p_socket.png)<span>TCPSocket class hierarchy</span></span>
+<span class="images">![](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/class_t_c_p_socket.png)<span>TCPSocket class hierarchy</span></span>
 
 The TCPSocket class provides the ability to send a stream of data over TCP. TCPSockets maintain a stateful connection that starts with the `connect` member function. After successfully connecting to a server, you can use the `send` and `recv` member functions to send and receive data (similar to writing or reading from a file).
 
@@ -20,7 +20,7 @@ Accepting a connection leaves the original socket in listening mode. You can con
 
 ## TCPSocket class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/class_t_c_p_socket.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/class_t_c_p_socket.html)
 
 ## TCPSocket example
 

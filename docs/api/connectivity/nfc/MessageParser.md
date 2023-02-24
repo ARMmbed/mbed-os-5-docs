@@ -4,7 +4,7 @@ The MessageParser class is an event-driven NDEF message parser. This class parse
 
 ## MessageParser class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_parser.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1nfc_1_1ndef_1_1_message_parser.html)
 
 ## MessageParser example
 

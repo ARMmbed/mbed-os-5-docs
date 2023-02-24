@@ -40,7 +40,7 @@ Two system configuration options permit trade-offs between image size and flexib
 
 ## Callback class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/classmbed_1_1_callback.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/classmbed_1_1_callback.html)
 
 ## Serial passthrough example with callbacks
 [![View code](https://www.mbed.com/embed/?url=https://github.com/ARMmbed/mbed-os-snippet-Callback_SerialPassthrough/tree/v6.7)](https://github.com/ARMmbed/mbed-os-snippet-Callback_SerialPassthrough/blob/v6.7/main.cpp)

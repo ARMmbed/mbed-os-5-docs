@@ -10,7 +10,7 @@ For boards that support hardware CRC, the MbedCRC API replaces the software impl
 
 ## MbedCRC class reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/structcrc__mbed__config.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/structcrc__mbed__config.html)
 
 ## MbedCRC examples
 

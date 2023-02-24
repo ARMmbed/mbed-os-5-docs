@@ -17,7 +17,7 @@ In Mbed OS, the PSA lifecycle is implemented as part of the platform service.
 
 ## PSA lifecycle reference
 
-[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/development/mbed-os-api-doxy/lifecycle_8h.html)
+[![View code](https://www.mbed.com/embed/?type=library)](https://os.mbed.com/docs/mbed-os/v6.16/mbed-os-api-doxy/lifecycle_8h.html)
 
 ## Related content
 
