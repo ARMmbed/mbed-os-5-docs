@@ -63,7 +63,7 @@ jobs:
           name: Upload documentation to s3
           command: |
             source /tmp/env
-            docbuilder publish /tmp/workspace/artifacts/$CIRCLE_BRANCH_NO_SLASH iot-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/$BUILD_DIRECTORY
+            docbuilder publish /tmp/workspace/artifacts/$CIRCLE_BRANCH_NO_SLASH otg-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/$BUILD_DIRECTORY
   push_redirects_to_s3:
     executor: doc_builder
     steps:
@@ -75,9 +75,10 @@ jobs:
           name: Upload redirects.json to s3
           command: |
             source /tmp/env
-            docbuilder upload_file ~/project/redirects.json iot-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/redirects.json
+            docbuilder upload_file ~/project/redirects.json otg-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/redirects.json
   zip_documentation:
-    machine: true
+    machine:
+      image: ubuntu-2004:202201-02
     steps:
       - *attach_workspace
       - run:
@@ -89,7 +90,8 @@ jobs:
           path: /tmp/workspace/docs.zip
 
   list_pages:
-    machine: true
+    machine:
+      image: ubuntu-2004:202201-02
     steps:
       - write_env_variables
       - *attach_workspace
@@ -111,7 +113,7 @@ jobs:
           name: Update live version on s3
           command: |
             source /tmp/env
-            docbuilder set_live_version iot-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/$BUILD_DIRECTORY
+            docbuilder set_live_version otg-doc-builds $CIRCLE_PROJECT_REPONAME/$CIRCLE_BRANCH_NO_SLASH/$BUILD_DIRECTORY
 workflows:
   version: 2
   build-publish-zip-deploy:
