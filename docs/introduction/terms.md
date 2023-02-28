@@ -6,7 +6,7 @@
 
 **Application** - An executable software module built out of libraries that acts as a final product.
 
-**Arm Keil Studio Cloud** - A web development environment for Mbed OS and CMSIS programs. Keil Studio Cloud [has its own documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio).
+**Arm Keil Studio Cloud** - A web development environment for Mbed OS and CMSIS programs. Keil Studio Cloud [has its own documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio-Cloud).
 
 **Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](../build-tools/mbed-cli-1.html), packaged as `mbed-cli`.
 

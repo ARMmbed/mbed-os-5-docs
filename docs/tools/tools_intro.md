@@ -15,7 +15,7 @@ We developed Mbed OS using the Mbed CLI tool, which is a Python program that coo
 
 ## Keil Studio Cloud
 
-Keil Studio Cloud is our zero-installation web IDE. It is the successor to the Mbed Online Compiler and allows you to develop Mbed and CMSIS projects. For more information, please see the [Keil Studio Cloud documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio).
+Keil Studio Cloud is our zero-installation web IDE. It is the successor to the Mbed Online Compiler and allows you to develop Mbed and CMSIS projects. For more information, please see the [Keil Studio Cloud documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio-Cloud).
 
 ## Mbed Studio
 
