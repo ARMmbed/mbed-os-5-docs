@@ -60,8 +60,8 @@
 
 **Component**
 
-    - In hardware: See [https://os.mbed.com/components/](https://os.mbed.com/components/).
-    - In software: An implementation of a hardware component.
+- In hardware: See [https://os.mbed.com/components/](https://os.mbed.com/components/).
+- In software: An implementation of a hardware component.
 
 **CMSIS-DAP** - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
