@@ -6,7 +6,7 @@
 
 **Application** - An executable software module built out of libraries that acts as a final product.
 
-**Arm Keil Studio Cloud** - A web development environment for Mbed OS and CMSIS programs. Keil Studio Cloud [has its own documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio).
+**Arm Keil Studio Cloud** - A web development environment for Mbed OS and CMSIS programs. Keil Studio Cloud [has its own documentation](https://developer.arm.com/documentation/102497/1-5/Arm-Keil-Studio-Cloud).
 
 **Arm Mbed CLI** - The name of the Arm Mbed [command-line tool](../build-tools/mbed-cli-1.html), packaged as `mbed-cli`.
 
@@ -60,8 +60,8 @@
 
 **Component**
 
-    - In hardware: See [https://os.mbed.com/components/](https://os.mbed.com/components/).
-    - In software: An implementation of a hardware component.
+- In hardware: See [https://os.mbed.com/components/](https://os.mbed.com/components/).
+- In software: An implementation of a hardware component.
 
 **CMSIS-DAP** - The precursor to DAPLink, this [project](https://github.com/mbedmicro/cmsis-dap) is deprecated due to known bugs. You should not use it in any new designs.
 
