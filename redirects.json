@@ -177,5 +177,7 @@
     "apis/mesh.html" : "apis/mesh-api.html",
     "apis/dns.html" : "apis/dns-apis.html",
     "porting/psa-compliance-port.html" : "porting/porting-security.html",
-    "build-tools/mbed-cli.html" : "build-tools/mbed-cli-1.html"
+    "build-tools/mbed-cli.html" : "build-tools/mbed-cli-1.html",
+    "tutorials/debugging-applications.html" : "debug-test/troubleshooting-common-issues.html",
+    "mbed-os/v6.0/contributing/index.html" : "mbed-os/latest/contributing/index.html"
 }
